@@ -6,8 +6,20 @@
  const record=id=>state[id]&&typeof state[id]==='object'&&!Array.isArray(state[id])?state[id]:(state[id]={});
  function save(){try{sessionStorage.setItem('dm-lecture-session',JSON.stringify(state));}catch{}}
  function prose(body){return body.split('\n').filter(s=>s.trim()).map(line=>line.startsWith('$$')?`<div class="lecture-equation">${MathView.html(line.slice(2,-2),true)}</div>`:`<p>${esc(line)}</p>`).join('');}
+ // Include native tables, captions and rendered math in the same search index.
+ const searchText=new Map();
+ const normalize=s=>s.normalize('NFKC').toLocaleLowerCase().replace(/[_{}\\]/g,'');
+ function searchable(lecture,topic){
+  if(!searchText.has(topic.id)){
+   const scratch=document.createElement('div');
+   scratch.innerHTML=prose(topic.body)+(topic.sections||[]).map(s=>prose(s.body)).join('')+LectureVisuals.html(topic.id);
+   scratch.querySelectorAll('svg,annotation,.katex-mathml').forEach(el=>el.remove());
+   searchText.set(topic.id,normalize([lecture.title,topic.title,topic.body,topic.warning||'',...(topic.sections||[]).flatMap(s=>[s.title,s.body]),scratch.textContent].join(' ')));
+  }
+  return searchText.get(topic.id);
+ }
  const href=(lecture,topic)=>`#${lecture.id}/${topic.id}`;
- function topicArticle(lecture,topic,{temporary=false,expanded=false}={}){
+ function topicArticle(lecture,topic,{temporary=false}={}){
   if(!temporary&&cache.has(topic.id))return cache.get(topic.id);
   const article=document.createElement('article');article.className='lesson-card lecture-topic';article.id='topic-'+topic.id;const r=temporary?JSON.parse(JSON.stringify(record(topic.id))):record(topic.id),index=all.findIndex(x=>x.topic===topic);
   article.innerHTML=`<p class="topic-meta">${esc(lecture.subtitle)}</p><h2 tabindex="-1">${esc(topic.title)}</h2>${prose(topic.body)}${topic.warning?`<aside class="source-warning"><strong>Source clarification</strong><p>${esc(topic.warning)}</p></aside>`:''}${topic.experiment?`<section data-experiment="${topic.experiment}" aria-label="Explore this relationship"></section>`:''}${topic.sections?.map(section=>`<section class="lecture-worked"><h3>${esc(section.title)}</h3>${prose(section.body)}</section>`).join('')||''}${LectureVisuals.html(topic.id)}${topic.check?`<form class="lecture-check check"><h3>Check your understanding</h3><p>${esc(topic.check.question)}</p><div class="lecture-choices">${topic.check.options.map((option,i)=>`<button type="button" data-choice="${i}" aria-pressed="${r.answer===i}">${esc(option)}</button>`).join('')}</div><p class="feedback" role="status">${r.feedback?esc(r.feedback):''}</p><details><summary>Explain the answer</summary><p>${esc(topic.check.explanation)}</p></details></form>`:''}${topic.sources?.length?`<details class="source-reference"><summary>Lecture references</summary><ul>${topic.sources.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></details>`:''}<footer class="lesson-footer">${index?`<a class="button" href="${href(all[index-1].lecture,all[index-1].topic)}">← ${esc(all[index-1].topic.title)}</a>`:'<a class="button" href="#">← All lectures</a>'}${index<all.length-1?`<a class="button" href="${href(all[index+1].lecture,all[index+1].topic)}">${esc(all[index+1].topic.title)} →</a>`:'<a class="button" href="#">All lectures →</a>'}</footer>`;
@@ -18,7 +30,7 @@
  function library(){
   root.innerHTML=`<header class="reader-heading"><p class="eyebrow">Introduction to Decision Making</p><h1>The lectures</h1><p>Model decisions, solve linear programs, and understand how the best choice changes with the data.</p></header><div class="lecture-search"><label for="course-search">Find a topic or formula</label><input id="course-search" type="search" placeholder="Try shadow price, airline, blending…" autocomplete="off"><p id="search-count" role="status"></p></div><div id="lecture-catalog"></div><a class="text-link" href="#all">Read all lectures on one page →</a>`;
   const catalog=root.querySelector('#lecture-catalog'),search=root.querySelector('input');
-  function filter(){const query=search.value.trim().toLocaleLowerCase(),terms=query.split(/\s+/).filter(Boolean);let count=0;catalog.innerHTML=CourseLectures.map((l,i)=>{const topics=l.topics.filter(t=>terms.every(term=>(l.title+' '+t.title+' '+t.body+' '+(t.sections||[]).map(s=>s.title+' '+s.body).join(' ')).toLocaleLowerCase().includes(term)));count+=topics.length;return topics.length?`<section class="lecture-catalog-entry"><p class="eyebrow">${i+1} · ${esc(l.subtitle)}</p><h2><a href="#${l.id}">${esc(l.title)}</a></h2><p>${esc(l.outcomes.join(' '))}</p>${query?`<ul>${topics.map(t=>`<li><a href="${href(l,t)}">${esc(t.title)}</a></li>`).join('')}</ul>`:`<a class="text-link" href="#${l.id}">${topics.length} topics · Open lecture →</a>`}</section>`:'';}).join('');root.querySelector('#search-count').textContent=query?`${count} matching topic${count===1?'':'s'}`:'';}
+  function filter(){const query=normalize(search.value.trim()),terms=query.split(/\s+/).filter(Boolean);let count=0;catalog.innerHTML=CourseLectures.map((l,i)=>{const topics=l.topics.filter(t=>terms.every(term=>searchable(l,t).includes(term)));count+=topics.length;return topics.length?`<section class="lecture-catalog-entry"><p class="eyebrow">${i+1} · ${esc(l.subtitle)}</p><h2><a href="#${l.id}">${esc(l.title)}</a></h2><p>${esc(l.outcomes.join(' '))}</p>${query?`<ul>${topics.map(t=>`<li><a href="${href(l,t)}">${esc(t.title)}</a></li>`).join('')}</ul>`:`<a class="text-link" href="#${l.id}">${topics.length} topics · Open lecture →</a>`}</section>`:'';}).join('');root.querySelector('#search-count').textContent=query?`${count} matching topic${count===1?'':'s'}`:'';}
   search.oninput=filter;filter();let last;try{last=JSON.parse(sessionStorage.getItem('dm-last-lecture')||'null');}catch{}const found=all.find(x=>x.lecture.id===last?.lecture&&x.topic.id===last?.topic);if(found){const resume=document.createElement('a');resume.className='resume-reading';resume.href=href(found.lecture,found.topic);resume.textContent='Continue '+found.topic.title+' →';root.querySelector('.reader-heading').append(resume);}document.title='Lectures · THU Decision Making';
  }
  function pause(){root.querySelectorAll('article').forEach(article=>article.experimentController?.pause());}
@@ -33,10 +45,18 @@
  }
  let printState;
  function preparePrint(){if(printState)return;pause();const [chapter]=location.hash.slice(1).split('/'),lecture=CourseLectures.find(l=>l.id===chapter),set=lecture?[lecture]:CourseLectures;
-  printState={nodes:[...root.childNodes],title:document.title,focus:document.activeElement,scrollY:window.scrollY};root.replaceChildren();root.classList.add('printing-lecture');for(const l of set){const h=document.createElement('h1');h.textContent=l.title;root.append(h);for(const t of l.topics){const article=topicArticle(l,t,{temporary:true,expanded:true});root.append(article);article.mountExperiment();article.querySelectorAll('details').forEach(d=>d.open=true);}}
+  printState={nodes:[...root.childNodes],title:document.title,focus:document.activeElement,scrollY:window.scrollY};root.replaceChildren();root.classList.add('printing-lecture');for(const l of set){const h=document.createElement('h1');h.textContent=l.title;root.append(h);for(const t of l.topics){const article=topicArticle(l,t,{temporary:true});root.append(article);article.mountExperiment();article.querySelectorAll('details').forEach(d=>d.open=true);}}
  }
  function restorePrint(){if(!printState)return;root.querySelectorAll('article').forEach(a=>a.experimentController?.destroy());root.replaceChildren(...printState.nodes);root.classList.remove('printing-lecture');document.title=printState.title;const previous=printState;printState=undefined;if(previous.focus?.isConnected)previous.focus.focus({preventScroll:true});window.scrollTo(0,previous.scrollY);}
- function printLecture(){preparePrint();try{window.print();}finally{restorePrint();}}
+ function printLecture(){
+  preparePrint();
+  // Some print implementations return before the dialog closes. Keep the full
+  // lecture mounted until afterprint, which also fires when printing is canceled.
+  try{window.print();}catch{
+   restorePrint();const status=root.querySelector('[data-print-status]');
+   if(status)status.textContent='Printing could not open. Try your browser’s Print command.';
+  }
+ }
  window.addEventListener('beforeprint',preparePrint);window.addEventListener('afterprint',restorePrint);
  window.addEventListener('hashchange',()=>{restorePrint();render();const heading=root.querySelector('.lecture-topic h2')||root.querySelector('h1');heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});});render();
 })();

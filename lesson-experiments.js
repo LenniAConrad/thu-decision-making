@@ -11,7 +11,8 @@ const LessonExperiments=(()=>{
  function view(type,p){
   if(type==='break-even'){
    const v=DecisionMath.breakEven(p.fixed,p.cost,p.price),desc=p.fixed===0&&p.price===p.cost?'Revenue equals cost at every volume; profit is zero.':v===null?(p.fixed===0?'Only zero sales break even; positive sales make a loss.':'No positive contribution: increasing sales cannot cover the fixed cost.'):`Break-even volume: ${fmt(v)} pairs. At least ${Math.ceil(v)} whole pairs cover the modeled cost.`;
-   return {desc,graph:LectureVisuals.plot({label:desc,xmax:1600,ymax:65000,xlabel:'Pairs sold',ylabel:'Revenue and cost · dollars',curves:[{name:'Revenue',fn:x=>p.price*x},{name:'Total cost',fn:x=>p.fixed+p.cost*x,dash:'7 5'},{name:'Fixed cost',fn:()=>p.fixed,dash:'2 5'}]})};
+   const xmax=v===null?1600:Math.max(1600,Math.ceil(v*1.2/100)*100),ymax=Math.max(65000,Math.ceil(Math.max(p.price*xmax,p.fixed+p.cost*xmax)/5000)*5000);
+   return {desc,graph:LectureVisuals.plot({label:desc,xmax,ymax,xlabel:'Pairs sold',ylabel:'Revenue and cost · dollars',curves:[{name:'Revenue',fn:x=>p.price*x},{name:'Total cost',fn:x=>p.fixed+p.cost*x,dash:'7 5'},{name:'Fixed cost',fn:()=>p.fixed,dash:'2 5'}],points:v===null?[]:[{x:v,y:p.price*v}]})};
   }
   if(type==='airline'){
    const m=DecisionMath.airline(p.price),desc=`Fare $${p.price}: expected demand ${fmt(m.demand)}, sales ${fmt(m.sales)} of 130 seats, revenue $${fmt(m.revenue)}. ${p.price===25?'This is the best common fare in the model.':p.price===24?'All seats sell. Try $25 and compare revenue.':'The best common fare is $25; compare it with the $24 full-plane fare.'}`;

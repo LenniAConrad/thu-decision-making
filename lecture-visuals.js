@@ -1,6 +1,7 @@
 /* Native diagrams and tables, authored from lecture data. No slide images. */
 const LectureVisuals=(()=>{
  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const tick=n=>n>=10000?`${Number((n/1000).toFixed(1))}k`:Number(n.toFixed(2));
  const colors=['#68419a','#198069','#b45f29'];
  const text=(x,y,t,anchor='start')=>`<text x="${x}" y="${y}" text-anchor="${anchor}">${esc(t)}</text>`;
  const line=(x1,y1,x2,y2,color='#b9c4cf',dash='')=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="2" ${dash?`stroke-dasharray="${dash}"`:''}/>`;
@@ -8,7 +9,7 @@ const LectureVisuals=(()=>{
  function plot({label,xmax,ymax,xlabel,ylabel,curves=[],polygon=[],points=[]}){
   const X=x=>70+x/xmax*530,Y=y=>300-y/ymax*245;
   let s=text(70,25,ylabel);
-  for(let i=0;i<=5;i++){const x=i*xmax/5,y=i*ymax/5;s+=line(X(x),55,X(x),300,'#edf0f4')+line(70,Y(y),600,Y(y),'#edf0f4')+text(X(x),326,Number(x.toFixed(2)),'middle')+text(58,Y(y)+6,Number(y.toFixed(2)),'end');}
+  for(let i=0;i<=5;i++){const x=i*xmax/5,y=i*ymax/5;s+=line(X(x),55,X(x),300,'#edf0f4')+line(70,Y(y),600,Y(y),'#edf0f4')+text(X(x),326,tick(x),'middle')+text(58,Y(y)+6,tick(y),'end');}
   if(polygon.length)s+=`<polygon points="${polygon.map(([x,y])=>`${X(x)},${Y(y)}`).join(' ')}" fill="#dcefe8" stroke="#198069" stroke-width="1.5"/>`;
   for(const [i,c] of curves.entries()){
    let d='',active=false;for(let k=0;k<=400;k++){const x=k*xmax/400,y=c.fn(x);if(Number.isFinite(y)&&y>=0&&y<=ymax){d+=`${active?'L':'M'}${X(x).toFixed(2)},${Y(y).toFixed(2)} `;active=true;}else active=false;}

@@ -47,7 +47,7 @@ Edit `content/lectures.json`, then regenerate its browser bundle:
 node scripts/build-lecture-content.cjs
 ```
 
-`npm test` checks every route, rendered math, search, keyboard-addressable controls, home experiment, state restoration, print preparation/restoration, local links, numerical models and page mapping. Independent SciPy/HiGHS checks were also used for the aircraft and production-scheduling worked results. Native SVG diagrams were rendered with Inkscape for visual inspection.
+`npm test` checks every route, rendered math, search (including native tables and mathematical notation), keyboard-addressable controls, home experiment, state restoration, print preparation/restoration, asynchronous print dialogs, failed print calls and extreme experiment settings, local links, numerical models and page mapping. The independent `scripts/audit-models.py` audit uses NumPy and SciPy/HiGHS to solve 20 source-based models and sweep the sensitivity boundaries. It checks the worked numerical results separately from the browser calculations. Run it with `python3 scripts/audit-models.py` when those optional Python dependencies are installed. Native SVG diagrams were rendered with Inkscape for visual inspection.
 
 The DOM tests do not replace a browser rendering engine. Browser layout and actual print-dialog rendering were not visually tested in this environment because no browser surface was available.
 
