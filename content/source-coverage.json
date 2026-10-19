@@ -1,0 +1,1166 @@
+{
+  "note": "Page-to-topic inventory, not a claim that every spoken explanation or future exam question is captured. Repeated Part 1 content is consolidated. Blank model slides are completed with explicitly stated derivations and assumptions.",
+  "sources": [
+    {
+      "file": "chapter01.pdf",
+      "sha256": "e448338744c6adc50eec7bac62a61c628c9854461ba77ed0f6608398fa1421f6",
+      "pageCount": 56,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [],
+          "context": "Title, teaching contacts, textbook, assessment administration or outline. No examinable derivation omitted."
+        },
+        {
+          "page": 2,
+          "topicIds": [],
+          "context": "Title, teaching contacts, textbook, assessment administration or outline. No examinable derivation omitted."
+        },
+        {
+          "page": 3,
+          "topicIds": [],
+          "context": "Title, teaching contacts, textbook, assessment administration or outline. No examinable derivation omitted."
+        },
+        {
+          "page": 4,
+          "topicIds": [],
+          "context": "Title, teaching contacts, textbook, assessment administration or outline. No examinable derivation omitted."
+        },
+        {
+          "page": 5,
+          "topicIds": [],
+          "context": "Title, teaching contacts, textbook, assessment administration or outline. No examinable derivation omitted."
+        },
+        {
+          "page": 6,
+          "topicIds": [],
+          "context": "Title, teaching contacts, textbook, assessment administration or outline. No examinable derivation omitted."
+        },
+        {
+          "page": 7,
+          "topicIds": [
+            "modeling"
+          ]
+        },
+        {
+          "page": 8,
+          "topicIds": [
+            "modeling"
+          ]
+        },
+        {
+          "page": 9,
+          "topicIds": [
+            "modeling"
+          ]
+        },
+        {
+          "page": 10,
+          "topicIds": [
+            "modeling"
+          ]
+        },
+        {
+          "page": 11,
+          "topicIds": [
+            "modeling"
+          ]
+        },
+        {
+          "page": 12,
+          "topicIds": [
+            "modeling"
+          ]
+        },
+        {
+          "page": 13,
+          "topicIds": [
+            "break-even"
+          ]
+        },
+        {
+          "page": 14,
+          "topicIds": [
+            "break-even"
+          ]
+        },
+        {
+          "page": 15,
+          "topicIds": [
+            "break-even"
+          ]
+        },
+        {
+          "page": 16,
+          "topicIds": [
+            "break-even"
+          ]
+        },
+        {
+          "page": 17,
+          "topicIds": [
+            "break-even"
+          ]
+        },
+        {
+          "page": 18,
+          "topicIds": [
+            "break-even"
+          ]
+        },
+        {
+          "page": 19,
+          "topicIds": [
+            "break-even"
+          ]
+        },
+        {
+          "page": 20,
+          "topicIds": [
+            "break-even"
+          ]
+        },
+        {
+          "page": 21,
+          "topicIds": [
+            "break-even"
+          ]
+        },
+        {
+          "page": 22,
+          "topicIds": [
+            "airline-demand"
+          ]
+        },
+        {
+          "page": 23,
+          "topicIds": [
+            "airline-demand"
+          ]
+        },
+        {
+          "page": 24,
+          "topicIds": [
+            "airline-demand"
+          ]
+        },
+        {
+          "page": 25,
+          "topicIds": [
+            "airline-demand"
+          ]
+        },
+        {
+          "page": 26,
+          "topicIds": [
+            "segmentation"
+          ]
+        },
+        {
+          "page": 27,
+          "topicIds": [
+            "segmentation"
+          ]
+        },
+        {
+          "page": 28,
+          "topicIds": [
+            "airline-demand",
+            "segmentation"
+          ]
+        },
+        {
+          "page": 29,
+          "topicIds": [
+            "segmentation"
+          ]
+        },
+        {
+          "page": 30,
+          "topicIds": [
+            "app-fare"
+          ]
+        },
+        {
+          "page": 31,
+          "topicIds": [
+            "app-fare"
+          ]
+        },
+        {
+          "page": 32,
+          "topicIds": [
+            "app-fare"
+          ]
+        },
+        {
+          "page": 33,
+          "topicIds": [
+            "app-fare",
+            "segmentation"
+          ]
+        },
+        {
+          "page": 34,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 35,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 36,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 37,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 38,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 39,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 40,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 41,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 42,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 43,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 44,
+          "topicIds": [
+            "decision-support"
+          ]
+        },
+        {
+          "page": 45,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 46,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 47,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 48,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 49,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 50,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 51,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 52,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 53,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 54,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 55,
+          "topicIds": [
+            "gantt"
+          ]
+        },
+        {
+          "page": 56,
+          "topicIds": [
+            "gantt"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "chapter02 - part 2.pdf",
+      "sha256": "1a535eb2a686c7c6a616d3866f21aaae9bdac35dae45e482ca89c82f22734750",
+      "pageCount": 46,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 5,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 6,
+          "topicIds": [
+            "pottery"
+          ]
+        },
+        {
+          "page": 7,
+          "topicIds": [
+            "pottery"
+          ]
+        },
+        {
+          "page": 8,
+          "topicIds": [
+            "pottery"
+          ]
+        },
+        {
+          "page": 9,
+          "topicIds": [
+            "fertilizer"
+          ]
+        },
+        {
+          "page": 10,
+          "topicIds": [
+            "fertilizer"
+          ]
+        },
+        {
+          "page": 11,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 12,
+          "topicIds": [
+            "pottery"
+          ]
+        },
+        {
+          "page": 13,
+          "topicIds": [
+            "pottery"
+          ]
+        },
+        {
+          "page": 14,
+          "topicIds": [
+            "graphical",
+            "pottery"
+          ]
+        },
+        {
+          "page": 15,
+          "topicIds": [
+            "fertilizer"
+          ]
+        },
+        {
+          "page": 16,
+          "topicIds": [
+            "irregular"
+          ]
+        },
+        {
+          "page": 17,
+          "topicIds": [
+            "irregular"
+          ]
+        },
+        {
+          "page": 18,
+          "topicIds": [
+            "irregular"
+          ]
+        },
+        {
+          "page": 19,
+          "topicIds": [
+            "irregular"
+          ]
+        },
+        {
+          "page": 20,
+          "topicIds": [
+            "irregular"
+          ]
+        },
+        {
+          "page": 21,
+          "topicIds": [
+            "hot-dogs"
+          ]
+        },
+        {
+          "page": 22,
+          "topicIds": [
+            "hot-dogs"
+          ]
+        },
+        {
+          "page": 23,
+          "topicIds": [
+            "hot-dogs"
+          ]
+        },
+        {
+          "page": 24,
+          "topicIds": [
+            "furniture"
+          ]
+        },
+        {
+          "page": 25,
+          "topicIds": [
+            "objective-range"
+          ]
+        },
+        {
+          "page": 26,
+          "topicIds": [
+            "objective-range"
+          ]
+        },
+        {
+          "page": 27,
+          "topicIds": [
+            "objective-range"
+          ]
+        },
+        {
+          "page": 28,
+          "topicIds": [
+            "fertilizer-range"
+          ]
+        },
+        {
+          "page": 29,
+          "topicIds": [
+            "fertilizer-range"
+          ]
+        },
+        {
+          "page": 30,
+          "topicIds": [
+            "objective-range"
+          ]
+        },
+        {
+          "page": 31,
+          "topicIds": [
+            "fertilizer-range"
+          ]
+        },
+        {
+          "page": 32,
+          "topicIds": [
+            "labor-shadow"
+          ]
+        },
+        {
+          "page": 33,
+          "topicIds": [
+            "labor-shadow"
+          ]
+        },
+        {
+          "page": 34,
+          "topicIds": [
+            "labor-shadow"
+          ]
+        },
+        {
+          "page": 35,
+          "topicIds": [
+            "clay-shadow"
+          ]
+        },
+        {
+          "page": 36,
+          "topicIds": [
+            "nutrient-shadow"
+          ]
+        },
+        {
+          "page": 37,
+          "topicIds": [
+            "clay-shadow",
+            "labor-shadow"
+          ]
+        },
+        {
+          "page": 38,
+          "topicIds": [
+            "nutrient-shadow"
+          ]
+        },
+        {
+          "page": 39,
+          "topicIds": [
+            "new-product"
+          ]
+        },
+        {
+          "page": 40,
+          "topicIds": [
+            "new-product"
+          ]
+        },
+        {
+          "page": 41,
+          "topicIds": [
+            "furniture"
+          ]
+        },
+        {
+          "page": 42,
+          "topicIds": [
+            "furniture"
+          ]
+        },
+        {
+          "page": 43,
+          "topicIds": [
+            "technology"
+          ]
+        },
+        {
+          "page": 44,
+          "topicIds": [
+            "technology"
+          ]
+        },
+        {
+          "page": 45,
+          "topicIds": [
+            "technology"
+          ]
+        },
+        {
+          "page": 46,
+          "topicIds": [
+            "technology"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "chapter02-part 1.pdf",
+      "sha256": "1d41b58c6e69714ba492d5dea6fc2800a278d27afcaed1b8f0ba4c01013535f9",
+      "pageCount": 32,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 5,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 6,
+          "topicIds": [
+            "pottery"
+          ]
+        },
+        {
+          "page": 7,
+          "topicIds": [
+            "pottery"
+          ]
+        },
+        {
+          "page": 8,
+          "topicIds": [
+            "pottery"
+          ]
+        },
+        {
+          "page": 9,
+          "topicIds": [
+            "fertilizer"
+          ]
+        },
+        {
+          "page": 10,
+          "topicIds": [
+            "fertilizer"
+          ]
+        },
+        {
+          "page": 11,
+          "topicIds": [
+            "lp-components"
+          ]
+        },
+        {
+          "page": 12,
+          "topicIds": [
+            "pottery"
+          ]
+        },
+        {
+          "page": 13,
+          "topicIds": [
+            "pottery"
+          ]
+        },
+        {
+          "page": 14,
+          "topicIds": [
+            "graphical"
+          ]
+        },
+        {
+          "page": 15,
+          "topicIds": [
+            "fertilizer"
+          ]
+        },
+        {
+          "page": 16,
+          "topicIds": [
+            "irregular"
+          ]
+        },
+        {
+          "page": 17,
+          "topicIds": [
+            "irregular"
+          ]
+        },
+        {
+          "page": 18,
+          "topicIds": [
+            "irregular"
+          ]
+        },
+        {
+          "page": 19,
+          "topicIds": [
+            "irregular"
+          ]
+        },
+        {
+          "page": 20,
+          "topicIds": [
+            "irregular"
+          ]
+        },
+        {
+          "page": 21,
+          "topicIds": [
+            "hot-dogs"
+          ]
+        },
+        {
+          "page": 22,
+          "topicIds": [
+            "hot-dogs"
+          ]
+        },
+        {
+          "page": 23,
+          "topicIds": [
+            "hot-dogs"
+          ]
+        },
+        {
+          "page": 24,
+          "topicIds": [
+            "furniture"
+          ]
+        },
+        {
+          "page": 25,
+          "topicIds": [
+            "furniture"
+          ]
+        },
+        {
+          "page": 26,
+          "topicIds": [
+            "furniture"
+          ]
+        },
+        {
+          "page": 27,
+          "topicIds": [
+            "furniture"
+          ]
+        },
+        {
+          "page": 28,
+          "topicIds": [
+            "objective-range"
+          ]
+        },
+        {
+          "page": 29,
+          "topicIds": [
+            "objective-range"
+          ]
+        },
+        {
+          "page": 30,
+          "topicIds": [
+            "objective-range"
+          ]
+        },
+        {
+          "page": 31,
+          "topicIds": [
+            "fertilizer-range"
+          ]
+        },
+        {
+          "page": 32,
+          "topicIds": [
+            "fertilizer-range"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "chapter03-2.pdf",
+      "sha256": "f6199b4f472274ca5b833a6086ca204a1bdf38884b51bd4e42d4db0954daad72",
+      "pageCount": 22,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 5,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 6,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 7,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 8,
+          "topicIds": [
+            "reports"
+          ]
+        },
+        {
+          "page": 9,
+          "topicIds": [
+            "reports"
+          ]
+        },
+        {
+          "page": 10,
+          "topicIds": [
+            "reports"
+          ]
+        },
+        {
+          "page": 11,
+          "topicIds": [
+            "reports"
+          ]
+        },
+        {
+          "page": 12,
+          "topicIds": [
+            "fertilizer-range",
+            "nutrient-shadow",
+            "reports"
+          ]
+        },
+        {
+          "page": 13,
+          "topicIds": [
+            "aircraft"
+          ]
+        },
+        {
+          "page": 14,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 15,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 16,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 17,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 18,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 19,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 20,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 21,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 22,
+          "topicIds": [
+            "copt"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "chapter04-2.pdf",
+      "sha256": "8a25c9ac91cc5b81b03d9cbead5694380e4ca787a096e9aaee08ce9f1342441c",
+      "pageCount": 32,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [],
+          "context": "Title and chapter outline; topics are covered in the chapter reader."
+        },
+        {
+          "page": 2,
+          "topicIds": [],
+          "context": "Title and chapter outline; topics are covered in the chapter reader."
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "shirts"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "shirts"
+          ]
+        },
+        {
+          "page": 5,
+          "topicIds": [
+            "shirts"
+          ]
+        },
+        {
+          "page": 6,
+          "topicIds": [
+            "diet"
+          ]
+        },
+        {
+          "page": 7,
+          "topicIds": [
+            "diet"
+          ]
+        },
+        {
+          "page": 8,
+          "topicIds": [
+            "portfolio"
+          ]
+        },
+        {
+          "page": 9,
+          "topicIds": [
+            "portfolio"
+          ]
+        },
+        {
+          "page": 10,
+          "topicIds": [
+            "advertising"
+          ]
+        },
+        {
+          "page": 11,
+          "topicIds": [
+            "advertising"
+          ]
+        },
+        {
+          "page": 12,
+          "topicIds": [
+            "advertising"
+          ]
+        },
+        {
+          "page": 13,
+          "topicIds": [
+            "transport"
+          ]
+        },
+        {
+          "page": 14,
+          "topicIds": [
+            "transport"
+          ]
+        },
+        {
+          "page": 15,
+          "topicIds": [
+            "transport"
+          ]
+        },
+        {
+          "page": 16,
+          "topicIds": [
+            "blending"
+          ]
+        },
+        {
+          "page": 17,
+          "topicIds": [
+            "blending"
+          ]
+        },
+        {
+          "page": 18,
+          "topicIds": [
+            "blending"
+          ]
+        },
+        {
+          "page": 19,
+          "topicIds": [
+            "production"
+          ]
+        },
+        {
+          "page": 20,
+          "topicIds": [
+            "production"
+          ]
+        },
+        {
+          "page": 21,
+          "topicIds": [
+            "production"
+          ]
+        },
+        {
+          "page": 22,
+          "topicIds": [
+            "pet-food"
+          ]
+        },
+        {
+          "page": 23,
+          "topicIds": [
+            "pet-food"
+          ]
+        },
+        {
+          "page": 24,
+          "topicIds": [
+            "pet-food"
+          ]
+        },
+        {
+          "page": 25,
+          "topicIds": [
+            "cash-flow"
+          ]
+        },
+        {
+          "page": 26,
+          "topicIds": [
+            "cash-flow"
+          ]
+        },
+        {
+          "page": 27,
+          "topicIds": [
+            "dea"
+          ]
+        },
+        {
+          "page": 28,
+          "topicIds": [
+            "dea"
+          ]
+        },
+        {
+          "page": 29,
+          "topicIds": [
+            "dea"
+          ]
+        },
+        {
+          "page": 30,
+          "topicIds": [
+            "dea"
+          ]
+        },
+        {
+          "page": 31,
+          "topicIds": [
+            "dea"
+          ]
+        },
+        {
+          "page": 32,
+          "topicIds": [
+            "uncertain-returns"
+          ]
+        }
+      ]
+    }
+  ]
+}
