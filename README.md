@@ -1,6 +1,6 @@
 # THU Introduction to Decision Making
 
-A student-built study companion for **Introduction to Decision Making (70160513-1)** at Tsinghua University, based on the lecture materials by **Prof. Hai Jiang**, Department of Industrial Engineering.
+A student-built study companion for **Introduction to Decision Making (70160513-1)** at Tsinghua University, based on the lecture materials by **Associate Professor Hai Jiang**, Department of Industrial Engineering.
 
 **[Open the study website](https://lenniaconrad.github.io/thu-decision-making/)** · [Read the lectures](https://lenniaconrad.github.io/thu-decision-making/lectures.html) · [Practice with hints](https://lenniaconrad.github.io/thu-decision-making/practice.html)
 
@@ -65,4 +65,4 @@ Only an explicit allowlist of runtime files is copied into `.build/site`. Built 
 
 ## Credits
 
-Course material: Prof. Hai Jiang, Tsinghua University. [Official profile](https://www.ie.tsinghua.edu.cn/eng/info/1051/1023.htm). Mathematical typesetting: [KaTeX](https://katex.org/), distributed with its license. Lecturer portrait rights remain with the original owner. No blanket license is asserted over third-party course material.
+Course material: Associate Professor Hai Jiang, Tsinghua University. [Official profile](https://www.ie.tsinghua.edu.cn/eng/info/1051/1023.htm). Mathematical typesetting: [KaTeX](https://katex.org/), distributed with its license. Lecturer portrait rights remain with the original owner. No blanket license is asserted over third-party course material.

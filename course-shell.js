@@ -8,5 +8,5 @@
  function close(){nav.classList.remove('open');button.setAttribute('aria-expanded','false');}
  function current(){const assignment=isReader&&location.hash.startsWith('#assignments');header.querySelectorAll('nav a').forEach(a=>{const active=a.getAttribute('href')===(isPractice?'practice.html':isMaterials?'materials.html':assignment?'lectures.html#assignments':isReader?'lectures.html':'index.html');if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});}
  current();window.addEventListener('hashchange',()=>{close();current();});header.addEventListener('keydown',e=>{if(e.key==='Escape'){close();button.focus();}});
- const footer=document.createElement('footer');footer.className='course-footer';footer.innerHTML='<span>Student-built notes with labeled worked derivations · based on Prof. Hai Jiang’s lectures.</span><a href="https://github.com/LenniAConrad/thu-decision-making">Source on GitHub ↗</a>';document.body.append(footer);
+ const footer=document.createElement('footer');footer.className='course-footer';footer.innerHTML='<span>Student-built notes with labeled worked derivations · based on Associate Professor Hai Jiang’s lectures.</span><a href="https://github.com/LenniAConrad/thu-decision-making">Source on GitHub ↗</a>';document.body.append(footer);
 })();
