@@ -963,7 +963,9 @@
             "copt"
           ]
         }
-      ]
+      ],
+      "status": "superseded",
+      "context": "Earlier 22-page Chapter 3 deck; current readings use the revised 29-page version."
     },
     {
       "file": "chapter04-2.pdf",
@@ -1161,6 +1163,496 @@
           ]
         }
       ]
+    },
+    {
+      "file": "chapter03-2--5beb6393ab.pdf",
+      "sha256": "5beb6393ab247eed77d988b708f1a9160196053f63125eb950bb348e2e65311a",
+      "pageCount": 29,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 5,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 6,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 7,
+          "topicIds": [
+            "spreadsheet"
+          ]
+        },
+        {
+          "page": 8,
+          "topicIds": [
+            "reports"
+          ]
+        },
+        {
+          "page": 9,
+          "topicIds": [
+            "reports"
+          ]
+        },
+        {
+          "page": 10,
+          "topicIds": [
+            "reports"
+          ]
+        },
+        {
+          "page": 11,
+          "topicIds": [
+            "reports"
+          ]
+        },
+        {
+          "page": 12,
+          "topicIds": [
+            "reports"
+          ]
+        },
+        {
+          "page": 13,
+          "topicIds": [
+            "aircraft"
+          ]
+        },
+        {
+          "page": 14,
+          "topicIds": [
+            "solver-benchmarks"
+          ]
+        },
+        {
+          "page": 15,
+          "topicIds": [
+            "solver-benchmarks"
+          ]
+        },
+        {
+          "page": 16,
+          "topicIds": [
+            "solver-benchmarks"
+          ]
+        },
+        {
+          "page": 17,
+          "topicIds": [
+            "solver-benchmarks"
+          ]
+        },
+        {
+          "page": 18,
+          "topicIds": [
+            "solver-benchmarks"
+          ]
+        },
+        {
+          "page": 19,
+          "topicIds": [
+            "solver-benchmarks"
+          ]
+        },
+        {
+          "page": 20,
+          "topicIds": [
+            "solver-benchmarks"
+          ]
+        },
+        {
+          "page": 21,
+          "topicIds": [
+            "solver-benchmarks"
+          ]
+        },
+        {
+          "page": 22,
+          "topicIds": [
+            "solver-benchmarks"
+          ]
+        },
+        {
+          "page": 23,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 24,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 25,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 26,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 27,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 28,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 29,
+          "topicIds": [
+            "copt"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "copt 26-09-29.pptx",
+      "sha256": "d7dd12bd43a46438a069ce01dd2e7267d8f0bf3bceedfbab54d1c3018002d919",
+      "pageCount": 12,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "copt"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "copt-files"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "copt-files"
+          ]
+        },
+        {
+          "page": 5,
+          "topicIds": [
+            "copt-inspection"
+          ]
+        },
+        {
+          "page": 6,
+          "topicIds": [
+            "copt-inspection"
+          ]
+        },
+        {
+          "page": 7,
+          "topicIds": [
+            "copt-files",
+            "copt-inspection"
+          ]
+        },
+        {
+          "page": 8,
+          "topicIds": [
+            "copt-files",
+            "copt-inspection"
+          ]
+        },
+        {
+          "page": 9,
+          "topicIds": [
+            "copt",
+            "copt-inspection"
+          ]
+        },
+        {
+          "page": 10,
+          "topicIds": [
+            "copt-inspection"
+          ]
+        },
+        {
+          "page": 11,
+          "topicIds": [
+            "copt-python"
+          ]
+        },
+        {
+          "page": 12,
+          "topicIds": [
+            "copt",
+            "copt-python"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Assignment1.pdf",
+      "sha256": "d33de8d327949edc8cb601005c2175e6142f28c9365384a2b9ce97bf91202a09",
+      "pageCount": 5,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [],
+          "context": "Assignment instructions and submission administration; problem content follows on later pages."
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "a1-shuttle"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "a1-shuttle"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "a1-shuttle"
+          ]
+        },
+        {
+          "page": 5,
+          "topicIds": [
+            "a1-shuttle"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Assignment 2.pdf",
+      "sha256": "6ed3f36dc5da5ced289900854aa423d0eccce270e794650a15100d59211cf6c3",
+      "pageCount": 3,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [],
+          "context": "Assignment instructions and submission administration; problem content follows on later pages."
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "a2-graphical",
+            "a2-claims"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "a2-graphical"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "New Answer of assignment 2.pdf",
+      "sha256": "dd09bf1e401dcfa6654216bf4f488579cf1bb931809ebe6cff398ad78e937c1d",
+      "pageCount": 4,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [
+            "a2-graphical"
+          ]
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "a2-graphical",
+            "a2-claims"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "a2-claims",
+            "a2-graphical"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "a2-graphical"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Assignment3.pdf",
+      "sha256": "2f59fa29b4ef730b2255c07b9ed4aad7a5380d700debf0df4d5504e9d926f93c",
+      "pageCount": 3,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [
+            "a3-mills"
+          ]
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "a3-mills",
+            "a3-bradley",
+            "a3-apex"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "a3-apex"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Assignment3_Answer.pdf",
+      "sha256": "357447ed2f17ecc4ba6647e945ccceb55fe8b090569afd2f3f04623a43f3cb7c",
+      "pageCount": 7,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [
+            "a3-mills"
+          ]
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "a3-mills"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "a3-bradley"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "a3-bradley"
+          ]
+        },
+        {
+          "page": 5,
+          "topicIds": [
+            "a3-bradley",
+            "a3-apex"
+          ]
+        },
+        {
+          "page": 6,
+          "topicIds": [
+            "a3-apex"
+          ]
+        },
+        {
+          "page": 7,
+          "topicIds": [
+            "a3-apex"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Homework 4.pdf",
+      "sha256": "5d1e8b39bbb7f4f74a49d70c259215a5a8534c99e228dcd177c46eee352d9124",
+      "pageCount": 4,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [],
+          "context": "Assignment instructions and submission administration; problem content follows on later pages."
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "a4-transport",
+            "a4-byproduct"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "a4-farm",
+            "a4-investment",
+            "a4-inventory"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "a4-inventory"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Assignment5.pdf",
+      "sha256": "b84608d5ca90d17a982bb7ea25943d6119bd49b4972f6b5eeda9133ac2de7d72",
+      "pageCount": 2,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [
+            "a5-dea"
+          ]
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "a5-allen",
+            "a5-biofuel",
+            "a5-transshipment"
+          ]
+        }
+      ]
     }
-  ]
+  ],
+  "updated": "2026-10-27"
 }

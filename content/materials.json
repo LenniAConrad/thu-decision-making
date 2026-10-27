@@ -1,0 +1,224 @@
+{
+  "updated": "27 October 2026",
+  "items": [
+    {
+      "id": "chapter-1",
+      "title": "Chapter 1: decision models and airline pricing",
+      "label": "Lecture readings",
+      "group": "Lectures and solver tutorial",
+      "files": [
+        "chapter01.pdf"
+      ],
+      "description": "Modeling, break-even analysis, airline pricing, decision support and scheduling.",
+      "links": [
+        {
+          "title": "Read Chapter 1",
+          "href": "lectures.html#foundations"
+        }
+      ]
+    },
+    {
+      "id": "chapter-2",
+      "title": "Chapter 2: linear programming and sensitivity",
+      "label": "Lecture readings",
+      "group": "Lectures and solver tutorial",
+      "files": [
+        "chapter02-part 1.pdf",
+        "chapter02 - part 2.pdf"
+      ],
+      "description": "Formulation, graphical solutions, special cases, coefficient ranges and shadow prices.",
+      "links": [
+        {
+          "title": "Linear programming",
+          "href": "lectures.html#linear-programming"
+        },
+        {
+          "title": "Sensitivity analysis",
+          "href": "lectures.html#sensitivity"
+        }
+      ]
+    },
+    {
+      "id": "chapter-3",
+      "title": "Chapter 3: computer solution (updated)",
+      "label": "Revised lecture",
+      "group": "Lectures and solver tutorial",
+      "files": [
+        "chapter03-2--5beb6393ab.pdf"
+      ],
+      "description": "Excel Solver, sensitivity reports, COPT workflows and interpreting solver benchmarks.",
+      "links": [
+        {
+          "title": "Read the updated chapter",
+          "href": "lectures.html#computer-solution"
+        }
+      ]
+    },
+    {
+      "id": "chapter-4",
+      "title": "Chapter 4: modeling examples",
+      "label": "Lecture readings",
+      "group": "Lectures and solver tutorial",
+      "files": [
+        "chapter04-2.pdf"
+      ],
+      "description": "Product mix, diet, portfolio, transportation, blending, production, cash flow and DEA.",
+      "links": [
+        {
+          "title": "Read the modeling toolkit",
+          "href": "lectures.html#modeling-examples"
+        }
+      ]
+    },
+    {
+      "id": "copt-tutorial",
+      "title": "COPT practical tutorial",
+      "label": "Solver tutorial",
+      "group": "Lectures and solver tutorial",
+      "files": [
+        "copt 26-09-29.pptx"
+      ],
+      "description": "Follow the corrected pottery model through LP/MPS files, command scripts and the Python interface.",
+      "links": [
+        {
+          "title": "LP files and the COPT command-line workflow",
+          "href": "lectures.html#computer-solution/copt"
+        },
+        {
+          "title": "Write LP files without changing the model",
+          "href": "lectures.html#computer-solution/copt-files"
+        },
+        {
+          "title": "Inspect, export and script a COPT solve",
+          "href": "lectures.html#computer-solution/copt-inspection"
+        },
+        {
+          "title": "Build the same model with the COPT Python API",
+          "href": "lectures.html#computer-solution/copt-python"
+        }
+      ]
+    },
+    {
+      "id": "homework-1",
+      "title": "Homework 1",
+      "label": "Problem set",
+      "group": "Assignments and answer keys",
+      "files": [
+        "Assignment1.pdf"
+      ],
+      "description": "Airline pricing: compare six fare strategies.",
+      "links": [
+        {
+          "title": "six airport-shuttle pricing policies",
+          "href": "lectures.html#assignments/a1-shuttle"
+        }
+      ]
+    },
+    {
+      "id": "homework-2",
+      "title": "Homework 2",
+      "label": "Problem set + official key",
+      "group": "Assignments and answer keys",
+      "files": [
+        "Assignment 2.pdf",
+        "New Answer of assignment 2.pdf"
+      ],
+      "description": "Graphical LP models and insurance claims, with the official answer key.",
+      "links": [
+        {
+          "title": "bounded, unbounded and reversed objectives",
+          "href": "lectures.html#assignments/a2-graphical"
+        },
+        {
+          "title": "staffing permanent and temporary claim processors",
+          "href": "lectures.html#assignments/a2-claims"
+        }
+      ]
+    },
+    {
+      "id": "homework-3",
+      "title": "Homework 3",
+      "label": "Problem set + official key",
+      "group": "Assignments and answer keys",
+      "files": [
+        "Assignment3.pdf",
+        "Assignment3_Answer.pdf"
+      ],
+      "description": "Sensitivity analysis, with the official answer key.",
+      "links": [
+        {
+          "title": "aluminum mills and cost sensitivity",
+          "href": "lectures.html#assignments/a3-mills"
+        },
+        {
+          "title": "farm profits and a change to corn only",
+          "href": "lectures.html#assignments/a3-bradley"
+        },
+        {
+          "title": "component production and reduced costs",
+          "href": "lectures.html#assignments/a3-apex"
+        }
+      ]
+    },
+    {
+      "id": "homework-4",
+      "title": "Homework 4",
+      "label": "Problem set",
+      "group": "Assignments and answer keys",
+      "files": [
+        "Homework 4.pdf"
+      ],
+      "description": "Practice formulating modeling patterns and solving linear programs.",
+      "links": [
+        {
+          "title": "engine transport with prohibited routes",
+          "href": "lectures.html#assignments/a4-transport"
+        },
+        {
+          "title": "produce, sell and discard a by-product",
+          "href": "lectures.html#assignments/a4-byproduct"
+        },
+        {
+          "title": "equal cultivation proportions across plots",
+          "href": "lectures.html#assignments/a4-farm"
+        },
+        {
+          "title": "allocate a coffee shop investment budget",
+          "href": "lectures.html#assignments/a4-investment"
+        },
+        {
+          "title": "quarterly heater production and inventory",
+          "href": "lectures.html#assignments/a4-inventory"
+        }
+      ]
+    },
+    {
+      "id": "homework-5",
+      "title": "Homework 5",
+      "label": "Problem set",
+      "group": "Assignments and answer keys",
+      "files": [
+        "Assignment5.pdf"
+      ],
+      "description": "Enterprise DEA, Allen’s investment, biofuel blending and transshipment; includes runnable COPT code.",
+      "links": [
+        {
+          "title": "rank six companies with DEA",
+          "href": "lectures.html#assignments/a5-dea"
+        },
+        {
+          "title": "solve Allen’s portfolio using COPT",
+          "href": "lectures.html#assignments/a5-allen"
+        },
+        {
+          "title": "blend biofuels with cetane and sulfur constraints",
+          "href": "lectures.html#assignments/a5-biofuel"
+        },
+        {
+          "title": "route shipments through capacity-limited hubs",
+          "href": "lectures.html#assignments/a5-transshipment"
+        }
+      ]
+    }
+  ]
+}

@@ -108,3 +108,17 @@ body{font-size:1rem}button:hover{background:#f3eef9;border-color:#b9a4d1}.primar
  .printing-lecture>h1:first-child{break-before:auto}
  .lecture-equation{overflow:visible}
 }
+
+/* Synced teaching-material library and selectable solver examples. */
+.materials-updated,.materials-note{color:var(--muted);font-size:.85rem}
+.materials-group{margin:36px 0}.materials-group>h2{font-size:1.3rem}
+.materials-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.material-card{min-width:0;border:1px solid var(--line);border-radius:12px;padding:22px;background:#fff}
+.material-card h3{font-size:1.1rem;margin:8px 0 12px}.material-card p{font-size:.92rem}
+.material-card details{color:var(--muted);font-size:.8rem;margin-top:16px;overflow-wrap:anywhere}
+.material-card summary{cursor:pointer;min-height:32px}.material-links{padding-left:18px}
+.material-links li{margin:9px 0}.material-downloads{padding:16px 16px 16px 36px;background:#f4f8f7;border:1px solid var(--line);border-radius:8px}
+.code-example pre{max-width:100%;tab-size:4;white-space:pre;overscroll-behavior-x:contain}
+.code-example pre:focus-visible{outline:3px solid var(--accent)}
+@media(max-width:760px){.materials-grid{grid-template-columns:1fr}.material-card{padding:18px}}
+@media print{.code-example pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:8pt;padding:10px}.materials-grid{display:block}.material-card{break-inside:avoid;margin-bottom:12px}}

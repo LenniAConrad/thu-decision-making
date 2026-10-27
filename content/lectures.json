@@ -370,8 +370,8 @@
     "title": "From a model to a solver",
     "subtitle": "Chapter 3",
     "outcomes": [
-      "Build a spreadsheet model and read its sensitivity report.",
-      "Write an LP file and interpret a solver result critically."
+      "Build spreadsheet and COPT models, inspect the loaded formulation, and read solver results.",
+      "Use LP/MPS files, command scripts and the Python API; interpret sensitivity and benchmarks critically."
     ],
     "topics": [
       {
@@ -380,7 +380,7 @@
         "body": "Computer solvers automate procedures such as the simplex method. The slides introduce Excel Solver and Cardinal Optimizer (COPT), alongside examples of other optimization packages. Software solves the formulation supplied to it; it cannot check whether the coefficients express the intended business problem.\nSeparate inputs, decision cells, objective and constraint calculations. In the slide spreadsheet, C2:D2 contains profits 40 and 50; C3:D3 labor coefficients 1 and 2; C4:D4 clay coefficients 4 and 3. C6 contains 40 and C7 contains 120. C11:D11 holds the changing production quantities.\nSet C15 to =SUMPRODUCT(C11:D11,C2:D2), C19 to =SUMPRODUCT(C3:D3,C11:D11), and C20 to =SUMPRODUCT(C4:D4,C11:D11). E19 links to C6 and E20 to C7.\nIn the demonstrated Solver setup, maximize C15 by changing C11:D11, subject to C19:C20 ≤ E19:E20. Apply nonnegative bounds and use the Simplex LP method. Solve, then independently substitute the returned values into every original constraint.\nThe expected result is (24,8), profit 1,360, labor usage 40 and clay usage 120. The Answer Report marks both resource constraints binding with zero slack. The original values shown in a report are the initial guesses, not a second optimum.",
         "sections": [],
         "sources": [
-          "chapter03-2.pdf:1-7"
+          "chapter03-2--5beb6393ab.pdf:1-7"
         ]
       },
       {
@@ -389,7 +389,7 @@
         "body": "An objective-coefficient range is current coefficient minus allowable decrease through current coefficient plus allowable increase. For pottery bowls, 40 − 15 = 25 and 40 + 26.6667 = 66.6667. For mugs, 50 − 20 = 30 and 50 + 30 = 80. Both produced variables have reduced cost zero.\nThe labor report gives RHS 40, shadow price 16, allowable decrease 10 and increase 40: range 30–80. Clay gives RHS 120, shadow price 6, decrease 60 and increase 40: range 60–160. Within a range, the optimal quantities can change even though the basis is retained.\nFor fertilizer, the changing cells are C9:C10. Minimize C13 = SUMPRODUCT(C2:C3,C9:C10). The nutrient left sides are SUMPRODUCT(C9:C10,D2:D3) and SUMPRODUCT(C9:C10,E2:E3), each constrained above its requirement. The answer is (0,8), total cost 24.\nThe fertilizer report gives Super-gro reduced cost 2, cost coefficient 6 and allowable decrease 2; Crop-quick coefficient 3, increase 1.5 and decrease 3. Nitrogen’s shadow price is 0 with surplus 16; phosphate’s is 1. Large entries such as 1E+30 denote an effectively unbounded allowable change in the software’s reporting convention.\nOne-at-a-time sensitivity reports are local and conditional. Integer restrictions, changed coefficients in the constraint matrix or simultaneous data changes can require solving again.",
         "sections": [],
         "sources": [
-          "chapter03-2.pdf:8-12"
+          "chapter03-2--5beb6393ab.pdf:8-12"
         ]
       },
       {
@@ -398,18 +398,308 @@
         "body": "Let x₁ and x₂ be production quantities of the two aircraft parts. The three stages are stamping, drilling and finishing.\n$$\\max Z=650x_1+910x_2$$\n$$4x_1+7.5x_2\\le105,\\quad6.2x_1+4.9x_2\\le90,\\quad9.1x_1+4.1x_2\\le110,\\quad x\\ge0.$$\nSolving the first two boundaries gives x₁ ≈ 5.96654 and x₂ ≈ 10.81784. Profit is approximately $13,722.49. Finishing usage is about 98.64870 hours, leaving about 11.35130 hours. Thus stamping and drilling bind while finishing does not.\nThese are continuous LP quantities. If the decision requires whole aircraft parts, impose integrality and solve the resulting integer model; independently rounding the displayed solution is not justified by this lecture’s LP calculation.",
         "sections": [],
         "sources": [
-          "chapter03-2.pdf:13"
+          "chapter03-2--5beb6393ab.pdf:13"
         ]
+      },
+      {
+        "id": "solver-benchmarks",
+        "title": "Read a solver benchmark critically",
+        "body": "The revised Chapter 3 adds a dated solver comparison and a case study about how benchmark selection affects a claim. A benchmark measures particular solver versions on a specified instance set, hardware and stopping rule. It does not establish a universal ordering for every optimization problem.\nThe LPopt snapshot is dated April 29, 2026 and concerns finding an optimal basic solution on 65 instances. It reports COPT 8.0.0 with score 1.00 and 100% solved. The virtual-best entry is an ensemble reference that selects the best observed solver per instance, rather than a separate solver available for an individual run. Treat this table as the course's historical example, not a current product recommendation.\nThe slide history contrasts the complete 240-instance MIPLIB2017 benchmark set with an advertised comparison on 99 selected instances. A selected subset can change measured ratios and need not represent the full benchmark. The slides reproduce a 2018 retraction and describe later benchmark withdrawals. These are source context for evaluating evidence, not proof that one solver will perform best on your model.\nWhen reading a comparison, check the exact instance list, solver versions, machine and thread settings, time limits, aggregation rule and treatment of unsolved instances. Read the solved fraction alongside the aggregate score. Test candidate solvers on representative models of your own before drawing a decision-specific conclusion.",
+        "sections": [],
+        "sources": [
+          "chapter03-2--5beb6393ab.pdf:14-22"
+        ],
+        "warning": "Benchmark values and vendor classifications below reproduce a dated course snapshot. They have not been presented as current release information or independently verified performance claims.",
+        "tables": [
+          {
+            "caption": "Course LPopt snapshot: optimal basic solutions, 65 instances, April 29, 2026",
+            "headers": [
+              "Entry",
+              "Score as displayed",
+              "Solved"
+            ],
+            "rows": [
+              [
+                "Virtual best",
+                "0.97",
+                "100%"
+              ],
+              [
+                "COPT 8.0.0",
+                "1.00 (1.00)",
+                "100%"
+              ],
+              [
+                "MOSEK 11.1.11",
+                "6.24 (6.24)",
+                "80%"
+              ],
+              [
+                "XOPT 0.0.8",
+                "6.63 (6.63)",
+                "80%"
+              ],
+              [
+                "HiGHS 1.14.0",
+                "13.07 (13.10)",
+                "82%"
+              ],
+              [
+                "CLP 1.17.7",
+                "27.38 (27.40)",
+                "62%"
+              ],
+              [
+                "Google-GLOP",
+                "59.71 (59.70)",
+                "51%"
+              ],
+              [
+                "SOPLEX 8.0.0",
+                "103.92 (104.00)",
+                "48%"
+              ]
+            ]
+          },
+          {
+            "caption": "Solver landscape in Chapter 3, page 16 (course snapshot)",
+            "headers": [
+              "Solver",
+              "Type in slide",
+              "Developer / vendor in slide",
+              "Origin in slide"
+            ],
+            "rows": [
+              [
+                "COPT",
+                "Commercial",
+                "Cardinal Operations",
+                "China"
+              ],
+              [
+                "MOSEK",
+                "Commercial",
+                "MOSEK ApS",
+                "Denmark"
+              ],
+              [
+                "XOPT",
+                "Commercial / proprietary",
+                "Shenzhen Research Institute of Big Data (SRIBD)",
+                "China"
+              ],
+              [
+                "HiGHS",
+                "Open source",
+                "HiGHS project; University of Edinburgh and ERGO-Code contributors",
+                "United Kingdom"
+              ],
+              [
+                "CLP",
+                "Open source",
+                "COIN-OR project",
+                "United States (project origin)"
+              ],
+              [
+                "Google-GLOP",
+                "Open source",
+                "Google",
+                "United States"
+              ],
+              [
+                "SoPlex",
+                "Open source",
+                "Zuse Institute Berlin (ZIB)",
+                "Germany"
+              ],
+              [
+                "Gurobi",
+                "Commercial",
+                "Gurobi Optimization",
+                "United States"
+              ],
+              [
+                "IBM ILOG CPLEX",
+                "Commercial",
+                "Originally CPLEX Optimization Inc.; now IBM",
+                "United States"
+              ],
+              [
+                "FICO Xpress",
+                "Commercial",
+                "Originally Dash Optimization; now FICO",
+                "United Kingdom (original developer)"
+              ],
+              [
+                "MindOpt",
+                "Commercial / proprietary",
+                "Alibaba's optimization team",
+                "China"
+              ]
+            ]
+          }
+        ],
+        "check": {
+          "question": "A solver is fastest on a selected subset of benchmark instances. What does that establish?",
+          "options": [
+            "It is fastest on every linear program.",
+            "It was fastest under the reported subset and test conditions.",
+            "It makes formulation checking unnecessary."
+          ],
+          "answer": 1,
+          "explanation": "Instance selection, versions, hardware and stopping rules affect the comparison. A subset result cannot be generalized to every model."
+        }
       },
       {
         "id": "copt",
         "title": "LP files and the COPT command-line workflow",
-        "body": "The lecture demonstrates COPT 7.2, including programming interfaces, a command-line optimizer and modeling-tool connectors. It also shows dated solver benchmarks: rankings depend on the instance set, hardware, version and benchmark definition, so they are context rather than a universal ordering.\nA text LP file separates objective sense, objective, named constraints and bounds. The corrected pottery model is included below as selectable text. LP and MPS are alternative model-exchange formats; writing an MPS file does not solve the model.\nIn the illustrated interactive shell: read example1.lp loads the model; opt solves it; writesol example1 saves the solution; writemps example1.mps exports MPS; writelp example1 exports LP. The slides also show set timelimit 10 and writeparam example1 for a 10-second limit and parameter export. Command behavior is described for the lecture’s version.\nOther commands displayed in the course are display/get for parameters and attributes, optlp for an LP solve, iis for an irreducible infeasible subsystem, feasrelax for feasibility relaxation, tune for parameter tuning and loadtuneparam for a tuning result. Use the installed version’s manual for its exact syntax and available options.\nAn IIS helps locate conflicting constraints; a relaxed solution changes the original problem. Neither is permission to discard a genuine business requirement. Always inspect solution status before using the objective and variable values.",
+        "body": "The Chapter 3 screenshots use COPT 7.2. The separate September 29 tutorial demonstrates COPT 8.0.7 and a corrected pottery model. Both workflows read a formulation, solve it and export the result. The tutorial introduces programming interfaces as well as the interactive shell and modeling-tool connectors.\nStart the interactive shell with copt_cmd. Use pwd to check its working directory, cd to change directories, and dir or ls to list available model files. If a path contains spaces, quote it. A shell can only read a file from a path it can find.\nUse read pottery.lp to load the corrected model below, then opt to solve it and writesol pottery.sol to save the result. An optimal result gives x₁ = 24, x₂ = 8 and Z = 1,360. Both constraints bind. Substituting the values gives labor 24 + 2(8) = 40 and clay 4(24) + 3(8) = 120.\nThe course also shows set timelimit 10, writeparam, display/get, optlp, iis, feasrelax, tune and loadtuneparam. Commands and available attributes depend on the installed version. The tutorial points to the copt80 manual in its example installation, while the older Chapter 3 screenshots point to copt72.\nAn IIS identifies a set of conflicting constraints. Feasibility relaxation changes bounds or constraints to make a problem solvable. Neither operation establishes that a changed formulation still represents the original business requirements. Always inspect solver status before reporting objective values or variable values.",
         "sections": [],
         "sources": [
-          "chapter03-2.pdf:14-22"
+          "chapter03-2--5beb6393ab.pdf:23-29",
+          "copt 26-09-29.pptx:1-2,9,12"
         ],
-        "warning": "The COPT screenshot actually encodes 4x₂ + 3x₂ ≤ 120 and returns x₁ = 40, Z = 1,600. That solves the mistyped model, not the intended pottery model. The corrected file below returns (24,8), Z = 1,360."
+        "warning": "The older Chapter 3 screenshots still use 4x₂ + 3x₂ ≤ 120 and return (40,0), Z = 1,600. That solves the mistyped model. The separate COPT tutorial corrects the row to 4x₁ + 3x₂ ≤ 120 and reports (24,8), Z = 1,360."
+      },
+      {
+        "id": "copt-files",
+        "title": "Write LP files without changing the model",
+        "body": "An LP file is a plain-text optimization model. Maximize or Minimize introduces the objective, Subject To introduces constraints, and Bounds specifies variable bounds. End terminates the file. Use unique constraint names and ordinary comparison operators such as <= and >=.\nVariables are continuous and nonnegative unless declared otherwise. A free variable needs an explicit free bound. Generals declares integer variables and Binaries declares variables restricted to zero or one. Those declarations change the mathematical problem. The tutorial's small format example includes both an integer and a binary variable, so it is a mixed-integer example even though the lecture section discusses LP files.\nOn Windows, show file-name extensions before renaming a text document. A file named example.lp.txt is still a text document with a hidden .txt suffix. Use a plain-text editor and separate numeric coefficients from variable names.\nThe tutorial's parsing example shows why syntax checking alone is insufficient: 4x2 can be read as a variable name rather than four times x2. Its particular malformed file also treats 32 as a variable and combines repeated coefficients on that variable. This is an observed parser trap in the demonstrated file, not a safe way to express a numeric constant.\nExport the model and compare its rows and columns with the intended algebra before solving. An MPS export can expose unexpected names and merged coefficients, but changing file format cannot repair an incorrect model on its own.",
+        "sections": [],
+        "sources": [
+          "copt 26-09-29.pptx:3-4,7-8"
+        ],
+        "code": [
+          {
+            "title": "Correct pottery.lp",
+            "language": "text",
+            "body": "Maximize\n  profit: 40 x1 + 50 x2\nSubject To\n  labor: x1 + 2 x2 <= 40\n  clay: 4 x1 + 3 x2 <= 120\nBounds\n  x1 >= 0\n  x2 >= 0\nEnd"
+          }
+        ],
+        "tables": [
+          {
+            "caption": "LP sections and what they declare",
+            "headers": [
+              "Section / declaration",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Maximize / Minimize",
+                "Objective direction and expression"
+              ],
+              [
+                "Subject To",
+                "Algebraic model constraints"
+              ],
+              [
+                "Bounds",
+                "Lower/upper bounds; e.g. x1 free permits either sign"
+              ],
+              [
+                "Generals",
+                "Integer variables"
+              ],
+              [
+                "Binaries",
+                "Zero-or-one variables"
+              ],
+              [
+                "End",
+                "End of model"
+              ]
+            ]
+          }
+        ],
+        "check": {
+          "question": "You intend the coefficient 4 times x2 in a plain-text LP file. Which form avoids the demonstrated token trap?",
+          "options": [
+            "4x2",
+            "4 x2",
+            "x2 free"
+          ],
+          "answer": 1,
+          "explanation": "Separate the coefficient and variable name with a space. The course example shows that an attached token such as 4x2 can be interpreted as a variable name."
+        },
+        "downloads": [
+          {
+            "title": "Download pottery.lp",
+            "href": "assets/examples/pottery.lp"
+          }
+        ]
+      },
+      {
+        "id": "copt-inspection",
+        "title": "Inspect, export and script a COPT solve",
+        "body": "After read pottery.lp, inspect the model before accepting any solve. The corrected pottery formulation has two constraint rows, two variables and four nonzero coefficients in its constraint matrix. Bounds are separate from those two algebraic rows. A column count greater than expected can reveal that a malformed numeric token became a variable.\nThe tutorial demonstrates get rows, get cols, get objsense and get elems. It also inspects maxelem, minelem, maxrhs and minrhs. These report model dimensions, objective sense and coefficient or bound magnitudes. Very different magnitudes can motivate checking units and scaling, but an attribute report is not a proof of correctness.\nUse writelp pottery-check.lp or writemps pottery.mps to export the loaded model. LP emphasizes human-readable algebra. MPS records named rows and variable-by-variable coefficients. Its ROWS codes N, L, G and E denote the objective, <=, >= and equality rows; COLUMNS holds nonzero coefficients; RHS holds row constants; ENDATA terminates the model. Inspect names and coefficients in either export instead of relying on the original input text alone.\nThe tutorial contrasts output ordering and parsing behavior of its LP and MPS exports. Those observations describe the demonstrated tools and files; file layout should not be treated as a mathematical property or a universal guarantee for every reader and writer.\nAfter an optimal solve, writesol pottery.sol exports objective and variable values. Exporting LP/MPS does not optimize the problem, while writing a solution file does not establish that the business model was formulated correctly.\nFor repeatable runs, put commands in an .in file and execute load pottery.in from the COPT shell. The tutorial's script loads the model, sets a 10-second limit, solves it and writes the solution in order. A time limit can stop a different problem before optimality, so inspect the final status rather than assuming that every script run found an optimum.",
+        "sections": [],
+        "sources": [
+          "copt 26-09-29.pptx:5-10"
+        ],
+        "tables": [
+          {
+            "caption": "Useful model attributes from the tutorial",
+            "headers": [
+              "Command",
+              "Interpretation"
+            ],
+            "rows": [
+              [
+                "get rows",
+                "Number of algebraic constraint rows"
+              ],
+              [
+                "get cols",
+                "Number of decision variables"
+              ],
+              [
+                "get elems",
+                "Nonzero entries of the constraint matrix"
+              ],
+              [
+                "get objsense",
+                "Objective direction"
+              ],
+              [
+                "get maxelem / get minelem",
+                "Largest / smallest absolute matrix element"
+              ],
+              [
+                "get maxrhs / get minrhs",
+                "Largest / smallest absolute row bound"
+              ]
+            ]
+          }
+        ],
+        "code": [
+          {
+            "title": "pottery.in",
+            "language": "text",
+            "body": "read pottery.lp\nset timelimit 10\nopt\nwritesol pottery.sol"
+          }
+        ]
+      },
+      {
+        "id": "copt-python",
+        "title": "Build the same model with the COPT Python API",
+        "body": "The tutorial also constructs the pottery model directly in Python. It installs the interface with pip install coptpy and refers students to the full COPT setup instructions on Learn. A package installation and the solver's licensing/setup requirements are separate steps.\nCreate an environment and model, add nonnegative variables, add both resource constraints, set the maximizing objective, choose any parameters and solve. Model construction through expressions avoids manually spelling coefficient-variable tokens in an LP text file.\nCheck model.status == COPT.OPTIMAL before using the result as an optimum. For the corrected continuous pottery LP, the script returns x1 = 24, x2 = 8 and objective 1,360. Both variable reduced costs are zero, while the labor and clay dual values are 16 and 6. These reproduce the lecture's local shadow prices for this continuous LP and its current basis.\nThe runnable example below follows tutorial slide 11 and names the constraints for readable output. The extra explicit non-optimal-status error is an author addition. Reduced costs and row duals need the appropriate continuous LP solution; do not reinterpret them automatically as sensitivity reports for an integer model.",
+        "sections": [],
+        "sources": [
+          "copt 26-09-29.pptx:11-12"
+        ],
+        "code": [
+          {
+            "title": "Complete pottery example (requires coptpy)",
+            "language": "python",
+            "body": "\"\"\"Pottery LP from the COPT course tutorial. Requires coptpy.\"\"\"\nimport coptpy as cp\nfrom coptpy import COPT\n\nenv = cp.Envr()\nmodel = env.createModel(\"pottery\")\nx1 = model.addVar(lb=0, name=\"x1\")\nx2 = model.addVar(lb=0, name=\"x2\")\nmodel.addConstr(x1 + 2*x2 <= 40, name=\"labor\")\nmodel.addConstr(4*x1 + 3*x2 <= 120, name=\"clay\")\nmodel.setObjective(40*x1 + 50*x2, sense=COPT.MAXIMIZE)\nmodel.setParam(COPT.Param.TimeLimit, 10.0)\nmodel.solve()\nif model.status != COPT.OPTIMAL:\n    raise RuntimeError(f\"No optimal solution: status {model.status}\")\nprint(f\"Objective: {model.objval:g}\")\nfor var in model.getVars():\n    print(f\"{var.name}: value={var.x:g}, reduced_cost={var.RC:g}\")\nfor con in model.getConstrs():\n    print(f\"{con.name}: dual={con.pi:g}\")\n"
+          }
+        ],
+        "downloads": [
+          {
+            "title": "Download the complete pottery Python example",
+            "href": "assets/examples/copt-pottery.py"
+          }
+        ]
       }
     ]
   },
@@ -536,6 +826,734 @@
           "chapter04-2.pdf:32"
         ],
         "warning": "Chapter 4, page 32 leaves B’s probability distribution incomplete. No unique stochastic optimum is asserted here. A zero-return missing outcome would recover approximately 25% expected return, but that is an additional assumption, not stated slide content."
+      }
+    ]
+  },
+  {
+    "id": "assignments",
+    "title": "Assignment practice",
+    "subtitle": "Problem Sets 1-5",
+    "outcomes": [
+      "Apply the lecture methods to every synced instructor assignment.",
+      "Compare official answer keys with independently checked worked solutions."
+    ],
+    "topics": [
+      {
+        "id": "a1-shuttle",
+        "title": "Assignment 1: six airport-shuttle pricing policies",
+        "body": "A shuttle has 40 seats. Regular tickets are bought less than seven days ahead; advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic, quantities are continuous, operating costs are ignored, and customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand is at most 40; there is no additional rationing or overbooking decision.\n$$D_W(p)=\\begin{cases}54-1.5p&0\\le p\\le30,\\\\24-0.5p&30<p\\le48,\\\\0&p>48,\\end{cases}\\qquad D_A(p)=48-2p,\\quad0\\le p\\le24.$$\nThe original fares are pW = $36 and pA = $18. Calculate demands, revenue and load factor for the benchmark; then compare filling capacity, optimizing only the advance fare, optimizing both fares, adding a student fare, and optimizing all three fares. These are derived worked solutions; no official Assignment 1 answer key is available in the synced materials. Related lecture: Airline demand, segmentation and advance fares.",
+        "sections": [
+          {
+            "title": "(a)-(c) Benchmark, fill the shuttle, optimize the advance fare",
+            "body": "At pW = 36, regular demand is 6. (a) At pA = 18, advance demand is 12, giving 18 passengers, 45% load factor and $432 revenue. (b) Filling capacity requires 34 advance passengers, so pA = (48 - 34)/2 = $7. Revenue becomes 6(36) + 34(7) = $454. (c) With pW fixed, maximize 216 + pA(48 - 2pA), subject to 6 + 48 - 2pA <= 40. Thus pA >= 7; the concave quadratic peaks at pA = $12. Advance demand is 24, total demand is 30, load factor is 75%, and revenue is $504. Selling ten fewer seats than in (b) earns $50 more because the retained advance passengers pay a higher fare. Load factor alone is not the revenue objective."
+          },
+          {
+            "title": "(d) Jointly optimize the two fares",
+            "body": "On the branch pW <= 30, use pW = 36 - (2/3)qW and pA = 24 - qA/2. Maximize 36qW - (2/3)qW^2 + 24qA - qA^2/2, with qW + qA <= 40, 9 <= qW <= 54 and 0 <= qA <= 48. Capacity binds. Equal marginal revenues give qW = 156/7 and qA = 124/7, so pW = 148/7 = $21.14 and pA = 106/7 = $15.14. Revenue is 5176/7 = $739.43 and load factor is 100%. The chosen regular fare is correctly below 30.\nFor pW >= 30, regular revenue decreases from the branch boundary; the best boundary policy is pW = 30 and pA = 12, with 9 + 24 = 33 passengers and $558 revenue. For the strictly open branch pW > 30, $558 is the limiting supremum. Either comparison is below $739.43."
+          },
+          {
+            "title": "(e) Introduce a student fare",
+            "body": "The students were already part of regular demand, not an additional population. Nonstudents have DR(pR) = 24 - pR/2 for 0 <= pR <= 48, and students have DS(pS) = 30 - pS for 0 <= pS <= 30; both become zero above their price limits. Student eligibility is checked by ID and nonstudents cannot use the student fare. Equal prices at or below 30 reproduce the first branch of DW; above 30, student demand vanishes.\nAt pR = 30 and pS = 18, qR = 9 and qS = 12, leaving 19 seats for advance demand. Its unconstrained revenue optimum would sell 24 seats, so the capacity limit binds: qA = 19 and pA = $14.50. Total revenue is 270 + 216 + 275.50 = $761.50, $22.07 above (d). The fixed fares reserve demand of 21 seats regardless of the descriptive ordering of fare choices."
+          },
+          {
+            "title": "(f) Jointly optimize all three fares",
+            "body": "Use inverse demands pR = 48 - 2qR, pS = 30 - qS, pA = 24 - qA/2 and quantity bounds 0 <= qR <= 24, 0 <= qS <= 30, 0 <= qA <= 48. Maximize 48qR - 2qR^2 + 30qS - qS^2 + 24qA - qA^2/2 subject to qR + qS + qA <= 40. Unconstrained quantities total 51, so capacity binds. Equal marginal revenues are 48 - 4qR = 30 - 2qS = 24 - qA = 44/7.\nThe optimum is (qR,qS,qA) = (73/7,83/7,124/7), or approximately (10.43,11.86,17.71). Prices are (190/7,127/7,106/7), approximately ($27.14,$18.14,$15.14). Revenue is 5365/7 = $766.43. This is $27 above joint unsegmented pricing in (d), and $4.93 above fixed segmented fares in (e). Concavity makes the marginal-revenue solution globally optimal. Capacity is allocated until the gain from one more seat is equal across the three eligible groups."
+          }
+        ],
+        "sources": [
+          "Assignment1.pdf · pages 2-5 (official problem; derived solutions)"
+        ],
+        "tables": [
+          {
+            "caption": "Pricing-policy comparison; quantities use full precision before rounding",
+            "headers": [
+              "Part",
+              "Fares W or R / S / A ($)",
+              "Total passengers",
+              "Load factor",
+              "Revenue ($)"
+            ],
+            "rows": [
+              [
+                "a",
+                "36 / — / 18",
+                "18",
+                "45%",
+                "432.00"
+              ],
+              [
+                "b",
+                "36 / — / 7",
+                "40",
+                "100%",
+                "454.00"
+              ],
+              [
+                "c",
+                "36 / — / 12",
+                "30",
+                "75%",
+                "504.00"
+              ],
+              [
+                "d",
+                "21.142857 / — / 15.142857",
+                "40",
+                "100%",
+                "739.428571"
+              ],
+              [
+                "e",
+                "30 / 18 / 14.5",
+                "40",
+                "100%",
+                "761.50"
+              ],
+              [
+                "f",
+                "27.142857 / 18.142857 / 15.142857",
+                "40",
+                "100%",
+                "766.428571"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a2-graphical",
+        "title": "Assignment 2: bounded, unbounded and reversed objectives",
+        "body": "Problems 1, 2 and 4 ask for graphical solutions, including maximization versus minimization. Draw each boundary line, keep the indicated half-plane, and evaluate the feasible vertices. An unbounded feasible region does not by itself imply an unbounded objective; demonstrate an improving feasible direction. All variables are nonnegative. The results below agree with the official key and have been independently recomputed. Related lecture: Graphical solution and irregular LP outcomes.",
+        "sections": [
+          {
+            "title": "Problem 1: a bounded maximum",
+            "body": "$$\\max Z=5x_1+8x_2;\\quad3x_1+5x_2\\le50,\\quad2x_1+4x_2\\le40,\\quad x_1\\le8,\\quad x_2\\le10,\\quad x_1,x_2\\ge0.$$\nThe feasible polygon has vertices (0,0), (8,0), (8,5.2), (0,10). Their objective values are 0, 40, 81.6, 80. Thus the unique maximum is (8,5.2), Z = 81.6. Draw the boundary from (0,10) to (8,5.2); the first resource and x1 bound meet at the optimum."
+          },
+          {
+            "title": "Problem 2: unbounded maximum, finite minimum",
+            "body": "$$Z=3x_1+2x_2;\\quad2x_1+4x_2\\ge22,\\quad-x_1+4x_2\\ge10,\\quad4x_1-2x_2\\le14,\\quad x_1-3x_2\\le1,\\quad x_1,x_2\\ge0.$$\nThe lower boundary vertices are (0,5.5), (4,3.5), and (38/7,27/7), with Z = 11, 19, and 24. The feasible region extends upward; increasing x2 with x1 fixed remains feasible and increases Z, proving the maximum is unbounded. Reversing to minimization gives (0,5.5), Z = 11."
+          },
+          {
+            "title": "Problem 4: a triangular feasible region",
+            "body": "$$Z=800x_1+900x_2;\\quad2x_1+4x_2\\le30,\\quad4x_1+2x_2\\le30,\\quad x_1+x_2\\ge9,\\quad x_1,x_2\\ge0.$$\nThe three vertices are (3,6), (5,5), and (6,3), with Z = $7,800, $8,500, and $7,500. The maximum is (5,5), $8,500; the minimum is (6,3), $7,500. Changing the objective sense changes the supporting corner, not the feasible triangle."
+          }
+        ],
+        "sources": [
+          "Assignment 2.pdf · pages 2-3 (official problems 1, 2, 4)",
+          "New Answer of assignment 2.pdf · pages 1-4 (official graphical answer key)"
+        ]
+      },
+      {
+        "id": "a2-claims",
+        "title": "Assignment 2: staffing permanent and temporary claim processors",
+        "body": "Problem 3 asks for an LP formulation and graphical solution. Permanent operators process 16 claims/day, produce 0.5 erroneous claims/day and cost $64/day. Temporary operators process 12 claims/day, produce 1.4 errors/day and cost $42/day. At least 450 claims must be processed, at most 40 workstations are available, and no more than 25 erroneous claims are allowed daily. Use continuous staffing quantities for the stated LP; integer hiring would be a different model. Related lecture: LP formulation and graphical solution.",
+        "sections": [
+          {
+            "title": "Model and feasible polygon",
+            "body": "Let x1 and x2 be permanent and temporary operators.\n$$\\min Z=64x_1+42x_2;\\quad16x_1+12x_2\\ge450,\\quad x_1+x_2\\le40,\\quad0.5x_1+1.4x_2\\le25,\\quad x_1,x_2\\ge0.$$\nShade above the processing requirement and below the workstation and error limits. The feasible vertices are (28.125,0), (40,0), (34.444444,5.555556), and (20.121951,10.670732). Their daily costs are $1,800, $2,560, $2,437.777778, and $1,735.975610, respectively."
+          },
+          {
+            "title": "Optimal staffing and source correction",
+            "body": "The processing and error constraints bind at the optimum: (x1,x2) = (20.1219512195,10.6707317073), with minimum cost $1,735.98/day after rounding to cents. Total staffing is about 30.792683, below 40. The official key identifies the same optimum. Its rounded cost label and one nonoptimal corner label need the corrections noted below."
+          }
+        ],
+        "sources": [
+          "Assignment 2.pdf · page 2 (official problem 3)",
+          "New Answer of assignment 2.pdf · pages 2-3 (official model and graphical solution)"
+        ],
+        "warning": "The official key’s page-3 chart swaps the coordinates of the workstation/error corner: it should be (34.444444,5.555556), not (5.55,34.45). Its optimum cost label $1,735.97 should round to $1,735.98. These corrections follow direct substitution into the printed model."
+      },
+      {
+        "id": "a3-mills",
+        "title": "Assignment 3: aluminum mills and cost sensitivity",
+        "body": "For every Assignment 3 problem, parts (a)-(d) require a graphical solution, graphical coefficient sensitivity, algebraic sensitivity with slack/surplus variables, and Excel Solver verification. Mill 1 produces high/medium/low aluminum at 6/2/4 tons per day; Mill 2 produces 2/2/10. Requirements are at least 12/8/5 tons. Operating costs are $6,000 and $7,000 per day. Related lecture: Objective-coefficient ranges, slack and surplus variables, and Solver reports.",
+        "sections": [
+          {
+            "title": "(a) Formulation and vertices",
+            "body": "Let x1,x2 be operating days.\n$$\\min Z=6000x_1+7000x_2;\\quad6x_1+2x_2\\ge12,\\quad2x_1+2x_2\\ge8,\\quad4x_1+10x_2\\ge5,\\quad x_1,x_2\\ge0.$$\nThe low-grade row is redundant. The unbounded feasible region lies above the high- and medium-grade boundaries. Vertices (0,6), (1,3), and (4,0) cost $42,000, $27,000, and $24,000. The minimum is four days at Mill 1 and zero at Mill 2."
+          },
+          {
+            "title": "(b)-(c) Graphical and algebraic sensitivity",
+            "body": "The objective slope is -c1/c2. At (4,0), adjacent boundary slopes are -1 and 0, so 0 <= c1 <= c2 keeps this corner optimal. With c2 = 7,000, c1 ranges from 0 to 7,000 (allowable decrease 6,000; increase 1,000). With c1 = 6,000, c2 ranges from 6,000 to infinity (decrease 1,000; unlimited increase).\nIntroduce surplus variables e1,e2,e3 by subtracting them from the three >= rows. The nonbasic variables are x2 and e2.\n$$x_1=4-x_2+\\tfrac12e_2,\\quad e_1=12-4x_2+3e_2,\\quad e_3=11+6x_2+2e_2.$$\n$$Z=24000+1000x_2+3000e_2=4c_1+(c_2-c_1)x_2+\\tfrac12c_1e_2.$$\nFor minimization, both nonbasic coefficients must remain nonnegative, giving exactly 0 <= c1 <= c2. At the original costs they are strictly positive, proving the unique optimum. Range endpoints can have multiple optima."
+          },
+          {
+            "title": "(d) Solver verification",
+            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected original-row shadow prices (high, medium, low) are ($0,$3,000,$0) per ton. The variable reduced costs are (0,$1,000). Medium demand can decrease from 8 to 4 with the same basis and has no finite upper bound; the high and low rows have current surpluses 12 and 11."
+          }
+        ],
+        "sources": [
+          "Assignment3.pdf · pages 1-2 (official problem 1 and shared instructions)",
+          "Assignment3_Answer.pdf · pages 1-2 (official answer)"
+        ]
+      },
+      {
+        "id": "a3-bradley",
+        "title": "Assignment 3: farm profits and a change to corn only",
+        "body": "The Bradley family has 410 acres and a $52,500 budget. Corn costs $105/acre and earns $300/acre; tobacco costs $210 and earns $520. Tobacco acreage is capped at 100. Define x1 and x2 as corn and tobacco acres. Address graphical solution, graphical and algebraic sensitivity, then Excel verification. Related lecture: Objective ranges and shadow prices.",
+        "sections": [
+          {
+            "title": "(a) Model and corner points",
+            "body": "$$\\max Z=300x_1+520x_2;\\quad x_1+x_2\\le410,\\quad105x_1+210x_2\\le52500,\\quad x_2\\le100,\\quad x_1,x_2\\ge0.$$\nThe budget row is equivalently x1 + 2x2 <= 500. Vertices (0,0), (0,100), (300,100), (320,90), (410,0) yield profits $0, $52,000, $142,000, $142,800, $123,000. The optimum is (320,90), with land and budget binding and ten acres of unused tobacco quota."
+          },
+          {
+            "title": "(b) Graphical sensitivity and the all-corn threshold",
+            "body": "The binding boundary slopes are -1 (land) and -1/2 (budget). Optimality requires 0.5 <= c1/c2 <= 1. With tobacco profit fixed at 520, corn profit ranges from $260 to $520 (decrease 40; increase 220). With corn fixed at 300, tobacco ranges from $300 to $600 (decrease 220; increase 80). An all-corn plan (410,0) first becomes optimal at corn profit $520. At exactly $520 it shares the optimum with a whole land-binding edge; corn profit strictly above $520 makes all-corn uniquely optimal."
+          },
+          {
+            "title": "(c) Algebraic sensitivity",
+            "body": "Use x1 + x2 + sL = 410 and x1 + 2x2 + sB = 500. The quota row is x2 + sT = 100.\n$$x_1=320-2s_L+s_B,\\quad x_2=90+s_L-s_B,\\quad s_T=10-s_L+s_B.$$\n$$Z=142800-80s_L-220s_B.$$\nFor general profits the two coefficients are -2c1 + c2 and c1 - c2. Requiring both to be <= 0 gives 0.5c2 <= c1 <= c2, the graphical range. The budget slack sB is measured in units of $105, so its coefficient -220 is not the dollar-denominated shadow price of the original budget."
+          },
+          {
+            "title": "(d) Solver verification",
+            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected original-row shadow prices are $80/acre for land, $220/105 = $2.095238 per budget dollar, and zero for tobacco quota. The current land RHS range is 400 to 500 acres; the original dollar-budget RHS range is $43,050 to $53,550; the quota remains nonbinding for a limit of at least 90 acres."
+          }
+        ],
+        "sources": [
+          "Assignment3.pdf · page 2 (official problem 2)",
+          "Assignment3_Answer.pdf · pages 3-5 (official answer)"
+        ],
+        "warning": "The official key’s “corn >= $520” condition means all-corn is an optimal plan, not necessarily the only optimal plan. Uniqueness requires a strict increase above $520."
+      },
+      {
+        "id": "a3-apex",
+        "title": "Assignment 3: component production and reduced costs",
+        "body": "Apex produces components A and B. Each A uses two machining units and one finishing unit; each B uses one machining and two finishing. Capacities are 100 and 80, and profits are $50 and $40. Complete the graphical, graphical-sensitivity, algebraic-sensitivity and Excel-report parts. Related lecture: Graphical solution and objective ranges.",
+        "sections": [
+          {
+            "title": "(a) Model and graphical solution",
+            "body": "$$\\max Z=50x_1+40x_2;\\quad2x_1+x_2\\le100,\\quad x_1+2x_2\\le80,\\quad x_1,x_2\\ge0.$$\nThe feasible polygon has vertices (0,0), (0,40), (40,20), and (50,0). Their profits are $0, $1,600, $2,800, and $2,500. Thus produce 40 A and 20 B for $2,800/day."
+          },
+          {
+            "title": "(b)-(c) Coefficient sensitivity by slopes and slack algebra",
+            "body": "Boundary slopes at the optimum are -2 and -1/2. Thus 0.5 <= c1/c2 <= 2. With c2 = 40, c1 ranges from 20 to 80; with c1 = 50, c2 ranges from 25 to 100. Allowable changes are +/-30 for c1, and decrease 15 / increase 60 for c2.\nIntroduce machining slack s1 and finishing slack s2:\n$$x_1=40-\\tfrac23s_1+\\tfrac13s_2,\\quad x_2=20+\\tfrac13s_1-\\tfrac23s_2,\\quad Z=2800-20s_1-10s_2.$$\nFor general c1,c2, the slack coefficients are (-2c1 + c2)/3 and (c1 - 2c2)/3. Both must stay <= 0 for maximization, reproducing 0.5c2 <= c1 <= 2c2. Negative coefficients at the stated profits justify optimality."
+          },
+          {
+            "title": "(d) Solver verification",
+            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected shadow prices are $20 per machining unit and $10 per finishing unit; both decision-variable reduced costs are zero. Holding the other RHS fixed, the same-basis machining-capacity range is 40 to 160, and finishing-capacity range is 50 to 200."
+          }
+        ],
+        "sources": [
+          "Assignment3.pdf · pages 2-3 (official problem 3)",
+          "Assignment3_Answer.pdf · pages 5-7 (official answer)"
+        ]
+      },
+      {
+        "id": "a4-transport",
+        "title": "Assignment 4(a): engine transport with prohibited routes",
+        "body": "Four plants ship engines to Greensboro (A), Charlotte (B), and Louisville (C), whose demands are 10, 20, and 15 engines/month. Plant capacities are upper bounds, so unused capacity is allowed. Seattle-to-Charlotte and Detroit-to-Louisville are prohibited. The assignment requests an LP formulation and Excel Solver solution for each of its five scenarios. The worked solution here is independently derived; no official Assignment 4 answer key is available. Related lecture: Transportation.",
+        "sections": [
+          {
+            "title": "Model",
+            "body": "Let xij >= 0 be engines from plant i to customer j. Using the cost table in hundreds of dollars, minimize the sum of cij*xij over allowed arcs. For each plant impose sum_j xij <= its capacity; for each customer impose sum_i xij = its demand. Set x2B = 0 and x4C = 0, or omit those variables entirely. There are no constraints requiring every plant to run at full capacity."
+          },
+          {
+            "title": "One derived optimal plan",
+            "body": "Ship five Phoenix engines and ten Seattle engines to Louisville, twenty St. Louis engines to Charlotte, and ten Detroit engines to Greensboro. All other arcs carry zero. Cost is 5(5) + 6(10) + 4(20) + 3(10) = 195 hundred dollars = $19,500. Demand totals only 45 against total capacity 75; adding fictitious real-customer demand or forcing equality on every plant would change the problem."
+          }
+        ],
+        "sources": [
+          "Homework 4.pdf · page 2 (official problem a; derived solution)"
+        ],
+        "tables": [
+          {
+            "caption": "Monthly capacities and shipping costs (hundreds of dollars per engine)",
+            "headers": [
+              "Plant",
+              "Capacity",
+              "A: Greensboro",
+              "B: Charlotte",
+              "C: Louisville"
+            ],
+            "rows": [
+              [
+                "1 Phoenix",
+                "5",
+                "7",
+                "8",
+                "5"
+              ],
+              [
+                "2 Seattle",
+                "25",
+                "6",
+                "10 (prohibited)",
+                "6"
+              ],
+              [
+                "3 St. Louis",
+                "20",
+                "10",
+                "4",
+                "5"
+              ],
+              [
+                "4 Detroit",
+                "25",
+                "3",
+                "9",
+                "11 (prohibited)"
+              ]
+            ]
+          },
+          {
+            "caption": "One optimal shipment plan (engines/month)",
+            "headers": [
+              "Plant",
+              "Greensboro",
+              "Charlotte",
+              "Louisville"
+            ],
+            "rows": [
+              [
+                "Phoenix",
+                "0",
+                "0",
+                "5"
+              ],
+              [
+                "Seattle",
+                "0",
+                "0",
+                "10"
+              ],
+              [
+                "St. Louis",
+                "0",
+                "20",
+                "0"
+              ],
+              [
+                "Detroit",
+                "10",
+                "0",
+                "0"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a4-byproduct",
+        "title": "Assignment 4(b): produce, sell and discard a by-product",
+        "body": "Each ton of A uses 2 hours in Process 1 and 3 hours in Process 2; each ton of B uses 3 and 4 hours. Available hours are 15 and 25. Profits are 400 yuan/ton A and 800 yuan/ton B. Each ton of B also creates two tons of C, which can be sold for 300 yuan/ton up to a five-ton sales limit; unsold C must be discarded at 200 yuan/ton. Related lecture: Blending and production formulations.",
+        "sections": [
+          {
+            "title": "Model",
+            "body": "Let a,b be tons of A and B, s the tons of C sold, and d the tons discarded. All are nonnegative.\n$$\\max Z=400a+800b+300s-200d;\\quad2a+3b\\le15,\\quad3a+4b\\le25,\\quad s+d=2b,\\quad s\\le5.$$\nThe by-product balance is an equality: all generated C must be either sold or discarded. The sale cap applies to s, not to total C generation."
+          },
+          {
+            "title": "Derived solution",
+            "body": "One optimum is a = 3.75, b = 2.5, s = 5, d = 0, yielding 1,500 + 2,000 + 1,500 = 5,000 yuan. Process 1 is full; Process 2 uses 21.25 of 25 hours. This is a derived numerical check of the formulation, independently solved with HiGHS; it is not an official answer key."
+          }
+        ],
+        "sources": [
+          "Homework 4.pdf · page 2 (official problem b; derived solution)"
+        ]
+      },
+      {
+        "id": "a4-farm",
+        "title": "Assignment 4(c): equal cultivation proportions across plots",
+        "body": "Three farm plots have 500, 800, and 700 acres. Corn, peas and soybeans earn $600, $450 and $300 per acre; crop maxima across the farm are 900, 700 and 1,000 acres. Any crop can use any plot. At least 60% of every plot must be cultivated, and the cultivated proportion must be the same for all three. Related lecture: LP formulation and resource allocation.",
+        "sections": [
+          {
+            "title": "Model",
+            "body": "Let xij >= 0 be acres of crop j on plot i, with j = C,P,S. Let t be the common cultivated fraction and Li the plot acreage.\n$$\\max Z=600\\sum_i x_{iC}+450\\sum_i x_{iP}+300\\sum_i x_{iS}.$$\n$$\\sum_j x_{ij}=L_it\\quad(i=1,2,3),\\qquad0.6\\le t\\le1.$$\n$$\\sum_i x_{iC}\\le900,\\quad\\sum_i x_{iP}\\le700,\\quad\\sum_i x_{iS}\\le1000.$$\nThese equalities are linear because plot sizes Li are constants. Equal absolute acreage on each plot would not represent equal proportions."
+          },
+          {
+            "title": "One derived optimum",
+            "body": "Use t = 1, planting 900 total acres of corn, 700 of peas, and 400 of soybeans. The table is one feasible distribution; many equally profitable distributions across plots exist. Profit is 900(600) + 700(450) + 400(300) = $975,000. Every plot is fully cultivated, so the equal-proportion and minimum-cultivation requirements both hold."
+          }
+        ],
+        "sources": [
+          "Homework 4.pdf · page 3 (official problem c; derived solution)"
+        ],
+        "tables": [
+          {
+            "caption": "One optimal crop allocation (acres)",
+            "headers": [
+              "Plot",
+              "Corn",
+              "Peas",
+              "Soybeans",
+              "Cultivated / size"
+            ],
+            "rows": [
+              [
+                "1",
+                "0",
+                "500",
+                "0",
+                "500 / 500"
+              ],
+              [
+                "2",
+                "800",
+                "0",
+                "0",
+                "800 / 800"
+              ],
+              [
+                "3",
+                "100",
+                "200",
+                "400",
+                "700 / 700"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a4-investment",
+        "title": "Assignment 4(d): allocate a coffee shop investment budget",
+        "body": "Allocate all $50,000 among baking, supplier contracts, loyalty and marketing at annual returns 15%, 8%, 6% and 20%. Baking is at most 30% of the total; supplier investment cannot exceed the other three combined; loyalty receives at least 20%; baking and marketing together receive at least 40%. Related lecture: Portfolio formulation.",
+        "sections": [
+          {
+            "title": "Model",
+            "body": "Let x1,x2,x3,x4 be dollars allocated to the four options in that order.\n$$\\max Z=0.15x_1+0.08x_2+0.06x_3+0.20x_4.$$\n$$x_1+x_2+x_3+x_4=50000,\\quad x_1\\le15000,\\quad x_2\\le x_1+x_3+x_4,$$\n$$x_3\\ge10000,\\quad x_1+x_4\\ge20000,\\quad x_1,x_2,x_3,x_4\\ge0.$$\nZ measures annual return, not principal plus return."
+          },
+          {
+            "title": "Derived solution",
+            "body": "Invest $10,000 in loyalty and $40,000 in marketing, with zero in baking and supplier contracts. Annual return is $8,600 and year-end principal plus return is $58,600. Marketing dominates the other optional investments; the binding loyalty minimum is the only reason not to allocate everything to marketing. The zero baking allocation respects an upper bound, not a minimum."
+          }
+        ],
+        "sources": [
+          "Homework 4.pdf · page 3 (official problem d; derived solution)"
+        ]
+      },
+      {
+        "id": "a4-inventory",
+        "title": "Assignment 4(e): quarterly heater production and inventory",
+        "body": "Quarterly demand is (580,300,320,700) units. Regular production is at most 450 units/quarter at $120/unit. Subcontracting is at most 200 units/quarter at $180/unit. End-of-quarter inventory costs $15/unit each quarter. Demand must be met on time, with zero initial and terminal inventory and no backorders. Related lecture: Multiperiod production and inventory balance.",
+        "sections": [
+          {
+            "title": "Model",
+            "body": "Let rt,st,It be regular production, subcontracted production and end-of-quarter inventory for t = 1,...,4, and dt the demand data.\n$$\\min Z=\\sum_{t=1}^{4}(120r_t+180s_t+15I_t).$$\n$$I_{t-1}+r_t+s_t-I_t=d_t,\\quad0\\le r_t\\le450,\\quad0\\le s_t\\le200,\\quad I_t\\ge0.$$\n$$I_0=0,\\qquad I_4=0.$$\nIncluding 15I4 in the objective is harmless because I4 is fixed at zero. Capacity cannot cover first-quarter demand without subcontracting: regular supply is only 450 against demand 580."
+          },
+          {
+            "title": "Derived optimal schedule",
+            "body": "The schedule below meets all demand. Its regular-production cost is 1,770(120) = $212,400, subcontracting cost is 130(180) = $23,400, and inventory cost is (120 + 250)(15) = $5,550, for a total minimum cost of $241,350. The earlier inventory substitutes for more expensive subcontracting in quarter 4. The schedule is independently solved with HiGHS."
+          }
+        ],
+        "sources": [
+          "Homework 4.pdf · pages 3-4 (official problem e; derived solution)"
+        ],
+        "tables": [
+          {
+            "caption": "One optimal schedule (units)",
+            "headers": [
+              "Quarter",
+              "Demand",
+              "Regular",
+              "Subcontract",
+              "Ending inventory"
+            ],
+            "rows": [
+              [
+                "1",
+                "580",
+                "450",
+                "130",
+                "0"
+              ],
+              [
+                "2",
+                "300",
+                "420",
+                "0",
+                "120"
+              ],
+              [
+                "3",
+                "320",
+                "450",
+                "0",
+                "250"
+              ],
+              [
+                "4",
+                "700",
+                "450",
+                "0",
+                "0"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a5-dea",
+        "title": "Assignment 5: rank six companies with DEA",
+        "body": "Each company uses fixed assets, working capital and employees to produce output value and profit-and-tax. The question asks for relative input-to-output efficiency. The assignment does not select a DEA returns-to-scale convention; this worked solution explicitly uses the input-oriented constant-returns CCR model. Related lecture: Data envelopment analysis. This is a derived solution verified in COPT and independently with HiGHS, not an official answer key.",
+        "sections": [
+          {
+            "title": "Input-oriented envelopment formulation",
+            "body": "For evaluated company o, use nonnegative reference weights lambda_j and input factor theta. Let xij be input i at company j, and yrj output r.\n$$\\min\\theta;\\qquad\\sum_jx_{ij}\\lambda_j\\le\\theta x_{io}\\ (i=1,2,3),\\qquad\\sum_jy_{rj}\\lambda_j\\ge y_{ro}\\ (r=1,2),\\qquad\\lambda_j,\\theta\\ge0.$$\nThere is no sum_j lambda_j = 1 constraint in the constant-returns model. Self-reference gives a feasible efficiency of one."
+          },
+          {
+            "title": "Equivalent weight formulation and ranking",
+            "body": "Choose nonnegative output weights u1,u2 and input weights v1,v2,v3. For company o maximize u1*y1o + u2*y2o, normalize v1*x1o + v2*x2o + v3*x3o = 1, and require every company's weighted output minus weighted input to be <= 0. Each company chooses its most favorable admissible weights. Both LP forms give the same scores.\n$$A=B=C=E=F>D,\\qquad\\theta_D=959/1824\\approx0.525767544.$$\nD's reference uses lambda_E = 217/1824 and lambda_F = 973/1824, with all other weights zero. Its radial input saving is 47.4232%. The five score-one companies remain tied; a stricter ordering would require an additional method or restrictions not specified in the assignment."
+          }
+        ],
+        "sources": [
+          "Assignment5.pdf · page 1 (official problem 1; derived solution)"
+        ],
+        "tables": [
+          {
+            "caption": "Enterprise data and input-oriented CCR efficiency",
+            "headers": [
+              "Company",
+              "Assets",
+              "Working capital",
+              "Employees",
+              "Output value",
+              "Profit & tax",
+              "Efficiency"
+            ],
+            "rows": [
+              [
+                "A",
+                "4",
+                "15",
+                "8",
+                "60",
+                "12",
+                "1"
+              ],
+              [
+                "B",
+                "15",
+                "4",
+                "2",
+                "39",
+                "6",
+                "1"
+              ],
+              [
+                "C",
+                "27",
+                "5",
+                "5",
+                "24",
+                "13",
+                "1"
+              ],
+              [
+                "D",
+                "15",
+                "7",
+                "6",
+                "16",
+                "7",
+                "0.525767544"
+              ],
+              [
+                "E",
+                "8",
+                "13",
+                "12",
+                "51",
+                "14",
+                "1"
+              ],
+              [
+                "F",
+                "13",
+                "4",
+                "3",
+                "44",
+                "10",
+                "1"
+              ]
+            ]
+          }
+        ],
+        "downloads": [
+          {
+            "title": "Download complete COPT code for all four Assignment 5 problems",
+            "href": "assets/examples/assignment5_copt.py"
+          }
+        ]
+      },
+      {
+        "id": "a5-allen",
+        "title": "Assignment 5: solve Allen’s portfolio using COPT",
+        "body": "Problem 2 revisits the lecture-4 investment example and requests a COPT solution. Kathleen Allen has $70,000 for one year. Municipal bonds return 8.5%, CDs 5%, treasury bills 6.5% and the stock fund 13%. Bonds are at most 20% of total funds; CDs cannot exceed the other alternatives combined; CDs plus bills must be at least 30%; CDs plus bills must be at least 1.2 times bonds plus stock. Related lecture: Portfolio and COPT.",
+        "sections": [
+          {
+            "title": "Formulation",
+            "body": "Let x1,x2,x3,x4 be dollars in those four alternatives.\n$$\\max Z=0.085x_1+0.05x_2+0.065x_3+0.13x_4.$$\n$$x_1+x_2+x_3+x_4=70000,\\quad x_1\\le14000,\\quad x_2-x_1-x_3-x_4\\le0,$$\n$$x_2+x_3\\ge21000,\\quad-1.2x_1+x_2+x_3-1.2x_4\\ge0,\\quad x_1,x_2,x_3,x_4\\ge0.$$\nThe full COPT exercise code is available with the assignment materials."
+          },
+          {
+            "title": "Derived COPT result",
+            "body": "The allocation is (0,0,38181.818182,31818.181818), with annual return $6,618.181818, or 9.454545% of capital. Its year-end value including principal is $76,618.181818. Treasury bills dominate CDs, and stock dominates municipal bonds without relaxing any constraints. The ratio x3 >= 1.2x4 then binds. This independently checked result is a worked derivation, not an official answer key."
+          }
+        ],
+        "sources": [
+          "Assignment5.pdf · page 2 (official problem 2)",
+          "chapter04-2.pdf · pages 8-9 (investment data and model-summary context)"
+        ],
+        "downloads": [
+          {
+            "title": "Download complete COPT code for all four Assignment 5 problems",
+            "href": "assets/examples/assignment5_copt.py"
+          }
+        ]
+      },
+      {
+        "id": "a5-biofuel",
+        "title": "Assignment 5: blend biofuels with cetane and sulfur constraints",
+        "body": "Feedstocks A, B and C have purchase limits 4,000, 5,000 and 3,500 barrels; costs $42,$36,$30; cetane ratings 65,52,45; sulfur contents 0.08%,0.15%,0.25%. Premium sells for $72/barrel, must have cetane >=58 and sulfur <=0.11%, and needs at least 3,000 barrels. Standard sells for $58, requires cetane >=50 and sulfur <=0.18%, and needs at least 4,000 barrels. Quality is a volume-weighted average. Parts (a)-(b) ask for the LP, complete COPT script, optimal allocations and profit. Related lecture: Blending and COPT.",
+        "sections": [
+          {
+            "title": "(a) Linear formulation",
+            "body": "Let xiP,xiS >= 0 be barrels of feedstock i in Premium and Standard, and QP = xAP + xBP + xCP, QS = xAS + xBS + xCS.\n$$\\max Z=30x_{AP}+36x_{BP}+42x_{CP}+16x_{AS}+22x_{BS}+28x_{CS}.$$\n$$x_{AP}+x_{AS}\\le4000,\\quad x_{BP}+x_{BS}\\le5000,\\quad x_{CP}+x_{CS}\\le3500,\\quad Q_P\\ge3000,\\quad Q_S\\ge4000.$$\n$$65x_{AP}+52x_{BP}+45x_{CP}\\ge58Q_P,\\quad65x_{AS}+52x_{BS}+45x_{CS}\\ge50Q_S.$$\n$$0.08x_{AP}+0.15x_{BP}+0.25x_{CP}\\le0.11Q_P,\\quad0.08x_{AS}+0.15x_{BS}+0.25x_{CS}\\le0.18Q_S.$$\nSulfur coefficients are consistently in percentage points. All purchase quantities are optional up to their upper bounds, so charge only feedstock actually used."
+          },
+          {
+            "title": "(b) One derived optimal COPT allocation",
+            "body": "The table gives one optimum; allocations need not be unique. Grade totals are 4,357.142857 Premium and 8,142.857143 Standard barrels. Their cetane ratings are 61.470588 and 50.309598; sulfur contents are exactly 0.11% and 0.18%. All feedstock is used. Revenue is $786,000, purchase cost $453,000, and maximum net profit $333,000. The downloadable script prints full-precision output and saves it as JSON. The result was independently checked with HiGHS."
+          },
+          {
+            "title": "A short optimality bound",
+            "body": "Let a,b,c be total feedstock purchases. Adding the sulfur rows yields 0.07QP <= 0.10a + 0.03b - 0.07c. Therefore profit <= 36a + 28b + 14c <= 36(4000) + 28(5000) + 14(3500) = 333000. The feasible reported allocation attains the bound."
+          }
+        ],
+        "sources": [
+          "Assignment5.pdf · page 2 (official problem 3; derived COPT solution)"
+        ],
+        "tables": [
+          {
+            "caption": "One optimal blending plan (barrels)",
+            "headers": [
+              "Feedstock",
+              "Premium",
+              "Standard",
+              "Total"
+            ],
+            "rows": [
+              [
+                "A",
+                "3588.235294",
+                "411.764706",
+                "4000"
+              ],
+              [
+                "B",
+                "0",
+                "5000",
+                "5000"
+              ],
+              [
+                "C",
+                "768.907563",
+                "2731.092437",
+                "3500"
+              ]
+            ]
+          }
+        ],
+        "downloads": [
+          {
+            "title": "Download complete COPT code for all four Assignment 5 problems",
+            "href": "assets/examples/assignment5_copt.py"
+          }
+        ]
+      },
+      {
+        "id": "a5-transshipment",
+        "title": "Assignment 5: route shipments through capacity-limited hubs",
+        "body": "Plants P1 and P2 can supply at most 800 and 1,000 units. Every shipment must pass through hub T1 or T2; direct plant-customer routes are disallowed. Hubs have throughput limits 900 and 850, and zero inventory. Customer demands are 500,650,450. Parts (a)-(b) require the LP, complete COPT script, every optimal link flow, and minimum shipping cost. Related lecture: Transportation and network flow balance.",
+        "sections": [
+          {
+            "title": "(a) Linear formulation",
+            "body": "Let aih >= 0 be units from plant i to hub h and bhk >= 0 units from hub h to customer k. Minimize total arc cost using the two tables. Plant constraints are ai1 + ai2 <= supply_i. Hub inflow equals outflow and is at most capacity_h. Customer inflow equals demand_k.\n$$\\min Z=5a_{11}+7a_{12}+6a_{21}+4a_{22}+8b_{11}+10b_{12}+12b_{13}+11b_{21}+7b_{22}+9b_{23}.$$\n$$a_{11}+a_{12}\\le800,\\quad a_{21}+a_{22}\\le1000,\\quad a_{11}+a_{21}\\le900,\\quad a_{12}+a_{22}\\le850.$$\n$$a_{11}+a_{21}=b_{11}+b_{12}+b_{13},\\quad a_{12}+a_{22}=b_{21}+b_{22}+b_{23}.$$\n$$b_{11}+b_{21}=500,\\quad b_{12}+b_{22}=650,\\quad b_{13}+b_{23}=450.$$\nHub capacity counts a unit once; inflow and outflow describe the same unit passing through the hub."
+          },
+          {
+            "title": "(b) One derived COPT optimum",
+            "body": "Send 750 units P1->T1, zero P1->T2, zero P2->T1 and 850 P2->T2. T1 sends (500,250,0) to C1,C2,C3; T2 sends (0,400,450). Every flow is nonnegative and demand is exact. Cost is 5(750) + 4(850) + 8(500) + 10(250) + 7(400) + 9(450) = $20,500. T2 is full; T1 has 150 spare units. Plant spare capacities are 50 and 150. This is a derived result checked with COPT and HiGHS, not an official answer key."
+          },
+          {
+            "title": "Why the minimum is attained",
+            "body": "Ignoring capacities, the cheapest full routes to C1,C2,C3 cost $13,$11,$13. Markets C2 and C3 need 1,100 units, but T2 carries at most 850. At least 250 of those units must use T1 at an extra cost of at least $4 each. Every feasible plan therefore costs at least 13(500) + 11(650) + 13(450) + 4(250) = $20,500. The reported plan attains that bound. The 250 T1 units for C2 and C3 can be divided differently while preserving this cost, so optimal flows are not unique."
+          }
+        ],
+        "sources": [
+          "Assignment5.pdf · page 2 (official problem 4; derived COPT solution)"
+        ],
+        "tables": [
+          {
+            "caption": "Plant-to-hub unit cost ($)",
+            "headers": [
+              "From",
+              "T1",
+              "T2",
+              "Supply upper bound"
+            ],
+            "rows": [
+              [
+                "P1",
+                "5",
+                "7",
+                "800"
+              ],
+              [
+                "P2",
+                "6",
+                "4",
+                "1000"
+              ]
+            ]
+          },
+          {
+            "caption": "Hub-to-customer unit cost ($)",
+            "headers": [
+              "From",
+              "C1",
+              "C2",
+              "C3",
+              "Throughput upper bound"
+            ],
+            "rows": [
+              [
+                "T1",
+                "8",
+                "10",
+                "12",
+                "900"
+              ],
+              [
+                "T2",
+                "11",
+                "7",
+                "9",
+                "850"
+              ]
+            ]
+          },
+          {
+            "caption": "Customer requirements (units)",
+            "headers": [
+              "Customer",
+              "C1",
+              "C2",
+              "C3"
+            ],
+            "rows": [
+              [
+                "Demand",
+                "500",
+                "650",
+                "450"
+              ]
+            ]
+          }
+        ],
+        "downloads": [
+          {
+            "title": "Download complete COPT code for all four Assignment 5 problems",
+            "href": "assets/examples/assignment5_copt.py"
+          }
+        ]
       }
     ]
   }
