@@ -4,8 +4,8 @@
   "private": true,
   "description": "Slide-based Introduction to Decision Making study companion",
   "scripts": {
-    "build": "node scripts/build-lecture-content.cjs --check && node build-site.cjs",
-    "test": "node scripts/build-lecture-content.cjs --check && node test-site.cjs && node test-numerics.cjs && node test-materials.cjs && node test-fidelity.cjs"
+    "build": "node scripts/build-lecture-content.cjs --check && node scripts/build-practice-content.cjs --check && node build-site.cjs",
+    "test": "node scripts/build-lecture-content.cjs --check && node scripts/build-practice-content.cjs --check && node test-site.cjs && node test-numerics.cjs && node test-materials.cjs && node test-fidelity.cjs && node test-practice.cjs"
   },
   "devDependencies": {
     "jsdom": "26.1.0"

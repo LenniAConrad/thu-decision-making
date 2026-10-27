@@ -1061,7 +1061,7 @@
           "Assignment 2.pdf · page 2 (official problem 3)",
           "New Answer of assignment 2.pdf · pages 2-3 (official model and graphical solution)"
         ],
-        "warning": "The official key’s page-3 chart swaps the coordinates of the workstation/error corner: it should be (34.444444,5.555556), not (5.55,34.45). Its optimum cost label $1,735.97 should round to $1,735.98. These corrections follow direct substitution into the printed model."
+        "warning": "The official key’s page-3 chart swaps the coordinates of the workstation/error corner: it should be (34.444444,5.555556), not (5.55,34.45). Its optimum cost label $1,735.97 should round to $1,735.98. These corrections follow direct substitution into the printed model. The same chart’s nonoptimal-corner cost shown as $2,437.9 is $2,437.777778, or $2,437.78 to cents."
       },
       {
         "id": "a3-mills",

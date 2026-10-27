@@ -2,7 +2,7 @@
 
 A student-built study companion for **Introduction to Decision Making (70160513-1)** at Tsinghua University, based on the lecture materials by **Prof. Hai Jiang**, Department of Industrial Engineering.
 
-**[Open the study website](https://lenniaconrad.github.io/thu-decision-making/)** · [Read the lectures](https://lenniaconrad.github.io/thu-decision-making/lectures.html)
+**[Open the study website](https://lenniaconrad.github.io/thu-decision-making/)** · [Read the lectures](https://lenniaconrad.github.io/thu-decision-making/lectures.html) · [Practice with hints](https://lenniaconrad.github.io/thu-decision-making/practice.html)
 
 The reader follows the white, purple and teal design of the Intro to AI and EEE companions. It contains 55 topics in six reading sections: foundations and airline pricing; LP formulation and geometry; sensitivity analysis; computer solution; modeling examples; and assignment practice. The course materials index links all four chapters, the COPT practical tutorial, all five problem sets, and the available official answer keys. Repeated Chapter 2 material is consolidated.
 
@@ -10,7 +10,8 @@ The reader follows the white, purple and teal design of the Intro to AI and EEE 
 - Experiments for break-even, airline fares, feasible production, objective coefficients and labor availability.
 - Search (including Homework/Assignment aliases), direct links, whole-section reading and printing, keyboard navigation, and controls retained within the current browser tab.
 - Accessible source-data tables, selectable LP/command/Python examples, downloadable COPT scripts, and native feasible-region graphs for the graphical assignments.
-- Session-only reading state. No account, analytics, completion dashboard or permanent progress record.
+- Practice for every lecture section: 24 exercises covering all five homework sets plus solver examples, three progressive hints each, a private working area, hidden comparison solutions, checklists and graphical comparisons where relevant.
+- Session-only reading and practice state. No account, analytics, completion dashboard or permanent progress record. Working notes stay in the current browser tab; nothing is submitted.
 - Lecturer portrait and official profile links, with image provenance in `assets/ATTRIBUTIONS.json`.
 
 ## Source basis and corrections
@@ -51,11 +52,14 @@ Edit `content/lectures.json`, then regenerate its browser bundle:
 
 ```sh
 node scripts/build-lecture-content.cjs
+node scripts/build-practice-content.cjs
 ```
 
 `npm test` checks every route, rendered math, search (including native tables and mathematical notation), keyboard-addressable controls, home experiment, state restoration, print preparation/restoration, asynchronous print dialogs, failed print calls and extreme experiment settings, local links, numerical models and page mapping. The independent `scripts/audit-models.py` audit uses NumPy and SciPy/HiGHS to solve 22 source-based models and sweep the sensitivity boundaries. It checks the worked numerical results separately from the browser calculations. Run it with `python3 scripts/audit-models.py` when those optional Python dependencies are installed. `python3 scripts/audit-assignments.py` independently checks the Assignment 1–4 numerical results, unboundedness, and sensitivity endpoints. The downloadable COPT pottery and Assignment 5 programs were run with COPT 8.0.7; their results were checked against the worked models. Native SVG diagrams were rendered with Inkscape for visual inspection.
 
-The DOM tests cover all 55 topics, source tables, code blocks, downloads, material-index routes, privacy exclusions, and source-page coverage, visible-source fidelity regressions, and lecture audit coverage, as well as the existing controls and print lifecycle. They do not replace a browser rendering engine. Browser layout and actual print-dialog rendering were not visually tested in this environment because no browser surface was available.
+Practice questions live in `content/practice.json`; `practice-index.js` contains only lightweight reader links, while `practice-content.js` loads full exercises on the practice page. Homework wording is restated from the course files; added hints and solver exercises are labeled. Official answer keys are distinguished from independently derived answers, and expected Excel values do not pretend an actual workbook was run.
+
+The DOM tests cover all 55 topics and 24 practice exercises, source tables, code blocks, downloads, material-index routes, privacy exclusions, and source-page coverage, visible-source fidelity regressions, and lecture audit coverage, as well as the existing controls and print lifecycle. Practice tests exercise progressive hints, hidden solutions, graphs, comparison checks, notes, reset, session restoration, blocked storage, invalid routes and lecture entry points. They do not replace a browser rendering engine. Browser layout and actual print-dialog rendering were not visually tested in this environment because no browser surface was available.
 
 Only an explicit allowlist of runtime files is copied into `.build/site`. Built HTML references content-hashed script/style URLs so a refreshed page loads the corrected course content rather than reusing an older cached bundle. GitHub Actions runs the checks and publishes successful `main` builds to GitHub Pages. Source PDFs, local review images and test dependencies are not deployed.
 
