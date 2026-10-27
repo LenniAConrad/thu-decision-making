@@ -5,7 +5,7 @@
  const cache=new Map();let state={};try{const stored=JSON.parse(sessionStorage.getItem('dm-lecture-session')||'{}');if(stored&&typeof stored==='object'&&!Array.isArray(stored))state=stored;}catch{}
  const record=id=>state[id]&&typeof state[id]==='object'&&!Array.isArray(state[id])?state[id]:(state[id]={});
  function save(){try{sessionStorage.setItem('dm-lecture-session',JSON.stringify(state));}catch{}}
- function prose(body){return body.split('\n').filter(s=>s.trim()).map(line=>line.startsWith('$$')?`<div class="lecture-equation">${MathView.html(line.slice(2,-2),true)}</div>`:`<p>${esc(line)}</p>`).join('');}
+ function prose(body){return body.split('\n').filter(s=>s.trim()).map(line=>line.startsWith('$$')?`<div class="lecture-equation" tabindex="0">${MathView.html(line.slice(2,-2),true)}</div>`:`<p>${esc(line)}</p>`).join('');}
  // Include native tables, captions and rendered math in the same search index.
  const searchText=new Map();
  const normalize=s=>s.normalize('NFKC').toLocaleLowerCase().replace(/\b(?:homework|hw)\s*(\d+)/g,'assignment $1').replace(/[_{}\\]/g,'');

@@ -47,7 +47,7 @@ body{font-size:1rem}button:hover{background:#f3eef9;border-color:#b9a4d1}.primar
 .lecture-search{margin-top:30px}.lecture-search label{display:block;font-weight:600;font-size:.9rem;margin-bottom:8px}.lecture-search input{width:100%}.lecture-search [role=status]{min-height:1.8em;font-size:.85rem}
 .lecture-outline{display:grid;margin:15px 0}.lecture-outline a{display:flex;gap:16px;align-items:center;min-height:46px;border-bottom:1px solid #edf0f4;padding:10px}.lecture-outline a[aria-current]{background:#f3eef9}.lecture-outline span{color:var(--muted);font-size:.8rem;min-width:1.4em}
 .lecture-tools{display:flex;align-items:center;gap:18px;margin-block:22px}.lecture-tools button{font-size:.85rem}.lecture-tools [role=status]{font-size:.8rem;color:var(--muted)}
-.lecture-equation{overflow-x:auto;max-width:100%;margin:22px 0;padding:4px 0}.lecture-equation .katex-display{margin:.6em 0}.lecture-topic>p{margin:20px 0}.lecture-topic>h2{scroll-margin-top:100px}
+.lecture-equation{overflow-x:auto;max-width:100%;margin:22px 0;padding:4px 0}.lecture-equation .katex-display{margin:.6em 0;overflow:visible}.lecture-equation:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.reader-heading h1,#solution-title,.practice-hint h4{scroll-margin-top:100px}.lecture-topic>p{margin:20px 0}.lecture-topic>h2{scroll-margin-top:100px}
 .lecture-choices{display:grid;gap:10px}.lecture-choices button{text-align:left}.lecture-choices button[aria-pressed=true]{border-color:var(--accent);background:#f3eef9}.lecture-check details{margin-top:20px}.lecture-check summary{cursor:pointer}
 .print-preparing{padding:20px;background:#f3eef9}.printing-lecture>.lecture-topic{margin-top:32px}
 @media print{.lecture-tools,.lecture-shell>.course-header,.lecture-search,.print-preparing{display:none!important}.lecture-topic>h2{break-after:avoid}.lecture-topic .lesson-footer{display:none}.printing-lecture>h1{break-before:page}.lecture-topic .lecture-check details{display:block}}
@@ -65,8 +65,6 @@ body{font-size:1rem}button:hover{background:#f3eef9;border-color:#b9a4d1}.primar
 .native-figure figcaption strong{color:#304154;font-weight:600}
 .plot-legend{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;padding:0!important;margin:-12px 0 28px!important;font-size:.88rem}
 .plot-legend li{display:flex;align-items:center;gap:10px;margin:0!important}
-.plot-legend span{width:28px;flex-shrink:0;border-top:3px solid var(--curve)}
-.plot-legend span.dashed{border-top-style:dashed}
 .lecture-table-wrap{overflow-x:auto;margin:24px 0;scrollbar-width:thin}
 .lecture-table-wrap table{width:100%;border-collapse:collapse;font-size:.93rem;line-height:1.65}
 .lecture-table-wrap caption{text-align:left;color:#627185;padding-bottom:12px}
@@ -91,7 +89,7 @@ body{font-size:1rem}button:hover{background:#f3eef9;border-color:#b9a4d1}.primar
 .course-path li>a{display:block}.course-path h3{margin:12px 0}.course-path p{font-size:.9rem;line-height:1.7}.path-step,.path-link{font-size:.78rem;color:var(--muted)}.path-link{color:var(--accent)}
 .experiment-controls label{display:block;font-size:.9rem}.experiment-controls output{display:block;text-align:left;font-size:.9rem;color:#198069;margin:4px 0}.experiment-controls input{display:block;width:100%}
 .experiment-plot{background:#fff;border-radius:8px;margin:20px 0}.experiment-result{min-height:7.2em}.inline-experiment [data-reset]{font-size:.85rem}
-.plot-legend{display:flex;flex-wrap:wrap;gap:8px 20px;padding:8px 15px 12px;font-size:.8rem;line-height:1.6}.plot-legend span{display:inline-flex;align-items:center;gap:7px}.plot-legend i{width:24px;border-top:3px solid;display:inline-block;flex:none}
+.plot-legend{display:flex;flex-wrap:wrap;gap:8px 20px;padding:8px 15px 12px;font-size:.8rem;line-height:1.6}.plot-legend>span{display:inline-flex;align-items:center;gap:7px;max-width:100%}.plot-legend i{width:24px;border-top:3px solid;display:inline-block;flex:none}
 .lecture-table-wrap{overflow-x:auto;margin:28px 0;max-width:100%;border:1px solid var(--line);border-radius:8px}.lecture-table-wrap:focus-visible{outline:3px solid var(--accent)}
 .lecture-table-wrap table{border-collapse:collapse;width:100%;font-size:.85rem;font-variant-numeric:tabular-nums;text-align:left}.lecture-table-wrap caption{text-align:left;padding:14px 16px;font-weight:650;background:#f8fafb}.lecture-table-wrap th,.lecture-table-wrap td{padding:11px 15px;border-bottom:1px solid var(--line);white-space:nowrap}.lecture-table-wrap thead{background:#f5f1fa}.lecture-table-wrap tbody th{font-weight:500}
 .code-example{margin:26px 0}.code-example figcaption{font-size:.9rem;font-weight:600}.code-example pre{background:#f5f7fa;border:1px solid var(--line);border-radius:8px;padding:20px;overflow-x:auto;font-size:.9rem;line-height:1.7}
@@ -150,5 +148,7 @@ body{font-size:1rem}button:hover{background:#f3eef9;border-color:#b9a4d1}.primar
 .topic-practice-links{margin:12px 0 24px;border:1px solid #d9d0e7;border-radius:8px;padding:12px 16px;background:#fcfbfe;font-size:.88rem}.topic-practice-links summary{cursor:pointer;min-height:32px}.topic-practice-links li{margin:8px 0}
 @media print{.topic-practice-links{display:none!important}}
 .practice-workspace.comparing>.practice-solution{position:sticky;top:96px;max-height:calc(100vh - 120px);overflow-y:auto}.practice-solution:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-@media(max-width:850px){.practice-workspace.comparing>.practice-solution{position:static;max-height:none;overflow:visible}}
+@media(max-width:850px){.practice-workspace.comparing>.practice-solution{position:static;max-height:none;overflow:visible}.practice-solution .native-drawing svg{min-width:560px}}
 @media print{.practice-workspace.comparing>.practice-solution{position:static;max-height:none;overflow:visible}}
+
+@media print{.practice-shell .reader-heading{display:block!important}.practice-solution .native-drawing svg{min-width:0}.lecture-equation .katex-display{overflow:visible}}

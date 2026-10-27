@@ -37,6 +37,7 @@ const key='dm-practice-session-v1';
   for(let i=1;i<=e.hints.length;i++){
    p.d.querySelector('[data-next-hint]').click();
    assert.equal(p.d.querySelectorAll('.practice-hint').length,i);
+   assert.equal(p.d.activeElement,p.d.querySelector('[data-hints] section:last-child h4'));
    assert.equal(p.d.querySelector('#practice-solution').hidden,true,'Hints do not reveal the solution');
   }
   assert.equal(p.d.querySelector('[data-next-hint]').disabled,true);
@@ -46,6 +47,8 @@ const key='dm-practice-session-v1';
   assert.equal(p.d.activeElement.id,'solution-title');
   assert.equal(p.d.querySelectorAll('[data-compare-item]').length,e.compare.length);
   assert.equal(p.d.querySelectorAll('.katex-error,.math-fallback').length,0,e.id+' math renders');
+  for(const equation of p.d.querySelectorAll('.lecture-equation'))assert.equal(equation.tabIndex,0,'equation can be scrolled with the keyboard');
+  for(const label of p.d.querySelectorAll('.plot-legend>span'))assert.notEqual(p.w.getComputedStyle(label).width,'28px','legend label keeps its natural width');
   if(e.solution.visual)assert.ok(p.d.querySelector('#practice-solution svg'),e.id+' comparison graph');
   for(const c of e.solution.code||[])assert.ok([...p.d.querySelectorAll('pre code')].some(el=>el.textContent===c.body));
   for(const a of p.d.querySelectorAll('a[href]')){
@@ -66,6 +69,11 @@ const key='dm-practice-session-v1';
  assert.equal(p.w.localStorage.length,0);
  await p.route('#all');await p.route(hash);
  assert.equal(p.d.querySelector('textarea').value,notes);
+ const source=p.d.querySelector('.practice-source'),beforePrint=p.w.sessionStorage.getItem(key);
+ assert.equal(source.open,false);event(p.w,p.w,'beforeprint');event(p.w,p.w,'beforeprint');
+ assert.equal(source.open,true);assert.equal(p.d.querySelector('#practice-solution').hidden,false);
+ event(p.w,p.w,'afterprint');assert.equal(source.open,false);assert.equal(p.w.sessionStorage.getItem(key),beforePrint);
+ source.open=true;event(p.w,p.w,'beforeprint');event(p.w,p.w,'afterprint');assert.equal(source.open,true);
  assert.equal(p.d.querySelectorAll('.practice-hint').length,1);
  assert.equal(p.d.querySelector('[data-compare-item]').checked,true);
  p.close();
@@ -79,7 +87,10 @@ const key='dm-practice-session-v1';
  p.d.querySelector('textarea').value='Keep these notes';event(p.w,p.d.querySelector('textarea'));
  assert.match(p.d.querySelector('[data-storage-status]').textContent,/could not save/);
  assert.equal(p.d.querySelector('textarea').value,'Keep these notes');
- await p.route('#foundations/missing-question');assert.match(p.d.querySelector('h1').textContent,/not found/);
+ await p.route('#all');await p.route(hash);assert.match(p.d.querySelector('[data-storage-status]').textContent,/could not save/);
+ assert.equal(p.d.querySelector('textarea').value,'Keep these notes');
+ event(p.w,p.w,'beforeprint');assert.equal(p.d.querySelector('#practice-solution').hidden,true);assert.equal(p.d.querySelectorAll('.practice-hint').length,0);event(p.w,p.w,'afterprint');
+ await p.route('#foundations/missing-question');assert.match(p.d.querySelector('h1').textContent,/not found/);assert.match(p.d.title,/Practice question not found/);
  await p.route('#invalid-section');assert.equal(p.d.querySelectorAll('.practice-group').length,lectureIds.length);p.close();
  for(const bad of [null,[],42,'bad',{[e.id]:{work:[],hints:-5,compare:null}}]){p=await page('practice.html',hash,{[key]:bad});assert.ok(p.d.querySelector('textarea'));assert.equal(p.d.querySelectorAll('.practice-hint').length,0);p.close();}
  p=await page('lectures.html');for(const id of lectureIds){await p.route('#'+id);assert.ok(p.d.querySelector(`a.practice-entry[href="practice.html#${id}"]`),id+' reader practice entry');}p.close();

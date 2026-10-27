@@ -809,7 +809,7 @@
         }
       ],
       "solution": {
-        "label": "Official key with corrections",
+        "label": "Official key with derived verification",
         "body": "The analytical comparison follows the official answer key, with the clarification stated below where needed. Excel report values are independently derived expectations; no actual Excel run or report is claimed.",
         "sections": [
           {
@@ -818,7 +818,7 @@
           },
           {
             "title": "(b)-(c) Graphical and algebraic sensitivity",
-            "body": "The objective slope is -c1/c2. At (4,0), adjacent boundary slopes are -1 and 0, so 0 <= c1 <= c2 keeps this corner optimal. With c2 = 7,000, c1 ranges from 0 to 7,000 (allowable decrease 6,000; increase 1,000). With c1 = 6,000, c2 ranges from 6,000 to infinity (decrease 1,000; unlimited increase).\nIntroduce surplus variables e1,e2,e3 by subtracting them from the three >= rows. The nonbasic variables are x2 and e2.\n$$x_1=4-x_2+\\tfrac12e_2,\\quad e_1=12-4x_2+3e_2,\\quad e_3=11+6x_2+2e_2.$$\n$$Z=24000+1000x_2+3000e_2=4c_1+(c_2-c_1)x_2+\\tfrac12c_1e_2.$$\nFor minimization, both nonbasic coefficients must remain nonnegative, giving exactly 0 <= c1 <= c2. At the original costs they are strictly positive, proving the unique optimum. Range endpoints can have multiple optima."
+            "body": "The objective slope is -c1/c2. At (4,0), adjacent boundary slopes are -1 and 0, so 0 <= c1 <= c2 keeps this corner optimal. With c2 = 7,000, c1 ranges from 0 to 7,000 (allowable decrease 6,000; increase 1,000). With c1 = 6,000, c2 ranges from 6,000 to infinity (decrease 1,000; unlimited increase).\nIntroduce surplus variables e1,e2,e3 by subtracting them from the three >= rows. The nonbasic variables are x2 and e2.\n$$x_1=4-x_2+\\tfrac12e_2,\\quad e_1=12-4x_2+3e_2,\\quad e_3=11+6x_2+2e_2.$$\nAt the original costs:\n$$Z=24000+1000x_2+3000e_2.$$\nWith general cost coefficients:\n$$Z=4c_1+(c_2-c_1)x_2+\\tfrac12c_1e_2.$$\nFor minimization, both nonbasic coefficients must remain nonnegative, giving exactly 0 <= c1 <= c2. At the original costs they are strictly positive, proving the unique optimum. Range endpoints can have multiple optima."
           },
           {
             "title": "(d) Solver verification",
@@ -937,7 +937,7 @@
         "sections": [
           {
             "title": "(a) Model and corner points",
-            "body": "$$\\max Z=300x_1+520x_2;\\quad x_1+x_2\\le410,\\quad105x_1+210x_2\\le52500,\\quad x_2\\le100,\\quad x_1,x_2\\ge0.$$\nThe budget row is equivalently x1 + 2x2 <= 500. Vertices (0,0), (0,100), (300,100), (320,90), (410,0) yield profits $0, $52,000, $142,000, $142,800, $123,000. The optimum is (320,90), with land and budget binding and ten acres of unused tobacco quota."
+            "body": "Let x1 be acres of corn and x2 acres of tobacco.\n$$\\max Z=300x_1+520x_2;\\quad x_1+x_2\\le410,\\quad105x_1+210x_2\\le52500,\\quad x_2\\le100,\\quad x_1,x_2\\ge0.$$\nThe budget row is equivalently x1 + 2x2 <= 500. Vertices (0,0), (0,100), (300,100), (320,90), (410,0) yield profits $0, $52,000, $142,000, $142,800, $123,000. The optimum is (320,90), with land and budget binding and ten acres of unused tobacco quota."
           },
           {
             "title": "(b) Graphical sensitivity and the all-corn threshold",
@@ -1065,7 +1065,7 @@
         }
       ],
       "solution": {
-        "label": "Official key with corrections",
+        "label": "Official key with derived verification",
         "body": "The analytical comparison follows the official answer key, with the clarification stated below where needed. Excel report values are independently derived expectations; no actual Excel run or report is claimed.",
         "sections": [
           {
