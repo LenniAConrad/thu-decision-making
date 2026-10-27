@@ -5,6 +5,7 @@ for(const [p,q,r] of [[60,30,1800],[24,130,3120],[25,125,3125],[45,45,2025],[90,
 let best={p:0,r:0};for(let i=0;i<=9000;i++){let p=i/100,r=m.airline(p).revenue;if(r>best.r)best={p,r};}near(best.p,25);near(best.r,3125);
 for(const [labor,x,y,z] of [[0,0,0,0],[20,20,0,800],[30,30,0,1200],[40,24,8,1360],[60,12,24,1680],[80,0,40,2000],[100,0,40,2000]]){const v=m.pottery(labor);near(v.x,x);near(v.y,y);near(v.value,z);}
 for(let l=1;l<101;l++){const r=m.pottery(l);assert.ok(r.x+2*r.y<=l+1e-9);assert.ok(4*r.x+3*r.y<=120+1e-9);near(r.value,l<=30?40*l:l<=80?720+16*l:2000);}
+for(const [labor,clay] of [[0,120],[30,120],[80,120],[40,0],[40,60],[40,160]]){const r=m.pottery(labor,clay);assert.equal(r.best.length,1,'A duplicated vertex must not imply alternate optima');assert.equal(new Set(r.vertices.map(p=>p.join(','))).size,r.vertices.length);}
 assert.equal(m.pottery(40,120,25,50).best.length,2);near(m.pottery(40,120,70,20).value,2100);near(m.pottery(40,80).value,1120);
 near(1800+32*28+22*72,4280);near(45*45+20*80,3625);
 // Independent two-equation solution and inactive constraint for aircraft example.

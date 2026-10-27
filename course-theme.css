@@ -122,3 +122,8 @@ body{font-size:1rem}button:hover{background:#f3eef9;border-color:#b9a4d1}.primar
 .code-example pre:focus-visible{outline:3px solid var(--accent)}
 @media(max-width:760px){.materials-grid{grid-template-columns:1fr}.material-card{padding:18px}}
 @media print{.code-example pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:8pt;padding:10px}.materials-grid{display:block}.material-card{break-inside:avoid;margin-bottom:12px}}
+
+.figure-basis{display:block;margin-top:6px;font-size:.75rem;font-weight:400;color:var(--muted)}
+.missing-topic{border:1px solid var(--line);border-radius:10px;padding:22px}
+@media print{.source-reference{display:block;font-size:8pt;break-inside:avoid}.figure-basis{font-size:8pt}}
+.lecture-table-wrap td{white-space:normal}

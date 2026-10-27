@@ -17,16 +17,17 @@ The reader follows the white, purple and teal design of the Intro to AI and EEE 
 
 The synchronized course folder was inventoried on 27 October 2026. The current teaching sources contain **195 lecture PDF pages**, **12 COPT tutorial slides**, and **28 assignment/answer-key pages** (235 pages/slides in total). The updated Chapter 3 file is `chapter03-2--5beb6393ab.pdf`; the earlier 22-page deck remains in the audit inventory as superseded. All 14 inventoried file hashes match the local synchronized sources. Original course PDFs and the PPTX remain outside this repository. Personal submissions, student identifiers, course contacts and another student's defense presentation are not included.
 
-`content/source-coverage.json` maps every source page to a topic or explicitly identifies title/administrative context. Source hashes identify the versions used. This inventory is an audit trail, not a guarantee that all spoken lectures, future materials or exam questions are represented. The reader’s “Lecture references” disclosures identify source pages.
+`content/source-coverage.json` maps every source page to a topic or explicitly identifies title/administrative context. Source hashes identify the versions used. `content/lecture-audit.json` records the 27 October visible-page audit and its corrections. Topic and section labels separate visible lecture statements from worked derivations and added modeling assumptions. This inventory is an audit trail, not a guarantee that all spoken lectures, future materials or exam questions are represented. The reader’s “Lecture references” disclosures identify source pages.
 
 Notable clarifications are stated where they matter:
 
-- Total cost adds fixed and variable cost; Chapter 1 contains a sign typo.
+- The visible Chapter 1 total-cost formula correctly adds fixed and variable cost. An earlier reader warning mistook a PDF text-layer artifact for a slide typo; that warning has been removed.
 - The intended pottery clay row is `4x1 + 3x2 <= 120`. The revised Chapter 3 still contains the older mistyped COPT screenshot and its 1,600 result. The separate COPT 8.0.7 tutorial corrects the row and gives (24,8), objective 1,360.
 - At the feasible pottery point (5,10), clay usage is 50, not the printed 70.
-- The second factory's labor RHS has an ambiguous handwritten correction. The reader derives a parameterized result rather than claiming a single interpretation.
+- At fare $38, the observed airline total is printed as 60 while its two type counts sum to 65. These source entries are retained with the inconsistency stated; the fitted demand curves are not refitted.
+- Willow Valley uses 2 labor hours per bowl, not 1. Its earlier reader transcription and derived results have been corrected. The overwritten labor RHS is retained as a parameter rather than asserted as certain.
 - A technology coefficient of 1.33 is distinguished from the rounded value of 4/3.
-- Blank Chapter 4 formulation pages are completed with derived models; boundary assumptions and the DEA convention are explicit.
+- All ten Chapter 4 formulation pages are visibly blank. The reader separates visible problem data from explicitly derived models, with inventory/timing assumptions and the DEA convention stated.
 - The final uncertain-investment slide gives incomplete probabilities for project B. The reader does not invent the missing outcome.
 - The Assignment 2 answer key swaps the coordinates of a nonoptimal claims-staffing corner and rounds the optimum cost down incorrectly; the reader shows direct-substitution corrections.
 - In the Assignment 3 farm answer, $520 corn profit makes all-corn optimal but not uniquely optimal; uniqueness needs a strict increase.
@@ -52,11 +53,11 @@ Edit `content/lectures.json`, then regenerate its browser bundle:
 node scripts/build-lecture-content.cjs
 ```
 
-`npm test` checks every route, rendered math, search (including native tables and mathematical notation), keyboard-addressable controls, home experiment, state restoration, print preparation/restoration, asynchronous print dialogs, failed print calls and extreme experiment settings, local links, numerical models and page mapping. The independent `scripts/audit-models.py` audit uses NumPy and SciPy/HiGHS to solve 20 source-based models and sweep the sensitivity boundaries. It checks the worked numerical results separately from the browser calculations. Run it with `python3 scripts/audit-models.py` when those optional Python dependencies are installed. `python3 scripts/audit-assignments.py` independently checks the Assignment 1–4 numerical results, unboundedness, and sensitivity endpoints. The downloadable COPT pottery and Assignment 5 programs were run with COPT 8.0.7; their results were checked against the worked models. Native SVG diagrams were rendered with Inkscape for visual inspection.
+`npm test` checks every route, rendered math, search (including native tables and mathematical notation), keyboard-addressable controls, home experiment, state restoration, print preparation/restoration, asynchronous print dialogs, failed print calls and extreme experiment settings, local links, numerical models and page mapping. The independent `scripts/audit-models.py` audit uses NumPy and SciPy/HiGHS to solve 22 source-based models and sweep the sensitivity boundaries. It checks the worked numerical results separately from the browser calculations. Run it with `python3 scripts/audit-models.py` when those optional Python dependencies are installed. `python3 scripts/audit-assignments.py` independently checks the Assignment 1–4 numerical results, unboundedness, and sensitivity endpoints. The downloadable COPT pottery and Assignment 5 programs were run with COPT 8.0.7; their results were checked against the worked models. Native SVG diagrams were rendered with Inkscape for visual inspection.
 
-The DOM tests cover all 55 topics, source tables, code blocks, downloads, material-index routes, privacy exclusions, and source-page coverage, as well as the existing controls and print lifecycle. They do not replace a browser rendering engine. Browser layout and actual print-dialog rendering were not visually tested in this environment because no browser surface was available.
+The DOM tests cover all 55 topics, source tables, code blocks, downloads, material-index routes, privacy exclusions, and source-page coverage, visible-source fidelity regressions, and lecture audit coverage, as well as the existing controls and print lifecycle. They do not replace a browser rendering engine. Browser layout and actual print-dialog rendering were not visually tested in this environment because no browser surface was available.
 
-Only an explicit allowlist of runtime files is copied into `.build/site`. GitHub Actions runs the checks and publishes successful `main` builds to GitHub Pages. Source PDFs, local review images and test dependencies are not deployed.
+Only an explicit allowlist of runtime files is copied into `.build/site`. Built HTML references content-hashed script/style URLs so a refreshed page loads the corrected course content rather than reusing an older cached bundle. GitHub Actions runs the checks and publishes successful `main` builds to GitHub Pages. Source PDFs, local review images and test dependencies are not deployed.
 
 ## Credits
 

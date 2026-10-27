@@ -70,4 +70,13 @@ for N in [0,16,31,32,33,60]:
  for P in [0,11,12,24,60]:
   r=linprog([6,3],A_ub=[[-2,-4],[-4,-3]],b_ub=[-N,-P],method='highs')
   assert r.success and abs(r.fun-max(.75*N,P))<1e-7
+# Willow Valley uses 2 labor hours per bowl, visibly shown on Chapter 2 p39.
+solve('Willow Valley H=40',[-48,-60],[[2,3],[4,3]],[40,120],expected=-960)
+w=solve('Willow Valley H=65',[-48,-60],[[2,3],[4,3]],[65,120],expected=-1520)
+assert np.max(abs(w.x-[27.5,10/3]))<1e-7
+assert np.max(abs(w.ineqlin.marginals-[-16,-4]))<1e-7
+for H in [0,1,40,59,60,61,65,119,120,121,180]:
+ r=linprog([-48,-60],A_ub=[[2,3],[4,3]],b_ub=[H,120],method='highs')
+ expected=24*H if H<=60 else 480+16*H if H<=120 else 2400
+ assert r.success and abs(-r.fun-expected)<1e-7
 print('Independent LP audit passed:',len(checks),'models plus resource/requirement boundary sweeps')

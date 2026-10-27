@@ -19,7 +19,7 @@ const topics=new Set(lectures.flatMap(l=>l.topics.map(t=>`${l.id}/${t.id}`)));
  assert.equal(p.d.querySelectorAll('.material-card').length,materials.items.length);
  assert.equal(p.d.querySelector('nav a[aria-current="page"]').textContent,'Materials');
  const input=p.d.querySelector('input');
- for(const query of ['Chapter 3','COPT','Homework 5','answer']){
+ for(const query of ['Chapter 3','COPT','Homework 5','Assignment 5','HW5','Homework5','answer']){
   input.value=query;event(p.w,input);
   assert.ok(p.d.querySelector('.material-card'),query+' finds material');
  }

@@ -31,6 +31,11 @@ const lectures=require('./content/lectures.json');
  set('fixed',0);assert.match(p.d.querySelector('.experiment-result').textContent,/every volume/);
  set('price',10);assert.match(p.d.querySelector('.experiment-result').textContent,/Only zero/);
  p.close();
+ p=await page('lectures.html','#assignments/a5-dea');assert.equal(p.d.querySelector('nav a[aria-current="page"]').textContent,'Assignments');
+ await p.route('#foundations/missing-topic');assert.match(p.d.querySelector('.missing-topic').textContent,/Topic not found/);assert.ok(p.d.querySelector('.missing-topic a[href="#foundations"]'));p.close();
+ const checked=lectures.flatMap(l=>l.topics.map(t=>({l,t}))).find(x=>x.t.check);
+ p=await page('lectures.html','#'+checked.l.id+'/'+checked.t.id,{'dm-lecture-session':{[checked.t.id]:{answer:checked.t.check.answer,feedback:'Obsolete explanation from an earlier content version'}}});
+ assert.match(p.d.querySelector('.feedback').textContent,/Correct/);assert.ok(p.d.querySelector('.feedback').textContent.includes(checked.t.check.explanation));assert.doesNotMatch(p.d.querySelector('.feedback').textContent,/Obsolete/);p.close();
  const coverage=require('./content/source-coverage.json');for(const source of coverage.sources){assert.equal(source.pages.length,source.pageCount);for(const entry of source.pages){assert.ok(entry.topicIds.length||entry.context);for(const id of entry.topicIds)assert.ok(lectures.some(c=>c.topics.some(t=>t.id===id)),id);}}
  console.log('PASS: home experiment, all '+lectures.flatMap(l=>l.topics).length+' topics, math rendering, navigation, search, controls, session restore, async/error print lifecycle, extreme break-even settings, table/math search, asset links and source inventory.');
 })().catch(e=>{console.error(e);process.exit(1)});

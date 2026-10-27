@@ -11,3 +11,5 @@ After edits, regenerate the content bundle, run the tests, inspect new native fi
 `materials.json` is the user-facing inventory of current teaching materials and links to their reader routes. The content bundle includes this inventory.
 
 Topics may add `tables` (`caption`, `headers`, rectangular `rows`), `code` (`title`, `language`, `body`) and `downloads` (`title`, local `href`). The reader includes these in reading, search and printing; local download files must be included by the build allowlist. Keep public attachments free of personal identifiers. Official-key corrections and independently derived answers must remain clearly labeled.
+
+`lecture-audit.json` records the visible-source fidelity audit. Preserve the distinction between a true slide inconsistency and a PDF extraction artifact: the latter must not be attributed to the lecturer as an error. Verify changed source coefficients visually and update independent numerical checks when their derived results change.

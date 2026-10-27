@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-27",
+  "scope": "Visible content in the saved Chapter 1–4 lecture decks and COPT tutorial; reader calculations checked separately.",
+  "reviewedTopicIds": [
+    "modeling",
+    "break-even",
+    "airline-demand",
+    "segmentation",
+    "app-fare",
+    "decision-support",
+    "gantt",
+    "lp-components",
+    "pottery",
+    "graphical",
+    "fertilizer",
+    "irregular",
+    "hot-dogs",
+    "furniture",
+    "objective-range",
+    "fertilizer-range",
+    "labor-shadow",
+    "clay-shadow",
+    "nutrient-shadow",
+    "new-product",
+    "technology",
+    "spreadsheet",
+    "reports",
+    "aircraft",
+    "solver-benchmarks",
+    "copt",
+    "copt-files",
+    "copt-inspection",
+    "copt-python",
+    "shirts",
+    "diet",
+    "portfolio",
+    "advertising",
+    "transport",
+    "blending",
+    "production",
+    "pet-food",
+    "cash-flow",
+    "dea",
+    "uncertain-returns"
+  ],
+  "findings": [
+    {
+      "topic": "break-even",
+      "source": "chapter01.pdf:15",
+      "resolution": "Removed a false reader warning. The visible slide correctly adds fixed and variable costs; the hidden text layer had misled the earlier extraction."
+    },
+    {
+      "topic": "modeling",
+      "source": "chapter01.pdf:8-12",
+      "resolution": "Retained the five visible modeling stages and implementation feedback in the recreated diagram. Showed the source steel equality before the optional availability inequality."
+    },
+    {
+      "topic": "segmentation",
+      "source": "chapter01.pdf:26",
+      "resolution": "Kept the printed fare-38 total of 60 and type counts 57/8, explicitly noting that they disagree. Calculations use the fitted lecture curves without refitting the observations."
+    },
+    {
+      "topic": "app-fare",
+      "source": "chapter01.pdf:30-33",
+      "resolution": "Labeled the app-demand formula as a reconstruction and stated fare bounds and the fixed full-fare/no-switching assumptions."
+    },
+    {
+      "topic": "gantt",
+      "source": "chapter01.pdf:50,54-55",
+      "resolution": "Distinguished development targets from measured prototype results and stated their different historical computer configurations."
+    },
+    {
+      "topic": "pottery",
+      "source": "chapter02 - part 2.pdf:6-8,12-18",
+      "resolution": "Distinguished correct visible handwritten rows from erroneous later printed repetitions, and retained the real 70-versus-50 arithmetic correction."
+    },
+    {
+      "topic": "new-product",
+      "source": "chapter02 - part 2.pdf:39",
+      "resolution": "Corrected Willow labor coefficient from 1 to the visible 2. Recomputed parametric solutions, values and shadow prices; retained symbolic H because the RHS is overwritten."
+    },
+    {
+      "topic": "sensitivity",
+      "source": "chapter02 - part 2.pdf:25-38,43-46",
+      "resolution": "Labeled filled-in algebra and global value functions as worked derivations. Clarified that an unchanged basis does not mean unchanged numerical quantities."
+    },
+    {
+      "topic": "computer-solution",
+      "source": "chapter03-2--5beb6393ab.pdf:4-13; copt 26-09-29.pptx:1-12",
+      "resolution": "Identified the visible model-block typo versus correct spreadsheet, labeled independently calculated aircraft results, and identified adapted COPT filenames rather than implying literal slide commands."
+    },
+    {
+      "topic": "modeling-examples",
+      "source": "chapter04-2.pdf:3-32",
+      "resolution": "Separated visible problem data from derived formulations and solutions. Stated continuous-variable, unused-supply, inventory-boundary, D-maturity and CCR choices. Kept incomplete B probabilities unresolved."
+    }
+  ],
+  "limits": "An audit of saved files cannot recover explanations delivered orally or equations written during class. The source-page inventory is not a promise of exam coverage."
+}
