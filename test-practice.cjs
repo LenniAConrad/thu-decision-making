@@ -33,7 +33,7 @@ const key='dm-practice-session-v1';
   assert.equal(p.d.querySelector('#practice-solution').hidden,true,e.id+' solution is initially hidden');
   assert.equal(p.d.querySelectorAll('.practice-hint').length,0,e.id+' no hints initially');
   assert.equal(p.d.querySelector('textarea').value,'');
-  assert.equal(p.d.querySelectorAll('.practice-question table').length,(e.tables||[]).length);
+  assert.equal(p.d.querySelectorAll('.practice-question table').length,(e.tables||[]).length+(e.notation?1:0));
   for(let i=1;i<=e.hints.length;i++){
    p.d.querySelector('[data-next-hint]').click();
    assert.equal(p.d.querySelectorAll('.practice-hint').length,i);

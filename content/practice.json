@@ -99,7 +99,37 @@
         "Did you keep regular demand fixed while changing \\(p_A\\)?",
         "For (c), did you check both the advance price domain and the capacity inequality rather than forcing a full shuttle?",
         "Are your revenues sums of fare × demand, and are your load factors divided by 40?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(p_W,p_A,p_S\\)",
+            "Regular, advance and student fares; W/A/S label ticket streams",
+            "dollars per ticket"
+          ],
+          [
+            "\\(D_W,D_A\\)",
+            "Regular and advance demand functions",
+            "passengers per departure"
+          ],
+          [
+            "\\(q_W,q_A,q_S\\)",
+            "Regular, advance and student passenger quantities",
+            "passengers per departure"
+          ],
+          [
+            "\\(R\\)",
+            "Combined revenue across ticket streams",
+            "dollars per departure"
+          ]
+        ]
+      }
     },
     {
       "id": "hw1-joint-two-fares",
@@ -179,7 +209,37 @@
         "Do the exact quantities sum to 40 before rounding?",
         "Did you distinguish the open higher-price branch from its \\(p_W = \\$30\\) boundary?",
         "Did you justify optimality using concavity, marginal revenue and the branch comparison?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(p_W,p_A,p_S\\)",
+            "Regular, advance and student fares; W/A/S label ticket streams",
+            "dollars per ticket"
+          ],
+          [
+            "\\(D_W,D_A\\)",
+            "Regular and advance demand functions",
+            "passengers per departure"
+          ],
+          [
+            "\\(q_W,q_A,q_S\\)",
+            "Regular, advance and student passenger quantities",
+            "passengers per departure"
+          ],
+          [
+            "\\(R\\)",
+            "Combined revenue across ticket streams",
+            "dollars per departure"
+          ]
+        ]
+      }
     },
     {
       "id": "hw1-student-fare",
@@ -266,7 +326,37 @@
         "Do all three demand quantities sum to no more than 40?",
         "Did you compare with an optimized common regular fare, rather than the original \\(p_W = \\$36\\) benchmark?",
         "Did you explain the fare-ordering point without inventing a chronological sales process?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(p_W,p_A,p_S\\)",
+            "Regular, advance and student fares; W/A/S label ticket streams",
+            "dollars per ticket"
+          ],
+          [
+            "\\(D_W,D_A\\)",
+            "Regular and advance demand functions",
+            "passengers per departure"
+          ],
+          [
+            "\\(q_W,q_A,q_S\\)",
+            "Regular, advance and student passenger quantities",
+            "passengers per departure"
+          ],
+          [
+            "\\(R\\)",
+            "Combined revenue across ticket streams",
+            "dollars per departure"
+          ]
+        ]
+      }
     },
     {
       "id": "hw1-joint-three-fares",
@@ -356,7 +446,37 @@
         "Are all three marginal revenues equal and the shared-capacity multiplier positive?",
         "Did you use concavity to justify global optimality rather than only report a stationary point?",
         "Did you compare like-for-like revenues with the two specified policies before rounding?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(p_W,p_A,p_S\\)",
+            "Regular, advance and student fares; W/A/S label ticket streams",
+            "dollars per ticket"
+          ],
+          [
+            "\\(D_W,D_A\\)",
+            "Regular and advance demand functions",
+            "passengers per departure"
+          ],
+          [
+            "\\(q_W,q_A,q_S\\)",
+            "Regular, advance and student passenger quantities",
+            "passengers per departure"
+          ],
+          [
+            "\\(R\\)",
+            "Combined revenue across ticket streams",
+            "dollars per departure"
+          ]
+        ]
+      }
     },
     {
       "id": "hw2-graphical-maximum",
@@ -445,7 +565,27 @@
         "Did you reject intersections outside \\(x_{1} \\le  8\\) or above a resource boundary?",
         "Did you include all four feasible vertices in the objective comparison?",
         "Does substituting your optimum show exactly which constraints bind?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1,x_2\\)",
+            "Nonnegative continuous decision quantities for the numbered LP being solved",
+            "abstract activity units"
+          ],
+          [
+            "\\(Z\\)",
+            "Objective value for that particular LP",
+            "its stated objective units"
+          ]
+        ]
+      }
     },
     {
       "id": "hw2-unbounded-and-minimum",
@@ -530,7 +670,27 @@
         "For maximization, did you provide a feasible direction with objective tending to infinity?",
         "For minimization, did you check all boundary vertices or supply an equivalent lower-bound proof?",
         "Did changing objective sense leave the feasible region unchanged?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1,x_2\\)",
+            "Nonnegative continuous decision quantities for the numbered LP being solved",
+            "abstract activity units"
+          ],
+          [
+            "\\(Z\\)",
+            "Objective value for that particular LP",
+            "its stated objective units"
+          ]
+        ]
+      }
     },
     {
       "id": "hw2-claims-staffing",
@@ -652,7 +812,27 @@
         "Did you compare all four feasible vertices and keep the operator types in the correct coordinate order?",
         "Does your continuous optimum meet processing and error limits exactly while leaving workstation slack?",
         "Did you round the cost only at the end, without rounding the staffing plan to integers?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1,x_2\\)",
+            "Permanent and temporary claim-processing operators",
+            "operators; continuous staffing-equivalents in this LP"
+          ],
+          [
+            "\\(Z\\)",
+            "Total staffing cost",
+            "dollars per modeled day"
+          ]
+        ]
+      }
     },
     {
       "id": "hw2-triangle-objectives",
@@ -737,7 +917,27 @@
         "Did you find and verify all three feasible vertices?",
         "Did you use the same feasible region for maximization and minimization?",
         "Do your chosen extrema and binding-row checks agree with direct substitution?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1,x_2\\)",
+            "Nonnegative continuous decision quantities for the numbered LP being solved",
+            "abstract activity units"
+          ],
+          [
+            "\\(Z\\)",
+            "Objective value for that particular LP",
+            "its stated objective units"
+          ]
+        ]
+      }
     },
     {
       "id": "hw3-aluminum",
@@ -866,7 +1066,37 @@
         "Do the graphical slope bounds and algebraic nonbasic-coefficient signs give the same ranges?",
         "Are your Excel variable reduced costs consistent with the analytical nonbasic-variable calculation?",
         "Did you discuss ties at coefficient-range endpoints rather than claiming uniqueness throughout the closed range?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1,x_2\\)",
+            "Operating time at aluminum mills 1 and 2",
+            "days"
+          ],
+          [
+            "\\(c_1,c_2\\)",
+            "Daily mill operating cost",
+            "dollars per day"
+          ],
+          [
+            "\\(e_1,e_2,e_3\\)",
+            "High-, medium- and low-grade production above the requirements",
+            "tons"
+          ],
+          [
+            "\\(Z\\)",
+            "Total operating cost",
+            "dollars"
+          ]
+        ]
+      }
     },
     {
       "id": "hw3-bradley",
@@ -993,7 +1223,37 @@
         "Did the algebra use the same scale for the budget row throughout?",
         "At the all-corn threshold, did you identify alternate optima?",
         "Does your actual Excel report agree with the one-at-a-time ranges, and are dollar-denominated shadow prices distinguished from rescaled-row values?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1,x_2\\)",
+            "Land planted with corn and tobacco",
+            "acres"
+          ],
+          [
+            "\\(c_1,c_2\\)",
+            "Profit per acre of corn and tobacco",
+            "dollars per acre"
+          ],
+          [
+            "\\(s_L,s_B,s_T\\)",
+            "Unused land, scaled budget and tobacco quota",
+            "acres; $105 budget units; acres"
+          ],
+          [
+            "\\(Z\\)",
+            "Total crop profit",
+            "dollars"
+          ]
+        ]
+      }
     },
     {
       "id": "hw3-apex",
@@ -1122,7 +1382,37 @@
         "Do the slack-objective coefficients have the correct signs for maximization?",
         "Do graphical and algebraic ranges agree, including endpoint ties?",
         "Did you distinguish decision-variable reduced costs from the objective coefficients of nonbasic slacks and from row shadow prices?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1,x_2\\)",
+            "Production quantities of components A and B",
+            "components"
+          ],
+          [
+            "\\(c_1,c_2\\)",
+            "Unit contribution from components A and B",
+            "dollars per component"
+          ],
+          [
+            "\\(s_1,s_2\\)",
+            "Unused machining and finishing capacity",
+            "units of the respective resource"
+          ],
+          [
+            "\\(Z\\)",
+            "Total production profit",
+            "dollars per day"
+          ]
+        ]
+      }
     },
     {
       "id": "solver-pottery-lp",
@@ -1229,7 +1519,32 @@
         "Did you check all dimensions and all four matrix coefficients?",
         "Does the final solver status support calling the solution optimal?",
         "Did you compute both resource usages independently and retain their units?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1, x_2\\)",
+            "Bowls and mugs produced, respectively",
+            "products per modeled day"
+          ],
+          [
+            "\\(Z\\)",
+            "Total production profit",
+            "dollars per day"
+          ],
+          [
+            "\\(c_1, c_2\\)",
+            "Profit earned by one bowl or one mug",
+            "dollars per product"
+          ]
+        ]
+      }
     },
     {
       "id": "solver-pottery-diagnosis",
@@ -1322,7 +1637,32 @@
         "Does your wrong-model optimum satisfy its written rows?",
         "Did you separately check the original physical clay calculation?",
         "Does the repaired model match the table and the corrected tutorial example?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1, x_2\\)",
+            "Bowls and mugs produced, respectively",
+            "products per modeled day"
+          ],
+          [
+            "\\(Z\\)",
+            "Total production profit",
+            "dollars per day"
+          ],
+          [
+            "\\(c_1, c_2\\)",
+            "Profit earned by one bowl or one mug",
+            "dollars per product"
+          ]
+        ]
+      }
     },
     {
       "id": "solver-pottery-report",
@@ -1434,7 +1774,32 @@
         "Were endpoint ties distinguished from a unique optimum?",
         "Did you retain the signs and units of the two resource changes?",
         "Did you avoid applying a one-at-a-time report as an independent box of simultaneous valid changes?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1, x_2\\)",
+            "Bowls and mugs produced, respectively",
+            "products per modeled day"
+          ],
+          [
+            "\\(Z\\)",
+            "Total production profit",
+            "dollars per day"
+          ],
+          [
+            "\\(c_1, c_2\\)",
+            "Profit earned by one bowl or one mug",
+            "dollars per product"
+          ]
+        ]
+      }
     },
     {
       "id": "solver-pottery-python",
@@ -1535,7 +1900,32 @@
         "Was Optimal status checked before interpreting objective and solution values?",
         "Do the independent physical calculations agree with the solver output?",
         "Are reduced costs and row duals interpreted separately with the right units and local-range limitation?"
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1, x_2\\)",
+            "Bowls and mugs produced, respectively",
+            "products per modeled day"
+          ],
+          [
+            "\\(Z\\)",
+            "Total production profit",
+            "dollars per day"
+          ],
+          [
+            "\\(c_1, c_2\\)",
+            "Profit earned by one bowl or one mug",
+            "dollars per product"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw4-transport",
@@ -1691,7 +2081,37 @@
         "Does your plan meet all three demands without exceeding a plant capacity?",
         "Is your objective expressed consistently in hundreds of dollars or converted to dollars?",
         "A different optimal lane allocation can be accepted if it is feasible and has the same minimum objective; retain your actual Excel workbook."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(i,j\\)",
+            "Plant index and customer label; A=Greensboro, B=Charlotte, C=Louisville",
+            "labels"
+          ],
+          [
+            "\\(x_{ij}\\)",
+            "Engines shipped from plant i to customer j",
+            "engines per month"
+          ],
+          [
+            "\\(c_{ij}\\)",
+            "Unit shipping cost on that route",
+            "hundreds of dollars per engine"
+          ],
+          [
+            "\\(Z\\)",
+            "Total shipping cost when table coefficients are used directly",
+            "hundreds of dollars"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw4-byproduct",
@@ -1804,7 +2224,32 @@
         "Is disposal charged at minus 200 yuan per ton?",
         "Are both process limits present, with the correct A/B coefficients?",
         "Check the solution’s process hours, sale/disposal balance and objective before comparing the optimum."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(a,b\\)",
+            "Amounts of main products A and B produced",
+            "tons"
+          ],
+          [
+            "\\(s,d\\)",
+            "By-product C sold and discarded",
+            "tons"
+          ],
+          [
+            "\\(Z\\)",
+            "Net profit after main-product profit, by-product sales and disposal cost",
+            "yuan"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw4-farm",
@@ -1947,7 +2392,42 @@
         "Do the crop maxima apply to totals across the farm?",
         "Does every plot’s allocation sum to its allowed cultivated acreage?",
         "Plot-level allocations need not match the example: compare feasibility, total crop acreages and maximum profit, because optimal distributions can be nonunique."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(i,j\\)",
+            "Plot index and crop label; C=corn, P=peas, S=soybeans",
+            "labels"
+          ],
+          [
+            "\\(x_{ij}\\)",
+            "Crop j acreage on plot i",
+            "acres"
+          ],
+          [
+            "\\(L_i\\)",
+            "Available land on plot i",
+            "acres"
+          ],
+          [
+            "\\(t\\)",
+            "Common cultivated proportion of every plot; not time in this model",
+            "fraction between 0.6 and 1"
+          ],
+          [
+            "\\(Z\\)",
+            "Total crop profit",
+            "dollars"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw4-investment",
@@ -2035,7 +2515,27 @@
         "Are the baking upper bound, loyalty lower bound and combined baking/marketing lower bound all present?",
         "Is supplier investment bounded by the other three options combined?",
         "Compare return earned separately from principal plus return, and verify all bounds at your solution."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1,x_2,x_3,x_4\\)",
+            "Money allocated to baking, supplier contracts, loyalty and marketing",
+            "dollars invested"
+          ],
+          [
+            "\\(Z\\)",
+            "Annual return, excluding initial principal",
+            "dollars"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw4-inventory",
@@ -2154,7 +2654,42 @@
         "Are initial and final inventory zero and every inventory nonnegative?",
         "Does the cost include regular production, subcontracting and end-of-quarter holding?",
         "Recalculate the objective at the displayed schedule and compare all three cost components; do not omit inventory held before the peak-demand quarter."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(t\\)",
+            "Quarter index, 1 through 4",
+            "index"
+          ],
+          [
+            "\\(r_t,s_t\\)",
+            "Regular and subcontracted production during quarter t",
+            "heaters"
+          ],
+          [
+            "\\(I_t\\)",
+            "End-of-quarter inventory; I is uppercase i",
+            "heaters"
+          ],
+          [
+            "\\(d_t\\)",
+            "Demand in quarter t",
+            "heaters"
+          ],
+          [
+            "\\(I_0,I_4\\)",
+            "Initial and terminal inventory",
+            "heaters, both fixed at zero"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw5-dea",
@@ -2318,7 +2853,52 @@
         "Does the normalization use the currently evaluated company’s own inputs?",
         "Are weights/reference quantities nonnegative?",
         "Compare scores only under the same convention. A score of one can leave several companies tied; different DEA conventions can yield different evaluations."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(i,r,j,o\\)",
+            "Input index, output index, comparison entity, and currently evaluated entity",
+            "indices, no units"
+          ],
+          [
+            "\\(x_{ij},y_{rj}\\)",
+            "Observed input i and output r for entity j",
+            "units in the source data table"
+          ],
+          [
+            "\\(v_i,u_r\\)",
+            "Nonnegative weights placed on input i and output r",
+            "scaled weights so weighted inputs/outputs are comparable"
+          ],
+          [
+            "\\(x_{io},y_{ro}\\)",
+            "Data for the entity currently being evaluated",
+            "units in the source data table"
+          ],
+          [
+            "\\(\\theta\\)",
+            "Input-oriented efficiency score: common input scaling factor",
+            "dimensionless"
+          ],
+          [
+            "\\(\\lambda_j\\)",
+            "Reference weight on comparison company j",
+            "dimensionless"
+          ],
+          [
+            "\\(E,F\\)",
+            "Company labels in the reference mix, not mathematical operators",
+            "labels"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw5-allen",
@@ -2440,7 +3020,27 @@
         "Are return coefficients matched to the correct investments?",
         "Does your COPT run finish with optimal status, and do reported values come from that run?",
         "Compare annual return with annual return; principal plus return is a different displayed quantity."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x_1,x_2,x_3,x_4\\)",
+            "Money in municipal bonds, CDs, treasury bills and the stock fund, respectively",
+            "dollars invested"
+          ],
+          [
+            "\\(Z\\)",
+            "Annual investment return, excluding the original principal",
+            "dollars of return"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw5-biofuel",
@@ -2622,7 +3222,42 @@
         "Do cetane rows use >= and sulfur rows use <= for the correct grade averages?",
         "Are sulfur percentages consistently scaled?",
         "A different optimal blend can be correct: compare feasibility, maximum net profit and solver status, rather than requiring every allocation to match the example."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(i\\)",
+            "Feedstock label A, B or C",
+            "label"
+          ],
+          [
+            "\\(x_{iP},x_{iS}\\)",
+            "Feedstock i blended into Premium or Standard fuel",
+            "barrels"
+          ],
+          [
+            "\\(Q_P,Q_S\\)",
+            "Total Premium and Standard fuel production",
+            "barrels"
+          ],
+          [
+            "\\(a,b,c\\)",
+            "Total purchases of feedstocks A, B and C in the optimality bound",
+            "barrels"
+          ],
+          [
+            "\\(Z\\)",
+            "Revenue minus feedstock purchase costs",
+            "dollars"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw5-transshipment",
@@ -2802,7 +3437,37 @@
         "Are plant supplies upper bounds and customer requirements equalities?",
         "Does the objective include costs on both route layers?",
         "Alternative optimal flows are possible. Compare all feasibility conditions and the minimum total cost, with values obtained from an optimal COPT run."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(i,h,k\\)",
+            "Plant index, hub index and customer index",
+            "indices"
+          ],
+          [
+            "\\(a_{ih}\\)",
+            "Units sent from plant i to hub h",
+            "shipment units"
+          ],
+          [
+            "\\(b_{hk}\\)",
+            "Units sent from hub h to customer k",
+            "shipment units"
+          ],
+          [
+            "\\(Z\\)",
+            "Total transportation cost across both legs",
+            "dollars"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw6-1",
@@ -3001,7 +3666,37 @@
         "Every nonnegative RHS regime, its value formula and interior marginal slope are covered.",
         "One-sided slopes at kinks are distinguished from a unique derivative.",
         "Actual Excel reports are required; derived expectations are not claimed as Excel output."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x,y\\)",
+            "Weekly basic A and decorative B production",
+            "divisible planning units"
+          ],
+          [
+            "\\(b_6\\)",
+            "Distributor quota on decorative B; 6 labels the sixth constraint",
+            "B units per week"
+          ],
+          [
+            "\\(Z,Z^*(b_6)\\)",
+            "Profit of a plan and best profit allowed by quota b₆",
+            "monetary units per week"
+          ],
+          [
+            "\\(s_i\\)",
+            "Unused capacity of processing constraint i, if introduced",
+            "units of the corresponding capacity"
+          ]
+        ]
+      }
     },
     {
       "id": "practice-hw6-2",
@@ -3176,7 +3871,32 @@
         "Every nonnegative RHS regime, its value formula and interior marginal slope are covered.",
         "One-sided slopes at kinks are distinguished from a unique derivative.",
         "Actual Excel reports are required; derived expectations are not claimed as Excel output."
-      ]
+      ],
+      "notation": {
+        "caption": "Symbols and units for this problem",
+        "headers": [
+          "Symbol",
+          "Meaning",
+          "Units / role"
+        ],
+        "rows": [
+          [
+            "\\(x,y\\)",
+            "Standard A and premium B campaign planning quantities",
+            "divisible planning units"
+          ],
+          [
+            "\\(b_4\\)",
+            "Total central approval slots; 4 labels the approval constraint",
+            "approval slots per week"
+          ],
+          [
+            "\\(Z,Z^*(b_4)\\)",
+            "Contribution of a plan and best contribution allowed by b₄",
+            "monetary units per week"
+          ]
+        ]
+      }
     }
   ]
 }

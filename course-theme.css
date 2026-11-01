@@ -152,3 +152,5 @@ body{font-size:1rem}button:hover{background:#f3eef9;border-color:#b9a4d1}.primar
 @media print{.practice-workspace.comparing>.practice-solution{position:static;max-height:none;overflow:visible}}
 
 @media print{.practice-shell .reader-heading{display:block!important}.practice-solution .native-drawing svg{min-width:0}.lecture-equation .katex-display{overflow:visible}}
+
+.symbol-guide{margin:1rem 0;padding:.8rem 1rem;border:1px solid #ddd5e8;border-radius:.6rem;background:#faf8fc}.symbol-guide>summary{cursor:pointer;font-weight:650;color:#52317d}.symbol-guide p{font-size:.95rem}.symbol-guide .lecture-table-wrap{margin:.8rem 0 0}

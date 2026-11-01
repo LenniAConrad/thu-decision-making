@@ -30,6 +30,26 @@
           ],
           "answer": 1,
           "explanation": "The model chooses production. Steel availability and selling price are parameters."
+        },
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x\\)",
+              "Number of steel products to make",
+              "products"
+            ],
+            [
+              "\\(Z\\)",
+              "Sales revenue minus production cost",
+              "dollars"
+            ]
+          ]
         }
       },
       {
@@ -45,7 +65,47 @@
         "sources": [
           "chapter01.pdf:13-21"
         ],
-        "experiment": "break-even"
+        "experiment": "break-even",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(c_f=F\\)",
+              "Total fixed cost; f means fixed",
+              "money per modeled period"
+            ],
+            [
+              "\\(c_v=c\\)",
+              "Variable cost per unit; the subscript v means variable",
+              "money per unit"
+            ],
+            [
+              "\\(p\\)",
+              "Selling price per unit",
+              "money per unit"
+            ],
+            [
+              "\\(v\\)",
+              "Production/sales volume; this standalone v is a quantity",
+              "units per period"
+            ],
+            [
+              "\\(TC, R, Z\\)",
+              "Total cost, revenue, and profit, respectively",
+              "money per period"
+            ],
+            [
+              "\\(v_{BE}\\)",
+              "Break-even sales volume; BE means break-even",
+              "units per period"
+            ]
+          ]
+        }
       },
       {
         "id": "airline-demand",
@@ -61,7 +121,37 @@
           "chapter01.pdf:22-25",
           "chapter01.pdf:28"
         ],
-        "experiment": "airline"
+        "experiment": "airline",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(p\\)",
+              "Common ticket price",
+              "dollars per ticket"
+            ],
+            [
+              "\\(q(p)\\)",
+              "Expected demand at fare p",
+              "passengers per departure"
+            ],
+            [
+              "\\(s(p)\\)",
+              "Tickets actually sold, capped by seat capacity",
+              "tickets per departure"
+            ],
+            [
+              "\\(R(p)\\)",
+              "Ticket revenue at fare p",
+              "dollars per departure"
+            ]
+          ]
+        }
       },
       {
         "id": "segmentation",
@@ -77,7 +167,32 @@
           "chapter01.pdf:26-29",
           "chapter01.pdf:33"
         ],
-        "warning": "The observed-data table on Chapter 1 page 26 has an internal inconsistency at fare $38: total tickets are listed as 60, but the type counts 57 and 8 add to 65. These entries are preserved as printed; the worked pricing calculations use the fitted curves supplied in the lecture."
+        "warning": "The observed-data table on Chapter 1 page 26 has an internal inconsistency at fare $38: total tickets are listed as 60, but the type counts 57 and 8 add to 65. These entries are preserved as printed; the worked pricing calculations use the fitted curves supplied in the lecture.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(p_1,p_2\\)",
+              "Business and leisure fares; 1 and 2 label passenger types",
+              "dollars per ticket"
+            ],
+            [
+              "\\(q_1,q_2\\)",
+              "Demand from business and leisure passengers",
+              "passengers per departure"
+            ],
+            [
+              "\\(R\\)",
+              "Revenue from both ticket streams",
+              "dollars per departure"
+            ]
+          ]
+        }
       },
       {
         "id": "app-fare",
@@ -95,7 +210,32 @@
         ],
         "sources": [
           "chapter01.pdf:30-33"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(a,b\\)",
+              "App fare and leisure fare, respectively",
+              "dollars per ticket"
+            ],
+            [
+              "\\(q_1\\)",
+              "Total business demand before separating full-fare and app customers",
+              "passengers per departure"
+            ],
+            [
+              "\\(R\\)",
+              "Combined full-fare, app and leisure ticket revenue",
+              "dollars per departure"
+            ]
+          ]
+        }
       },
       {
         "id": "decision-support",
@@ -176,6 +316,41 @@
           ],
           "answer": 0,
           "explanation": "Coefficients may be constants, but products and powers of decision variables are not linear."
+        },
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x,x_i\\)",
+              "Vector of decision quantities and its ith entry",
+              "model-specific activity units"
+            ],
+            [
+              "\\(c,c_i\\)",
+              "Vector of objective coefficients and its ith entry",
+              "objective units per activity unit"
+            ],
+            [
+              "\\(A,a_{ij}\\)",
+              "Constraint coefficient matrix; row i, activity j",
+              "row-i units per activity-j unit"
+            ],
+            [
+              "\\(b,b_i\\)",
+              "Vector of RHS limits; b_i is row i’s limit",
+              "units of the corresponding constraint"
+            ],
+            [
+              "\\(c^Tx\\)",
+              "Sum of coefficient times quantity over all activities; T means transpose",
+              "objective units"
+            ]
+          ]
         }
       },
       {
@@ -192,7 +367,32 @@
           "chapter02 - part 2.pdf:6-8",
           "chapter02 - part 2.pdf:12-14"
         ],
-        "warning": "The visible product data and handwritten model on Chapter 2 Part 2 pages 6–8 use \\(4x_{1} + 3x_{2} \\le  120\\). Some later printed repetitions, including pages 12, 13, 16 and 18, instead show \\(4x_{2} + 3x_{2}\\). Page 12 also prints \\(4\\times 5 + 3\\times 10 = 70\\), although the arithmetic equals 50. Calculations and redrawn graphs here use the product data and the handwritten correct model."
+        "warning": "The visible product data and handwritten model on Chapter 2 Part 2 pages 6–8 use \\(4x_{1} + 3x_{2} \\le  120\\). Some later printed repetitions, including pages 12, 13, 16 and 18, instead show \\(4x_{2} + 3x_{2}\\). Page 12 also prints \\(4\\times 5 + 3\\times 10 = 70\\), although the arithmetic equals 50. Calculations and redrawn graphs here use the product data and the handwritten correct model.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ]
+          ]
+        }
       },
       {
         "id": "graphical",
@@ -217,6 +417,31 @@
           ],
           "answer": 0,
           "explanation": "\\(24 + 2\\times 8 = 40\\), so the labor constraint binds."
+        },
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ]
+          ]
         }
       },
       {
@@ -227,7 +452,32 @@
         "sources": [
           "chapter02 - part 2.pdf:9-10,15"
         ],
-        "warning": "Part 1 page 15 repeats a phosphate-row subscript typo. The ingredient table and Part 2 handwritten model give \\(4x_{1} + 3x_{2} \\ge  24\\), which is the constraint used here."
+        "warning": "Part 1 page 15 repeats a phosphate-row subscript typo. The ingredient table and Part 2 handwritten model give \\(4x_{1} + 3x_{2} \\ge  24\\), which is the constraint used here.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Bags of Super-gro and Crop-quick",
+              "bags"
+            ],
+            [
+              "\\(c_1,c_2\\)",
+              "Price of one bag of each fertilizer",
+              "dollars per bag"
+            ],
+            [
+              "\\(Z\\)",
+              "Total fertilizer purchase cost",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "irregular",
@@ -245,7 +495,32 @@
         ],
         "sources": [
           "chapter02 - part 2.pdf:16-20"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ]
+          ]
+        }
       },
       {
         "id": "hot-dogs",
@@ -254,7 +529,27 @@
         "sections": [],
         "sources": [
           "chapter02 - part 2.pdf:21-23"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(c,b\\)",
+              "Chicken and beef in the batch; c means chicken here",
+              "pounds"
+            ],
+            [
+              "\\(Z\\)",
+              "Total ingredient cost for the batch",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "furniture",
@@ -270,7 +565,27 @@
           "chapter02-part 1.pdf:24-27",
           "chapter02 - part 2.pdf:24",
           "chapter02 - part 2.pdf:41-42"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Doors and windows in the furniture model; abstract quantities in the separate numerical exercise",
+              "product units"
+            ],
+            [
+              "\\(Z\\)",
+              "Objective value: furniture profit or the separate exercise’s stated objective",
+              "dollars in the furniture model"
+            ]
+          ]
+        }
       }
     ]
   },
@@ -298,7 +613,37 @@
           "chapter02 - part 2.pdf:30"
         ],
         "experiment": "profit",
-        "warning": "Slides 25–27 print \\(4x_{2} + 3x_{2} \\le  120\\) in the model block, while their graph labels the clay line \\(4x_{1} + 3x_{2} = 120\\). This reader uses the graph-consistent clay row, also supported by the input table and later slides."
+        "warning": "Slides 25–27 print \\(4x_{2} + 3x_{2} \\le  120\\) in the model block, while their graph labels the clay line \\(4x_{1} + 3x_{2} = 120\\). This reader uses the graph-consistent clay row, also supported by the input table and later slides.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ],
+            [
+              "\\(y_L,y_C\\)",
+              "Marginal profit from one more labor hour or pound of clay; L and C label resources",
+              "dollars per hour; dollars per pound"
+            ]
+          ]
+        }
       },
       {
         "id": "fertilizer-range",
@@ -309,7 +654,32 @@
           "chapter02 - part 2.pdf:28-29",
           "chapter02 - part 2.pdf:31",
           "chapter03-2--5beb6393ab.pdf:12"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Bags of Super-gro and Crop-quick",
+              "bags"
+            ],
+            [
+              "\\(c_1,c_2\\)",
+              "Price of one bag of each fertilizer",
+              "dollars per bag"
+            ],
+            [
+              "\\(Z\\)",
+              "Total fertilizer purchase cost",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "labor-shadow",
@@ -335,7 +705,42 @@
           "answer": 1,
           "explanation": "The new quantities are 23.4 bowls and 8.8 mugs. Profit rises by $16."
         },
-        "warning": "Slide 32 describes an unchanged “solution variable mix” and groups different positive quantities together. Here this means retaining the current basis/product pattern, not retaining the numerical quantities (24,8). At a range endpoint a basic variable can become zero."
+        "warning": "Slide 32 describes an unchanged “solution variable mix” and groups different positive quantities together. Here this means retaining the current basis/product pattern, not retaining the numerical quantities (24,8). At a range endpoint a basic variable can become zero.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ],
+            [
+              "\\(L\\)",
+              "Available labor",
+              "hours per day"
+            ],
+            [
+              "\\(Z^*(L)\\)",
+              "Best profit achievable for that labor availability; * means optimal",
+              "dollars per day"
+            ]
+          ]
+        }
       },
       {
         "id": "clay-shadow",
@@ -350,7 +755,42 @@
         "sources": [
           "chapter02 - part 2.pdf:35",
           "chapter02 - part 2.pdf:37"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ],
+            [
+              "\\(C\\)",
+              "Available clay; uppercase C is a resource, not a unit cost",
+              "pounds per day"
+            ],
+            [
+              "\\(Z^*(C)\\)",
+              "Best profit at that clay availability",
+              "dollars per day"
+            ]
+          ]
+        }
       },
       {
         "id": "nutrient-shadow",
@@ -361,7 +801,37 @@
           "chapter02 - part 2.pdf:36",
           "chapter02 - part 2.pdf:38",
           "chapter03-2--5beb6393ab.pdf:12"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(N,P\\)",
+              "Required nitrogen and phosphate",
+              "pounds"
+            ],
+            [
+              "\\(x_1^*,x_2^*\\)",
+              "Optimal bag quantities of Super-gro and Crop-quick",
+              "bags"
+            ],
+            [
+              "\\(Z^*\\)",
+              "Minimum attainable purchase cost; * means optimal",
+              "dollars"
+            ],
+            [
+              "\\(\\max(a,b)\\)",
+              "The larger of the two quantities a and b",
+              "same units as the arguments"
+            ]
+          ]
+        }
       },
       {
         "id": "new-product",
@@ -376,7 +846,52 @@
         "sources": [
           "chapter02 - part 2.pdf:39-40"
         ],
-        "warning": "The labor RHS in the source image is overwritten in red; the red correction appears to read 65. This reader retains the parameter H and explicitly labels the two illustrative RHS values. The visible coefficient before \\(y_{1}\\) is 2; using 1 would describe a different factory."
+        "warning": "The labor RHS in the source image is overwritten in red; the red correction appears to read 65. This reader retains the parameter H and explicitly labels the two illustrative RHS values. The visible coefficient before \\(y_{1}\\) is 2; using 1 would describe a different factory.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ],
+            [
+              "\\(x_3\\)",
+              "Number of the proposed new cups",
+              "cups per day"
+            ],
+            [
+              "\\(y_1,y_2\\)",
+              "Bowls and mugs at the second factory (Willow Valley)",
+              "products per day"
+            ],
+            [
+              "\\(H\\)",
+              "Labor available at the second factory",
+              "hours per day"
+            ],
+            [
+              "\\(Z_W^*(H)\\)",
+              "Optimal Willow Valley profit for labor availability H; W identifies that factory",
+              "dollars per day"
+            ]
+          ]
+        }
       },
       {
         "id": "technology",
@@ -390,7 +905,37 @@
         ],
         "sources": [
           "chapter02 - part 2.pdf:43-46"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(H\\)",
+              "Workshop 3 labor availability in the furniture example",
+              "hours"
+            ],
+            [
+              "\\(x_1,x_2\\)",
+              "Bowls and mugs in the pottery coefficient-change example",
+              "products per day"
+            ],
+            [
+              "\\(\\alpha\\)",
+              "Labor needed per bowl; alpha is a technology coefficient, not a production quantity",
+              "hours per bowl"
+            ],
+            [
+              "\\(Z\\)",
+              "Profit of the model currently under discussion",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "rhs-algebra",
@@ -408,7 +953,42 @@
         ],
         "sources": [
           "Assignment 6.pdf:2-4"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Decision quantities in the current example: bowls/mugs or fertilizer bags",
+              "products or bags, according to the example"
+            ],
+            [
+              "\\(b_i\\)",
+              "RHS limit for constraint i; i labels a row",
+              "units of that row’s resource or requirement"
+            ],
+            [
+              "\\(s,u,x_3\\)",
+              "Slack s for unused capacity, surplus u for excess above a requirement; the handout also names such a variable x₃",
+              "same units as its constraint row"
+            ],
+            [
+              "\\(Z^*\\)",
+              "Optimal objective: maximum pottery profit or minimum fertilizer cost",
+              "dollars"
+            ],
+            [
+              "\\(M\\)",
+              "Solution mix: the set of currently positive variables",
+              "a set, not a quantity"
+            ]
+          ]
+        }
       },
       {
         "id": "rhs-worked-examples",
@@ -426,7 +1006,42 @@
         ],
         "sources": [
           "Assignment 6.pdf:2-4"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Decision quantities in the current example: bowls/mugs or fertilizer bags",
+              "products or bags, according to the example"
+            ],
+            [
+              "\\(b_i\\)",
+              "RHS limit for constraint i; i labels a row",
+              "units of that row’s resource or requirement"
+            ],
+            [
+              "\\(s,u,x_3\\)",
+              "Slack s for unused capacity, surplus u for excess above a requirement; the handout also names such a variable x₃",
+              "same units as its constraint row"
+            ],
+            [
+              "\\(Z^*\\)",
+              "Optimal objective: maximum pottery profit or minimum fertilizer cost",
+              "dollars"
+            ],
+            [
+              "\\(M\\)",
+              "Solution mix: the set of currently positive variables",
+              "a set, not a quantity"
+            ]
+          ]
+        }
       }
     ]
   },
@@ -447,7 +1062,32 @@
         "sources": [
           "chapter03-2--5beb6393ab.pdf:1-7"
         ],
-        "warning": "The model block at the left of slides 4–5 repeats the clay-row typo \\(4x_{2} + 3x_{2}\\). The visible spreadsheet instead uses coefficients 4 and 3 under bowl and mug, and its Solver report returns (24,8), \\(Z = 1,360\\). The formulas here follow that spreadsheet."
+        "warning": "The model block at the left of slides 4–5 repeats the clay-row typo \\(4x_{2} + 3x_{2}\\). The visible spreadsheet instead uses coefficients 4 and 3 under bowl and mug, and its Solver report returns (24,8), \\(Z = 1,360\\). The formulas here follow that spreadsheet.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ]
+          ]
+        }
       },
       {
         "id": "reports",
@@ -456,7 +1096,32 @@
         "sections": [],
         "sources": [
           "chapter03-2--5beb6393ab.pdf:8-12"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ]
+          ]
+        }
       },
       {
         "id": "aircraft",
@@ -465,7 +1130,27 @@
         "sections": [],
         "sources": [
           "chapter03-2--5beb6393ab.pdf:13"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Production quantities of aircraft parts 1 and 2",
+              "parts"
+            ],
+            [
+              "\\(Z\\)",
+              "Total contribution from those parts",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "solver-benchmarks",
@@ -625,7 +1310,32 @@
           "chapter03-2--5beb6393ab.pdf:23-29",
           "copt 26-09-29.pptx:1-2,9,12"
         ],
-        "warning": "The older Chapter 3 screenshots still use \\(4x_{2} + 3x_{2} \\le  120\\) and return (40,0), \\(Z = 1,600\\). That solves the mistyped model. The separate COPT tutorial corrects the row to \\(4x_{1} + 3x_{2} \\le  120\\) and reports (24,8), \\(Z = 1,360\\)."
+        "warning": "The older Chapter 3 screenshots still use \\(4x_{2} + 3x_{2} \\le  120\\) and return (40,0), \\(Z = 1,600\\). That solves the mistyped model. The separate COPT tutorial corrects the row to \\(4x_{1} + 3x_{2} \\le  120\\) and reports (24,8), \\(Z = 1,360\\).",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ]
+          ]
+        }
       },
       {
         "id": "copt-files",
@@ -692,7 +1402,32 @@
             "title": "Download pottery.lp",
             "href": "assets/examples/pottery.lp"
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ]
+          ]
+        }
       },
       {
         "id": "copt-inspection",
@@ -743,7 +1478,32 @@
             "language": "text",
             "body": "read pottery.lp\nset timelimit 10\nopt\nwritesol pottery.sol"
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ]
+          ]
+        }
       },
       {
         "id": "copt-python",
@@ -765,7 +1525,32 @@
             "title": "Download the complete pottery Python example",
             "href": "assets/examples/copt-pottery.py"
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1, x_2\\)",
+              "Bowls and mugs produced, respectively",
+              "products per modeled day"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ],
+            [
+              "\\(c_1, c_2\\)",
+              "Profit earned by one bowl or one mug",
+              "dollars per product"
+            ]
+          ]
+        }
       }
     ]
   },
@@ -791,7 +1576,32 @@
         "sources": [
           "chapter04-2.pdf · pages 3-5"
         ],
-        "warning": "Page 5 visibly provides only model-construction headings. The equations here are the reader’s derivation from the visible data on pages \\(3-4\\), not a transcription of a completed lecture formulation."
+        "warning": "Page 5 visibly provides only model-construction headings. The equations here are the reader’s derivation from the visible data on pages \\(3-4\\), not a transcription of a completed lecture formulation.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Front-only and front-and-back sweatshirts",
+              "dozens"
+            ],
+            [
+              "\\(x_3,x_4\\)",
+              "Front-only and front-and-back T-shirts",
+              "dozens"
+            ],
+            [
+              "\\(Z\\)",
+              "Total stated production profit",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "diet",
@@ -806,7 +1616,37 @@
         "sources": [
           "chapter04-2.pdf · pages 6-7"
         ],
-        "warning": "Page 7 is visibly blank beneath its model-construction headings. Its hidden text layer contains unrelated investment equations, which are not used as diet evidence. The model here is derived from page 6."
+        "warning": "Page 7 is visibly blank beneath its model-construction headings. Its hidden text layer contains unrelated investment equations, which are not used as diet evidence. The model here is derived from page 6.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(i\\)",
+              "Food index, 1 through 10 in the source table",
+              "index, no unit"
+            ],
+            [
+              "\\(x_i\\)",
+              "Amount of food i, measured in its table serving size",
+              "servings of food i"
+            ],
+            [
+              "\\(c_i\\)",
+              "Cost of one serving of food i",
+              "dollars per serving"
+            ],
+            [
+              "\\(\\sum_i c_ix_i\\)",
+              "Total cost summed over all food choices; Σ means sum",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "portfolio",
@@ -821,7 +1661,27 @@
         "sources": [
           "chapter04-2.pdf · pages 8-9"
         ],
-        "warning": "The model-summary page 9 is visibly blank beneath its headings. These equations follow from the table on page 8; they are not visible equations from page 9."
+        "warning": "The model-summary page 9 is visibly blank beneath its headings. These equations follow from the table on page 8; they are not visible equations from page 9.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2,x_3,x_4\\)",
+              "Money in municipal bonds, CDs, treasury bills and the stock fund, respectively",
+              "dollars invested"
+            ],
+            [
+              "\\(Z\\)",
+              "Annual investment return, excluding the original principal",
+              "dollars of return"
+            ]
+          ]
+        }
       },
       {
         "id": "advertising",
@@ -836,7 +1696,27 @@
         "sources": [
           "chapter04-2.pdf · pages 10-12"
         ],
-        "warning": "Page 12 is visibly blank beneath its decision-variable and formulation headings. The LP below is derived from pages \\(10-11\\). A requirement to buy whole ads would be an additional integer restriction, not a visible statement in the saved model slide."
+        "warning": "Page 12 is visibly blank beneath its decision-variable and formulation headings. The LP below is derived from pages \\(10-11\\). A requirement to buy whole ads would be an additional integer restriction, not a visible statement in the saved model slide.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2,x_3\\)",
+              "Number of television, radio and newspaper advertisements",
+              "ads"
+            ],
+            [
+              "\\(Z\\)",
+              "Total additive advertising exposure",
+              "people-exposures, not necessarily distinct viewers"
+            ]
+          ]
+        }
       },
       {
         "id": "transport",
@@ -851,7 +1731,37 @@
         "sources": [
           "chapter04-2.pdf · pages 13-15"
         ],
-        "warning": "Page 15 is visibly blank. Warehouse upper bounds and the zero-cost dummy-destination alternative are explicit modeling choices for the 700-versus-600 imbalance; neither choice is displayed on the blank lecture formulation slide."
+        "warning": "Page 15 is visibly blank. Warehouse upper bounds and the zero-cost dummy-destination alternative are explicit modeling choices for the 700-versus-600 imbalance; neither choice is displayed on the blank lecture formulation slide.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(i,j\\)",
+              "Warehouse index and store/destination index",
+              "labels, no unit"
+            ],
+            [
+              "\\(x_{ij}\\)",
+              "Quantity shipped from warehouse i to store j",
+              "televisions per month"
+            ],
+            [
+              "\\(c_{ij}\\)",
+              "Shipping cost for one television on route i to j",
+              "dollars per television"
+            ],
+            [
+              "\\(A,B,C\\)",
+              "Destination labels: New York, Dallas and Detroit",
+              "labels, not decision quantities"
+            ]
+          ]
+        }
       },
       {
         "id": "blending",
@@ -870,12 +1780,42 @@
         "sources": [
           "chapter04-2.pdf · pages 16-18"
         ],
-        "warning": "Page 18 is visibly blank beneath its model-formulation heading. The LP, component-1 argument and $76,800 solution here are reader derivations from the visible page-17 data. The optimal grade totals are fixed, but component allocations can be nonunique."
+        "warning": "Page 18 is visibly blank beneath its model-formulation heading. The LP, component-1 argument and $76,800 solution here are reader derivations from the visible page-17 data. The optimal grade totals are fixed, but component allocations can be nonunique.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(i,j\\)",
+              "Component index and grade label; S=super, P=premium, E=extra",
+              "labels, no unit"
+            ],
+            [
+              "\\(x_{ij}\\)",
+              "Component i allocated to grade j",
+              "barrels per day"
+            ],
+            [
+              "\\(q_j\\)",
+              "Total amount of grade j, summing all its components",
+              "barrels per day"
+            ],
+            [
+              "\\(Z\\)",
+              "Sales revenue minus purchased ingredient cost",
+              "dollars per day"
+            ]
+          ]
+        }
       },
       {
         "id": "production",
         "title": "Multiperiod production and inventory",
-        "body": "PM Computers seeks a production schedule that meets its orders at minimum cost. Visible page 20 gives regular capacity of 160 computers/week, overtime capacity of 50 more per week, unit costs $190 regular and $260 overtime, and holding cost $10/computer/week. Orders in weeks \\(1-6\\) are 105, 170, 230, 180, 150 and 250. The saved data page does not state initial or terminal inventory.",
+        "body": "PM Computers seeks a production schedule that meets its orders at minimum cost. Visible page 20 gives regular capacity of 160 computers/week, overtime capacity of 50 more per week, unit costs $190 regular and $260 overtime, and holding cost $10/computer/week. Orders in weeks 1–6 are 105, 170, 230, 180, 150 and 250. The saved data page does not state initial or terminal inventory.",
         "sections": [
           {
             "title": "Derived inventory model and boundary assumptions",
@@ -889,7 +1829,42 @@
         "sources": [
           "chapter04-2.pdf · pages 19-21"
         ],
-        "warning": "Page 21 is visibly blank. The $216,300 schedule is a verified reader solution under I0 = I6 = 0, on-time demand with no backlogs, and holding charged between weeks. These boundary assumptions are not visible source facts."
+        "warning": "Page 21 is visibly blank. The $216,300 schedule is a verified reader solution under I0 = I6 = 0, on-time demand with no backlogs, and holding charged between weeks. These boundary assumptions are not visible source facts.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(t\\)",
+              "Week index, 1 through 6",
+              "index, no unit"
+            ],
+            [
+              "\\(r_t,o_t\\)",
+              "Regular and overtime production during week t",
+              "computers per week"
+            ],
+            [
+              "\\(I_t\\)",
+              "Inventory remaining at the end of week t; I is uppercase i",
+              "computers"
+            ],
+            [
+              "\\(d_t\\)",
+              "Orders that must be met in week t",
+              "computers"
+            ],
+            [
+              "\\(I_0,I_6\\)",
+              "Initial and final inventory, both zero in this model",
+              "computers"
+            ]
+          ]
+        }
       },
       {
         "id": "pet-food",
@@ -908,12 +1883,42 @@
         "sources": [
           "chapter04-2.pdf · pages 22-24"
         ],
-        "warning": "Page 24 is visibly blank beneath its model-formulation heading. The ingredient-allocation model and $1,992 worked optimum are derived from page 23. The stated per-can profits are used directly."
+        "warning": "Page 24 is visibly blank beneath its model-formulation heading. The ingredient-allocation model and $1,992 worked optimum are derived from page 23. The stated per-can profits are used directly.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(h_M,f_M,c_M\\)",
+              "Horse meat, fish and cereal assigned to Meow Chow",
+              "pounds per week"
+            ],
+            [
+              "\\(h_B,f_B,c_B\\)",
+              "Horse meat, fish and cereal assigned to Bow Chow",
+              "pounds per week"
+            ],
+            [
+              "\\(M,B\\)",
+              "Total Meow Chow and Bow Chow; M/B label the two products",
+              "pounds, numerically equal to one-pound cans"
+            ],
+            [
+              "\\(Z\\)",
+              "Total stated profit",
+              "dollars per week"
+            ]
+          ]
+        }
       },
       {
         "id": "cash-flow",
         "title": "Investment over time: when is money available?",
-        "body": "The visible page-25 example starts with $100,000 and a five-year horizon. A can start at the beginning of years \\(1-4\\) and returns 15% after two years. B starts at the beginning of year 3, pays 25% at the end of year 5, and is capped at $40,000. C starts at the beginning of year 2, pays 40% at the end of year 4, and is capped at $30,000. Government bond D can be purchased at the beginning of each year and gives a 6% return. The question asks how to maximize the return at the end of year 5.",
+        "body": "The visible page-25 example starts with $100,000 and a five-year horizon. A can start at the beginning of years 1–4 and returns 15% after two years. B starts at the beginning of year 3, pays 25% at the end of year 5, and is capped at $40,000. C starts at the beginning of year 2, pays 40% at the end of year 4, and is capped at $30,000. Government bond D can be purchased at the beginning of each year and gives a 6% return. The question asks how to maximize the return at the end of year 5.",
         "sections": [
           {
             "title": "Derived cash-flow model with explicit timing conventions",
@@ -923,12 +1928,42 @@
         "sources": [
           "chapter04-2.pdf · pages 25-26"
         ],
-        "warning": "Page 26 is visibly blank. The displayed equations are a reader reconstruction: D is taken to mature after one year, quoted percentage returns are added to repaid principal, and maturity cash can be reinvested at year boundaries. The cash-flow diagram illustrates those same conventions; it is not copied from a completed lecture model."
+        "warning": "Page 26 is visibly blank. The displayed equations are a reader reconstruction: D is taken to mature after one year, quoted percentage returns are added to repaid principal, and maturity cash can be reinvested at year boundaries. The cash-flow diagram illustrates those same conventions; it is not copied from a completed lecture model.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(t\\)",
+              "Year in which an investment begins",
+              "year index"
+            ],
+            [
+              "\\(A_t,D_t\\)",
+              "Amounts invested in projects A and D at the start of year t",
+              "thousands of dollars"
+            ],
+            [
+              "\\(B,C\\)",
+              "One-time amounts invested in projects B and C",
+              "thousands of dollars"
+            ],
+            [
+              "\\(W\\)",
+              "Terminal wealth: original principal plus accumulated returns at the end of year 5",
+              "thousands of dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "dea",
         "title": "Data envelopment analysis: relative efficiency",
-        "body": "The visible pages \\(27-29\\) compare Alton, Beeks, Carey and Delancey elementary schools. Inputs are teacher/student ratio, supplementary funds per student and average parent education level; the slide explains education values 12 = high-school graduate and 16 = college graduate. Outputs are average reading, mathematics and history SOL test scores. The goal is to find schools that convert resources into outcomes less efficiently than the others. The full school data are in the table below.",
+        "body": "The visible pages 27–29 compare Alton, Beeks, Carey and Delancey elementary schools. Inputs are teacher/student ratio, supplementary funds per student and average parent education level; the slide explains education values 12 = high-school graduate and 16 = college graduate. Outputs are average reading, mathematics and history SOL test scores. The goal is to find schools that convert resources into outcomes less efficiently than the others. The full school data are in the table below.",
         "sections": [
           {
             "title": "Reader-derived DEA formulation and its convention",
@@ -942,12 +1977,42 @@
         "sources": [
           "chapter04-2.pdf · pages 27-31"
         ],
-        "warning": "Page 30 is visibly blank. It does not specify a returns-to-scale convention or display a completed DEA formulation. The reader’s CCR model and domination discussion are labeled deductions, not an official score table from the professor."
+        "warning": "Page 30 is visibly blank. It does not specify a returns-to-scale convention or display a completed DEA formulation. The reader’s CCR model and domination discussion are labeled deductions, not an official score table from the professor.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(i,r,j,o\\)",
+              "Input index, output index, comparison entity, and currently evaluated entity",
+              "indices, no units"
+            ],
+            [
+              "\\(x_{ij},y_{rj}\\)",
+              "Observed input i and output r for entity j",
+              "units in the source data table"
+            ],
+            [
+              "\\(v_i,u_r\\)",
+              "Nonnegative weights placed on input i and output r",
+              "scaled weights so weighted inputs/outputs are comparable"
+            ],
+            [
+              "\\(x_{io},y_{ro}\\)",
+              "Data for the entity currently being evaluated",
+              "units in the source data table"
+            ]
+          ]
+        }
       },
       {
         "id": "uncertain-returns",
         "title": "Uncertain returns: what the last slide does and does not specify",
-        "body": "The final visible slide repeats the $100,000, five-year investment example with random returns. A can start in years \\(1-4\\) and pays after two years: 25% return with probability 20%, or 12.5% with probability 80%. B starts in year 3, pays at the end of year 5, and is capped at $40,000: the listed outcomes are a 30% return with probability 40% and 60% with probability 21.67%. C starts in year 2, pays at the end of year 4 and is capped at $30,000: its outcomes are 45% with probability 90% and -5% with probability 10%. D can be bought at the beginning of each year and gives 6%.",
+        "body": "The final visible slide repeats the $100,000, five-year investment example with random returns. A can start in years 1–4 and pays after two years: 25% return with probability 20%, or 12.5% with probability 80%. B starts in year 3, pays at the end of year 5, and is capped at $40,000: the listed outcomes are a 30% return with probability 40% and 60% with probability 21.67%. C starts in year 2, pays at the end of year 4 and is capped at $30,000: its outcomes are 45% with probability 90% and -5% with probability 10%. D can be bought at the beginning of each year and gives 6%.",
         "sections": [
           {
             "title": "Derived expected-return calculations",
@@ -961,7 +2026,37 @@
         "sources": [
           "chapter04-2.pdf · pages 32"
         ],
-        "warning": "Page 32 leaves 38.33% of B’s probability mass unspecified. Do not invent a missing outcome, silently renormalize the two printed probabilities, or claim a unique stochastic optimum from the available slide."
+        "warning": "Page 32 leaves 38.33% of B’s probability mass unspecified. Do not invent a missing outcome, silently renormalize the two printed probabilities, or claim a unique stochastic optimum from the available slide.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(t\\)",
+              "Year in which an investment begins",
+              "year index"
+            ],
+            [
+              "\\(A_t,D_t\\)",
+              "Amounts invested in projects A and D at the start of year t",
+              "thousands of dollars"
+            ],
+            [
+              "\\(B,C\\)",
+              "One-time amounts invested in projects B and C",
+              "thousands of dollars"
+            ],
+            [
+              "\\(W\\)",
+              "Terminal wealth: original principal plus accumulated returns at the end of year 5",
+              "thousands of dollars"
+            ]
+          ]
+        }
       }
     ]
   },
@@ -1054,7 +2149,37 @@
               ]
             ]
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(p_W,p_A,p_S\\)",
+              "Regular, advance and student fares; W/A/S label ticket streams",
+              "dollars per ticket"
+            ],
+            [
+              "\\(D_W,D_A\\)",
+              "Regular and advance demand functions",
+              "passengers per departure"
+            ],
+            [
+              "\\(q_W,q_A,q_S\\)",
+              "Regular, advance and student passenger quantities",
+              "passengers per departure"
+            ],
+            [
+              "\\(R\\)",
+              "Combined revenue across ticket streams",
+              "dollars per departure"
+            ]
+          ]
+        }
       },
       {
         "id": "a2-graphical",
@@ -1077,7 +2202,27 @@
         "sources": [
           "Assignment 2.pdf · pages 2-3 (official problems 1, 2, 4)",
           "New Answer of assignment 2.pdf · pages 1-4 (official graphical answer key)"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Nonnegative continuous decision quantities for the numbered LP being solved",
+              "abstract activity units"
+            ],
+            [
+              "\\(Z\\)",
+              "Objective value for that particular LP",
+              "its stated objective units"
+            ]
+          ]
+        }
       },
       {
         "id": "a2-claims",
@@ -1097,7 +2242,27 @@
           "Assignment 2.pdf · page 2 (official problem 3)",
           "New Answer of assignment 2.pdf · pages 2-3 (official model and graphical solution)"
         ],
-        "warning": "The official key’s page-3 chart swaps the coordinates of the workstation/error corner: it should be (34.444444,5.555556), not (5.55,34.45). Its optimum cost label $1,735.97 should round to $1,735.98. These corrections follow direct substitution into the printed model. The same chart’s nonoptimal-corner cost shown as $2,437.9 is $2,437.777778, or $2,437.78 to cents."
+        "warning": "The official key’s page-3 chart swaps the coordinates of the workstation/error corner: it should be (34.444444,5.555556), not (5.55,34.45). Its optimum cost label $1,735.97 should round to $1,735.98. These corrections follow direct substitution into the printed model. The same chart’s nonoptimal-corner cost shown as $2,437.9 is $2,437.777778, or $2,437.78 to cents.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Permanent and temporary claim-processing operators",
+              "operators; continuous staffing-equivalents in this LP"
+            ],
+            [
+              "\\(Z\\)",
+              "Total staffing cost",
+              "dollars per modeled day"
+            ]
+          ]
+        }
       },
       {
         "id": "a3-mills",
@@ -1120,7 +2285,37 @@
         "sources": [
           "Assignment3.pdf · pages 1-2 (official problem 1 and shared instructions)",
           "Assignment3_Answer.pdf · pages 1-2 (official answer)"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Operating time at aluminum mills 1 and 2",
+              "days"
+            ],
+            [
+              "\\(c_1,c_2\\)",
+              "Daily mill operating cost",
+              "dollars per day"
+            ],
+            [
+              "\\(e_1,e_2,e_3\\)",
+              "High-, medium- and low-grade production above the requirements",
+              "tons"
+            ],
+            [
+              "\\(Z\\)",
+              "Total operating cost",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "a3-bradley",
@@ -1148,7 +2343,37 @@
           "Assignment3.pdf · page 2 (official problem 2)",
           "Assignment3_Answer.pdf · pages 3-5 (official answer)"
         ],
-        "warning": "The official key’s “corn >= $520” condition means all-corn is an optimal plan, not necessarily the only optimal plan. Uniqueness requires a strict increase above $520."
+        "warning": "The official key’s “corn >= $520” condition means all-corn is an optimal plan, not necessarily the only optimal plan. Uniqueness requires a strict increase above $520.",
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Land planted with corn and tobacco",
+              "acres"
+            ],
+            [
+              "\\(c_1,c_2\\)",
+              "Profit per acre of corn and tobacco",
+              "dollars per acre"
+            ],
+            [
+              "\\(s_L,s_B,s_T\\)",
+              "Unused land, scaled budget and tobacco quota",
+              "acres; $105 budget units; acres"
+            ],
+            [
+              "\\(Z\\)",
+              "Total crop profit",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "a3-apex",
@@ -1171,7 +2396,37 @@
         "sources": [
           "Assignment3.pdf · pages 2-3 (official problem 3)",
           "Assignment3_Answer.pdf · pages 5-7 (official answer)"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2\\)",
+              "Production quantities of components A and B",
+              "components"
+            ],
+            [
+              "\\(c_1,c_2\\)",
+              "Unit contribution from components A and B",
+              "dollars per component"
+            ],
+            [
+              "\\(s_1,s_2\\)",
+              "Unused machining and finishing capacity",
+              "units of the respective resource"
+            ],
+            [
+              "\\(Z\\)",
+              "Total production profit",
+              "dollars per day"
+            ]
+          ]
+        }
       },
       {
         "id": "a4-transport",
@@ -1266,7 +2521,37 @@
               ]
             ]
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(i,j\\)",
+              "Plant index and customer label; A=Greensboro, B=Charlotte, C=Louisville",
+              "labels"
+            ],
+            [
+              "\\(x_{ij}\\)",
+              "Engines shipped from plant i to customer j",
+              "engines per month"
+            ],
+            [
+              "\\(c_{ij}\\)",
+              "Unit shipping cost on that route",
+              "hundreds of dollars per engine"
+            ],
+            [
+              "\\(Z\\)",
+              "Total shipping cost when table coefficients are used directly",
+              "hundreds of dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "a4-byproduct",
@@ -1284,7 +2569,32 @@
         ],
         "sources": [
           "Homework 4.pdf · page 2 (official problem b; derived solution)"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(a,b\\)",
+              "Amounts of main products A and B produced",
+              "tons"
+            ],
+            [
+              "\\(s,d\\)",
+              "By-product C sold and discarded",
+              "tons"
+            ],
+            [
+              "\\(Z\\)",
+              "Net profit after main-product profit, by-product sales and disposal cost",
+              "yuan"
+            ]
+          ]
+        }
       },
       {
         "id": "a4-farm",
@@ -1337,7 +2647,42 @@
               ]
             ]
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(i,j\\)",
+              "Plot index and crop label; C=corn, P=peas, S=soybeans",
+              "labels"
+            ],
+            [
+              "\\(x_{ij}\\)",
+              "Crop j acreage on plot i",
+              "acres"
+            ],
+            [
+              "\\(L_i\\)",
+              "Available land on plot i",
+              "acres"
+            ],
+            [
+              "\\(t\\)",
+              "Common cultivated proportion of every plot; not time in this model",
+              "fraction between 0.6 and 1"
+            ],
+            [
+              "\\(Z\\)",
+              "Total crop profit",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "a4-investment",
@@ -1355,7 +2700,27 @@
         ],
         "sources": [
           "Homework 4.pdf · page 3 (official problem d; derived solution)"
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2,x_3,x_4\\)",
+              "Money allocated to baking, supplier contracts, loyalty and marketing",
+              "dollars invested"
+            ],
+            [
+              "\\(Z\\)",
+              "Annual return, excluding initial principal",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "a4-inventory",
@@ -1415,7 +2780,42 @@
               ]
             ]
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(t\\)",
+              "Quarter index, 1 through 4",
+              "index"
+            ],
+            [
+              "\\(r_t,s_t\\)",
+              "Regular and subcontracted production during quarter t",
+              "heaters"
+            ],
+            [
+              "\\(I_t\\)",
+              "End-of-quarter inventory; I is uppercase i",
+              "heaters"
+            ],
+            [
+              "\\(d_t\\)",
+              "Demand in quarter t",
+              "heaters"
+            ],
+            [
+              "\\(I_0,I_4\\)",
+              "Initial and terminal inventory",
+              "heaters, both fixed at zero"
+            ]
+          ]
+        }
       },
       {
         "id": "a5-dea",
@@ -1509,7 +2909,52 @@
             "title": "Download complete COPT code for all four Assignment 5 problems",
             "href": "assets/examples/assignment5_copt.py"
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(i,r,j,o\\)",
+              "Input index, output index, comparison entity, and currently evaluated entity",
+              "indices, no units"
+            ],
+            [
+              "\\(x_{ij},y_{rj}\\)",
+              "Observed input i and output r for entity j",
+              "units in the source data table"
+            ],
+            [
+              "\\(v_i,u_r\\)",
+              "Nonnegative weights placed on input i and output r",
+              "scaled weights so weighted inputs/outputs are comparable"
+            ],
+            [
+              "\\(x_{io},y_{ro}\\)",
+              "Data for the entity currently being evaluated",
+              "units in the source data table"
+            ],
+            [
+              "\\(\\theta\\)",
+              "Input-oriented efficiency score: common input scaling factor",
+              "dimensionless"
+            ],
+            [
+              "\\(\\lambda_j\\)",
+              "Reference weight on comparison company j",
+              "dimensionless"
+            ],
+            [
+              "\\(E,F\\)",
+              "Company labels in the reference mix, not mathematical operators",
+              "labels"
+            ]
+          ]
+        }
       },
       {
         "id": "a5-allen",
@@ -1534,7 +2979,27 @@
             "title": "Download complete COPT code for all four Assignment 5 problems",
             "href": "assets/examples/assignment5_copt.py"
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x_1,x_2,x_3,x_4\\)",
+              "Money in municipal bonds, CDs, treasury bills and the stock fund, respectively",
+              "dollars invested"
+            ],
+            [
+              "\\(Z\\)",
+              "Annual investment return, excluding the original principal",
+              "dollars of return"
+            ]
+          ]
+        }
       },
       {
         "id": "a5-biofuel",
@@ -1593,7 +3058,42 @@
             "title": "Download complete COPT code for all four Assignment 5 problems",
             "href": "assets/examples/assignment5_copt.py"
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(i\\)",
+              "Feedstock label A, B or C",
+              "label"
+            ],
+            [
+              "\\(x_{iP},x_{iS}\\)",
+              "Feedstock i blended into Premium or Standard fuel",
+              "barrels"
+            ],
+            [
+              "\\(Q_P,Q_S\\)",
+              "Total Premium and Standard fuel production",
+              "barrels"
+            ],
+            [
+              "\\(a,b,c\\)",
+              "Total purchases of feedstocks A, B and C in the optimality bound",
+              "barrels"
+            ],
+            [
+              "\\(Z\\)",
+              "Revenue minus feedstock purchase costs",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "a5-transshipment",
@@ -1689,7 +3189,37 @@
             "title": "Download complete COPT code for all four Assignment 5 problems",
             "href": "assets/examples/assignment5_copt.py"
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(i,h,k\\)",
+              "Plant index, hub index and customer index",
+              "indices"
+            ],
+            [
+              "\\(a_{ih}\\)",
+              "Units sent from plant i to hub h",
+              "shipment units"
+            ],
+            [
+              "\\(b_{hk}\\)",
+              "Units sent from hub h to customer k",
+              "shipment units"
+            ],
+            [
+              "\\(Z\\)",
+              "Total transportation cost across both legs",
+              "dollars"
+            ]
+          ]
+        }
       },
       {
         "id": "a6-concrete",
@@ -1799,7 +3329,37 @@
               ]
             ]
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x,y\\)",
+              "Weekly basic A and decorative B production",
+              "divisible planning units"
+            ],
+            [
+              "\\(b_6\\)",
+              "Distributor quota on decorative B; 6 labels the sixth constraint",
+              "B units per week"
+            ],
+            [
+              "\\(Z,Z^*(b_6)\\)",
+              "Profit of a plan and best profit allowed by quota b₆",
+              "monetary units per week"
+            ],
+            [
+              "\\(s_i\\)",
+              "Unused capacity of processing constraint i, if introduced",
+              "units of the corresponding capacity"
+            ]
+          ]
+        }
       },
       {
         "id": "a6-agency",
@@ -1897,7 +3457,32 @@
               ]
             ]
           }
-        ]
+        ],
+        "notation": {
+          "caption": "Symbols and units in this lesson",
+          "headers": [
+            "Symbol",
+            "Meaning in this lesson",
+            "Units / role"
+          ],
+          "rows": [
+            [
+              "\\(x,y\\)",
+              "Standard A and premium B campaign planning quantities",
+              "divisible planning units"
+            ],
+            [
+              "\\(b_4\\)",
+              "Total central approval slots; 4 labels the approval constraint",
+              "approval slots per week"
+            ],
+            [
+              "\\(Z,Z^*(b_4)\\)",
+              "Contribution of a plan and best contribution allowed by b₄",
+              "monetary units per week"
+            ]
+          ]
+        }
       }
     ]
   }

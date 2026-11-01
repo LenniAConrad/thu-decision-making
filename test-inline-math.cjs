@@ -18,12 +18,19 @@ function check(root){
  assert.match(scratch.textContent,/Fixed cost \$10,000 and price \$23/);
  assert.equal(scratch.querySelectorAll('script').length,0);assert.equal(scratch.querySelectorAll('.katex').length,1);
  p.close();
- p=await page('lectures.html','#all');check(p.d);p.close();
+ p=await page('lectures.html','#all');check(p.d);
+ const lectures=require('./content/lectures.json');
+ const guided=lectures.flatMap(l=>l.topics).filter(t=>t.notation);
+ assert.equal(p.d.querySelectorAll('.symbol-guide').length,guided.length);
+ assert.equal(guided.length,56);
+ for(const t of guided){assert.ok(t.notation.rows.every(r=>r.length===3&&r.every(Boolean)));assert.ok(p.d.querySelector('#topic-'+t.id+' .symbol-guide table'));}
+ p.close();
  const data=require('./content/practice.json');p=await page('practice.html');
  for(const e of data.exercises){
   await p.route('#'+e.lectureIds[0]+'/'+e.id);
   for(let i=0;i<e.hints.length;i++)p.d.querySelector('[data-next-hint]').click();
   p.d.querySelector('[data-compare]').click();check(p.d);
+  assert.ok(p.d.querySelector('.practice-question .symbol-guide table'),'Question notation is available before solution comparison');
  }
  p.close();console.log('PASS: cost subscripts/aliases, safe inline rendering, literal prices and no raw math markup across all lectures/practice.');
 })().catch(e=>{console.error(e);process.exit(1)});

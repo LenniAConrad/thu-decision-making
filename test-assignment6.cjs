@@ -12,7 +12,7 @@ const {page,event}=require('./test-reader.cjs');
  for(const id of ['a6-concrete','a6-agency']){
   const p=await page('lectures.html','#assignments/'+id);
   assert.equal(p.d.querySelectorAll('.native-drawing svg').length,2,'Feasible region and complete marginal graph');
-  assert.equal(p.d.querySelectorAll('table').length,2,'Official data and derived regimes');
+  assert.equal(p.d.querySelectorAll('table').length,3,'Notation, official data and derived regimes');
   assert.match(p.d.querySelector('main').textContent,/Excel/);
   assert.equal(p.d.querySelectorAll('.katex-error,.math-fallback').length,0);
   assert.equal(p.errors.length,0);p.close();
