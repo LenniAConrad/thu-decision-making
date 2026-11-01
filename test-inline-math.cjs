@@ -6,10 +6,13 @@ function check(root){
 }
 (async()=>{
  let p=await page('lectures.html','#foundations/break-even');
- const paragraph=[...p.d.querySelectorAll('.lecture-topic>p')].find(el=>el.textContent.includes('Writing'));
+ const paragraph=p.d.querySelector('.lecture-topic');
  assert.ok(paragraph.querySelectorAll('.katex').length>=6,'Definitions and aliases are typeset inline');
  const tex=[...paragraph.querySelectorAll('annotation')].map(el=>el.textContent);
- assert.ok(tex.includes('c_f'));assert.ok(tex.includes('c_v'));assert.ok(tex.includes('F = c_f'));assert.ok(tex.includes('c = c_v'));
+ assert.ok(tex.includes('c_f'));assert.ok(tex.includes('c_v'));assert.ok(tex.some(t=>t.replace(/\s/g,'')==='F=c_f'));assert.ok(tex.some(t=>t.replace(/\s/g,'')==='c=c_v'));
+ assert.match(paragraph.parentElement.textContent,/stands for fixed/);
+ assert.match(paragraph.parentElement.textContent,/stands for variable/);
+ assert.match(paragraph.parentElement.textContent,/means volume/);
  const inline=p.w.eval('MathView.inline');
  const scratch=p.d.createElement('div');scratch.innerHTML=inline('Fixed cost $10,000 and price $23; \\(x_1^2\\) <script>alert(1)</script>');
  assert.match(scratch.textContent,/Fixed cost \$10,000 and price \$23/);
