@@ -25,3 +25,8 @@ const reviewed=lectures.filter(l=>l.id!=='assignments').flatMap(l=>l.topics.map(
 assert.deepEqual([...audit.reviewedTopicIds].sort(),reviewed);
 for(const finding of audit.findings)assert.ok(finding.source&&finding.resolution);
 console.log('PASS: visible-source regressions, corrected Willow model, explicit derived-model labels and lecture audit coverage.');
+// Teach the model directly; provenance belongs in the separate references/audit.
+for(const topic of lectures.flatMap(l=>l.topics)){
+ const prose=[topic.title,topic.body,topic.warning||'',...(topic.sections||[]).flatMap(s=>[s.title,s.body])].join('\n');
+ assert.doesNotMatch(prose,/\b(?:slides?|lectures?)\b/i,topic.id+' uses direct teaching prose');
+}

@@ -1494,7 +1494,7 @@
         "copt 26-09-29.pptx · slides 4–10",
         "chapter03-2--5beb6393ab.pdf · pages 4–7"
       ],
-      "prompt": "Recreate the lecture’s continuous pottery example from the production data. All available labor and clay are upper bounds. This revisits the demonstrated example; it is not an additional assigned homework question. Use the physical clay coefficients in the table: 4 lb per bowl and 3 lb per mug.",
+      "prompt": "Recreate the continuous pottery model from the production data. All available labor and clay are upper bounds. This revisits the demonstrated example; it is not an additional assigned homework question. Use the physical clay coefficients in the table: 4 lb per bowl and 3 lb per mug.",
       "tables": [
         {
           "caption": "Pottery production data",
@@ -1622,12 +1622,12 @@
         "copt-inspection"
       ],
       "kind": "extra",
-      "assignment": "Additional practice based on a displayed lecture typo",
+      "assignment": "Additional model-diagnosis practice",
       "sources": [
         "chapter03-2--5beb6393ab.pdf · pages 25–27 (mistyped pottery screenshot)",
         "copt 26-09-29.pptx · slides 4–9 (corrected model and inspection)"
       ],
-      "prompt": "A colleague used the correct pottery data in the table but typed the following model. The solver accepts it and reports an optimum. Explain why that alone does not validate the business formulation. This is an additional diagnostic exercise created for the study companion, based on the typo visible in the older course screenshot.\n$$\\max Z=40x_1+50x_2$$\n$$x_1+2x_2\\le40,\\qquad4x_2+3x_2\\le120,\\qquad x_1,x_2\\ge0.$$",
+      "prompt": "A colleague used the correct pottery data in the table but typed the following model. The solver accepts it and reports an optimum. Explain why that alone does not validate the business formulation. Use this additional diagnostic exercise to distinguish a solver accepting a model from the model representing the intended business problem.\n$$\\max Z=40x_1+50x_2$$\n$$x_1+2x_2\\le40,\\qquad4x_2+3x_2\\le120,\\qquad x_1,x_2\\ge0.$$",
       "tables": [
         {
           "caption": "Pottery production data",
@@ -1746,12 +1746,12 @@
         "clay-shadow"
       ],
       "kind": "lecture",
-      "assignment": "Practice based on the lecture’s sensitivity report",
+      "assignment": "Practice interpreting a sensitivity report",
       "sources": [
         "chapter03-2--5beb6393ab.pdf · pages 10–11",
         "chapter02 - part 2.pdf · pages 26–38"
       ],
-      "prompt": "Use the following entries transcribed from the lecture’s pottery Sensitivity Report. Treat each proposed parameter change separately, holding all other model data fixed. Derive conclusions from the report rather than reading an unchanged variable mix as unchanged numerical production quantities.",
+      "prompt": "Use the following pottery Sensitivity Report entries. Treat each proposed parameter change separately, holding all other model data fixed. Derive conclusions from the report rather than reading an unchanged variable mix as unchanged numerical production quantities.",
       "tables": [
         {
           "caption": "Objective coefficients from the displayed report",
@@ -1833,7 +1833,7 @@
           },
           {
             "title": "What the report does not say",
-            "body": "The original quantities (24,8) need not remain numerically fixed: with labor alone at 60 the solution is (12,24), while with clay alone at 80 it is (8,16). These two plans describe separate changed models. Combining individually admissible changes can leave the original basis’s feasible region, so one-at-a-time intervals do not automatically authorize simultaneous changes. The lecture’s “unchanged solution variable mix” is interpreted as the basis/product pattern, not fixed quantities."
+            "body": "The original quantities (24,8) need not remain numerically fixed: with labor alone at 60 the solution is (12,24), while with clay alone at 80 it is (8,16). These two plans describe separate changed models. Combining individually admissible changes can leave the original basis’s feasible region, so one-at-a-time intervals do not automatically authorize simultaneous changes. Keeping the same solution mix preserves the basis/product pattern, not the numerical quantities."
           }
         ]
       },
@@ -1940,7 +1940,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "The program below follows tutorial slide 11, using named constraints and an explicit non-optimal-status guard. It returns 24 bowls, 8 mugs, objective 1,360, variable reduced costs zero, and labor/clay duals 16 and 6. These resource duals are local dollars per labor hour and dollars per pound of clay. A printed reduced cost of -0 is numerical zero.",
+        "body": "The program uses named constraints and checks that the solve proves optimality. It returns 24 bowls, 8 mugs, objective 1,360, variable reduced costs zero, and labor/clay duals 16 and 6. These resource duals are local dollars per labor hour and dollars per pound of clay. A printed reduced cost of -0 is numerical zero.",
         "sections": [
           {
             "title": "Independent substitution",
@@ -2092,7 +2092,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This is a reader-derived worked solution based on the instructor’s problem data, not an official answer key. Numerical results have been independently checked.",
+        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
         "sections": [
           {
             "title": "Model",
@@ -2276,7 +2276,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This is a reader-derived worked solution based on the instructor’s problem data, not an official answer key. Numerical results have been independently checked.",
+        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
         "sections": [
           {
             "title": "Model",
@@ -2413,7 +2413,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This is a reader-derived worked solution based on the instructor’s problem data, not an official answer key. Numerical results have been independently checked.",
+        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
         "sections": [
           {
             "title": "Model",
@@ -2576,7 +2576,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This is a reader-derived worked solution based on the instructor’s problem data, not an official answer key. Numerical results have been independently checked.",
+        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
         "sections": [
           {
             "title": "Model",
@@ -2683,7 +2683,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This is a reader-derived worked solution based on the instructor’s problem data, not an official answer key. Numerical results have been independently checked.",
+        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
         "sections": [
           {
             "title": "Model",
@@ -2879,12 +2879,12 @@
         },
         {
           "title": "State the convention before ranking",
-          "body": "An input-oriented constant-returns CCR model is one explicit reader choice. Keep peer comparisons consistent across all companies and do not add a convexity constraint unless you intend a different model."
+          "body": "An input-oriented constant-returns CCR model is one explicit modeling choice. Keep peer comparisons consistent across all companies and do not add a convexity constraint unless you intend a different model."
         }
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This is a reader-derived worked solution based on the instructor’s problem data, not an official answer key. Numerical results have been independently checked.",
+        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
         "sections": [
           {
             "title": "Input-oriented envelopment formulation",
@@ -3013,7 +3013,7 @@
         "Assignment5.pdf · page 2 (official problem 2)",
         "chapter04-2.pdf · pages 8-9 (investment data and model-summary context)"
       ],
-      "prompt": "The assignment asks you to solve the investment example from lecture 4, page 8, using COPT. Kathleen Allen has $70,000 for a one-year investment period. Municipal bonds may receive at most 20% of total investment. CDs cannot receive more than the other three alternatives combined. Treasury bills and CDs together must receive at least 30% of the total and at least 1.2 times the amount allocated to bonds and the stock fund. Annual return rates are below. Allocate the fund to maximize annual return.",
+      "prompt": "Solve the following investment problem using COPT. Kathleen Allen has $70,000 for a one-year investment period. Municipal bonds may receive at most 20% of total investment. CDs cannot receive more than the other three alternatives combined. Treasury bills and CDs together must receive at least 30% of the total and at least 1.2 times the amount allocated to bonds and the stock fund. Annual return rates are below. Allocate the fund to maximize annual return.",
       "tables": [
         {
           "caption": "Investment returns",
@@ -3042,7 +3042,7 @@
         }
       ],
       "tasks": [
-        "Define the dollar-allocation variables and write the investment LP using the lecture’s stated data and restrictions.",
+        "Define the dollar-allocation variables and write the investment LP using the stated data and restrictions.",
         "Implement and solve the model with COPT, checking the optimal solver status.",
         "Report all four allocations and the maximum one-year return; include the complete script used to produce the result."
       ],
@@ -3062,7 +3062,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This is a reader-derived worked solution based on the instructor’s problem data, not an official answer key. Numerical results have been independently checked.",
+        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
         "sections": [
           {
             "title": "Formulation",
@@ -3242,7 +3242,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This is a reader-derived worked solution based on the instructor’s problem data, not an official answer key. Numerical results have been independently checked.",
+        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
         "sections": [
           {
             "title": "(a) Linear formulation",
@@ -3472,7 +3472,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This is a reader-derived worked solution based on the instructor’s problem data, not an official answer key. Numerical results have been independently checked.",
+        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
         "sections": [
           {
             "title": "(a) Linear formulation",
@@ -3667,7 +3667,7 @@
       ],
       "solution": {
         "label": "Derived worked solution; Excel values are expectations",
-        "body": "A concrete plant chooses divisible planning units of basic blocks A and decorative blocks B. Unit contributions are 10 and 35. Five processing capacities and the distributor quota restrict production. The current B quota is 5; study its RHS \\(b_6\\ge0\\) while all processing capacities stay fixed. The table preserves the official problem data. The analysis below is derived for this companion, not an official answer key.",
+        "body": "A concrete plant chooses divisible planning units of basic blocks A and decorative blocks B. Unit contributions are 10 and 35. Five processing capacities and the distributor quota restrict production. The current B quota is 5; study its RHS \\(b_6\\ge0\\) while all processing capacities stay fixed. The table preserves the official problem data. The worked solution below is independently derived, not an official answer key.",
         "sections": [
           {
             "title": "Formulate and solve the current problem",
@@ -3683,7 +3683,7 @@
           },
           {
             "title": "Assignment 6 submission requirements",
-            "body": "The handout requires a PDF of your answers and the Excel file(s) packaged together in one ZIP archive. It asks for the current feasible region, the complete shadow-price graph, algebraic verification and Excel Solver verification. Due 23:59 on 3 November 2026 (course time). This study companion neither produces official Solver reports nor submits work."
+            "body": "Submit a PDF of your answers and the Excel file(s) packaged together in one ZIP archive. Include the current feasible region, the complete shadow-price graph, algebraic verification and Excel Solver verification. Due 23:59 on 3 November 2026 (course time). Generate the required Solver reports in Excel before submitting your work."
           }
         ],
         "tables": [
@@ -3888,7 +3888,7 @@
       ],
       "solution": {
         "label": "Derived worked solution; Excel values are expectations",
-        "body": "An advertising agency chooses divisible standard and premium campaign planning units, earning 7 and 13 per unit. Three teams provide the hours in the table. Both campaign types consume one central approval slot. The current approval limit is 11; vary only \\(b_4\\ge0\\). The worked analysis is derived for this companion.",
+        "body": "An advertising agency chooses divisible standard and premium campaign planning units, earning 7 and 13 per unit. Three teams provide the hours in the table. Both campaign types consume one central approval slot. The current approval limit is 11; vary only \\(b_4\\ge0\\). The worked solution below is independently derived.",
         "sections": [
           {
             "title": "Model and current feasible region",
@@ -3904,7 +3904,7 @@
           },
           {
             "title": "Assignment 6 submission requirements",
-            "body": "The handout requires a PDF of your answers and the Excel file(s) packaged together in one ZIP archive. It asks for the current feasible region, the complete shadow-price graph, algebraic verification and Excel Solver verification. Due 23:59 on 3 November 2026 (course time). This study companion neither produces official Solver reports nor submits work."
+            "body": "Submit a PDF of your answers and the Excel file(s) packaged together in one ZIP archive. Include the current feasible region, the complete shadow-price graph, algebraic verification and Excel Solver verification. Due 23:59 on 3 November 2026 (course time). Generate the required Solver reports in Excel before submitting your work."
           }
         ],
         "tables": [
