@@ -16,7 +16,7 @@
       "sources": [
         "Assignment1.pdf · pages 2-4, parts (a)-(c); worked solution derived from the stated model"
       ],
-      "prompt": "One airport-shuttle departure has 40 seats. Each passenger occupies one seat and receives the same service. Regular tickets are bought less than seven days ahead. Advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic. Ignore operating costs and maximize ticket revenue. Customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand does not exceed 40; there is no rationing or overbooking decision. Treat passenger quantities as continuous. Keep exact values until the final answer, and round final money amounts to two decimals when needed. Load factor is total passengers divided by 40.\n$$D_W(p)=\\begin{cases}54-1.5p&0\\le p\\le30,\\\\24-0.5p&30<p\\le48,\\\\0&p>48.\\end{cases}$$\n$$D_A(p)=48-2p,\\qquad0\\le p\\le24.$$\nAll prices are in dollars. Current fares are pW = $36 and pA = $18. Keep the regular fare fixed at $36 in every part of this exercise.",
+      "prompt": "One airport-shuttle departure has 40 seats. Each passenger occupies one seat and receives the same service. Regular tickets are bought less than seven days ahead. Advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic. Ignore operating costs and maximize ticket revenue. Customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand does not exceed 40; there is no rationing or overbooking decision. Treat passenger quantities as continuous. Keep exact values until the final answer, and round final money amounts to two decimals when needed. Load factor is total passengers divided by 40.\n$$D_W(p)=\\begin{cases}54-1.5p&0\\le p\\le30,\\\\24-0.5p&30<p\\le48,\\\\0&p>48.\\end{cases}$$\n$$D_A(p)=48-2p,\\qquad0\\le p\\le24.$$\nAll prices are in dollars. Current fares are \\(p_W = \\$36\\) and \\(p_A = \\$18\\). Keep the regular fare fixed at $36 in every part of this exercise.",
       "tables": [],
       "tasks": [
         "(a) At the current fares, find regular demand, advance demand, total seats sold, load factor and total revenue.",
@@ -34,7 +34,7 @@
         },
         {
           "title": "Check the stationary point and its domain",
-          "body": "For (c), substitute the fixed regular demand into capacity to obtain a lower bound on pA. Differentiate the advance-revenue quadratic and check whether its stationary point satisfies that bound and 0 ≤ pA ≤ 24."
+          "body": "For (c), substitute the fixed regular demand into capacity to obtain a lower bound on \\(p_A\\). Differentiate the advance-revenue quadratic and check whether its stationary point satisfies that bound and \\(0 \\le  p_A \\le  24\\)."
         }
       ],
       "solution": {
@@ -43,15 +43,15 @@
         "sections": [
           {
             "title": "(a) Current fares",
-            "body": "The regular fare is above $30, so qW = 24 − 0.5(36) = 6. Advance demand is qA = 48 − 2(18) = 12. Total demand is 18 and load factor is 18/40 = 45%.\n$$R=36(6)+18(12)=432.$$"
+            "body": "The regular fare is above $30, so \\(q_W = 24 - 0.5\\)(36) = 6. Advance demand is \\(q_A = 48 - 2\\)(18) = 12. Total demand is 18 and load factor is \\(18/40 = 45\\%\\).\n$$R=36(6)+18(12)=432.$$"
           },
           {
             "title": "(b) Fill capacity",
-            "body": "Regular demand stays at 6. Thus advance demand must be 40 − 6 = 34. Solving 48 − 2pA = 34 gives pA = $7.\n$$R=36(6)+7(34)=454.$$\nThe shuttle is full and revenue exceeds (a) by $22."
+            "body": "Regular demand stays at 6. Thus advance demand must be \\(40 - 6 = 34\\). Solving \\(48 - 2pA = 34\\) gives \\(p_A = \\$7\\).\n$$R=36(6)+7(34)=454.$$\nThe shuttle is full and revenue exceeds (a) by $22."
           },
           {
             "title": "(c) Optimize advance revenue",
-            "body": "Capacity requires 6 + 48 − 2pA ≤ 40, so 7 ≤ pA ≤ 24. The objective is\n$$R(p_A)=216+48p_A-2p_A^2.$$\nIts derivative is 48 − 4pA, and its second derivative is −4. The feasible maximizer is pA = $12. Then qA = 24, total demand is 30, load factor is 75%, and revenue is 216 + 12(24) = $504.\nThis is $50 more than filling the shuttle, despite selling ten fewer tickets. The higher advance fare more than compensates for lower advance demand. A load-factor objective can prefer a policy with lower ticket revenue."
+            "body": "Capacity requires \\(6 + 48 - 2pA \\le  40\\), so \\(7 \\le  p_A \\le  24\\). The objective is\n$$R(p_A)=216+48p_A-2p_A^2.$$\nIts derivative is \\(48 - 4pA\\), and its second derivative is −4. The feasible maximizer is \\(p_A = \\$12\\). Then \\(q_A = 24\\), total demand is 30, load factor is 75%, and revenue is \\(216 + 12\\)(24) = $504.\nThis is $50 more than filling the shuttle, despite selling ten fewer tickets. The higher advance fare more than compensates for lower advance demand. A load-factor objective can prefer a policy with lower ticket revenue."
           }
         ],
         "tables": [
@@ -70,7 +70,7 @@
                 "a",
                 "36",
                 "18",
-                "6 / 12",
+                "\\(6 / 12\\)",
                 "45%",
                 "432.00"
               ],
@@ -78,7 +78,7 @@
                 "b",
                 "36",
                 "7",
-                "6 / 34",
+                "\\(6 / 34\\)",
                 "100%",
                 "454.00"
               ],
@@ -86,7 +86,7 @@
                 "c",
                 "36",
                 "12",
-                "6 / 24",
+                "\\(6 / 24\\)",
                 "75%",
                 "504.00"
               ]
@@ -95,8 +95,8 @@
         ]
       },
       "compare": [
-        "Did you use the upper-price regular-demand branch at pW = $36?",
-        "Did you keep regular demand fixed while changing pA?",
+        "Did you use the upper-price regular-demand branch at \\(p_W = \\$36\\)?",
+        "Did you keep regular demand fixed while changing \\(p_A\\)?",
         "For (c), did you check both the advance price domain and the capacity inequality rather than forcing a full shuttle?",
         "Are your revenues sums of fare × demand, and are your load factors divided by 40?"
       ]
@@ -116,7 +116,7 @@
       "sources": [
         "Assignment1.pdf · pages 2-4, part (d); worked solution derived from the stated model"
       ],
-      "prompt": "One airport-shuttle departure has 40 seats. Each passenger occupies one seat and receives the same service. Regular tickets are bought less than seven days ahead. Advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic. Ignore operating costs and maximize ticket revenue. Customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand does not exceed 40; there is no rationing or overbooking decision. Treat passenger quantities as continuous. Keep exact values until the final answer, and round final money amounts to two decimals when needed. Load factor is total passengers divided by 40.\n$$D_W(p)=\\begin{cases}54-1.5p&0\\le p\\le30,\\\\24-0.5p&30<p\\le48,\\\\0&p>48.\\end{cases}$$\n$$D_A(p)=48-2p,\\qquad0\\le p\\le24.$$\nChoose both fares, with 0 ≤ pW ≤ 48 and 0 ≤ pA ≤ 24. Charge one common regular fare to everyone in the regular stream. Regular fares above $48 add no demand outcome beyond pW = $48.\n$$\\max_{p_W,p_A}\\;p_WD_W(p_W)+p_AD_A(p_A),\\qquad D_W(p_W)+D_A(p_A)\\le40.$$",
+      "prompt": "One airport-shuttle departure has 40 seats. Each passenger occupies one seat and receives the same service. Regular tickets are bought less than seven days ahead. Advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic. Ignore operating costs and maximize ticket revenue. Customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand does not exceed 40; there is no rationing or overbooking decision. Treat passenger quantities as continuous. Keep exact values until the final answer, and round final money amounts to two decimals when needed. Load factor is total passengers divided by 40.\n$$D_W(p)=\\begin{cases}54-1.5p&0\\le p\\le30,\\\\24-0.5p&30<p\\le48,\\\\0&p>48.\\end{cases}$$\n$$D_A(p)=48-2p,\\qquad0\\le p\\le24.$$\nChoose both fares, with \\(0 \\le  p_W \\le  48\\) and \\(0 \\le  p_A \\le  24\\). Charge one common regular fare to everyone in the regular stream. Regular fares above $48 add no demand outcome beyond \\(p_W = \\$48\\).\n$$\\max_{p_W,p_A}\\;p_WD_W(p_W)+p_AD_A(p_A),\\qquad D_W(p_W)+D_A(p_A)\\le40.$$",
       "tables": [],
       "tasks": [
         "Find the optimal two fares, demand for each product, total revenue and load factor.",
@@ -126,11 +126,11 @@
       "hints": [
         {
           "title": "Separate the branches",
-          "body": "Solve once for 0 ≤ pW ≤ 30 and once for 30 < pW ≤ 48. The two branch expressions agree at the boundary, but their inverse-demand slopes differ."
+          "body": "Solve once for \\(0 \\le  p_W \\le  30\\) and once for \\(30 < p_W \\le  48\\). The two branch expressions agree at the boundary, but their inverse-demand slopes differ."
         },
         {
           "title": "Use quantities on the low-price branch",
-          "body": "There, pW = 36 − (2/3)qW and pA = 24 − qA/2. Translate the price domains into quantity bounds before imposing qW + qA ≤ 40."
+          "body": "There, \\(p_W = 36\\) − (\\(2/3\\))\\(q_W\\) and \\(p_A = 24 - q_A/2\\). Translate the price domains into quantity bounds before imposing \\(q_W + q_A \\le  40\\)."
         },
         {
           "title": "Compare marginal revenue and endpoints",
@@ -143,11 +143,11 @@
         "sections": [
           {
             "title": "Lower-price branch",
-            "body": "For 0 ≤ pW ≤ 30, write\n$$p_W=36-\\tfrac23q_W,\\qquad p_A=24-\\tfrac12q_A.$$\nThe quantity bounds are 9 ≤ qW ≤ 54 and 0 ≤ qA ≤ 48. Revenue is\n$$R=36q_W-\\tfrac23q_W^2+24q_A-\\tfrac12q_A^2.$$\nThe unconstrained maxima qW = 27 and qA = 24 total 51, exceeding capacity. Strict concavity and positive marginal revenues at the constrained optimum imply binding capacity. Set qA = 40 − qW and equate marginal revenues:\n$$36-\\tfrac43q_W=24-q_A,\\qquad q_W+q_A=40.$$\nThus qW = 156/7 and qA = 124/7. The fares are pW = 148/7 and pA = 106/7, or approximately $21.14 and $15.14. The regular fare is below $30, as required. Total revenue is 5176/7 ≈ $739.43, with 100% load factor."
+            "body": "For \\(0 \\le  p_W \\le  30\\), write\n$$p_W=36-\\tfrac23q_W,\\qquad p_A=24-\\tfrac12q_A.$$\nThe quantity bounds are \\(9 \\le  q_W \\le  54\\) and \\(0 \\le  q_A \\le  48\\). Revenue is\n$$R=36q_W-\\tfrac23q_W^2+24q_A-\\tfrac12q_A^2.$$\nThe unconstrained maxima \\(q_W = 27\\) and \\(q_A = 24\\) total 51, exceeding capacity. Strict concavity and positive marginal revenues at the constrained optimum imply binding capacity. Set \\(q_A = 40 - q_W\\) and equate marginal revenues:\n$$36-\\tfrac43q_W=24-q_A,\\qquad q_W+q_A=40.$$\nThus \\(q_W = 156/7\\) and \\(q_A = 124/7\\). The fares are \\(p_W = 148/7\\) and \\(p_A = 106/7\\), or approximately $21.14 and $15.14. The regular fare is below $30, as required. Total revenue is \\(5176/7 \\approx  \\$739.43\\), with 100% load factor."
           },
           {
             "title": "Higher-price branch and global comparison",
-            "body": "For 30 < pW ≤ 48, regular demand satisfies 0 ≤ qW < 9 and its inverse demand is pW = 48 − 2qW. Its revenue 48qW − 2qW² is increasing throughout this quantity interval. Advance revenue is maximized at qA = 24; even as qW approaches 9, total demand approaches only 33, so capacity does not restrict this branch.\nIncluding the boundary pW = $30 gives the limiting best policy pA = $12, with revenue 30(9) + 12(24) = $558. On the strictly open branch pW > 30, $558 is a supremum rather than an attained maximum. Both are below $739.43, proving the lower-branch result is globally best."
+            "body": "For \\(30 < p_W \\le  48\\), regular demand satisfies \\(0 \\le  q_W < 9\\) and its inverse demand is \\(p_W = 48 - 2qW\\). Its revenue \\(48qW - 2qW^2\\) is increasing throughout this quantity interval. Advance revenue is maximized at \\(q_A = 24\\); even as \\(q_W\\) approaches 9, total demand approaches only 33, so capacity does not restrict this branch.\nIncluding the boundary \\(p_W = \\$30\\) gives the limiting best policy \\(p_A = \\$12\\), with revenue 30(9) + 12(24) = $558. On the strictly open branch \\(p_W > 30\\), $558 is a supremum rather than an attained maximum. Both are below $739.43, proving the lower-branch result is globally best."
           }
         ],
         "tables": [
@@ -161,13 +161,13 @@
             "rows": [
               [
                 "Regular",
-                "148/7 / 21.142857",
-                "156/7 / 22.285714"
+                "\\(148/7 / 21.142857\\)",
+                "\\(156/7 / 22.285714\\)"
               ],
               [
                 "Advance",
-                "106/7 / 15.142857",
-                "124/7 / 17.714286"
+                "\\(106/7 / 15.142857\\)",
+                "\\(124/7 / 17.714286\\)"
               ]
             ]
           }
@@ -177,7 +177,7 @@
         "Did you solve and compare both regular-demand branches?",
         "Does your candidate fare lie in the branch used to calculate it?",
         "Do the exact quantities sum to 40 before rounding?",
-        "Did you distinguish the open higher-price branch from its pW = $30 boundary?",
+        "Did you distinguish the open higher-price branch from its \\(p_W = \\$30\\) boundary?",
         "Did you justify optimality using concavity, marginal revenue and the branch comparison?"
       ]
     },
@@ -196,7 +196,7 @@
       "sources": [
         "Assignment1.pdf · pages 2, 4-5, part (e); worked solution derived from the stated model"
       ],
-      "prompt": "One airport-shuttle departure has 40 seats. Each passenger occupies one seat and receives the same service. Regular tickets are bought less than seven days ahead. Advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic. Ignore operating costs and maximize ticket revenue. Customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand does not exceed 40; there is no rationing or overbooking decision. Treat passenger quantities as continuous. Keep exact values until the final answer, and round final money amounts to two decimals when needed. Load factor is total passengers divided by 40.\nThe original regular stream consists of nonstudents R and students S; students are already included in regular demand, not an additional population. Students show a valid student ID and buy the student product at the fares considered. Nonstudents cannot use the student fare. No customers switch between the regular/student stream and advance purchases. Nonstudent demand is zero above $48; student demand is zero above $30.\n$$D_R(p_R)=24-\\tfrac12p_R,\\quad0\\le p_R\\le48;\\qquad D_S(p_S)=30-p_S,\\quad0\\le p_S\\le30.$$\n$$D_A(p_A)=48-2p_A,\\qquad0\\le p_A\\le24.$$\nThe company fixes pR = $30 and pS = $18, then chooses pA to maximize revenue. Fare decisions concern the same departure; their descriptive order is not a chronological booking order.\nFor the unsegmented comparison, charge one common fare pW ∈ [0,48] to both R and S, using qW = DR(pW) + DS(pW), and optimize pW jointly with pA. This comparison is fully specified by the same group demands above.",
+      "prompt": "One airport-shuttle departure has 40 seats. Each passenger occupies one seat and receives the same service. Regular tickets are bought less than seven days ahead. Advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic. Ignore operating costs and maximize ticket revenue. Customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand does not exceed 40; there is no rationing or overbooking decision. Treat passenger quantities as continuous. Keep exact values until the final answer, and round final money amounts to two decimals when needed. Load factor is total passengers divided by 40.\nThe original regular stream consists of nonstudents R and students S; students are already included in regular demand, not an additional population. Students show a valid student ID and buy the student product at the fares considered. Nonstudents cannot use the student fare. No customers switch between the regular/student stream and advance purchases. Nonstudent demand is zero above $48; student demand is zero above $30.\n$$D_R(p_R)=24-\\tfrac12p_R,\\quad0\\le p_R\\le48;\\qquad D_S(p_S)=30-p_S,\\quad0\\le p_S\\le30.$$\n$$D_A(p_A)=48-2p_A,\\qquad0\\le p_A\\le24.$$\nThe company fixes pR = $30 and pS = $18, then chooses \\(p_A\\) to maximize revenue. Fare decisions concern the same departure; their descriptive order is not a chronological booking order.\nFor the unsegmented comparison, charge one common fare \\(p_W\\) ∈ [0,48] to both R and S, using \\(q_W\\) = DR(\\(p_W\\)) + DS(\\(p_W\\)), and optimize \\(p_W\\) jointly with \\(p_A\\). This comparison is fully specified by the same group demands above.",
       "tables": [],
       "tasks": [
         "Find nonstudent regular demand and student demand at the fixed fares.",
@@ -225,11 +225,11 @@
         "sections": [
           {
             "title": "Segment demand and advance optimization",
-            "body": "At pR = $30, qR = 24 − 30/2 = 9. At pS = $18, qS = 30 − 18 = 12. Together they demand 21 seats, leaving at most 19 for advance passengers.\nAdvance revenue in quantity form is 24qA − qA²/2. Its unconstrained maximum is at qA = 24, exceeding the remaining capacity. Revenue is increasing up to that quantity, so choose qA = 19. The inverse demand gives pA = 24 − 19/2 = $14.50.\n$$R=30(9)+18(12)+14.5(19)=761.50.$$\nAll 40 seats are used. The residual 19-seat calculation follows from simultaneous demands at the fixed fares, not a sequential reservation assumption."
+            "body": "At pR = $30, qR = \\(24 - 30/2 = 9\\). At pS = $18, qS = \\(30 - 18 = 12\\). Together they demand 21 seats, leaving at most 19 for advance passengers.\nAdvance revenue in quantity form is \\(24qA - qA^2/2\\). Its unconstrained maximum is at \\(q_A = 24\\), exceeding the remaining capacity. Revenue is increasing up to that quantity, so choose \\(q_A = 19\\). The inverse demand gives \\(p_A = 24 - 19/2 = \\$14.50\\).\n$$R=30(9)+18(12)+14.5(19)=761.50.$$\nAll 40 seats are used. The residual 19-seat calculation follows from simultaneous demands at the fixed fares, not a sequential reservation assumption."
           },
           {
             "title": "Aggregate demand and the unsegmented comparison",
-            "body": "If both regular groups pay p ≤ $30, DR(p) + DS(p) = (24 − p/2) + (30 − p) = 54 − 1.5p. For 30 < p ≤ 48, students demand zero and only 24 − p/2 remains.\nFor the common-fare benchmark, the lower-branch inverse demands are pW = 36 − (2/3)qW and pA = 24 − qA/2. Equating marginal revenues with qW + qA = 40 gives qW = 156/7 and qA = 124/7, with fares 148/7 and 106/7. The higher branch cannot exceed the boundary revenue $558. Thus the unsegmented optimum is 5176/7 ≈ $739.43.\nFixed segmented fares improve revenue by 761.50 − 5176/7 = 309/14 ≈ $22.07. The comparison holds the customer populations and physical service fixed."
+            "body": "If both regular groups pay \\(p \\le  \\$30\\), DR(p) + DS(p) = \\((24 - p/2) + (30 - p) = 54 - 1.5p\\). For \\(30 < p \\le  48\\), students demand zero and only \\(24 - p/2\\) remains.\nFor the common-fare benchmark, the lower-branch inverse demands are \\(p_W = 36\\) − (\\(2/3\\))\\(q_W\\) and \\(p_A = 24 - q_A/2\\). Equating marginal revenues with \\(q_W + q_A = 40\\) gives \\(q_W = 156/7\\) and \\(q_A = 124/7\\), with fares \\(148/7\\) and \\(106/7\\). The higher branch cannot exceed the boundary revenue $558. Thus the unsegmented optimum is \\(5176/7 \\approx  \\$739.43\\).\nFixed segmented fares improve revenue by \\(761.50 - 5176/7 = 309/14 \\approx  \\$22.07\\). The comparison holds the customer populations and physical service fixed."
           }
         ],
         "tables": [
@@ -264,7 +264,7 @@
         "Did you avoid double-counting students inside both DW and DS?",
         "Did your advance optimum respect residual capacity and the advance price domain?",
         "Do all three demand quantities sum to no more than 40?",
-        "Did you compare with an optimized common regular fare, rather than the original pW = $36 benchmark?",
+        "Did you compare with an optimized common regular fare, rather than the original \\(p_W = \\$36\\) benchmark?",
         "Did you explain the fare-ordering point without inventing a chronological sales process?"
       ]
     },
@@ -283,7 +283,7 @@
       "sources": [
         "Assignment1.pdf · pages 2, 4-5, part (f); worked solution derived from the stated model"
       ],
-      "prompt": "One airport-shuttle departure has 40 seats. Each passenger occupies one seat and receives the same service. Regular tickets are bought less than seven days ahead. Advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic. Ignore operating costs and maximize ticket revenue. Customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand does not exceed 40; there is no rationing or overbooking decision. Treat passenger quantities as continuous. Keep exact values until the final answer, and round final money amounts to two decimals when needed. Load factor is total passengers divided by 40.\nThe original regular stream consists of nonstudents R and students S; students are already included in regular demand, not an additional population. Students show a valid student ID and buy the student product at the fares considered. Nonstudents cannot use the student fare. No customers switch between the regular/student stream and advance purchases. Nonstudent demand is zero above $48; student demand is zero above $30.\n$$D_R(p_R)=24-\\tfrac12p_R,\\quad0\\le p_R\\le48;\\qquad D_S(p_S)=30-p_S,\\quad0\\le p_S\\le30.$$\n$$D_A(p_A)=48-2p_A,\\qquad0\\le p_A\\le24.$$\nChoose all three fares. Equivalently, use the supplied inverse demands and quantity bounds:\n$$p_R=48-2q_R,\\qquad p_S=30-q_S,\\qquad p_A=24-\\tfrac12q_A.$$\n$$0\\le q_R\\le24,\\qquad0\\le q_S\\le30,\\qquad0\\le q_A\\le48,\\qquad q_R+q_S+q_A\\le40.$$\nFor comparison, the unsegmented policy sets a single common regular fare pW ∈ [0,48] for R and S and optimizes it jointly with pA. The fixed segmented policy sets pR = $30 and pS = $18 while optimizing only pA. Both comparison policies use the same demands and 40-seat capacity; no previous exercise is needed to specify them.",
+      "prompt": "One airport-shuttle departure has 40 seats. Each passenger occupies one seat and receives the same service. Regular tickets are bought less than seven days ahead. Advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic. Ignore operating costs and maximize ticket revenue. Customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand does not exceed 40; there is no rationing or overbooking decision. Treat passenger quantities as continuous. Keep exact values until the final answer, and round final money amounts to two decimals when needed. Load factor is total passengers divided by 40.\nThe original regular stream consists of nonstudents R and students S; students are already included in regular demand, not an additional population. Students show a valid student ID and buy the student product at the fares considered. Nonstudents cannot use the student fare. No customers switch between the regular/student stream and advance purchases. Nonstudent demand is zero above $48; student demand is zero above $30.\n$$D_R(p_R)=24-\\tfrac12p_R,\\quad0\\le p_R\\le48;\\qquad D_S(p_S)=30-p_S,\\quad0\\le p_S\\le30.$$\n$$D_A(p_A)=48-2p_A,\\qquad0\\le p_A\\le24.$$\nChoose all three fares. Equivalently, use the supplied inverse demands and quantity bounds:\n$$p_R=48-2q_R,\\qquad p_S=30-q_S,\\qquad p_A=24-\\tfrac12q_A.$$\n$$0\\le q_R\\le24,\\qquad0\\le q_S\\le30,\\qquad0\\le q_A\\le48,\\qquad q_R+q_S+q_A\\le40.$$\nFor comparison, the unsegmented policy sets a single common regular fare \\(p_W\\) ∈ [0,48] for R and S and optimizes it jointly with \\(p_A\\). The fixed segmented policy sets pR = $30 and pS = $18 while optimizing only \\(p_A\\). Both comparison policies use the same demands and 40-seat capacity; no previous exercise is needed to specify them.",
       "tables": [],
       "tasks": [
         "Formulate total ticket revenue in quantities, then find all three optimal quantities and fares.",
@@ -302,7 +302,7 @@
         },
         {
           "title": "Use a common multiplier",
-          "body": "Solve 48 − 4qR = 30 − 2qS = 24 − qA = λ together with the binding capacity equation, then check every quantity bound. Strict concavity gives a global optimality argument."
+          "body": "Solve 48 − 4qR = 30 − 2qS = \\(24 - q_A\\) = λ together with the binding capacity equation, then check every quantity bound. Strict concavity gives a global optimality argument."
         }
       ],
       "solution": {
@@ -311,15 +311,15 @@
         "sections": [
           {
             "title": "Quantity formulation and capacity",
-            "body": "$$\\max R=48q_R-2q_R^2+30q_S-q_S^2+24q_A-\\tfrac12q_A^2.$$\nUse the quantity bounds and shared capacity from the question. Without capacity, the separate maxima are qR = 12, qS = 15 and qA = 24, totaling 51. A constrained optimum must allocate the scarce seats across the groups."
+            "body": "$$\\max R=48q_R-2q_R^2+30q_S-q_S^2+24q_A-\\tfrac12q_A^2.$$\nUse the quantity bounds and shared capacity from the question. Without capacity, the separate maxima are qR = 12, qS = 15 and \\(q_A = 24\\), totaling 51. A constrained optimum must allocate the scarce seats across the groups."
           },
           {
             "title": "Equal marginal revenues",
-            "body": "For interior quantities, the first-order conditions are\n$$48-4q_R=30-2q_S=24-q_A=\\lambda.$$\nHence qR = 12 − λ/4, qS = 15 − λ/2 and qA = 24 − λ. Their sum is 51 − 7λ/4. Setting it to 40 gives λ = 44/7 > 0 and\n$$(q_R,q_S,q_A)=\\left(\\tfrac{73}{7},\\tfrac{83}{7},\\tfrac{124}{7}\\right).$$\nEvery quantity is strictly within its bounds. Substitution into inverse demand gives\n$$(p_R,p_S,p_A)=\\left(\\tfrac{190}{7},\\tfrac{127}{7},\\tfrac{106}{7}\\right).$$\nTotal demand is exactly 40, load factor is 100%, and revenue is 5365/7 ≈ $766.43. The objective Hessian has diagonal entries −4, −2 and −1, so the concave first-order solution is the unique global quantity optimum on the convex feasible set. Equal marginal revenues mean that reallocating a small seat quantity between any two groups cannot increase total revenue."
+            "body": "For interior quantities, the first-order conditions are\n$$48-4q_R=30-2q_S=24-q_A=\\lambda.$$\nHence qR = 12 − λ/4, qS = 15 − λ/2 and \\(q_A = 24\\) − λ. Their sum is 51 − 7λ/4. Setting it to 40 gives λ = \\(44/7 > 0\\) and\n$$(q_R,q_S,q_A)=\\left(\\tfrac{73}{7},\\tfrac{83}{7},\\tfrac{124}{7}\\right).$$\nEvery quantity is strictly within its bounds. Substitution into inverse demand gives\n$$(p_R,p_S,p_A)=\\left(\\tfrac{190}{7},\\tfrac{127}{7},\\tfrac{106}{7}\\right).$$\nTotal demand is exactly 40, load factor is 100%, and revenue is \\(5365/7 \\approx  \\$766.43\\). The objective Hessian has diagonal entries −4, −2 and −1, so the concave first-order solution is the unique global quantity optimum on the convex feasible set. Equal marginal revenues mean that reallocating a small seat quantity between any two groups cannot increase total revenue."
           },
           {
             "title": "Comparison policies",
-            "body": "For the unsegmented policy, adding the R and S demands gives DW = 54 − 1.5pW up to $30 and DW = 24 − 0.5pW above $30. On the lower branch, equating marginal revenues under capacity gives qW = 156/7 and qA = 124/7; the corresponding revenue is 5176/7 ≈ $739.43. The other branch has boundary revenue at most $558.\nFor the fixed segmented policy, pR = $30 and pS = $18 produce demands 9 and 12, leaving 19 seats for advance passengers. The best feasible advance fare is $14.50, giving revenue $761.50.\nFull three-fare optimization therefore improves revenue by exactly $27 over unsegmented optimization and by 69/14 ≈ $4.93 over the fixed segmented policy."
+            "body": "For the unsegmented policy, adding the R and S demands gives DW = \\(54 - 1.5pW\\) up to $30 and DW = \\(24 - 0.5pW\\) above $30. On the lower branch, equating marginal revenues under capacity gives \\(q_W = 156/7\\) and \\(q_A = 124/7\\); the corresponding revenue is \\(5176/7 \\approx  \\$739.43\\). The other branch has boundary revenue at most $558.\nFor the fixed segmented policy, pR = $30 and pS = $18 produce demands 9 and 12, leaving 19 seats for advance passengers. The best feasible advance fare is $14.50, giving revenue $761.50.\nFull three-fare optimization therefore improves revenue by exactly $27 over unsegmented optimization and by \\(69/14 \\approx  \\$4.93\\) over the fixed segmented policy."
           }
         ],
         "tables": [
@@ -333,18 +333,18 @@
             "rows": [
               [
                 "Nonstudent regular",
-                "73/7 / 10.428571",
-                "190/7 / 27.142857"
+                "\\(73/7 / 10.428571\\)",
+                "\\(190/7 / 27.142857\\)"
               ],
               [
                 "Student",
-                "83/7 / 11.857143",
-                "127/7 / 18.142857"
+                "\\(83/7 / 11.857143\\)",
+                "\\(127/7 / 18.142857\\)"
               ],
               [
                 "Advance",
-                "124/7 / 17.714286",
-                "106/7 / 15.142857"
+                "\\(124/7 / 17.714286\\)",
+                "\\(106/7 / 15.142857\\)"
               ]
             ]
           }
@@ -384,7 +384,7 @@
       "hints": [
         {
           "title": "Plot intercepts and bounds",
-          "body": "Draw the two resource lines, the vertical x1 upper bound and horizontal x2 upper bound. Keep only the part of the first quadrant satisfying every inequality."
+          "body": "Draw the two resource lines, the vertical \\(x_{1}\\) upper bound and horizontal \\(x_{2}\\) upper bound. Keep only the part of the first quadrant satisfying every inequality."
         },
         {
           "title": "Remove infeasible intersections",
@@ -392,7 +392,7 @@
         },
         {
           "title": "Compare every feasible vertex",
-          "body": "Evaluate 5x1 + 8x2 at each vertex. The best point must be compared with both axis endpoints and the origin, not merely found as an intersection."
+          "body": "Evaluate \\(5x1 + 8x2\\) at each vertex. The best point must be compared with both axis endpoints and the origin, not merely found as an intersection."
         }
       ],
       "solution": {
@@ -401,11 +401,11 @@
         "sections": [
           {
             "title": "Feasible polygon and objective values",
-            "body": "For x1 ≥ 0, the first resource gives x2 ≤ 10 − 0.6x1, which is at least as restrictive as x2 ≤ 10 − 0.5x1 from the second resource. Intersect this lower boundary with 0 ≤ x1 ≤ 8 and x2 ≥ 0.\nThe vertices are (0,0), (8,0), (8,26/5) and (0,10). Their objective values are 0, 40, 408/5 and 80."
+            "body": "For \\(x_{1} \\ge  0\\), the first resource gives \\(x_{2} \\le  10 - 0.6x1\\), which is at least as restrictive as \\(x_{2} \\le  10 - 0.5x1\\) from the second resource. Intersect this lower boundary with \\(0 \\le  x_{1} \\le  8\\) and \\(x_{2} \\ge  0\\).\nThe vertices are (0,0), (8,0), (8,\\(26/5\\)) and (0,10). Their objective values are 0, 40, \\(408/5\\) and 80."
           },
           {
             "title": "Optimum and substitution check",
-            "body": "The unique maximum is (x1,x2) = (8,5.2), with Z = 81.6. The first resource binds because 3(8) + 5(5.2) = 50, and x1 = 8 binds. The second resource uses 2(8) + 4(5.2) = 36.8, leaving slack 3.2. The x2 upper bound leaves slack 4.8. Both variables are positive."
+            "body": "The unique maximum is (\\(x_{1}\\),\\(x_{2}\\)) = (8,5.2), with \\(Z = 81.6\\). The first resource binds because 3(8) + 5(5.2) = 50, and \\(x_{1} = 8\\) binds. The second resource uses 2(8) + 4(5.2) = 36.8, leaving slack 3.2. The \\(x_{2}\\) upper bound leaves slack 4.8. Both variables are positive."
           }
         ],
         "tables": [
@@ -442,7 +442,7 @@
       },
       "compare": [
         "Did your shaded region satisfy every bound, including nonnegativity?",
-        "Did you reject intersections outside x1 ≤ 8 or above a resource boundary?",
+        "Did you reject intersections outside \\(x_{1} \\le  8\\) or above a resource boundary?",
         "Did you include all four feasible vertices in the objective comparison?",
         "Does substituting your optimum show exactly which constraints bind?"
       ]
@@ -473,7 +473,7 @@
       "hints": [
         {
           "title": "Rewrite as lower bounds on x2",
-          "body": "Rearrange each inequality into the form x2 ≥ a + b x1 and include x2 ≥ 0. The feasible region lies above their upper envelope."
+          "body": "Rearrange each inequality into the form \\(x_{2} \\ge  a + b\\) \\(x_{1}\\) and include \\(x_{2} \\ge  0\\). The feasible region lies above their upper envelope."
         },
         {
           "title": "Check an improving ray",
@@ -486,15 +486,15 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "The official key reports an unbounded maximum and the finite minimum (0,5.5), Z = 11. The ray below supplies the required unboundedness argument.",
+        "body": "The official key reports an unbounded maximum and the finite minimum (0,5.5), \\(Z = 11\\). The ray below supplies the required unboundedness argument.",
         "sections": [
           {
             "title": "Boundary and maximization",
-            "body": "The four row restrictions become x2 ≥ 5.5 − 0.5x1, x2 ≥ 2.5 + 0.25x1, x2 ≥ 2x1 − 7 and x2 ≥ (x1 − 1)/3. The active lower-boundary vertices are (0,11/2), (4,7/2) and (38/7,27/7).\nFor any t ≥ 0, (x1,x2) = (0,11/2 + t) satisfies every inequality. Its objective is Z = 11 + 2t, which grows without bound. Therefore there is no finite maximizing optimum."
+            "body": "The four row restrictions become \\(x_{2} \\ge  5.5 - 0.5x1\\), \\(x_{2} \\ge  2.5 + 0.25x1\\), \\(x_{2} \\ge  2x1 - 7\\) and \\(x_{2} \\ge  (x_{1} - 1)/3\\). The active lower-boundary vertices are (0,\\(11/2\\)), (4,\\(7/2\\)) and (\\(38/7\\),\\(27/7\\)).\nFor any \\(t \\ge  0\\), (\\(x_{1}\\),\\(x_{2}\\)) = (0,\\(11/2 + t\\)) satisfies every inequality. Its objective is \\(Z = 11 + 2t\\), which grows without bound. Therefore there is no finite maximizing optimum."
           },
           {
             "title": "Minimization",
-            "body": "The three boundary vertex values are 11, 19 and 24. The unbounded rays cannot improve on the first value for this positive-cost objective. Thus the minimum is (0,11/2), with Z = 11.\nA direct bound also proves it: the first row gives 0.5x1 + x2 ≥ 5.5, so 3x1 + 2x2 = 2(0.5x1 + x2) + 2x1 ≥ 11 for x1 ≥ 0. The reported point attains that bound."
+            "body": "The three boundary vertex values are 11, 19 and 24. The unbounded rays cannot improve on the first value for this positive-cost objective. Thus the minimum is (0,\\(11/2\\)), with \\(Z = 11\\).\nA direct bound also proves it: the first row gives \\(0.5x1 + x_{2} \\ge  5.5\\), so \\(3x1 + 2x2 = 2\\)(\\(0.5x1 + x_{2}\\)) + \\(2x1 \\ge  11\\) for \\(x_{1} \\ge  0\\). The reported point attains that bound."
           }
         ],
         "tables": [
@@ -506,15 +506,15 @@
             ],
             "rows": [
               [
-                "(0,11/2)",
+                "(0,\\(11/2\\))",
                 "11"
               ],
               [
-                "(4,7/2)",
+                "(4,\\(7/2\\))",
                 "19"
               ],
               [
-                "(38/7,27/7)",
+                "(\\(38/7\\),\\(27/7\\))",
                 "24"
               ]
             ]
@@ -599,15 +599,15 @@
         "sections": [
           {
             "title": "(a) Formulation",
-            "body": "Let x1 be permanent operators and x2 temporary operators, measured as continuous operator quantities.\n$$\\min Z=64x_1+42x_2.$$\n$$16x_1+12x_2\\ge450,\\qquad x_1+x_2\\le40,\\qquad0.5x_1+1.4x_2\\le25,\\qquad x_1,x_2\\ge0.$$"
+            "body": "Let \\(x_{1}\\) be permanent operators and \\(x_{2}\\) temporary operators, measured as continuous operator quantities.\n$$\\min Z=64x_1+42x_2.$$\n$$16x_1+12x_2\\ge450,\\qquad x_1+x_2\\le40,\\qquad0.5x_1+1.4x_2\\le25,\\qquad x_1,x_2\\ge0.$$"
           },
           {
             "title": "(b) Vertices and minimum",
-            "body": "The feasible vertices are (225/8,0), (40,0), (310/9,50/9) and (825/41,875/82). Compare their costs in the table.\nProcessing and errors bind at the optimum. Solving 16x1 + 12x2 = 450 and 0.5x1 + 1.4x2 = 25 gives x1 = 825/41 ≈ 20.121951 and x2 = 875/82 ≈ 10.670732. Cost is 71175/41 ≈ $1,735.975610 per day, which rounds to $1,735.98.\nTotal staffing is 2525/82 ≈ 30.792683, below 40, leaving about 9.207317 workstations unused. The plan processes exactly 450 claims and produces exactly 25 expected erroneous claims per day. An integer-hiring variant would require a separate model and solve."
+            "body": "The feasible vertices are (\\(225/8\\),0), (40,0), (\\(310/9\\),\\(50/9\\)) and (\\(825/41,875/82\\)). Compare their costs in the table.\nProcessing and errors bind at the optimum. Solving \\(16x1 + 12x2 = 450\\) and \\(0.5x1 + 1.4x2 = 25\\) gives \\(x_{1} = 825/41 \\approx  20.121951\\) and \\(x_{2} = 875/82 \\approx  10.670732\\). Cost is \\(71175/41 \\approx  \\$1,735.975610\\) per day, which rounds to $1,735.98.\nTotal staffing is \\(2525/82 \\approx  30.792683\\), below 40, leaving about 9.207317 workstations unused. The plan processes exactly 450 claims and produces exactly 25 expected erroneous claims per day. An integer-hiring variant would require a separate model and solve."
           },
           {
             "title": "Corrections to the official chart",
-            "body": "On key page 3, the workstation/error corner has coordinates (310/9,50/9) ≈ (34.444444,5.555556), not the swapped (5.55,34.45) labels. Its exact cost is 21940/9 ≈ $2,437.777778, or $2,437.78 after rounding, rather than the displayed $2,437.9. The optimal cost rounds to $1,735.98, not $1,735.97. Direct substitution in the printed model verifies these corrections."
+            "body": "On key page 3, the workstation/error corner has coordinates (\\(310/9\\),\\(50/9\\)) ≈ (34.444444,5.555556), not the swapped (5.55,34.45) labels. Its exact cost is \\(21940/9 \\approx  \\$2,437.777778\\), or $2,437.78 after rounding, rather than the displayed $2,437.9. The optimal cost rounds to $1,735.98, not $1,735.97. Direct substitution in the printed model verifies these corrections."
           }
         ],
         "tables": [
@@ -680,7 +680,7 @@
       "hints": [
         {
           "title": "Notice the minimum-total requirement",
-          "body": "The first two rows are upper bounds, but x1 + x2 ≥ 9 keeps the side away from the origin. Shade their intersection, not the entire region below the two upper bounds."
+          "body": "The first two rows are upper bounds, but \\(x_{1} + x_{2} \\ge  9\\) keeps the side away from the origin. Shade their intersection, not the entire region below the two upper bounds."
         },
         {
           "title": "Find the three pairwise row intersections",
@@ -688,7 +688,7 @@
         },
         {
           "title": "Evaluate one list twice",
-          "body": "Evaluate 800x1 + 900x2 at each feasible vertex. Select the largest for (a) and the smallest for (b); do not change the constraints when reversing the objective."
+          "body": "Evaluate \\(800x1 + 900x2\\) at each feasible vertex. Select the largest for (a) and the smallest for (b); do not change the constraints when reversing the objective."
         }
       ],
       "solution": {
@@ -701,7 +701,7 @@
           },
           {
             "title": "Maximum and minimum",
-            "body": "The maximum is attained at (5,5), with Z = $8,500. Both upper-bound resource rows bind, while x1 + x2 = 10 exceeds the minimum 9 by one.\nThe minimum is attained at (6,3), with Z = $7,500. Here 4x1 + 2x2 = 30 and x1 + x2 = 9 bind. The other row uses 2(6) + 4(3) = 24, leaving slack 6. Reversing the objective sense changes which feasible corner is preferred, while every feasible point continues to satisfy exactly the same constraints."
+            "body": "The maximum is attained at (5,5), with \\(Z = \\$8,500\\). Both upper-bound resource rows bind, while \\(x_{1} + x_{2} = 10\\) exceeds the minimum 9 by one.\nThe minimum is attained at (6,3), with \\(Z = \\$7,500\\). Here \\(4x1 + 2x2 = 30\\) and \\(x_{1} + x_{2} = 9\\) bind. The other row uses 2(6) + 4(3) = 24, leaving slack 6. Reversing the objective sense changes which feasible corner is preferred, while every feasible point continues to satisfy exactly the same constraints."
           }
         ],
         "tables": [
@@ -733,7 +733,7 @@
         }
       },
       "compare": [
-        "Did you shade above x1 + x2 = 9 while staying below both resource lines?",
+        "Did you shade above \\(x_{1} + x_{2} = 9\\) while staying below both resource lines?",
         "Did you find and verify all three feasible vertices?",
         "Did you use the same feasible region for maximization and minimization?",
         "Do your chosen extrema and binding-row checks agree with direct substitution?"
@@ -790,7 +790,7 @@
       ],
       "tasks": [
         "(a) Define the variables and formulate the LP. Draw the feasible region, identify every finite extreme point, evaluate its cost, and find the optimal operating plan.",
-        "(b) Compare slopes graphically to find the ranges of c₁ and c₂, changing one cost at a time while holding the other at its original value. State both allowable increases and decreases.",
+        "(b) Compare slopes graphically to find the ranges of \\(c_{1}\\) and \\(c_{2}\\), changing one cost at a time while holding the other at its original value. State both allowable increases and decreases.",
         "(c) Introduce surplus/slack variables to write equality rows. At your optimal vertex, express the basic variables and Z in terms of the nonbasic variables. Use the nonbasic objective coefficients to justify optimality and derive the coefficient ranges algebraically.",
         "(d) Solve your continuous LP in Excel Solver using Simplex LP and nonnegative decision variables. Generate a Sensitivity Report and compare its optimum, variable reduced costs, and one-at-a-time coefficient ranges with parts (b)–(c). Keep the actual report from your own run; the comparison solution contains expected values, not a claimed Excel run."
       ],
@@ -814,11 +814,11 @@
         "sections": [
           {
             "title": "(a) Formulation and vertices",
-            "body": "Let x1,x2 be operating days.\n$$\\min Z=6000x_1+7000x_2;\\quad6x_1+2x_2\\ge12,\\quad2x_1+2x_2\\ge8,\\quad4x_1+10x_2\\ge5,\\quad x_1,x_2\\ge0.$$\nThe low-grade row is redundant. The unbounded feasible region lies above the high- and medium-grade boundaries. Vertices (0,6), (1,3), and (4,0) cost $42,000, $27,000, and $24,000. The minimum is four days at Mill 1 and zero at Mill 2."
+            "body": "Let \\(x_{1}\\),\\(x_{2}\\) be operating days.\n$$\\min Z=6000x_1+7000x_2;\\quad6x_1+2x_2\\ge12,\\quad2x_1+2x_2\\ge8,\\quad4x_1+10x_2\\ge5,\\quad x_1,x_2\\ge0.$$\nThe low-grade row is redundant. The unbounded feasible region lies above the high- and medium-grade boundaries. Vertices (0,6), (1,3), and (4,0) cost $42,000, $27,000, and $24,000. The minimum is four days at Mill 1 and zero at Mill 2."
           },
           {
             "title": "(b)-(c) Graphical and algebraic sensitivity",
-            "body": "The objective slope is -c1/c2. At (4,0), adjacent boundary slopes are -1 and 0, so 0 <= c1 <= c2 keeps this corner optimal. With c2 = 7,000, c1 ranges from 0 to 7,000 (allowable decrease 6,000; increase 1,000). With c1 = 6,000, c2 ranges from 6,000 to infinity (decrease 1,000; unlimited increase).\nIntroduce surplus variables e1,e2,e3 by subtracting them from the three >= rows. The nonbasic variables are x2 and e2.\n$$x_1=4-x_2+\\tfrac12e_2,\\quad e_1=12-4x_2+3e_2,\\quad e_3=11+6x_2+2e_2.$$\nAt the original costs:\n$$Z=24000+1000x_2+3000e_2.$$\nWith general cost coefficients:\n$$Z=4c_1+(c_2-c_1)x_2+\\tfrac12c_1e_2.$$\nFor minimization, both nonbasic coefficients must remain nonnegative, giving exactly 0 <= c1 <= c2. At the original costs they are strictly positive, proving the unique optimum. Range endpoints can have multiple optima."
+            "body": "The objective slope is -\\(c_{1}/c_{2}\\). At (4,0), adjacent boundary slopes are -1 and 0, so \\(0 \\le  c_{1} \\le  c_{2}\\) keeps this corner optimal. With \\(c_{2} = 7,000\\), \\(c_{1}\\) ranges from 0 to 7,000 (allowable decrease 6,000; increase 1,000). With \\(c_{1} = 6,000\\), \\(c_{2}\\) ranges from 6,000 to infinity (decrease 1,000; unlimited increase).\nIntroduce surplus variables \\(e_{1}\\),\\(e_{2}\\),\\(e_{3}\\) by subtracting them from the three >= rows. The nonbasic variables are \\(x_{2}\\) and \\(e_{2}\\).\n$$x_1=4-x_2+\\tfrac12e_2,\\quad e_1=12-4x_2+3e_2,\\quad e_3=11+6x_2+2e_2.$$\nAt the original costs:\n$$Z=24000+1000x_2+3000e_2.$$\nWith general cost coefficients:\n$$Z=4c_1+(c_2-c_1)x_2+\\tfrac12c_1e_2.$$\nFor minimization, both nonbasic coefficients must remain nonnegative, giving exactly \\(0 \\le  c_{1} \\le  c_{2}\\). At the original costs they are strictly positive, proving the unique optimum. Range endpoints can have multiple optima."
           },
           {
             "title": "(d) Solver verification",
@@ -913,7 +913,7 @@
       ],
       "tasks": [
         "(a) Formulate the LP, graph the feasible region, label all its corner points, evaluate profit, and choose the maximizing allocation.",
-        "(b) Use objective-line rotation to find one-at-a-time sensitivity ranges for corn profit c₁ and tobacco profit c₂. With tobacco profit fixed, find the minimum corn profit at which planting only corn is optimal; distinguish “optimal” from “uniquely optimal.”",
+        "(b) Use objective-line rotation to find one-at-a-time sensitivity ranges for corn profit \\(c_{1}\\) and tobacco profit \\(c_{2}\\). With tobacco profit fixed, find the minimum corn profit at which planting only corn is optimal; distinguish “optimal” from “uniquely optimal.”",
         "(c) Introduce slack variables, express the decision variables and Z in terms of the nonbasic slacks at the optimum, and justify optimality from their reduced-cost signs. Derive the coefficient ranges algebraically. Keep track of whether the budget row is in dollars or has been rescaled.",
         "(d) Solve your continuous LP in Excel Solver using Simplex LP and nonnegative decision variables. Generate a Sensitivity Report and compare its optimum, variable reduced costs, and one-at-a-time coefficient ranges with parts (b)–(c). Keep the actual report from your own run; the comparison solution contains expected values, not a claimed Excel run."
       ],
@@ -937,19 +937,19 @@
         "sections": [
           {
             "title": "(a) Model and corner points",
-            "body": "Let x1 be acres of corn and x2 acres of tobacco.\n$$\\max Z=300x_1+520x_2;\\quad x_1+x_2\\le410,\\quad105x_1+210x_2\\le52500,\\quad x_2\\le100,\\quad x_1,x_2\\ge0.$$\nThe budget row is equivalently x1 + 2x2 <= 500. Vertices (0,0), (0,100), (300,100), (320,90), (410,0) yield profits $0, $52,000, $142,000, $142,800, $123,000. The optimum is (320,90), with land and budget binding and ten acres of unused tobacco quota."
+            "body": "Let \\(x_{1}\\) be acres of corn and \\(x_{2}\\) acres of tobacco.\n$$\\max Z=300x_1+520x_2;\\quad x_1+x_2\\le410,\\quad105x_1+210x_2\\le52500,\\quad x_2\\le100,\\quad x_1,x_2\\ge0.$$\nThe budget row is equivalently \\(x_{1} + 2x2 \\le  500\\). Vertices (0,0), (0,100), (300,100), (320,90), (410,0) yield profits $0, $52,000, $142,000, $142,800, $123,000. The optimum is (320,90), with land and budget binding and ten acres of unused tobacco quota."
           },
           {
             "title": "(b) Graphical sensitivity and the all-corn threshold",
-            "body": "The binding boundary slopes are -1 (land) and -1/2 (budget). Optimality requires 0.5 <= c1/c2 <= 1. With tobacco profit fixed at 520, corn profit ranges from $260 to $520 (decrease 40; increase 220). With corn fixed at 300, tobacco ranges from $300 to $600 (decrease 220; increase 80). An all-corn plan (410,0) first becomes optimal at corn profit $520. At exactly $520 it shares the optimum with a whole land-binding edge; corn profit strictly above $520 makes all-corn uniquely optimal."
+            "body": "The binding boundary slopes are -1 (land) and -\\(1/2\\) (budget). Optimality requires \\(0.5 \\le  c_{1}/c_{2} \\le  1\\). With tobacco profit fixed at 520, corn profit ranges from $260 to $520 (decrease 40; increase 220). With corn fixed at 300, tobacco ranges from $300 to $600 (decrease 220; increase 80). An all-corn plan (410,0) first becomes optimal at corn profit $520. At exactly $520 it shares the optimum with a whole land-binding edge; corn profit strictly above $520 makes all-corn uniquely optimal."
           },
           {
             "title": "(c) Algebraic sensitivity",
-            "body": "Use x1 + x2 + sL = 410 and x1 + 2x2 + sB = 500. The quota row is x2 + sT = 100.\n$$x_1=320-2s_L+s_B,\\quad x_2=90+s_L-s_B,\\quad s_T=10-s_L+s_B.$$\n$$Z=142800-80s_L-220s_B.$$\nFor general profits the two coefficients are -2c1 + c2 and c1 - c2. Requiring both to be <= 0 gives 0.5c2 <= c1 <= c2, the graphical range. The budget slack sB is measured in units of $105, so its coefficient -220 is not the dollar-denominated shadow price of the original budget."
+            "body": "Use \\(x_{1} + x_{2} + s_L = 410\\) and \\(x_{1} + 2x2 + s_B = 500\\). The quota row is \\(x_{2} + s_T = 100\\).\n$$x_1=320-2s_L+s_B,\\quad x_2=90+s_L-s_B,\\quad s_T=10-s_L+s_B.$$\n$$Z=142800-80s_L-220s_B.$$\nFor general profits the two coefficients are -\\(2c1 + c_{2}\\) and \\(c_{1} - c_{2}\\). Requiring both to be <= 0 gives \\(0.5c2 \\le  c_{1} \\le  c_{2}\\), the graphical range. The budget slack \\(s_B\\) is measured in units of $105, so its coefficient -220 is not the dollar-denominated shadow price of the original budget."
           },
           {
             "title": "(d) Solver verification",
-            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected original-row shadow prices are $80/acre for land, $220/105 = $2.095238 per budget dollar, and zero for tobacco quota. The current land RHS range is 400 to 500 acres; the original dollar-budget RHS range is $43,050 to $53,550; the quota remains nonbinding for a limit of at least 90 acres."
+            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected original-row shadow prices are $80/acre for land, \\(\\$220/105 = \\$2.095238\\) per budget dollar, and zero for tobacco quota. The current land RHS range is 400 to 500 acres; the original dollar-budget RHS range is $43,050 to $53,550; the quota remains nonbinding for a limit of at least 90 acres."
           }
         ],
         "tables": [
@@ -1012,7 +1012,7 @@
         "Assignment3.pdf · pages 2-3 (official problem 3)",
         "Assignment3_Answer.pdf · pages 5-7 (official answer)"
       ],
-      "prompt": "Apex Precision Manufacturing produces component A (x₁) and component B (x₂). Its continuous daily LP is given below. Use it to complete the graphical, sensitivity, algebraic, and Excel verification parts.\n$$\\max Z=50x_1+40x_2$$\n$$2x_1+x_2\\le100,\\qquad x_1+2x_2\\le80,\\qquad x_1,x_2\\ge0.$$",
+      "prompt": "Apex Precision Manufacturing produces component A (\\(x_{1}\\)) and component B (\\(x_{2}\\)). Its continuous daily LP is given below. Use it to complete the graphical, sensitivity, algebraic, and Excel verification parts.\n$$\\max Z=50x_1+40x_2$$\n$$2x_1+x_2\\le100,\\qquad x_1+2x_2\\le80,\\qquad x_1,x_2\\ge0.$$",
       "tables": [
         {
           "caption": "Resources and returns",
@@ -1046,8 +1046,8 @@
       ],
       "tasks": [
         "(a) Draw the feasible region, find every extreme point, evaluate Z at each point, and determine the maximizing production mix and daily profit.",
-        "(b) Use the slopes of the binding boundaries to find the coefficient range for c₁ with c₂ = 40 and for c₂ with c₁ = 50. State allowable increases and decreases.",
-        "(c) Let s₁ and s₂ be machining and finishing slacks. Express x₁, x₂, and Z in terms of the nonbasic slacks at the optimum. Explain optimality using their objective coefficients, then derive both coefficient ranges algebraically.",
+        "(b) Use the slopes of the binding boundaries to find the coefficient range for \\(c_{1}\\) with \\(c_{2} = 40\\) and for \\(c_{2}\\) with \\(c_{1} = 50\\). State allowable increases and decreases.",
+        "(c) Let \\(s_{1}\\) and \\(s_{2}\\) be machining and finishing slacks. Express \\(x_{1}\\), \\(x_{2}\\), and Z in terms of the nonbasic slacks at the optimum. Explain optimality using their objective coefficients, then derive both coefficient ranges algebraically.",
         "(d) Solve your continuous LP in Excel Solver using Simplex LP and nonnegative decision variables. Generate a Sensitivity Report and compare its optimum, variable reduced costs, and one-at-a-time coefficient ranges with parts (b)–(c). Keep the actual report from your own run; the comparison solution contains expected values, not a claimed Excel run."
       ],
       "hints": [
@@ -1074,7 +1074,7 @@
           },
           {
             "title": "(b)-(c) Coefficient sensitivity by slopes and slack algebra",
-            "body": "Boundary slopes at the optimum are -2 and -1/2. Thus 0.5 <= c1/c2 <= 2. With c2 = 40, c1 ranges from 20 to 80; with c1 = 50, c2 ranges from 25 to 100. Allowable changes are +/-30 for c1, and decrease 15 / increase 60 for c2.\nIntroduce machining slack s1 and finishing slack s2:\n$$x_1=40-\\tfrac23s_1+\\tfrac13s_2,\\quad x_2=20+\\tfrac13s_1-\\tfrac23s_2,\\quad Z=2800-20s_1-10s_2.$$\nFor general c1,c2, the slack coefficients are (-2c1 + c2)/3 and (c1 - 2c2)/3. Both must stay <= 0 for maximization, reproducing 0.5c2 <= c1 <= 2c2. Negative coefficients at the stated profits justify optimality."
+            "body": "Boundary slopes at the optimum are -2 and -\\(1/2\\). Thus \\(0.5 \\le  c_{1}/c_{2} \\le  2\\). With \\(c_{2} = 40\\), \\(c_{1}\\) ranges from 20 to 80; with \\(c_{1} = 50\\), \\(c_{2}\\) ranges from 25 to 100. Allowable changes are +/-30 for \\(c_{1}\\), and decrease 15 / increase 60 for \\(c_{2}\\).\nIntroduce machining slack \\(s_{1}\\) and finishing slack \\(s_{2}\\):\n$$x_1=40-\\tfrac23s_1+\\tfrac13s_2,\\quad x_2=20+\\tfrac13s_1-\\tfrac23s_2,\\quad Z=2800-20s_1-10s_2.$$\nFor general \\(c_{1}\\),\\(c_{2}\\), the slack coefficients are (-\\(2c1 + c_{2}\\))/3 and \\((c_{1} - 2c2)/3\\). Both must stay <= 0 for maximization, reproducing \\(0.5c2 \\le  c_{1} \\le  2c2\\). Negative coefficients at the stated profits justify optimality."
           },
           {
             "title": "(d) Solver verification",
@@ -1199,7 +1199,7 @@
         "sections": [
           {
             "title": "Expected model inspection and optimum",
-            "body": "The loaded model has 2 algebraic constraint rows, 2 variables, and 4 nonzero matrix coefficients; maximization is the objective sense. The optimum is 24 bowls and 8 mugs, with profit $1,360. Labor usage is 24 + 2(8) = 40 hours and clay usage is 4(24) + 3(8) = 120 lb; both slacks are zero. Bounds are not counted as extra algebraic rows."
+            "body": "The loaded model has 2 algebraic constraint rows, 2 variables, and 4 nonzero matrix coefficients; maximization is the objective sense. The optimum is 24 bowls and 8 mugs, with profit $1,360. Labor usage is \\(24 + 2\\)(8) = 40 hours and clay usage is 4(24) + 3(8) = 120 lb; both slacks are zero. Bounds are not counted as extra algebraic rows."
           }
         ],
         "code": [
@@ -1302,7 +1302,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "The typed row is 7x₂ ≤ 120: it contains no x₁ coefficient, so bowls incorrectly use zero clay in that model. The loaded matrix has three nonzero coefficients, not four.",
+        "body": "The typed row is \\(7x_{2} \\le  120\\): it contains no \\(x_{1}\\) coefficient, so bowls incorrectly use zero clay in that model. The loaded matrix has three nonzero coefficients, not four.",
         "sections": [
           {
             "title": "Why the wrong model returns a larger objective",
@@ -1310,7 +1310,7 @@
           },
           {
             "title": "Repair and compare",
-            "body": "The correct clay row is 4x₁ + 3x₂ ≤ 120. Its optimum is (24,8), profit $1,360, with both resource constraints binding. Optimal status is a statement about the supplied formulation, not a certificate that its coefficients describe the business problem. This coefficient error is distinct from the tutorial’s separate parser example in which an unspaced token such as 4x2 becomes a variable name."
+            "body": "The correct clay row is \\(4x_{1} + 3x_{2} \\le  120\\). Its optimum is (24,8), profit $1,360, with both resource constraints binding. Optimal status is a statement about the supplied formulation, not a certificate that its coefficients describe the business problem. This coefficient error is distinct from the tutorial’s separate parser example in which an unspaced token such as 4x2 becomes a variable name."
           }
         ],
         "visual": {
@@ -1417,7 +1417,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "Bowl profit lies from $25 to $200/3 ≈ $66.67; mug profit lies from $30 to $80. The displayed increase 26.6666667 is a rounded 80/3; adding it to 40 gives the exact upper endpoint 200/3. An adjacent edge can tie at an objective-range endpoint.",
+        "body": "Bowl profit lies from $25 to \\(\\$200/3 \\approx  \\$66.67\\); mug profit lies from $30 to $80. The displayed increase 26.6666667 is a rounded \\(80/3\\); adding it to 40 gives the exact upper endpoint \\(200/3\\). An adjacent edge can tie at an objective-range endpoint.",
         "sections": [
           {
             "title": "RHS intervals and predicted changes",
@@ -1510,7 +1510,7 @@
         "sections": [
           {
             "title": "Independent substitution",
-            "body": "Profit is 40(24) + 50(8) = 1,360; labor is 24 + 2(8) = 40; clay is 4(24) + 3(8) = 120. Both slacks are zero. Dual-resource valuation agrees with product profits: 16 + 4(6) = 40 and 2(16) + 3(6) = 50. These are checks of the continuous LP, not a sensitivity report for an integer production model."
+            "body": "Profit is 40(24) + 50(8) = 1,360; labor is \\(24 + 2\\)(8) = 40; clay is 4(24) + 3(8) = 120. Both slacks are zero. Dual-resource valuation agrees with product profits: \\(16 + 4\\)(6) = 40 and 2(16) + 3(6) = 50. These are checks of the continuous LP, not a sensitivity report for an integer production model."
           }
         ],
         "code": [
@@ -1551,7 +1551,7 @@
       "sources": [
         "Homework 4.pdf · page 2 (official problem a; derived solution)"
       ],
-      "prompt": "A manufacturer can supply engines monthly from four plants to three trucking firms. Plants 1-4 are Phoenix, Seattle, St. Louis and Detroit. Customers A-C are Greensboro, Charlotte and Louisville. Capacities are upper bounds; customer requirements must be met. Charlotte refuses engines from Seattle, and Louisville refuses engines from Detroit. Costs in the table are in hundreds of dollars per engine. Choose monthly shipments to minimize total transportation cost.",
+      "prompt": "A manufacturer can supply engines monthly from four plants to three trucking firms. Plants \\(1-4\\) are Phoenix, Seattle, St. Louis and Detroit. Customers A-C are Greensboro, Charlotte and Louisville. Capacities are upper bounds; customer requirements must be met. Charlotte refuses engines from Seattle, and Louisville refuses engines from Detroit. Costs in the table are in hundreds of dollars per engine. Choose monthly shipments to minimize total transportation cost.",
       "tables": [
         {
           "caption": "Monthly engine capacities and unit shipping costs (hundreds of dollars)",
@@ -1636,7 +1636,7 @@
         "sections": [
           {
             "title": "Model",
-            "body": "Let xij >= 0 be engines from plant i to customer j. Using the cost table in hundreds of dollars, minimize the sum of cij*xij over allowed arcs. For each plant impose sum_j xij <= its capacity; for each customer impose sum_i xij = its demand. Set x2B = 0 and x4C = 0, or omit those variables entirely. There are no constraints requiring every plant to run at full capacity."
+            "body": "Let \\(x_{ij} \\ge  0\\) be engines from plant i to customer j. Using the cost table in hundreds of dollars, minimize the sum of \\(c_{ij}*x_{ij}\\) over allowed arcs. For each plant impose \\(\\sum_j\\) \\(x_{ij}\\) <= its capacity; for each customer impose \\(\\sum_i\\) \\(x_{ij}\\) = its demand. Set \\(x_{2B} = 0\\) and \\(x_{4C} = 0\\), or omit those variables entirely. There are no constraints requiring every plant to run at full capacity."
           },
           {
             "title": "One derived optimal plan",
@@ -1644,7 +1644,7 @@
           },
           {
             "title": "Complete objective and constraint structure",
-            "body": "For plants i = 1,...,4 and customers j = A,B,C, let xij be engines shipped. Use the source-table costs cij.\n$$\\min Z=\\sum_{i=1}^{4}\\sum_{j\\in\\{A,B,C\\}}c_{ij}x_{ij}.$$\n$$\\sum_jx_{1j}\\le5,\\quad\\sum_jx_{2j}\\le25,\\quad\\sum_jx_{3j}\\le20,\\quad\\sum_jx_{4j}\\le25.$$\n$$\\sum_ix_{iA}=10,\\quad\\sum_ix_{iB}=20,\\quad\\sum_ix_{iC}=15,\\quad x_{2B}=x_{4C}=0,\\quad x_{ij}\\ge0.$$\nZ is in hundreds of dollars. The displayed optimal flow costs 195, hence $19,500."
+            "body": "For plants \\(i = 1\\),...,4 and customers j = A,B,C, let \\(x_{ij}\\) be engines shipped. Use the source-table costs \\(c_{ij}\\).\n$$\\min Z=\\sum_{i=1}^{4}\\sum_{j\\in\\{A,B,C\\}}c_{ij}x_{ij}.$$\n$$\\sum_jx_{1j}\\le5,\\quad\\sum_jx_{2j}\\le25,\\quad\\sum_jx_{3j}\\le20,\\quad\\sum_jx_{4j}\\le25.$$\n$$\\sum_ix_{iA}=10,\\quad\\sum_ix_{iB}=20,\\quad\\sum_ix_{iC}=15,\\quad x_{2B}=x_{4C}=0,\\quad x_{ij}\\ge0.$$\nZ is in hundreds of dollars. The displayed optimal flow costs 195, hence $19,500."
           }
         ],
         "tables": [
@@ -1789,11 +1789,11 @@
           },
           {
             "title": "Derived solution",
-            "body": "One optimum is a = 3.75, b = 2.5, s = 5, d = 0, yielding 1,500 + 2,000 + 1,500 = 5,000 yuan. Process 1 is full; Process 2 uses 21.25 of 25 hours. This is a derived numerical check of the formulation, independently solved with HiGHS; it is not an official answer key."
+            "body": "One optimum is \\(a = 3.75\\), \\(b = 2.5\\), \\(s = 5\\), d = 0, yielding \\(1,500 + 2,000 + 1,500 = 5,000\\) yuan. Process 1 is full; Process 2 uses 21.25 of 25 hours. This is a derived numerical check of the formulation, independently solved with HiGHS; it is not an official answer key."
           },
           {
             "title": "Feasibility and an optimality bound",
-            "body": "At (a,b,s,d) = (3.75,2.5,5,0), Process 1 uses 15 hours and Process 2 uses 21.25, within the limits. By-product generation is 2b = 5 = s + d. Profit is 400(3.75) + 800(2.5) + 300(5) = 5,000 yuan.\nUsing d = 2b - s, the profit is 400a + 400b + 500s. Since d >= 0 implies s <= 2b, this profit is at most 200(2a + 3b) + 400s <= 200(15) + 400(5) = 5,000. The feasible plan attains that bound."
+            "body": "At (a,b,s,d) = (3.75,2.5,5,0), Process 1 uses 15 hours and Process 2 uses 21.25, within the limits. By-product generation is \\(2b = 5 = s\\) + d. Profit is 400(3.75) + 800(2.5) + 300(5) = 5,000 yuan.\nUsing d = \\(2b - s\\), the profit is \\(400a + 400b + 500s\\). Since d >= 0 implies \\(s \\le  2b\\), this profit is at most 200(\\(2a + 3b\\)) + \\(400s \\le  200\\)(15) + 400(5) = 5,000. The feasible plan attains that bound."
           }
         ],
         "tables": []
@@ -1877,7 +1877,7 @@
       "hints": [
         {
           "title": "Use plot-by-crop variables",
-          "body": "One variable per crop is insufficient to impose a separate cultivation condition on each plot. Use acres xij of crop j on plot i."
+          "body": "One variable per crop is insufficient to impose a separate cultivation condition on each plot. Use acres \\(x_{ij}\\) of crop j on plot i."
         },
         {
           "title": "Represent a common proportion",
@@ -1894,11 +1894,11 @@
         "sections": [
           {
             "title": "Model",
-            "body": "Let xij >= 0 be acres of crop j on plot i, with j = C,P,S. Let t be the common cultivated fraction and Li the plot acreage.\n$$\\max Z=600\\sum_i x_{iC}+450\\sum_i x_{iP}+300\\sum_i x_{iS}.$$\n$$\\sum_j x_{ij}=L_it\\quad(i=1,2,3),\\qquad0.6\\le t\\le1.$$\n$$\\sum_i x_{iC}\\le900,\\quad\\sum_i x_{iP}\\le700,\\quad\\sum_i x_{iS}\\le1000.$$\nThese equalities are linear because plot sizes Li are constants. Equal absolute acreage on each plot would not represent equal proportions."
+            "body": "Let \\(x_{ij} \\ge  0\\) be acres of crop j on plot i, with j = C,P,S. Let t be the common cultivated fraction and \\(L_i\\) the plot acreage.\n$$\\max Z=600\\sum_i x_{iC}+450\\sum_i x_{iP}+300\\sum_i x_{iS}.$$\n$$\\sum_j x_{ij}=L_it\\quad(i=1,2,3),\\qquad0.6\\le t\\le1.$$\n$$\\sum_i x_{iC}\\le900,\\quad\\sum_i x_{iP}\\le700,\\quad\\sum_i x_{iS}\\le1000.$$\nThese equalities are linear because plot sizes \\(L_i\\) are constants. Equal absolute acreage on each plot would not represent equal proportions."
           },
           {
             "title": "One derived optimum",
-            "body": "Use t = 1, planting 900 total acres of corn, 700 of peas, and 400 of soybeans. The table is one feasible distribution; many equally profitable distributions across plots exist. Profit is 900(600) + 700(450) + 400(300) = $975,000. Every plot is fully cultivated, so the equal-proportion and minimum-cultivation requirements both hold."
+            "body": "Use \\(t = 1\\), planting 900 total acres of corn, 700 of peas, and 400 of soybeans. The table is one feasible distribution; many equally profitable distributions across plots exist. Profit is 900(600) + 700(450) + 400(300) = $975,000. Every plot is fully cultivated, so the equal-proportion and minimum-cultivation requirements both hold."
           },
           {
             "title": "Why the reported objective is a global maximum",
@@ -1921,21 +1921,21 @@
                 "0",
                 "500",
                 "0",
-                "500 / 500"
+                "\\(500 / 500\\)"
               ],
               [
                 "2",
                 "800",
                 "0",
                 "0",
-                "800 / 800"
+                "\\(800 / 800\\)"
               ],
               [
                 "3",
                 "100",
                 "200",
                 "400",
-                "700 / 700"
+                "\\(700 / 700\\)"
               ]
             ]
           }
@@ -2016,7 +2016,7 @@
         "sections": [
           {
             "title": "Model",
-            "body": "Let x1,x2,x3,x4 be dollars allocated to the four options in that order.\n$$\\max Z=0.15x_1+0.08x_2+0.06x_3+0.20x_4.$$\n$$x_1+x_2+x_3+x_4=50000,\\quad x_1\\le15000,\\quad x_2\\le x_1+x_3+x_4,$$\n$$x_3\\ge10000,\\quad x_1+x_4\\ge20000,\\quad x_1,x_2,x_3,x_4\\ge0.$$\nZ measures annual return, not principal plus return."
+            "body": "Let \\(x_{1}\\),\\(x_{2}\\),\\(x_{3}\\),\\(x_{4}\\) be dollars allocated to the four options in that order.\n$$\\max Z=0.15x_1+0.08x_2+0.06x_3+0.20x_4.$$\n$$x_1+x_2+x_3+x_4=50000,\\quad x_1\\le15000,\\quad x_2\\le x_1+x_3+x_4,$$\n$$x_3\\ge10000,\\quad x_1+x_4\\ge20000,\\quad x_1,x_2,x_3,x_4\\ge0.$$\nZ measures annual return, not principal plus return."
           },
           {
             "title": "Derived solution",
@@ -2024,7 +2024,7 @@
           },
           {
             "title": "Feasibility and return bound",
-            "body": "The model allocates the entire $50,000. The plan (x1,x2,x3,x4) = (0,0,10000,40000) gives $8,600 annual return and respects every restriction. The supplier and baking allocations may be zero because their restrictions are upper bounds.\nUsing the budget equality, return = 10000 - 0.05x1 - 0.12x2 - 0.14x3. Nonnegativity and x3 >= 10000 imply return <= 10000 - 1400 = 8600. The plan attains this bound. Year-end principal plus return is $58,600."
+            "body": "The model allocates the entire $50,000. The plan (\\(x_{1}\\),\\(x_{2}\\),\\(x_{3}\\),\\(x_{4}\\)) = (0,0,10000,40000) gives $8,600 annual return and respects every restriction. The supplier and baking allocations may be zero because their restrictions are upper bounds.\nUsing the budget equality, return = \\(10000 - 0.05x1 - 0.12x2 - 0.14x3\\). Nonnegativity and \\(x_{3} \\ge  10000\\) imply return <= \\(10000 - 1400 = 8600\\). The plan attains this bound. Year-end principal plus return is $58,600."
           }
         ],
         "tables": []
@@ -2098,11 +2098,11 @@
         "sections": [
           {
             "title": "Model",
-            "body": "Let rt,st,It be regular production, subcontracted production and end-of-quarter inventory for t = 1,...,4, and dt the demand data.\n$$\\min Z=\\sum_{t=1}^{4}(120r_t+180s_t+15I_t).$$\n$$I_{t-1}+r_t+s_t-I_t=d_t,\\quad0\\le r_t\\le450,\\quad0\\le s_t\\le200,\\quad I_t\\ge0.$$\n$$I_0=0,\\qquad I_4=0.$$\nIncluding 15I4 in the objective is harmless because I4 is fixed at zero. Capacity cannot cover first-quarter demand without subcontracting: regular supply is only 450 against demand 580."
+            "body": "Let \\(r_t\\),\\(s_t\\),It be regular production, subcontracted production and end-of-quarter inventory for \\(t = 1\\),...,4, and \\(d_t\\) the demand data.\n$$\\min Z=\\sum_{t=1}^{4}(120r_t+180s_t+15I_t).$$\n$$I_{t-1}+r_t+s_t-I_t=d_t,\\quad0\\le r_t\\le450,\\quad0\\le s_t\\le200,\\quad I_t\\ge0.$$\n$$I_0=0,\\qquad I_4=0.$$\nIncluding 15I4 in the objective is harmless because \\(I_{4}\\) is fixed at zero. Capacity cannot cover first-quarter demand without subcontracting: regular supply is only 450 against demand 580."
           },
           {
             "title": "Derived optimal schedule",
-            "body": "The schedule below meets all demand. Its regular-production cost is 1,770(120) = $212,400, subcontracting cost is 130(180) = $23,400, and inventory cost is (120 + 250)(15) = $5,550, for a total minimum cost of $241,350. The earlier inventory substitutes for more expensive subcontracting in quarter 4. The schedule is independently solved with HiGHS."
+            "body": "The schedule below meets all demand. Its regular-production cost is 1,770(120) = $212,400, subcontracting cost is 130(180) = $23,400, and inventory cost is (\\(120 + 250\\))\\((15) = \\$5,550\\), for a total minimum cost of $241,350. The earlier inventory substitutes for more expensive subcontracting in quarter 4. The schedule is independently solved with HiGHS."
           }
         ],
         "tables": [
@@ -2259,15 +2259,15 @@
         "sections": [
           {
             "title": "Input-oriented envelopment formulation",
-            "body": "For evaluated company o, use nonnegative reference weights lambda_j and input factor theta. Let xij be input i at company j, and yrj output r.\n$$\\min\\theta;\\qquad\\sum_jx_{ij}\\lambda_j\\le\\theta x_{io}\\ (i=1,2,3),\\qquad\\sum_jy_{rj}\\lambda_j\\ge y_{ro}\\ (r=1,2),\\qquad\\lambda_j,\\theta\\ge0.$$\nThere is no sum_j lambda_j = 1 constraint in the constant-returns model. Self-reference gives a feasible efficiency of one."
+            "body": "For evaluated company o, use nonnegative reference weights \\(\\lambda_j\\) and input factor \\(\\theta\\). Let \\(x_{ij}\\) be input i at company j, and \\(y_{rj}\\) output r.\n$$\\min\\theta;\\qquad\\sum_jx_{ij}\\lambda_j\\le\\theta x_{io}\\ (i=1,2,3),\\qquad\\sum_jy_{rj}\\lambda_j\\ge y_{ro}\\ (r=1,2),\\qquad\\lambda_j,\\theta\\ge0.$$\nThere is no \\(\\sum_j\\) \\(\\lambda_j = 1\\) constraint in the constant-returns model. Self-reference gives a feasible efficiency of one."
           },
           {
             "title": "Equivalent weight formulation and ranking",
-            "body": "Choose nonnegative output weights u1,u2 and input weights v1,v2,v3. For company o maximize u1*y1o + u2*y2o, normalize v1*x1o + v2*x2o + v3*x3o = 1, and require every company's weighted output minus weighted input to be <= 0. Each company chooses its most favorable admissible weights. Both LP forms give the same scores.\n$$A=B=C=E=F>D,\\qquad\\theta_D=959/1824\\approx0.525767544.$$\nD's reference uses lambda_E = 217/1824 and lambda_F = 973/1824, with all other weights zero. Its radial input saving is 47.4232%. The five score-one companies remain tied; a stricter ordering would require an additional method or restrictions not specified in the assignment."
+            "body": "Choose nonnegative output weights \\(u_{1}\\),\\(u_{2}\\) and input weights \\(v_{1}\\),\\(v_{2}\\),\\(v_{3}\\). For company o maximize \\(u_{1}\\)*y1o + \\(u_{2}\\)*y2o, normalize \\(v_{1}\\)*x1o + \\(v_{2}\\)*x2o + \\(v_{3}\\)*x3o = 1, and require every company's weighted output minus weighted input to be <= 0. Each company chooses its most favorable admissible weights. Both LP forms give the same scores.\n$$A=B=C=E=F>D,\\qquad\\theta_D=959/1824\\approx0.525767544.$$\nD's reference uses \\(\\lambda_E = 217/1824\\) and \\(\\lambda_F = 973/1824\\), with all other weights zero. Its radial input saving is 47.4232%. The five score-one companies remain tied; a stricter ordering would require an additional method or restrictions not specified in the assignment."
           },
           {
             "title": "Reading the score table",
-            "body": "Under the stated input-oriented CCR convention, companies A, B, C, E and F have efficiency one, while D has 959/1824, approximately 0.525767544. The ranking is A = B = C = E = F > D. This does not provide a strict ordering within the efficient group. D’s reference activity uses lambdaE = 217/1824 and lambdaF = 973/1824. Its radial input contraction is 1 - thetaD = 47.4232%, while maintaining at least its existing outputs."
+            "body": "Under the stated input-oriented CCR convention, companies A, B, C, E and F have efficiency one, while D has \\(959/1824\\), approximately 0.525767544. The ranking is A = B = C = E = F > D. This does not provide a strict ordering within the efficient group. D’s reference activity uses lambdaE = \\(217/1824\\) and lambdaF = \\(973/1824\\). Its radial input contraction is 1 - thetaD = 47.4232%, while maintaining at least its existing outputs."
           }
         ],
         "tables": [
@@ -2292,7 +2292,7 @@
               ],
               [
                 "D",
-                "959/1824 = 0.525767544"
+                "\\(959/1824 = 0.525767544\\)"
               ],
               [
                 "E",
@@ -2388,11 +2388,11 @@
         "sections": [
           {
             "title": "Formulation",
-            "body": "Let x1,x2,x3,x4 be dollars in those four alternatives.\n$$\\max Z=0.085x_1+0.05x_2+0.065x_3+0.13x_4.$$\n$$x_1+x_2+x_3+x_4=70000,\\quad x_1\\le14000,\\quad x_2-x_1-x_3-x_4\\le0,$$\n$$x_2+x_3\\ge21000,\\quad-1.2x_1+x_2+x_3-1.2x_4\\ge0,\\quad x_1,x_2,x_3,x_4\\ge0.$$\nThe full COPT exercise code is available with the assignment materials."
+            "body": "Let \\(x_{1}\\),\\(x_{2}\\),\\(x_{3}\\),\\(x_{4}\\) be dollars in those four alternatives.\n$$\\max Z=0.085x_1+0.05x_2+0.065x_3+0.13x_4.$$\n$$x_1+x_2+x_3+x_4=70000,\\quad x_1\\le14000,\\quad x_2-x_1-x_3-x_4\\le0,$$\n$$x_2+x_3\\ge21000,\\quad-1.2x_1+x_2+x_3-1.2x_4\\ge0,\\quad x_1,x_2,x_3,x_4\\ge0.$$\nThe full COPT exercise code is available with the assignment materials."
           },
           {
             "title": "Derived COPT result",
-            "body": "The allocation is (0,0,38181.818182,31818.181818), with annual return $6,618.181818, or 9.454545% of capital. Its year-end value including principal is $76,618.181818. Treasury bills dominate CDs, and stock dominates municipal bonds without relaxing any constraints. The ratio x3 >= 1.2x4 then binds. This independently checked result is a worked derivation, not an official answer key."
+            "body": "The allocation is (0,0,38181.818182,31818.181818), with annual return $6,618.181818, or 9.454545% of capital. Its year-end value including principal is $76,618.181818. Treasury bills dominate CDs, and stock dominates municipal bonds without relaxing any constraints. The ratio \\(x_{3} \\ge  1.2x4\\) then binds. This independently checked result is a worked derivation, not an official answer key."
           }
         ],
         "tables": [
@@ -2543,7 +2543,7 @@
         "sections": [
           {
             "title": "(a) Linear formulation",
-            "body": "Let xiP,xiS >= 0 be barrels of feedstock i in Premium and Standard, and QP = xAP + xBP + xCP, QS = xAS + xBS + xCS.\n$$\\max Z=30x_{AP}+36x_{BP}+42x_{CP}+16x_{AS}+22x_{BS}+28x_{CS}.$$\n$$x_{AP}+x_{AS}\\le4000,\\quad x_{BP}+x_{BS}\\le5000,\\quad x_{CP}+x_{CS}\\le3500,\\quad Q_P\\ge3000,\\quad Q_S\\ge4000.$$\n$$65x_{AP}+52x_{BP}+45x_{CP}\\ge58Q_P,\\quad65x_{AS}+52x_{BS}+45x_{CS}\\ge50Q_S.$$\n$$0.08x_{AP}+0.15x_{BP}+0.25x_{CP}\\le0.11Q_P,\\quad0.08x_{AS}+0.15x_{BS}+0.25x_{CS}\\le0.18Q_S.$$\nSulfur coefficients are consistently in percentage points. All purchase quantities are optional up to their upper bounds, so charge only feedstock actually used."
+            "body": "Let \\(x_{iP}\\),\\(x_{iS} \\ge  0\\) be barrels of feedstock i in Premium and Standard, and \\(Q_P = x_{AP} + x_{BP} + x_{CP}\\), \\(Q_S = x_{AS} + x_{BS} + x_{CS}\\).\n$$\\max Z=30x_{AP}+36x_{BP}+42x_{CP}+16x_{AS}+22x_{BS}+28x_{CS}.$$\n$$x_{AP}+x_{AS}\\le4000,\\quad x_{BP}+x_{BS}\\le5000,\\quad x_{CP}+x_{CS}\\le3500,\\quad Q_P\\ge3000,\\quad Q_S\\ge4000.$$\n$$65x_{AP}+52x_{BP}+45x_{CP}\\ge58Q_P,\\quad65x_{AS}+52x_{BS}+45x_{CS}\\ge50Q_S.$$\n$$0.08x_{AP}+0.15x_{BP}+0.25x_{CP}\\le0.11Q_P,\\quad0.08x_{AS}+0.15x_{BS}+0.25x_{CS}\\le0.18Q_S.$$\nSulfur coefficients are consistently in percentage points. All purchase quantities are optional up to their upper bounds, so charge only feedstock actually used."
           },
           {
             "title": "(b) One derived optimal COPT allocation",
@@ -2551,7 +2551,7 @@
           },
           {
             "title": "A short optimality bound",
-            "body": "Let a,b,c be total feedstock purchases. Adding the sulfur rows yields 0.07QP <= 0.10a + 0.03b - 0.07c. Therefore profit <= 36a + 28b + 14c <= 36(4000) + 28(5000) + 14(3500) = 333000. The feasible reported allocation attains the bound."
+            "body": "Let a,b,c be total feedstock purchases. Adding the sulfur rows yields \\(0.07QP \\le  0.10a + 0.03b - 0.07c\\). Therefore profit <= \\(36a + 28b + 14c \\le  36\\)(4000) + 28(5000) + 14(3500) = 333000. The feasible reported allocation attains the bound."
           }
         ],
         "tables": [
@@ -2732,7 +2732,7 @@
         "sections": [
           {
             "title": "(a) Linear formulation",
-            "body": "Let aih >= 0 be units from plant i to hub h and bhk >= 0 units from hub h to customer k. Minimize total arc cost using the two tables. Plant constraints are ai1 + ai2 <= supply_i. Hub inflow equals outflow and is at most capacity_h. Customer inflow equals demand_k.\n$$\\min Z=5a_{11}+7a_{12}+6a_{21}+4a_{22}+8b_{11}+10b_{12}+12b_{13}+11b_{21}+7b_{22}+9b_{23}.$$\n$$a_{11}+a_{12}\\le800,\\quad a_{21}+a_{22}\\le1000,\\quad a_{11}+a_{21}\\le900,\\quad a_{12}+a_{22}\\le850.$$\n$$a_{11}+a_{21}=b_{11}+b_{12}+b_{13},\\quad a_{12}+a_{22}=b_{21}+b_{22}+b_{23}.$$\n$$b_{11}+b_{21}=500,\\quad b_{12}+b_{22}=650,\\quad b_{13}+b_{23}=450.$$\nHub capacity counts a unit once; inflow and outflow describe the same unit passing through the hub."
+            "body": "Let \\(a_{ih} \\ge  0\\) be units from plant i to hub h and \\(b_{hk} \\ge  0\\) units from hub h to customer k. Minimize total arc cost using the two tables. Plant constraints are \\(a_{i1} + a_{i2} \\le  \\mathrm{supply}_{i}\\). Hub inflow equals outflow and is at most \\(\\mathrm{capacity}_{h}\\). Customer inflow equals \\(\\mathrm{demand}_{k}\\).\n$$\\min Z=5a_{11}+7a_{12}+6a_{21}+4a_{22}+8b_{11}+10b_{12}+12b_{13}+11b_{21}+7b_{22}+9b_{23}.$$\n$$a_{11}+a_{12}\\le800,\\quad a_{21}+a_{22}\\le1000,\\quad a_{11}+a_{21}\\le900,\\quad a_{12}+a_{22}\\le850.$$\n$$a_{11}+a_{21}=b_{11}+b_{12}+b_{13},\\quad a_{12}+a_{22}=b_{21}+b_{22}+b_{23}.$$\n$$b_{11}+b_{21}=500,\\quad b_{12}+b_{22}=650,\\quad b_{13}+b_{23}=450.$$\nHub capacity counts a unit once; inflow and outflow describe the same unit passing through the hub."
           },
           {
             "title": "(b) One derived COPT optimum",
