@@ -19,6 +19,7 @@ function check(root){
  assert.equal(scratch.querySelectorAll('script').length,0);assert.equal(scratch.querySelectorAll('.katex').length,1);
  p.close();
  p=await page('lectures.html','#all');check(p.d);
+ assert.equal(p.d.querySelectorAll('.source-warning').length,0,'No yellow source-warning boxes');
  const lectures=require('./content/lectures.json');
  const guided=lectures.flatMap(l=>l.topics).filter(t=>t.notation);
  assert.equal(p.d.querySelectorAll('.symbol-guide').length,guided.length);

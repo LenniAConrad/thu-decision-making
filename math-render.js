@@ -18,6 +18,10 @@ const MathView=(()=>{
     if(!words)return formula;
     return `<div class="equation-pair">${formula}<div class="word-equation"><span class="word-equation-arrow" role="img" aria-label="The same formula in words">⇔</span><div class="word-equation-content"><span class="word-equation-label">Same formula in words</span><div class="lecture-equation" tabindex="0">${html(words,true)}</div></div></div></div>`;
   }
+  function points(items){
+    if(!items?.length)return '';
+    return `<div class="point-readings"><span class="point-readings-label">Points in words</span><ul>${items.map(p=>`<li><span class="point-coordinate">${escape(p.point)}</span><span class="point-arrow" aria-label="means">⇔</span><span>${escape(p.meaning)}</span></li>`).join('')}</ul></div>`;
+  }
   function plain(text){
     // Convert the lab's small, known equation grammar to TeX. Grouped quotients
     // become true fractions; node/component names are always escaped as text.
@@ -39,6 +43,6 @@ const MathView=(()=>{
   }
   function render(root=document){root.querySelectorAll('[data-tex]').forEach(el=>{const tex=el.dataset.tex;if(el.dataset.mathRendered===tex)return;el.innerHTML=html(tex,el.dataset.display==='true');el.dataset.mathRendered=tex;});}
   if(typeof document!=='undefined')document.addEventListener('DOMContentLoaded',()=>render());
-  return {html,inline,equation,plain,render,escape};
+  return {html,inline,equation,points,plain,render,escape};
 })();
 if(typeof module!=='undefined')module.exports=MathView;

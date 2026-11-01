@@ -43,7 +43,8 @@
     "dea",
     "uncertain-returns",
     "rhs-algebra",
-    "rhs-worked-examples"
+    "rhs-worked-examples",
+    "pricing-strategies"
   ],
   "findings": [
     {
@@ -102,5 +103,38 @@
     "date": "2026-11-01",
     "source": "Assignment 6.pdf:1-6",
     "scope": "All six pages rendered and inspected; original lecture source hashes unchanged. Algebraic method and data transcribed; regime solutions are independently derived."
+  },
+  "editorialCorrections": {
+    "date": "2026-11-01",
+    "policy": "Clear typographical errors corrected directly in student-facing content; original files and earlier findings retained in this audit. Missing information is not imputed.",
+    "fare38Total": {
+      "original": 60,
+      "corrected": 65,
+      "reason": "57 business + 8 leisure passengers = 65; demand curves and strategy calculations are unchanged."
+    },
+    "retiredWarnings": {
+      "segmentation": "The observed-data table has an internal inconsistency at fare $38: total tickets are listed as 60, but the type counts 57 and 8 add to 65. These entries are preserved as printed; the worked pricing calculations use the stated fitted curves.",
+      "pottery": "Each bowl uses 4 lb of clay and each mug uses 3 lb, so clay usage is \\(4x_1+3x_2\\). At (5,10), this is 50 lb, not 70. Keep both product variables in the clay constraint.",
+      "fertilizer": "The phosphate constraint is \\(4x_1+3x_2\\ge24\\), using the phosphate supplied by both fertilizer types.",
+      "objective-range": "Use the clay constraint \\(4x_1+3x_2\\le120\\), consistent with 4 lb per bowl and 3 lb per mug. Repeating the second variable in both terms would describe a different resource constraint.",
+      "labor-shadow": "Keeping the same solution mix preserves the current basis/product pattern, not the numerical quantities (24,8). At a range endpoint, a basic variable can become zero.",
+      "new-product": "Willow Valley labor availability is uncertain, so retain \\(H\\) as a parameter and distinguish the examples with 40 and 65 hours. Each bowl uses 2 labor hours; using 1 would describe a different factory.",
+      "spreadsheet": "Use 4 and 3 as the bowl and mug clay coefficients. The corresponding optimum is (24,8), with profit 1,360. A clay row containing only the mug variable is a different model.",
+      "solver-benchmarks": "Benchmark values and vendor classifications below reproduce a dated course snapshot. They have not been presented as current release information or independently verified performance claims.",
+      "copt": "The older Chapter 3 screenshots still use \\(4x_{2} + 3x_{2} \\le  120\\) and return (40,0), \\(Z = 1,600\\). That solves the mistyped model. The separate COPT tutorial corrects the row to \\(4x_{1} + 3x_{2} \\le  120\\) and reports (24,8), \\(Z = 1,360\\).",
+      "shirts": "This is a derived continuous formulation. Quantities are measured in dozens; requiring whole dozens would add integer restrictions.",
+      "diet": "This is a derived continuous model: fractional servings are allowed, and every food uses the serving unit listed in the data table. Whole-serving requirements would add integer restrictions.",
+      "portfolio": "The model-summary page 9 is visibly blank beneath its headings. These equations follow from the table on page 8; they are not visible equations from page 9.",
+      "advertising": "This formulation assumes divisible advertising quantities. Requiring whole advertisements adds integer restrictions and can change the optimum.",
+      "transport": "Warehouse supplies are upper bounds and unused stock has no modeled penalty. A zero-cost dummy destination is an alternative representation of the 100-unit supply surplus.",
+      "blending": "This is a derived formulation and optimum. Grade totals are fixed at the optimum, but component allocations can be nonunique.",
+      "production": "The derived minimum cost of $216,300 assumes zero initial and terminal inventory, on-time demand, no backlogs, and storage charged between weeks.",
+      "pet-food": "Page 24 is visibly blank beneath its model-formulation heading. The ingredient-allocation model and $1,992 worked optimum are derived from page 23. The stated per-can profits are used directly.",
+      "cash-flow": "This model assumes project D matures after one year, percentage returns are added to repaid principal, and cash can be reinvested at year boundaries. These timing assumptions determine which investments are feasible.",
+      "dea": "The CCR formulation assumes constant returns to scale. Different returns-to-scale conventions or restrictions on weights give different efficiency models and can change scores.",
+      "uncertain-returns": "Page 32 leaves 38.33% of B’s probability mass unspecified. Do not invent a missing outcome, silently renormalize the two printed probabilities, or claim a unique stochastic optimum from the incomplete probabilities.",
+      "a2-claims": "The official key’s page-3 chart swaps the coordinates of the workstation/error corner: it should be (34.444444,5.555556), not (5.55,34.45). Its optimum cost label $1,735.97 should round to $1,735.98. These corrections follow direct substitution into the printed model. The same chart’s nonoptimal-corner cost shown as $2,437.9 is $2,437.777778, or $2,437.78 to cents.",
+      "a3-bradley": "The official key’s “corn >= $520” condition means all-corn is an optimal plan, not necessarily the only optimal plan. Uniqueness requires a strict increase above $520."
+    }
   }
 }

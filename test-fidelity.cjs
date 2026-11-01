@@ -8,9 +8,12 @@ const text=id=>{const t=topics.get(id);return [t.body,...(t.sections||[]).map(s=
 // Chapter 1 p15 visibly has a plus. The PDF text layer is not the source of truth.
 assert.ok(text('break-even').includes('TC=F+cv'));
 assert.doesNotMatch(text('break-even'),/prints a minus|sign typo|minus sign/i);
-// Preserve the inconsistent observed row without inventing a corrected dataset.
-assert.match(topics.get('segmentation').warning,/57.*8.*65/);
-assert.match(topics.get('segmentation').warning,/60/);
+// The obvious total typo is corrected in the teaching text; original evidence is in the audit.
+assert.match(text('airline-demand'),/\(38,65\)/);
+assert.doesNotMatch(text('airline-demand'),/\(38,60\)/);
+assert.match(text('segmentation'),/57 business and 8 leisure/);
+assert.equal(audit.editorialCorrections.fare38Total.corrected,65);
+for(const t of topics.values())assert.equal(t.warning,undefined,'No source-warning fields in reader content');
 // Chapter 2 p39 uses two labor hours per Willow bowl. Verify derived consequences.
 assert.ok(text('new-product').includes('2y_1+3y_2\\le H'));
 assert.ok(text('new-product').includes('480+16H'));

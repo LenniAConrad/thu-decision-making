@@ -619,6 +619,32 @@
       "equationWords": {
         "\\max Z=5x_1+8x_2.": "\\max {\\text{objective value}}=5\\,\\times\\,{\\text{first activity quantity}}+8\\,\\times\\,{\\text{second activity quantity}}.",
         "3x_1+5x_2\\le50,\\qquad2x_1+4x_2\\le40,\\qquad x_1\\le8,\\qquad x_2\\le10,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}3\\,\\times\\,{\\text{first activity quantity}}+5\\,\\times\\,{\\text{second activity quantity}}\\le50,\\\\2{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\le40,\\\\ {\\text{first activity quantity}}\\le8,\\\\ {\\text{second activity quantity}}\\le10,\\\\ {\\text{first activity quantity}},{\\text{second activity quantity}}\\ge0.\\end{gathered}"
+      },
+      "pointReadings": {
+        "The vertices are (0,0), (8,0), (8,\\(26/5\\)) and (0,10). Their objective values are 0, 40, \\(408/5\\) and 80.": [
+          {
+            "point": "(0,0)",
+            "meaning": "Choose 0 for the first quantity and 0 for the second."
+          },
+          {
+            "point": "(8,0)",
+            "meaning": "Choose 8 for the first quantity and 0 for the second."
+          },
+          {
+            "point": "(8,26/5)",
+            "meaning": "Choose 8 for the first quantity and 26/5 for the second."
+          },
+          {
+            "point": "(0,10)",
+            "meaning": "Choose 0 for the first quantity and 10 for the second."
+          }
+        ],
+        "The unique maximum is (\\(x_{1}\\),\\(x_{2}\\)) = (8,5.2), with \\(Z = 81.6\\). The first resource binds because 3(8) + 5(5.2) = 50, and \\(x_{1} = 8\\) binds. The second resource uses 2(8) + 4(5.2) = 36.8, leaving slack 3.2. The \\(x_{2}\\) upper bound leaves slack 4.8. Both variables are positive.": [
+          {
+            "point": "(8,5.2)",
+            "meaning": "Choose 8 for the first quantity and 5.2 for the second."
+          }
+        ]
       }
     },
     {
@@ -660,7 +686,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "The official key reports an unbounded maximum and the finite minimum (0,5.5), \\(Z = 11\\). The ray below supplies the required unboundedness argument.",
+        "body": "There is no largest objective value, but there is a smallest one: 11, reached when the first quantity is zero and the second is 5.5. To prove there is no maximum, show a direction in which the objective keeps increasing without breaking any constraint.",
         "sections": [
           {
             "title": "Boundary and maximization",
@@ -728,6 +754,34 @@
       "equationWords": {
         "Z=3x_1+2x_2.": "{\\text{objective value}}=3\\,\\times\\,{\\text{first activity quantity}}+2\\,\\times\\,{\\text{second activity quantity}}.",
         "2x_1+4x_2\\ge22,\\qquad-x_1+4x_2\\ge10,\\qquad4x_1-2x_2\\le14,\\qquad x_1-3x_2\\le1,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}2\\,\\times\\,{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\ge22,\\\\-{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\ge10,\\\\4{\\text{first activity quantity}}-2\\,\\times\\,{\\text{second activity quantity}}\\le14,\\\\ {\\text{first activity quantity}}-3\\,\\times\\,{\\text{second activity quantity}}\\le1,\\\\ {\\text{first activity quantity}},{\\text{second activity quantity}}\\ge0.\\end{gathered}"
+      },
+      "pointReadings": {
+        "The official key reports an unbounded maximum and the finite minimum (0,5.5), \\(Z = 11\\). The ray below supplies the required unboundedness argument.": [
+          {
+            "point": "(0,5.5)",
+            "meaning": "Choose 0 for the first quantity and 5.5 for the second."
+          }
+        ],
+        "The four row restrictions become \\(x_{2} \\ge  5.5 - 0.5x1\\), \\(x_{2} \\ge  2.5 + 0.25x1\\), \\(x_{2} \\ge  2x1 - 7\\) and \\(x_{2} \\ge  (x_{1} - 1)/3\\). The active lower-boundary vertices are (0,\\(11/2\\)), (4,\\(7/2\\)) and (\\(38/7\\),\\(27/7\\)).": [
+          {
+            "point": "(0,11/2)",
+            "meaning": "Choose 0 for the first quantity and 11/2 for the second."
+          },
+          {
+            "point": "(4,7/2)",
+            "meaning": "Choose 4 for the first quantity and 7/2 for the second."
+          },
+          {
+            "point": "(38/7,27/7)",
+            "meaning": "Choose 38/7 for the first quantity and 27/7 for the second."
+          }
+        ],
+        "The three boundary vertex values are 11, 19 and 24. The unbounded rays cannot improve on the first value for this positive-cost objective. Thus the minimum is (0,\\(11/2\\)), with \\(Z = 11\\).": [
+          {
+            "point": "(0,11/2)",
+            "meaning": "Choose 0 for the first quantity and 11/2 for the second."
+          }
+        ]
       }
     },
     {
@@ -792,8 +846,8 @@
         }
       ],
       "solution": {
-        "label": "Official key with corrections",
-        "body": "The official key identifies the correct optimal corner. Its workstation/error corner labels and cost rounding require the corrections below.",
+        "label": "Worked solution",
+        "body": "Find the corner points of the allowed staffing region, calculate their daily costs, and then check the cheapest plan against all three limits.",
         "sections": [
           {
             "title": "(a) Formulation",
@@ -804,8 +858,8 @@
             "body": "The feasible vertices are (\\(225/8\\),0), (40,0), (\\(310/9\\),\\(50/9\\)) and (\\(825/41,875/82\\)). Compare their costs in the table.\nProcessing and errors bind at the optimum. Solving \\(16x1 + 12x2 = 450\\) and \\(0.5x1 + 1.4x2 = 25\\) gives \\(x_{1} = 825/41 \\approx  20.121951\\) and \\(x_{2} = 875/82 \\approx  10.670732\\). Cost is \\(71175/41 \\approx  \\$1,735.975610\\) per day, which rounds to $1,735.98.\nTotal staffing is \\(2525/82 \\approx  30.792683\\), below 40, leaving about 9.207317 workstations unused. The plan processes exactly 450 claims and produces exactly 25 expected erroneous claims per day. An integer-hiring variant would require a separate model and solve."
           },
           {
-            "title": "Corrections to the official chart",
-            "body": "On key page 3, the workstation/error corner has coordinates (\\(310/9\\),\\(50/9\\)) ≈ (34.444444,5.555556), not the swapped (5.55,34.45) labels. Its exact cost is \\(21940/9 \\approx  \\$2,437.777778\\), or $2,437.78 after rounding, rather than the displayed $2,437.9. The optimal cost rounds to $1,735.98, not $1,735.97. Direct substitution in the printed model verifies these corrections."
+            "title": "Check the corner coordinates and rounding",
+            "body": "The workstation/error corner is \\((310/9,50/9)\\), approximately 34.444444 permanent and 5.555556 temporary operators. Its daily cost is \\(21940/9\\), which rounds to $2,437.78. The least-cost plan costs $1,735.98 per day after rounding. Keep full precision while solving and round money only when reporting the answer."
           }
         ],
         "tables": [
@@ -874,6 +928,40 @@
       "equationWords": {
         "\\min Z=64x_1+42x_2.": "\\min {\\text{staffing cost}}=64\\,\\times\\,{\\text{permanent operators}}+42\\,\\times\\,{\\text{temporary operators}}.",
         "16x_1+12x_2\\ge450,\\qquad x_1+x_2\\le40,\\qquad0.5x_1+1.4x_2\\le25,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}16\\,\\times\\,{\\text{permanent operators}}+12\\,\\times\\,{\\text{temporary operators}}\\ge450,\\\\ {\\text{permanent operators}}+{\\text{temporary operators}}\\le40,\\\\0.5\\,\\times\\,{\\text{permanent operators}}+1.4\\,\\times\\,{\\text{temporary operators}}\\le25,\\\\ {\\text{permanent operators}},{\\text{temporary operators}}\\ge0.\\end{gathered}"
+      },
+      "pointReadings": {
+        "The feasible vertices are (\\(225/8\\),0), (40,0), (\\(310/9\\),\\(50/9\\)) and (\\(825/41,875/82\\)). Compare their costs in the table.": [
+          {
+            "point": "(225/8,0)",
+            "meaning": "Use 225/8 permanent operators and 0 temporary operators."
+          },
+          {
+            "point": "(40,0)",
+            "meaning": "Use 40 permanent operators and 0 temporary operators."
+          },
+          {
+            "point": "(310/9,50/9)",
+            "meaning": "Use 310/9 permanent operators and 50/9 temporary operators."
+          },
+          {
+            "point": "(825/41,875/82)",
+            "meaning": "Use 825/41 permanent operators and 875/82 temporary operators."
+          }
+        ],
+        "On key page 3, the workstation/error corner has coordinates (\\(310/9\\),\\(50/9\\)) ≈ (34.444444,5.555556), not the swapped (5.55,34.45) labels. Its exact cost is \\(21940/9 \\approx  \\$2,437.777778\\), or $2,437.78 after rounding, rather than the displayed $2,437.9. The optimal cost rounds to $1,735.98, not $1,735.97. Direct substitution in the printed model verifies these corrections.": [
+          {
+            "point": "(310/9,50/9)",
+            "meaning": "Use 310/9 permanent operators and 50/9 temporary operators."
+          },
+          {
+            "point": "(34.444444,5.555556)",
+            "meaning": "Use 34.444444 permanent operators and 5.555556 temporary operators."
+          },
+          {
+            "point": "(5.55,34.45)",
+            "meaning": "Use 5.55 permanent operators and 34.45 temporary operators."
+          }
+        ]
       }
     },
     {
@@ -915,7 +1003,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "Both results agree with the official key. The same three feasible vertices support the maximization and minimization comparisons.",
+        "body": "Use the same three feasible corner points for both questions. Maximization chooses the largest objective value; minimization chooses the smallest.",
         "sections": [
           {
             "title": "Feasible vertices",
@@ -983,6 +1071,34 @@
       "equationWords": {
         "Z=800x_1+900x_2.": "{\\text{objective value}}=800\\,\\times\\,{\\text{first activity quantity}}+900\\,\\times\\,{\\text{second activity quantity}}.",
         "2x_1+4x_2\\le30,\\qquad4x_1+2x_2\\le30,\\qquad x_1+x_2\\ge9,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}2\\,\\times\\,{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\le30,\\\\4{\\text{first activity quantity}}+2\\,\\times\\,{\\text{second activity quantity}}\\le30,\\\\ {\\text{first activity quantity}}+{\\text{second activity quantity}}\\ge9,\\\\ {\\text{first activity quantity}},{\\text{second activity quantity}}\\ge0.\\end{gathered}"
+      },
+      "pointReadings": {
+        "The intersections of the three boundary pairs are (3,6), (5,5) and (6,3). Each satisfies the third row and nonnegativity. Their objective values are $7,800, $8,500 and $7,500, respectively.": [
+          {
+            "point": "(3,6)",
+            "meaning": "Choose 3 for the first quantity and 6 for the second."
+          },
+          {
+            "point": "(5,5)",
+            "meaning": "Choose 5 for the first quantity and 5 for the second."
+          },
+          {
+            "point": "(6,3)",
+            "meaning": "Choose 6 for the first quantity and 3 for the second."
+          }
+        ],
+        "The maximum is attained at (5,5), with \\(Z = \\$8,500\\). Both upper-bound resource rows bind, while \\(x_{1} + x_{2} = 10\\) exceeds the minimum 9 by one.": [
+          {
+            "point": "(5,5)",
+            "meaning": "Choose 5 for the first quantity and 5 for the second."
+          }
+        ],
+        "The minimum is attained at (6,3), with \\(Z = \\$7,500\\). Here \\(4x1 + 2x2 = 30\\) and \\(x_{1} + x_{2} = 9\\) bind. The other row uses 2(6) + 4(3) = 24, leaving slack 6. Reversing the objective sense changes which feasible corner is preferred, while every feasible point continues to satisfy exactly the same constraints.": [
+          {
+            "point": "(6,3)",
+            "meaning": "Choose 6 for the first quantity and 3 for the second."
+          }
+        ]
       }
     },
     {
@@ -1055,7 +1171,7 @@
         }
       ],
       "solution": {
-        "label": "Official key with derived verification",
+        "label": "Worked solution",
         "body": "The analytical comparison follows the official answer key, with the clarification stated below where needed. Excel report values are independently derived expectations; no actual Excel run or report is claimed.",
         "sections": [
           {
@@ -1068,7 +1184,7 @@
           },
           {
             "title": "(d) Solver verification",
-            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected original-row shadow prices (high, medium, low) are ($0,$3,000,$0) per ton. The variable reduced costs are (0,$1,000). Medium demand can decrease from 8 to 4 with the same basis and has no finite upper bound; the high and low rows have current surpluses 12 and 11."
+            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. Use the values below to check your own Excel Sensitivity Report. Expected original-row shadow prices (high, medium, low) are ($0,$3,000,$0) per ton. The variable reduced costs are (0,$1,000). Medium demand can decrease from 8 to 4 with the same basis and has no finite upper bound; the high and low rows have current surpluses 12 and 11."
           }
         ],
         "tables": [
@@ -1148,6 +1264,28 @@
         "x_1=4-x_2+\\tfrac12e_2,\\quad e_1=12-4x_2+3e_2,\\quad e_3=11+6x_2+2e_2.": "\\begin{gathered}{\\text{mill 1 operating days}}=4-{\\text{mill 2 operating days}}+\\tfrac12{\\text{surplus medium-grade tons}},\\\\ {\\text{surplus high-grade tons}}=12-4\\,\\times\\,{\\text{mill 2 operating days}}+3\\,\\times\\,{\\text{surplus medium-grade tons}},\\\\ {\\text{surplus low-grade tons}}=11+6\\,\\times\\,{\\text{mill 2 operating days}}+2\\,\\times\\,{\\text{surplus medium-grade tons}}.\\end{gathered}",
         "Z=24000+1000x_2+3000e_2.": "{\\text{operating cost}}=24000+1000\\,\\times\\,{\\text{mill 2 operating days}}+3000\\,\\times\\,{\\text{surplus medium-grade tons}}.",
         "Z=4c_1+(c_2-c_1)x_2+\\tfrac12c_1e_2.": "{\\text{operating cost}}=4\\,\\times\\,{\\text{mill 1 cost per day}}+({\\text{mill 2 cost per day}}-{\\text{mill 1 cost per day}})\\,\\times\\,{\\text{mill 2 operating days}}+\\tfrac12{\\text{mill 1 cost per day}}\\,\\times\\,{\\text{surplus medium-grade tons}}."
+      },
+      "pointReadings": {
+        "The low-grade row is redundant. The unbounded feasible region lies above the high- and medium-grade boundaries. Vertices (0,6), (1,3), and (4,0) cost $42,000, $27,000, and $24,000. The minimum is four days at Mill 1 and zero at Mill 2.": [
+          {
+            "point": "(0,6)",
+            "meaning": "Run mill 1 for 0 days and mill 2 for 6 days."
+          },
+          {
+            "point": "(1,3)",
+            "meaning": "Run mill 1 for 1 days and mill 2 for 3 days."
+          },
+          {
+            "point": "(4,0)",
+            "meaning": "Run mill 1 for 4 days and mill 2 for 0 days."
+          }
+        ],
+        "The objective slope is -\\(c_{1}/c_{2}\\). At (4,0), adjacent boundary slopes are -1 and 0, so \\(0 \\le  c_{1} \\le  c_{2}\\) keeps this corner optimal. With \\(c_{2} = 7,000\\), \\(c_{1}\\) ranges from 0 to 7,000 (allowable decrease 6,000; increase 1,000). With \\(c_{1} = 6,000\\), \\(c_{2}\\) ranges from 6,000 to infinity (decrease 1,000; unlimited increase).": [
+          {
+            "point": "(4,0)",
+            "meaning": "Run mill 1 for 4 days and mill 2 for 0 days."
+          }
+        ]
       }
     },
     {
@@ -1214,8 +1352,8 @@
         }
       ],
       "solution": {
-        "label": "Official key with corrections",
-        "body": "The analytical comparison follows the official answer key, with the clarification stated below where needed. Excel report values are independently derived expectations; no actual Excel run or report is claimed. The official key’s “corn >= $520” condition means all-corn is an optimal plan, not necessarily the only optimal plan. Uniqueness requires a strict increase above $520.",
+        "label": "Worked solution",
+        "body": "At a corn profit of exactly $520 per acre, planting only corn is one best plan, but other plans tie with it. The profit must rise strictly above $520 before all-corn becomes the unique best choice. Use the expected sensitivity values below to check the reports you generate in Excel.",
         "sections": [
           {
             "title": "(a) Model and corner points",
@@ -1231,7 +1369,7 @@
           },
           {
             "title": "(d) Solver verification",
-            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected original-row shadow prices are $80/acre for land, \\(\\$220/105 = \\$2.095238\\) per budget dollar, and zero for tobacco quota. The current land RHS range is 400 to 500 acres; the original dollar-budget RHS range is $43,050 to $53,550; the quota remains nonbinding for a limit of at least 90 acres."
+            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. Use the values below to check your own Excel Sensitivity Report. Expected original-row shadow prices are $80/acre for land, \\(\\$220/105 = \\$2.095238\\) per budget dollar, and zero for tobacco quota. The current land RHS range is 400 to 500 acres; the original dollar-budget RHS range is $43,050 to $53,550; the quota remains nonbinding for a limit of at least 90 acres."
           }
         ],
         "tables": [
@@ -1310,6 +1448,36 @@
         "\\max Z=300x_1+520x_2;\\quad x_1+x_2\\le410,\\quad105x_1+210x_2\\le52500,\\quad x_2\\le100,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\max {\\text{crop profit}}=300\\,\\times\\,{\\text{corn acres}}+520\\,\\times\\,{\\text{tobacco acres}};\\\\ {\\text{corn acres}}+{\\text{tobacco acres}}\\le410,\\\\105{\\text{corn acres}}+210\\,\\times\\,{\\text{tobacco acres}}\\le52500,\\\\ {\\text{tobacco acres}}\\le100,\\\\ {\\text{corn acres}},{\\text{tobacco acres}}\\ge0.\\end{gathered}",
         "x_1=320-2s_L+s_B,\\quad x_2=90+s_L-s_B,\\quad s_T=10-s_L+s_B.": "\\begin{gathered}{\\text{corn acres}}=320-2\\,\\times\\,{\\text{unused acres}}+{\\text{unused budget in 105-dollar units}},\\\\ {\\text{tobacco acres}}=90+{\\text{unused acres}}-{\\text{unused budget in 105-dollar units}},\\\\ {\\text{unused tobacco quota acres}}=10-{\\text{unused acres}}+{\\text{unused budget in 105-dollar units}}.\\end{gathered}",
         "Z=142800-80s_L-220s_B.": "{\\text{crop profit}}=142800-80\\,\\times\\,{\\text{unused acres}}-220\\,\\times\\,{\\text{unused budget in 105-dollar units}}."
+      },
+      "pointReadings": {
+        "The budget row is equivalently \\(x_{1} + 2x2 \\le  500\\). Vertices (0,0), (0,100), (300,100), (320,90), (410,0) yield profits $0, $52,000, $142,000, $142,800, $123,000. The optimum is (320,90), with land and budget binding and ten acres of unused tobacco quota.": [
+          {
+            "point": "(0,0)",
+            "meaning": "Plant 0 acres of corn and 0 acres of tobacco."
+          },
+          {
+            "point": "(0,100)",
+            "meaning": "Plant 0 acres of corn and 100 acres of tobacco."
+          },
+          {
+            "point": "(300,100)",
+            "meaning": "Plant 300 acres of corn and 100 acres of tobacco."
+          },
+          {
+            "point": "(320,90)",
+            "meaning": "Plant 320 acres of corn and 90 acres of tobacco."
+          },
+          {
+            "point": "(410,0)",
+            "meaning": "Plant 410 acres of corn and 0 acres of tobacco."
+          }
+        ],
+        "The binding boundary slopes are -1 (land) and -\\(1/2\\) (budget). Optimality requires \\(0.5 \\le  c_{1}/c_{2} \\le  1\\). With tobacco profit fixed at 520, corn profit ranges from $260 to $520 (decrease 40; increase 220). With corn fixed at 300, tobacco ranges from $300 to $600 (decrease 220; increase 80). An all-corn plan (410,0) first becomes optimal at corn profit $520. At exactly $520 it shares the optimum with a whole land-binding edge; corn profit strictly above $520 makes all-corn uniquely optimal.": [
+          {
+            "point": "(410,0)",
+            "meaning": "Plant 410 acres of corn and 0 acres of tobacco."
+          }
+        ]
       }
     },
     {
@@ -1382,7 +1550,7 @@
         }
       ],
       "solution": {
-        "label": "Official key with derived verification",
+        "label": "Worked solution",
         "body": "The analytical comparison follows the official answer key, with the clarification stated below where needed. Excel report values are independently derived expectations; no actual Excel run or report is claimed.",
         "sections": [
           {
@@ -1395,7 +1563,7 @@
           },
           {
             "title": "(d) Solver verification",
-            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected shadow prices are $20 per machining unit and $10 per finishing unit; both decision-variable reduced costs are zero. Holding the other RHS fixed, the same-basis machining-capacity range is 40 to 160, and finishing-capacity range is 50 to 200."
+            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. Use the values below to check your own Excel Sensitivity Report. Expected shadow prices are $20 per machining unit and $10 per finishing unit; both decision-variable reduced costs are zero. Holding the other RHS fixed, the same-basis machining-capacity range is 40 to 160, and finishing-capacity range is 50 to 200."
           }
         ],
         "tables": [
@@ -1475,6 +1643,26 @@
         "2x_1+x_2\\le100,\\qquad x_1+2x_2\\le80,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}2\\,\\times\\,{\\text{component A quantity}}+{\\text{component B quantity}}\\le100,\\\\ {\\text{component A quantity}}+2\\,\\times\\,{\\text{component B quantity}}\\le80,\\\\ {\\text{component A quantity}},{\\text{component B quantity}}\\ge0.\\end{gathered}",
         "\\max Z=50x_1+40x_2;\\quad2x_1+x_2\\le100,\\quad x_1+2x_2\\le80,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\max {\\text{profit}}=50\\,\\times\\,{\\text{component A quantity}}+40\\,\\times\\,{\\text{component B quantity}};\\\\2{\\text{component A quantity}}+{\\text{component B quantity}}\\le100,\\\\ {\\text{component A quantity}}+2\\,\\times\\,{\\text{component B quantity}}\\le80,\\\\ {\\text{component A quantity}},{\\text{component B quantity}}\\ge0.\\end{gathered}",
         "x_1=40-\\tfrac23s_1+\\tfrac13s_2,\\quad x_2=20+\\tfrac13s_1-\\tfrac23s_2,\\quad Z=2800-20s_1-10s_2.": "\\begin{gathered}{\\text{component A quantity}}=40-\\tfrac23{\\text{unused machining capacity}}+\\tfrac13{\\text{unused finishing capacity}},\\\\ {\\text{component B quantity}}=20+\\tfrac13{\\text{unused machining capacity}}-\\tfrac23{\\text{unused finishing capacity}},\\\\ {\\text{profit}}=2800-20\\,\\times\\,{\\text{unused machining capacity}}-10\\,\\times\\,{\\text{unused finishing capacity}}.\\end{gathered}"
+      },
+      "pointReadings": {
+        "The feasible polygon has vertices (0,0), (0,40), (40,20), and (50,0). Their profits are $0, $1,600, $2,800, and $2,500. Thus produce 40 A and 20 B for $2,800/day.": [
+          {
+            "point": "(0,0)",
+            "meaning": "Make 0 units of component A and 0 units of component B."
+          },
+          {
+            "point": "(0,40)",
+            "meaning": "Make 0 units of component A and 40 units of component B."
+          },
+          {
+            "point": "(40,20)",
+            "meaning": "Make 40 units of component A and 20 units of component B."
+          },
+          {
+            "point": "(50,0)",
+            "meaning": "Make 50 units of component A and 0 units of component B."
+          }
+        ]
       }
     },
     {
@@ -1689,7 +1877,7 @@
           },
           {
             "title": "Repair and compare",
-            "body": "The correct clay row is \\(4x_{1} + 3x_{2} \\le  120\\). Its optimum is (24,8), profit $1,360, with both resource constraints binding. Optimal status is a statement about the supplied formulation, not a certificate that its coefficients describe the business problem. This coefficient error is distinct from the tutorial’s separate parser example in which an unspaced token such as 4x2 becomes a variable name."
+            "body": "The correct clay row is \\(4x_{1} + 3x_{2} \\le  120\\). Its optimum is (24,8), profit $1,360, with both resource constraints binding. Optimal status is a statement about the supplied formulation, not a certificate that its coefficients describe the business problem."
           }
         ],
         "visual": {
@@ -1730,6 +1918,20 @@
       "equationWords": {
         "\\max Z=40x_1+50x_2": "\\max {\\text{profit}}=40\\,\\times\\,{\\text{bowls produced}}+50\\,\\times\\,{\\text{mugs produced}}",
         "x_1+2x_2\\le40,\\qquad4x_2+3x_2\\le120,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}{\\text{bowls produced}}+2\\,\\times\\,{\\text{mugs produced}}\\le40,\\\\4{\\text{mugs produced}}+3\\,\\times\\,{\\text{mugs produced}}\\le120,\\\\ {\\text{bowls produced}},{\\text{mugs produced}}\\ge0.\\end{gathered}"
+      },
+      "pointReadings": {
+        "Under the typed model, bowls return $40 per labor hour and mugs $25 per labor hour. The optimum is (40,0), profit $1,600. It satisfies the typed clay row but physically consumes 4(40) = 160 lb, exceeding the actual 120 lb supply by 40 lb.": [
+          {
+            "point": "(40,0)",
+            "meaning": "Make 40 bowls and 0 mugs per day."
+          }
+        ],
+        "The correct clay row is \\(4x_{1} + 3x_{2} \\le  120\\). Its optimum is (24,8), profit $1,360, with both resource constraints binding. Optimal status is a statement about the supplied formulation, not a certificate that its coefficients describe the business problem.": [
+          {
+            "point": "(24,8)",
+            "meaning": "Make 24 bowls and 8 mugs per day."
+          }
+        ]
       }
     },
     {
@@ -1868,7 +2070,23 @@
           ]
         ]
       },
-      "equationWords": {}
+      "equationWords": {},
+      "pointReadings": {
+        "The original quantities (24,8) need not remain numerically fixed: with labor alone at 60 the solution is (12,24), while with clay alone at 80 it is (8,16). These two plans describe separate changed models. Combining individually admissible changes can leave the original basis’s feasible region, so one-at-a-time intervals do not automatically authorize simultaneous changes. Keeping the same solution mix preserves the basis/product pattern, not the numerical quantities.": [
+          {
+            "point": "(24,8)",
+            "meaning": "Make 24 bowls and 8 mugs per day."
+          },
+          {
+            "point": "(12,24)",
+            "meaning": "Make 12 bowls and 24 mugs per day."
+          },
+          {
+            "point": "(8,16)",
+            "meaning": "Make 8 bowls and 16 mugs per day."
+          }
+        ]
+      }
     },
     {
       "id": "solver-pottery-python",
@@ -2092,7 +2310,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
+        "body": "Start with the decision quantities, write the constraints, and check the resulting plan.",
         "sections": [
           {
             "title": "Model",
@@ -2276,7 +2494,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
+        "body": "Start with the decision quantities, write the constraints, and check the resulting plan.",
         "sections": [
           {
             "title": "Model",
@@ -2284,11 +2502,11 @@
           },
           {
             "title": "Derived solution",
-            "body": "One optimum is \\(a = 3.75\\), \\(b = 2.5\\), \\(s = 5\\), d = 0, yielding \\(1,500 + 2,000 + 1,500 = 5,000\\) yuan. Process 1 is full; Process 2 uses 21.25 of 25 hours. This is a derived numerical check of the formulation, independently solved with HiGHS; it is not an official answer key."
+            "body": "One optimum is \\(a = 3.75\\), \\(b = 2.5\\), \\(s = 5\\), d = 0, yielding \\(1,500 + 2,000 + 1,500 = 5,000\\) yuan. Process 1 is full; Process 2 uses 21.25 of 25 hours. Substituting these quantities checks that the plan is feasible."
           },
           {
             "title": "Feasibility and an optimality bound",
-            "body": "At (a,b,s,d) = (3.75,2.5,5,0), Process 1 uses 15 hours and Process 2 uses 21.25, within the limits. By-product generation is \\(2b = 5 = s\\) + d. Profit is 400(3.75) + 800(2.5) + 300(5) = 5,000 yuan.\nUsing d = \\(2b - s\\), the profit is \\(400a + 400b + 500s\\). Since d >= 0 implies \\(s \\le  2b\\), this profit is at most 200(\\(2a + 3b\\)) + \\(400s \\le  200\\)(15) + 400(5) = 5,000. The feasible plan attains that bound."
+            "body": "Produce 3.75 tons of A and 2.5 tons of B, sell all 5 tons of by-product C, and discard none. This uses 15 hours in Process 1 and 21.25 hours in Process 2, within the limits. By-product generation is \\(2b = 5 = s\\) + d. Profit is 400(3.75) + 800(2.5) + 300(5) = 5,000 yuan.\nUsing d = \\(2b - s\\), the profit is \\(400a + 400b + 500s\\). Since d >= 0 implies \\(s \\le  2b\\), this profit is at most 200(\\(2a + 3b\\)) + \\(400s \\le  200\\)(15) + 400(5) = 5,000. The feasible plan attains that bound."
           }
         ],
         "tables": []
@@ -2413,7 +2631,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
+        "body": "Start with the decision quantities, write the constraints, and check the resulting plan.",
         "sections": [
           {
             "title": "Model",
@@ -2576,7 +2794,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
+        "body": "Start with the decision quantities, write the constraints, and check the resulting plan.",
         "sections": [
           {
             "title": "Model",
@@ -2588,7 +2806,7 @@
           },
           {
             "title": "Feasibility and return bound",
-            "body": "The model allocates the entire $50,000. The plan (\\(x_{1}\\),\\(x_{2}\\),\\(x_{3}\\),\\(x_{4}\\)) = (0,0,10000,40000) gives $8,600 annual return and respects every restriction. The supplier and baking allocations may be zero because their restrictions are upper bounds.\nUsing the budget equality, return = \\(10000 - 0.05x1 - 0.12x2 - 0.14x3\\). Nonnegativity and \\(x_{3} \\ge  10000\\) imply return <= \\(10000 - 1400 = 8600\\). The plan attains this bound. Year-end principal plus return is $58,600."
+            "body": "Allocate the entire $50,000: put $10,000 into loyalty and $40,000 into marketing, with nothing in baking or supplier contracts. This earns $8,600 per year and respects every restriction. The supplier and baking allocations may be zero because their restrictions are upper bounds.\nUsing the budget equality, return = \\(10000 - 0.05x1 - 0.12x2 - 0.14x3\\). Nonnegativity and \\(x_{3} \\ge  10000\\) imply return <= \\(10000 - 1400 = 8600\\). The plan attains this bound. Year-end principal plus return is $58,600."
           }
         ],
         "tables": []
@@ -2683,7 +2901,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
+        "body": "Start with the decision quantities, write the constraints, and check the resulting plan.",
         "sections": [
           {
             "title": "Model",
@@ -2691,7 +2909,7 @@
           },
           {
             "title": "Derived optimal schedule",
-            "body": "The schedule below meets all demand. Its regular-production cost is 1,770(120) = $212,400, subcontracting cost is 130(180) = $23,400, and inventory cost is (\\(120 + 250\\))\\((15) = \\$5,550\\), for a total minimum cost of $241,350. The earlier inventory substitutes for more expensive subcontracting in quarter 4. The schedule is independently solved with HiGHS."
+            "body": "The schedule below meets all demand. Its regular-production cost is 1,770(120) = $212,400, subcontracting cost is 130(180) = $23,400, and inventory cost is (\\(120 + 250\\))\\((15) = \\$5,550\\), for a total minimum cost of $241,350. The earlier inventory substitutes for more expensive subcontracting in quarter 4. "
           }
         ],
         "tables": [
@@ -2884,7 +3102,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
+        "body": "Start with the decision quantities, write the constraints, and check the resulting plan.",
         "sections": [
           {
             "title": "Input-oriented envelopment formulation",
@@ -3062,7 +3280,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
+        "body": "Start with the decision quantities, write the constraints, and check the resulting plan.",
         "sections": [
           {
             "title": "Formulation",
@@ -3070,7 +3288,7 @@
           },
           {
             "title": "Derived COPT result",
-            "body": "The allocation is (0,0,38181.818182,31818.181818), with annual return $6,618.181818, or 9.454545% of capital. Its year-end value including principal is $76,618.181818. Treasury bills dominate CDs, and stock dominates municipal bonds without relaxing any constraints. The ratio \\(x_{3} \\ge  1.2x4\\) then binds. This independently checked result is a worked derivation, not an official answer key."
+            "body": "Invest nothing in municipal bonds or CDs, about $38,181.82 in treasury bills and $31,818.18 in the stock fund. The annual return is $6,618.181818, or 9.454545% of capital. Its year-end value including principal is $76,618.181818. Treasury bills dominate CDs, and stock dominates municipal bonds without relaxing any constraints. The ratio \\(x_{3} \\ge  1.2x4\\) then binds. Check the allocation against each investment rule."
           }
         ],
         "tables": [
@@ -3242,7 +3460,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
+        "body": "Start with the decision quantities, write the constraints, and check the resulting plan.",
         "sections": [
           {
             "title": "(a) Linear formulation",
@@ -3250,7 +3468,7 @@
           },
           {
             "title": "(b) One derived optimal COPT allocation",
-            "body": "The table gives one optimum; allocations need not be unique. Grade totals are 4,357.142857 Premium and 8,142.857143 Standard barrels. Their cetane ratings are 61.470588 and 50.309598; sulfur contents are exactly 0.11% and 0.18%. All feedstock is used. Revenue is $786,000, purchase cost $453,000, and maximum net profit $333,000. The downloadable script prints full-precision output and saves it as JSON. The result was independently checked with HiGHS."
+            "body": "The table gives one optimum; allocations need not be unique. Grade totals are 4,357.142857 Premium and 8,142.857143 Standard barrels. Their cetane ratings are 61.470588 and 50.309598; sulfur contents are exactly 0.11% and 0.18%. All feedstock is used. Revenue is $786,000, purchase cost $453,000, and maximum net profit $333,000. The downloadable script prints full-precision output and saves it as JSON. "
           },
           {
             "title": "A short optimality bound",
@@ -3472,7 +3690,7 @@
       ],
       "solution": {
         "label": "Derived worked solution",
-        "body": "This worked solution is independently derived, not an official answer key. Numerical results have been independently checked.",
+        "body": "Start with the decision quantities, write the constraints, and check the resulting plan.",
         "sections": [
           {
             "title": "(a) Linear formulation",
@@ -3480,7 +3698,7 @@
           },
           {
             "title": "(b) One derived COPT optimum",
-            "body": "Send 750 units P1->T1, zero P1->T2, zero P2->T1 and 850 P2->T2. T1 sends (500,250,0) to C1,C2,C3; T2 sends (0,400,450). Every flow is nonnegative and demand is exact. Cost is 5(750) + 4(850) + 8(500) + 10(250) + 7(400) + 9(450) = $20,500. T2 is full; T1 has 150 spare units. Plant spare capacities are 50 and 150. This is a derived result checked with COPT and HiGHS, not an official answer key."
+            "body": "Send 750 units P1->T1, zero P1->T2, zero P2->T1 and 850 P2->T2. Hub 1 sends 500 units to customer 1, 250 to customer 2 and none to customer 3. Hub 2 sends none to customer 1, 400 to customer 2 and 450 to customer 3. Every flow is nonnegative and demand is exact. Cost is 5(750) + 4(850) + 8(500) + 10(250) + 7(400) + 9(450) = $20,500. T2 is full; T1 has 150 spare units. Plant spare capacities are 50 and 150. The plan meets all demands within the stated limits."
           },
           {
             "title": "Why the minimum is attained",
@@ -3667,7 +3885,7 @@
       ],
       "solution": {
         "label": "Derived worked solution; Excel values are expectations",
-        "body": "A concrete plant chooses divisible planning units of basic blocks A and decorative blocks B. Unit contributions are 10 and 35. Five processing capacities and the distributor quota restrict production. The current B quota is 5; study its RHS \\(b_6\\ge0\\) while all processing capacities stay fixed. The table preserves the official problem data. The worked solution below is independently derived, not an official answer key.",
+        "body": "A concrete plant chooses divisible planning units of basic blocks A and decorative blocks B. Unit contributions are 10 and 35. Five processing capacities and the distributor quota restrict production. The current B quota is 5; study its RHS \\(b_6\\ge0\\) while all processing capacities stay fixed. Work through the model and check the result against the constraints.",
         "sections": [
           {
             "title": "Formulate and solve the current problem",
@@ -3679,7 +3897,7 @@
           },
           {
             "title": "Excel Solver verification to carry out",
-            "body": "Use continuous changing cells A and B, maximize total contribution, add all six constraints and nonnegativity, and select Simplex LP. Solve at quota values 1,3,5,7,9, choosing one interior point from every regime. Expected solutions are \\((15,1),(14,3),(11,5),(6,7),(3,8)\\), with objectives 185,245,285,305,310. Expected quota shadow prices are 35,25,15,5,0; closed RHS validity ranges are [0,2], [2,4], [4,6], [6,8], [8,∞), restricted to nonnegative quota. Compare the quota row’s allowable increase/decrease with these endpoints. These are independently derived expectations, not reports from an Excel run."
+            "body": "Use continuous changing cells A and B, maximize total contribution, add all six constraints and nonnegativity, and select Simplex LP. Solve at quota values 1,3,5,7,9, choosing one interior point from every regime. Expected solutions are \\((15,1),(14,3),(11,5),(6,7),(3,8)\\), with objectives 185,245,285,305,310. Expected quota shadow prices are 35,25,15,5,0; closed RHS validity ranges are [0,2], [2,4], [4,6], [6,8], [8,∞), restricted to nonnegative quota. Compare the quota row’s allowable increase/decrease with these endpoints. Generate a Sensitivity Report for each case and compare it with these expected results."
           },
           {
             "title": "Assignment 6 submission requirements",
@@ -3815,6 +4033,56 @@
       "equationWords": {
         "x\\le15,\\quad x+y\\le17,\\quad x+2y\\le21,\\quad x+3y\\le27,\\quad x+4y\\le35,\\quad y\\le b_6.": "\\begin{gathered}{\\text{basic blocks}}\\le15,\\\\ {\\text{basic blocks}}+{\\text{decorative blocks}}\\le17,\\\\ {\\text{basic blocks}}+2\\,\\times\\,{\\text{decorative blocks}}\\le21,\\\\ {\\text{basic blocks}}+3\\,\\times\\,{\\text{decorative blocks}}\\le27,\\\\ {\\text{basic blocks}}+4\\,\\times\\,{\\text{decorative blocks}}\\le35,\\\\ {\\text{decorative blocks}}\\le {\\text{decorative-block quota}}.\\end{gathered}",
         "x(y)=\\min\\{15,17-y,21-2y,27-3y,35-4y\\}.": "{\\text{basic blocks}}({\\text{decorative blocks}})=\\min\\{15,17-{\\text{decorative blocks}},21-2\\,\\times\\,{\\text{decorative blocks}},27-3\\,\\times\\,{\\text{decorative blocks}},35-4\\,\\times\\,{\\text{decorative blocks}}\\}."
+      },
+      "pointReadings": {
+        "At \\(b_6=5\\), the feasible polygon has vertices \\((0,0),(15,0),(15,2),(13,4),(11,5),(0,5)\\). The optimum is \\((11,5)\\), profit 285. Heat treatment and the quota bind; all original capacities must still be checked.": [
+          {
+            "point": "(0,0)",
+            "meaning": "Produce 0 basic-block units and 0 decorative-block units each week."
+          },
+          {
+            "point": "(15,0)",
+            "meaning": "Produce 15 basic-block units and 0 decorative-block units each week."
+          },
+          {
+            "point": "(15,2)",
+            "meaning": "Produce 15 basic-block units and 2 decorative-block units each week."
+          },
+          {
+            "point": "(13,4)",
+            "meaning": "Produce 13 basic-block units and 4 decorative-block units each week."
+          },
+          {
+            "point": "(11,5)",
+            "meaning": "Produce 11 basic-block units and 5 decorative-block units each week."
+          },
+          {
+            "point": "(0,5)",
+            "meaning": "Produce 0 basic-block units and 5 decorative-block units each week."
+          }
+        ],
+        "Use continuous changing cells A and B, maximize total contribution, add all six constraints and nonnegativity, and select Simplex LP. Solve at quota values 1,3,5,7,9, choosing one interior point from every regime. Expected solutions are \\((15,1),(14,3),(11,5),(6,7),(3,8)\\), with objectives 185,245,285,305,310. Expected quota shadow prices are 35,25,15,5,0; closed RHS validity ranges are [0,2], [2,4], [4,6], [6,8], [8,∞), restricted to nonnegative quota. Compare the quota row’s allowable increase/decrease with these endpoints. Generate a Sensitivity Report for each case and compare it with these expected results.": [
+          {
+            "point": "(15,1)",
+            "meaning": "Produce 15 basic-block units and 1 decorative-block units each week."
+          },
+          {
+            "point": "(14,3)",
+            "meaning": "Produce 14 basic-block units and 3 decorative-block units each week."
+          },
+          {
+            "point": "(11,5)",
+            "meaning": "Produce 11 basic-block units and 5 decorative-block units each week."
+          },
+          {
+            "point": "(6,7)",
+            "meaning": "Produce 6 basic-block units and 7 decorative-block units each week."
+          },
+          {
+            "point": "(3,8)",
+            "meaning": "Produce 3 basic-block units and 8 decorative-block units each week."
+          }
+        ]
       }
     },
     {
@@ -3888,7 +4156,7 @@
       ],
       "solution": {
         "label": "Derived worked solution; Excel values are expectations",
-        "body": "An advertising agency chooses divisible standard and premium campaign planning units, earning 7 and 13 per unit. Three teams provide the hours in the table. Both campaign types consume one central approval slot. The current approval limit is 11; vary only \\(b_4\\ge0\\). The worked solution below is independently derived.",
+        "body": "An advertising agency chooses divisible standard and premium campaign planning units, earning 7 and 13 per unit. Three teams provide the hours in the table. Both campaign types consume one central approval slot. The current approval limit is 11; vary only \\(b_4\\ge0\\). Work through the model step by step.",
         "sections": [
           {
             "title": "Model and current feasible region",
@@ -3900,7 +4168,7 @@
           },
           {
             "title": "Excel Solver verification to carry out",
-            "body": "Use Simplex LP with continuous nonnegative variables and request a Sensitivity Report after each solve. Interior approval values 2,7,11,12.5,14 should produce (A,B) = (0,2),(4,3),(9.5,1.5),(12,0.5),(13,0), objectives 26,67,86,90.5,91, and approval shadow prices 13,5,4,1,0. Corresponding closed RHS validity ranges, restricted to nonnegative approvals, are [0,4], [4,10], [10,12], [12,13], [13,∞). These expected values do not replace the assignment’s required Excel workbook and actual reports."
+            "body": "Use Simplex LP with continuous nonnegative variables and request a Sensitivity Report after each solve. Interior approval values 2,7,11,12.5,14 should produce (A,B) = (0,2),(4,3),(9.5,1.5),(12,0.5),(13,0), objectives 26,67,86,90.5,91, and approval shadow prices 13,5,4,1,0. Corresponding closed RHS validity ranges, restricted to nonnegative approvals, are [0,4], [4,10], [10,12], [12,13], [13,∞). Keep the workbook and actual Sensitivity Reports for your submission."
           },
           {
             "title": "Assignment 6 submission requirements",
@@ -4019,6 +4287,58 @@
       "equationWords": {
         "x+4y\\le16,\\quad x+3y\\le14,\\quad x+2y\\le13,\\quad x+y\\le b_4.": "\\begin{gathered}{\\text{standard campaigns}}+4\\,\\times\\,{\\text{premium campaigns}}\\le16,\\\\ {\\text{standard campaigns}}+3\\,\\times\\,{\\text{premium campaigns}}\\le14,\\\\ {\\text{standard campaigns}}+2\\,\\times\\,{\\text{premium campaigns}}\\le13,\\\\ {\\text{standard campaigns}}+{\\text{premium campaigns}}\\le {\\text{approval slots}}.\\end{gathered}",
         "y\\le b_4,\\quad y\\le(16-b_4)/3,\\quad y\\le(14-b_4)/2,\\quad y\\le13-b_4.": "\\begin{gathered}{\\text{premium campaigns}}\\le {\\text{approval slots}},\\\\ {\\text{premium campaigns}}\\le(16-{\\text{approval slots}})/3,\\\\ {\\text{premium campaigns}}\\le(14-{\\text{approval slots}})/2,\\\\ {\\text{premium campaigns}}\\le13-{\\text{approval slots}}.\\end{gathered}"
+      },
+      "pointReadings": {
+        "At \\(b_4=11\\), the polygon vertices are \\((0,0),(11,0),(9.5,1.5),(8,2),(0,4)\\). The optimum is \\((9.5,1.5)\\), contribution 86. Content editing and approvals bind.": [
+          {
+            "point": "(0,0)",
+            "meaning": "Plan 0 standard campaign units and 0 premium campaign units each week."
+          },
+          {
+            "point": "(11,0)",
+            "meaning": "Plan 11 standard campaign units and 0 premium campaign units each week."
+          },
+          {
+            "point": "(9.5,1.5)",
+            "meaning": "Plan 9.5 standard campaign units and 1.5 premium campaign units each week."
+          },
+          {
+            "point": "(8,2)",
+            "meaning": "Plan 8 standard campaign units and 2 premium campaign units each week."
+          },
+          {
+            "point": "(0,4)",
+            "meaning": "Plan 0 standard campaign units and 4 premium campaign units each week."
+          }
+        ],
+        "These bounds become active in order, giving breakpoints 4,10,12,13 and the table’s formulas. Once approvals reach 13, \\((13,0)\\) earns 91 and more approvals have no value. For example, the final publishing inequality also proves \\(7x+13y\\le7(x+2y)\\le91\\). Interior shadow prices are 13,5,4,1,0. Do not assign one differentiable slope at a breakpoint.": [
+          {
+            "point": "(13,0)",
+            "meaning": "Plan 13 standard campaign units and 0 premium campaign units each week."
+          }
+        ],
+        "Use Simplex LP with continuous nonnegative variables and request a Sensitivity Report after each solve. Interior approval values 2,7,11,12.5,14 should produce (A,B) = (0,2),(4,3),(9.5,1.5),(12,0.5),(13,0), objectives 26,67,86,90.5,91, and approval shadow prices 13,5,4,1,0. Corresponding closed RHS validity ranges, restricted to nonnegative approvals, are [0,4], [4,10], [10,12], [12,13], [13,∞). Keep the workbook and actual Sensitivity Reports for your submission.": [
+          {
+            "point": "(0,2)",
+            "meaning": "Plan 0 standard campaign units and 2 premium campaign units each week."
+          },
+          {
+            "point": "(4,3)",
+            "meaning": "Plan 4 standard campaign units and 3 premium campaign units each week."
+          },
+          {
+            "point": "(9.5,1.5)",
+            "meaning": "Plan 9.5 standard campaign units and 1.5 premium campaign units each week."
+          },
+          {
+            "point": "(12,0.5)",
+            "meaning": "Plan 12 standard campaign units and 0.5 premium campaign units each week."
+          },
+          {
+            "point": "(13,0)",
+            "meaning": "Plan 13 standard campaign units and 0 premium campaign units each week."
+          }
+        ]
       }
     }
   ]

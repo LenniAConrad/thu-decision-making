@@ -11,7 +11,7 @@
       {
         "id": "modeling",
         "title": "The management science approach",
-        "body": "Management science uses mathematical models and evidence to support decisions. The course also calls it operations research, quantitative methods and business analytics. Pricing, production, logistics, scheduling and ranking all fit this approach.\nStart by observing a problem. Define the decision, its boundaries and the organization’s objective. Construct a model; solve it; then implement and check the decision in its actual setting. A mathematically optimal answer is useful only if the model represents the real problem.\nA decision variable is something you choose. A parameter is an input you treat as given. The objective measures the result you want to maximize or minimize; constraints define the permitted choices.",
+        "body": "A decision model is a small, useful description of a real choice. It helps you compare options without having to guess which one is best. Start by asking: what can we choose, what are we trying to improve, and what limits our choices?\nThe things you can choose are decision variables. The numbers you take as given are parameters. In a factory, the number of products to make is a decision; the steel available and the selling price are inputs.\nThe objective is the result you want to improve, such as profit. Constraints are the limits a plan must obey, such as the amount of steel available. A plan that breaks even one required limit is not an acceptable option.\nBuild the model, solve it, and then check whether its assumptions fit the real situation. A calculation can find the best plan inside a model; it cannot decide whether you left something important out.\nA feasible plan obeys every constraint. An optimal plan is the best feasible plan according to the objective. To maximize means to make the objective as large as possible; to minimize means to make it as small as possible.",
         "sections": [
           {
             "title": "The steel-product example",
@@ -58,7 +58,7 @@
       {
         "id": "break-even",
         "title": "Break-even: cost, revenue and profit",
-        "body": "Fixed cost is the cost that does not change with production volume over the modeled range. Unit variable cost is the additional cost per unit produced.\nRead \\(c_f\\) as “c sub f”: the subscript \\(f\\) stands for fixed. Read \\(c_v\\) as “c sub v”: that subscript \\(v\\) stands for variable. These subscripts are labels, not multiplication and not separate decision variables.\nTo keep the equations short, write \\(F=c_f\\) for total fixed cost and \\(c=c_v\\) for variable cost per unit. Capital \\(F\\) is an amount of money; lowercase \\(c\\) is money per unit. For example, a fixed rental bill belongs in \\(F\\), while material cost for one product belongs in \\(c\\).\nLet \\(p\\) be selling price per unit and \\(v\\) the volume of units produced and sold. The standalone variable \\(v\\) means volume; it is different from the “variable” label in the subscript of \\(c_v\\). This simple model assumes production equals sales.\nIn the equations, \\(TC\\) means total cost, \\(R\\) means sales revenue, and \\(Z\\) means profit. All three are amounts of money for the same period:\n$$TC=F+cv,\\qquad R=pv,\\qquad Z=(p-c)v-F.$$\nThe product \\(cv\\) is variable cost per unit times the number of units. Similarly, \\(pv\\) is price times units sold. Subtracting total cost from revenue gives profit.\nAt break-even, revenue equals total cost, so profit is zero. The subscript \\(BE\\) stands for break-even: \\(v_{BE}\\) is the number of units that must be sold to break even. If \\(p>c\\),\n$$v_{BE}=\\frac{F}{p-c}.$$\nHere \\(p-c\\) is the contribution per unit: the amount from each sale left to cover fixed cost and then profit. Dividing money by money per unit gives a number of units.\nIf \\(p=c\\) and \\(F>0\\), no finite sales volume covers fixed cost. If \\(p<c\\), additional sales reduce profit. The model assumes that the chosen volume can be sold at the stated price.",
+        "body": "Imagine selling a product. Some bills, such as rent, arrive even if you sell nothing. Other costs, such as materials, grow with each sale. Break-even is the point where your sales have paid for both kinds of cost, but have not yet earned a profit.\nFixed cost is the cost that does not change with production volume over the modeled range. Unit variable cost is the additional cost per unit produced.\nRead \\(c_f\\) as “c sub f”: the subscript \\(f\\) stands for fixed. Read \\(c_v\\) as “c sub v”: that subscript \\(v\\) stands for variable. These subscripts are labels, not multiplication and not separate decision variables.\nTo keep the equations short, write \\(F=c_f\\) for total fixed cost and \\(c=c_v\\) for variable cost per unit. Capital \\(F\\) is an amount of money; lowercase \\(c\\) is money per unit. For example, a fixed rental bill belongs in \\(F\\), while material cost for one product belongs in \\(c\\).\nLet \\(p\\) be selling price per unit and \\(v\\) the volume of units produced and sold. The standalone variable \\(v\\) means volume; it is different from the “variable” label in the subscript of \\(c_v\\). This simple model assumes production equals sales.\nIn the equations, \\(TC\\) means total cost, \\(R\\) means sales revenue, and \\(Z\\) means profit. All three are amounts of money for the same period:\n$$TC=F+cv,\\qquad R=pv,\\qquad Z=(p-c)v-F.$$\nThe product \\(cv\\) is variable cost per unit times the number of units. Similarly, \\(pv\\) is price times units sold. Subtracting total cost from revenue gives profit.\nAt break-even, revenue equals total cost, so profit is zero. The subscript \\(BE\\) stands for break-even: \\(v_{BE}\\) is the number of units that must be sold to break even. If \\(p>c\\),\n$$v_{BE}=\\frac{F}{p-c}.$$\nHere \\(p-c\\) is the contribution per unit: the amount from each sale left to cover fixed cost and then profit. Dividing money by money per unit gives a number of units.\nIf \\(p=c\\) and \\(F>0\\), no finite sales volume covers fixed cost. If \\(p<c\\), additional sales reduce profit. The model assumes that the chosen volume can be sold at the stated price.",
         "sections": [
           {
             "title": "Western Clothing Company",
@@ -117,11 +117,11 @@
       {
         "id": "airline-demand",
         "title": "Airline demand and a single fare",
-        "body": "The airline has 130 seats per departure and a full economy fare of $60. The observed (fare, tickets sold) pairs are (40,55), (50,40), (30,102) and (38,60). Use a fitted demand curve, which need not pass through every observation.\nThe two displayed branches meet at fare $40 and demand 50. Extending the curve with nonnegative demand and imposing the stated seat limit gives:\n$$q(p)=\\begin{cases}250-5p&0\\le p\\le40\\\\90-p&40\\le p\\le90\\\\0&p\\ge90.\\end{cases}$$\n$$s(p)=\\min\\{130,q(p)\\},\\qquad R(p)=p\\,s(p).$$\nThe zero-demand truncation and capacity-limited sales formula make the physical bounds explicit. Calculations below use the stated demand curve rather than fitting a new one to the observations.",
+        "body": "A higher ticket price earns more from each passenger, but may persuade fewer people to fly. The useful question is therefore not just “How many seats can we fill?” It is “Which fare brings in the most revenue?”\nThe flight has 130 seats and a full fare of $60. Recorded price-and-sales points are (40,55), (50,40), (30,102) and (38,65). In each point, the first number is the fare in dollars and the second is the number of tickets sold.\nThe curve has two parts, meeting at a $40 fare and 50 passengers. Use the first part for lower fares and the second for higher fares. Demand cannot be negative:\n$$q(p)=\\begin{cases}250-5p&0\\le p\\le40\\\\90-p&40\\le p\\le90\\\\0&p\\ge90.\\end{cases}$$\n$$s(p)=\\min\\{130,q(p)\\},\\qquad R(p)=p\\,s(p).$$\nThe demand curve estimates how many people want a ticket at each price. Actual sales cannot exceed 130 seats, even if demand is higher. Revenue is the price multiplied by the number of tickets sold. We use this same fitted curve for each policy so that the comparisons are consistent.\nA fitted demand curve is a simplified description of the overall pattern. Its prediction can differ from a particular recorded sale, so do not confuse an observed point with a point on the fitted curve.",
         "sections": [
           {
             "title": "Compare the first three pricing policies",
-            "body": "The comparison table reports fare $60, 30 tickets and revenue $1,800 for strategy 1. To fill the plane in strategy 2, solve \\(250 - 5p = 130\\): fare $24 gives revenue $3,120.\nFor strategy 3, derive the revenue maximum from the supplied curve. In the uncapped low-price region, \\(R = 250p - 5p^2\\), with derivative \\(250 - 10p\\). At \\(p = \\$25\\), sales are 125 and revenue is $3,125. The higher-price branch has its own stationary point at \\(p = \\$45\\), with 45 sales and revenue $2,025. Checking the capacity breakpoint and branch boundaries confirms the best common fare of $25.\nThe table therefore distinguishes filling all seats from maximizing ticket revenue."
+            "body": "Start with fare $60, 30 tickets and revenue $1,800 for strategy 1. To fill the plane in strategy 2, solve \\(250 - 5p = 130\\): fare $24 gives revenue $3,120.\nFor strategy 3, derive the revenue maximum from the supplied curve. In the uncapped low-price region, \\(R = 250p - 5p^2\\), with derivative \\(250 - 10p\\). At \\(p = \\$25\\), sales are 125 and revenue is $3,125. The higher-price branch has its own stationary point at \\(p = \\$45\\), with 45 sales and revenue $2,025. Checking the capacity breakpoint and branch boundaries confirms the best common fare of $25.\nThe table therefore distinguishes filling all seats from maximizing ticket revenue."
           }
         ],
         "sources": [
@@ -162,12 +162,32 @@
         "equationWords": {
           "q(p)=\\begin{cases}250-5p&0\\le p\\le40\\\\90-p&40\\le p\\le90\\\\0&p\\ge90.\\end{cases}": "{\\text{expected passengers}}({\\text{ticket price}})=\\begin{cases}250-5\\,\\times\\,{\\text{ticket price}}&0\\le {\\text{ticket price}}\\le40\\\\90-{\\text{ticket price}}&40\\le {\\text{ticket price}}\\le90\\\\0&{\\text{ticket price}}\\ge90.\\end{cases}",
           "s(p)=\\min\\{130,q(p)\\},\\qquad R(p)=p\\,s(p).": "\\begin{gathered}{\\text{tickets sold}}({\\text{ticket price}})=\\min\\{130,{\\text{expected passengers}}({\\text{ticket price}})\\},\\\\ {\\text{revenue}}({\\text{ticket price}})={\\text{ticket price}}\\,{\\text{tickets sold}}({\\text{ticket price}}).\\end{gathered}"
+        },
+        "pointReadings": {
+          "The flight has 130 seats and a full fare of $60. Recorded price-and-sales points are (40,55), (50,40), (30,102) and (38,65). In each point, the first number is the fare in dollars and the second is the number of tickets sold.": [
+            {
+              "point": "(40,55)",
+              "meaning": "At a fare of $40 per ticket, 55 tickets are sold per departure."
+            },
+            {
+              "point": "(50,40)",
+              "meaning": "At a fare of $50 per ticket, 40 tickets are sold per departure."
+            },
+            {
+              "point": "(30,102)",
+              "meaning": "At a fare of $30 per ticket, 102 tickets are sold per departure."
+            },
+            {
+              "point": "(38,65)",
+              "meaning": "At a fare of $38 per ticket, 65 tickets are sold per departure."
+            }
+          ]
         }
       },
       {
         "id": "segmentation",
         "title": "Two passenger types and two fares",
-        "body": "Separate business travelers who purchase within 14 days of departure from leisure travelers who purchase at least 15 days ahead. Observed business/leisure counts are \\(52/3\\) at $40, \\(40/0\\) at $50, \\(65/37\\) at $30 and \\(57/8\\) at $38. The last row's type counts disagree with its printed total, as noted below.\nThe displayed fitted curves are \\(q₁ = 90 - p_{1}\\) and \\(q₂ = 160 - 4p_{2}\\). Restricting expected passenger counts to be nonnegative gives:\n$$q_1(p_1)=\\max(0,90-p_1),\\qquad q_2(p_2)=\\max(0,160-4p_2).$$\nUnder one fare, these demands add to the piecewise total-demand curve. For two fares, the two segment revenues share the 130-seat capacity.",
+        "body": "Not every passenger responds to price in the same way. Someone traveling for work may accept a fare that someone planning a holiday would reject. If booking rules let us distinguish these groups, we can consider a different fare for each.\nSeparate business travelers who purchase within 14 days of departure from leisure travelers who purchase at least 15 days ahead. At a common fare of $40, demand was 52 business passengers and 3 leisure passengers. At $50, it was 40 business passengers and no leisure passengers; at $30, 65 business and 37 leisure passengers; and at $38, 57 business and 8 leisure passengers.\nThe displayed fitted curves are \\(q₁ = 90 - p_{1}\\) and \\(q₂ = 160 - 4p_{2}\\). Restricting expected passenger counts to be nonnegative gives:\n$$q_1(p_1)=\\max(0,90-p_1),\\qquad q_2(p_2)=\\max(0,160-4p_2).$$\nIf both groups pay the same fare, add their demands to find total demand. If they pay different fares, calculate each group separately—but their tickets still have to fit on the same 130-seat plane.",
         "sections": [
           {
             "title": "Find the best two fares",
@@ -178,7 +198,6 @@
           "chapter01.pdf:26-29",
           "chapter01.pdf:33"
         ],
-        "warning": "The observed-data table has an internal inconsistency at fare $38: total tickets are listed as 60, but the type counts 57 and 8 add to 65. These entries are preserved as printed; the worked pricing calculations use the stated fitted curves.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -212,7 +231,7 @@
       {
         "id": "app-fare",
         "title": "App specials and a binding seat constraint",
-        "body": "The app-pricing model keeps 30 full-fare business passengers paying $60 while an app special attracts additional price-sensitive business travelers. With a fixed leisure fare, the optimum is app fare $40 with 20 app users; optimizing both fares gives app fare $32 with 28 app users and leisure fare $22 with 72 leisure users.\nThe following is a worked reconstruction of those results from the displayed demand curves. At app fare a, total business demand on \\(q₁ = 90 - a\\) is split into 30 full-fare customers and residual app demand \\(60 - a\\). Leisure demand at fare b is \\(160 - 4b\\). Use \\(0 \\le  a \\le  60\\) and \\(0 \\le  b \\le  40\\):\n$$R=1800+a(60-a)+b(160-4b).$$\n$$30+(60-a)+(160-4b)\\le130\\quad\\Longleftrightarrow\\quad a+4b\\ge120.$$\nThis reconstruction assumes that the 30 full-fare passengers do not switch to the app. Allowing these customers to switch would change the demand model and the optimum.",
+        "body": "Suppose we can sell an extra discounted ticket through an app. The extra sale helps only if it adds revenue without displacing a more valuable sale. We need to account for both the limited seats and which customers can use the discount.\nNow offer an app special to additional price-sensitive business travelers. Keep 30 full-fare business passengers paying $60 each. First choose the app fare while keeping the leisure fare at $20; then choose both the app and leisure fares together.\nStart with the demand curves. At app fare a, total business demand on \\(q₁ = 90 - a\\) is split into 30 full-fare customers and residual app demand \\(60 - a\\). Leisure demand at fare b is \\(160 - 4b\\). Use \\(0 \\le  a \\le  60\\) and \\(0 \\le  b \\le  40\\):\n$$R=1800+a(60-a)+b(160-4b).$$\n$$30+(60-a)+(160-4b)\\le130\\quad\\Longleftrightarrow\\quad a+4b\\ge120.$$\nAssume that the 30 full-fare passengers do not switch to the app. Allowing these customers to switch would change the demand model and the optimum.",
         "sections": [
           {
             "title": "Strategy 5: leisure fare fixed at $20",
@@ -258,9 +277,27 @@
         }
       },
       {
+        "id": "pricing-strategies",
+        "title": "Compare all six airline pricing strategies",
+        "body": "Here are six ways to sell seats on the same flight. Read down the table to see what each policy changes, then compare the revenue bars. You do not need to follow the algebra yet to understand the trade-off.\nChoose fares to maximize revenue from a flight with 130 seats. Compare a single common fare, separate business and leisure fares, and an app special. Fares are in dollars per ticket; passenger counts and revenue are per departure.\nFor the app policies, keep 30 full-fare business passengers at $60 and assume they do not switch to the discounted app ticket. All values use the stated fitted demand curves and continuous demand model.",
+        "sections": [
+          {
+            "title": "Read the comparison",
+            "body": "Start with the table to see exactly who pays each fare. The chart then compares total ticket revenue, starting its bars at zero. Empty seats help distinguish capacity use from the revenue objective."
+          },
+          {
+            "title": "What changes the best decision?",
+            "body": "Charging everyone $24 fills the plane and earns $3,120. Charging $25 sells 125 tickets and earns $3,125: five empty seats accompany a $5 revenue increase. Separate business and leisure fares earn $3,625. With the stated no-switching assumption, adding an app fare raises revenue to $4,200; choosing both app and leisure fares raises it to $4,280."
+          }
+        ],
+        "sources": [
+          "chapter01.pdf:22-33"
+        ]
+      },
+      {
         "id": "decision-support",
         "title": "Methods and decision support systems",
-        "body": "Linear programming uses a clear objective, resource restrictions and known parameters. Probabilistic methods explicitly represent uncertainty. Network methods express relationships as nodes and connections and may be deterministic or probabilistic. Forecasting, inventory models, simulation and multicriteria methods address other structures.\nApplications include scheduling, production planning, inventory, pricing, product assortment, capital budgeting, delivery routes and satellite scheduling. The INFORMS journals on applied analytics and data science provide examples of implementation.\nA decision support system combines a user interface, databases and management-science models. The decision maker asks “what if?”, compares alternatives and examines sensitivity. ERP systems illustrate how these tools connect across organizational functions and internet-based operations.",
+        "body": "Different decisions need different tools. A delivery problem is naturally about routes; an uncertain sales forecast is about probabilities. Choosing a method starts with understanding the problem, not with choosing software.\nLinear programming uses a clear objective, resource restrictions and known parameters. Probabilistic methods explicitly represent uncertainty. Network methods express relationships as nodes and connections and may be deterministic or probabilistic. Forecasting, inventory models, simulation and multicriteria methods address other structures.\nApplications include scheduling, production planning, inventory, pricing, product assortment, capital budgeting, delivery routes and satellite scheduling. The INFORMS journals on applied analytics and data science provide examples of implementation.\nA decision support system combines a user interface, databases and management-science models. The decision maker asks “what if?”, compares alternatives and examines sensitivity. ERP systems illustrate how these tools connect across organizational functions and internet-based operations.",
         "sections": [],
         "sources": [
           "chapter01.pdf:34-44"
@@ -296,7 +333,7 @@
       {
         "id": "gantt",
         "title": "Case study: making scheduling results usable",
-        "body": "The Mitsubishi production-scheduling example illustrates that a solution also needs a usable interface. The old tool needed about two hours to draw 100,000 schedule items, around 13 items per second. Users also needed to move and resize bars, change colors and hatching, show labels and tooltips, change the time scale, open nested rows and resize columns.\nThe targets were 20,000 items within 10–20 seconds and 100,000 within 0.1–0.2 hour. Instead of preparing the entire chart before displaying anything, compute and draw the requested portion immediately.\nA block is a group of schedule data; the view is the visible region; an extended view caches surrounding content. When the view changes, refresh the screen and cache as needed. Modifications update the local scheduling cache and then the database. The interface, drawing/data-management layer and cache separate presentation from server storage.",
+        "body": "Even a good plan is hard to use if its display is slow. This scheduling example shows how presenting only the part someone needs can make a large solution much easier to work with.\nThe Mitsubishi production-scheduling example illustrates that a solution also needs a usable interface. The old tool needed about two hours to draw 100,000 schedule items, around 13 items per second. Users also needed to move and resize bars, change colors and hatching, show labels and tooltips, change the time scale, open nested rows and resize columns.\nThe targets were 20,000 items within 10–20 seconds and 100,000 within 0.1–0.2 hour. Instead of preparing the entire chart before displaying anything, compute and draw the requested portion immediately.\nA block is a group of schedule data; the view is the visible region; an extended view caches surrounding content. When the view changes, refresh the screen and cache as needed. Modifications update the local scheduling cache and then the database. The interface, drawing/data-management layer and cache separate presentation from server storage.",
         "sections": [
           {
             "title": "Reported evaluation and its historical setup",
@@ -321,7 +358,7 @@
       {
         "id": "lp-components",
         "title": "The four assumptions of linear programming",
-        "body": "An LP consists of decision variables, a linear objective, linear constraints and variable bounds. The coefficients and right-hand-side values are parameters. To apply it, identify the decision, formulate the model, solve it and implement the result.\nProportionality means a coefficient stays constant as the activity level changes. Additivity means contributions combine by addition, without interaction terms. Divisibility allows fractional variable values. Certainty treats the model’s inputs as known.\n$$\\max\\; c^Tx\\quad\\text{subject to }Ax\\le b,\\;x\\ge0.$$\nHere \\(x\\) is the vector of decision quantities, \\(c\\) is the vector of their objective coefficients, \\(A\\) is the matrix of constraint coefficients, and \\(b\\) is the vector of right-hand-side limits. The superscript \\(T\\) means transpose, so \\(c^Tx\\) is the sum of each coefficient times its corresponding decision quantity, not a power of \\(c\\). The inequalities apply component by component. These letters are local to this LP model: its \\(c\\) need not mean the unit variable cost used in the earlier break-even example.\nThis compact form is an example, not a restriction: an LP can minimize, include equalities or lower-bound requirements, and have other variable bounds. Products of decision variables, squared variables and variable denominators are not linear.\nFor every variable, state its unit and time period. Every term in one constraint must have the same unit. If actual choices must be whole numbers, an integer model may be required; rounding an LP solution can break feasibility.",
+        "body": "Linear programming is a way to choose quantities when the gains and resource use add up in a simple way. “Linear” means that doubling an activity doubles its modeled contribution and resource use. Let us turn that idea into variables, a goal and limits.\nAn LP consists of decision variables, a linear objective, linear constraints and variable bounds. The coefficients and right-hand-side values are parameters. To apply it, identify the decision, formulate the model, solve it and implement the result.\nProportionality means a coefficient stays constant as the activity level changes. Additivity means contributions combine by addition, without interaction terms. Divisibility allows fractional variable values. Certainty treats the model’s inputs as known.\n$$\\max\\; c^Tx\\quad\\text{subject to }Ax\\le b,\\;x\\ge0.$$\nA vector is a list of numbers; a matrix is a table of numbers. They let us write many decisions and constraints compactly.\nHere \\(x\\) is the vector of decision quantities, \\(c\\) is the vector of their objective coefficients, \\(A\\) is the matrix of constraint coefficients, and \\(b\\) is the vector of right-hand-side limits. The superscript \\(T\\) means transpose, so \\(c^Tx\\) is the sum of each coefficient times its corresponding decision quantity, not a power of \\(c\\). The inequalities apply component by component. These letters are local to this LP model: its \\(c\\) need not mean the unit variable cost used in the earlier break-even example.\nThis compact form is an example, not a restriction: an LP can minimize, include equalities or lower-bound requirements, and have other variable bounds. Products of decision variables, squared variables and variable denominators are not linear.\nFor every variable, state its unit and time period. Every term in one constraint must have the same unit. If actual choices must be whole numbers, an integer model may be required; rounding an LP solution can break feasibility.",
         "sections": [],
         "sources": [
           "chapter02 - part 2.pdf:1-5",
@@ -379,7 +416,7 @@
       {
         "id": "pottery",
         "title": "Beaver Creek: bowls and mugs",
-        "body": "Let \\(x_{1}\\) be bowls per day and \\(x_{2}\\) mugs per day. Each bowl earns $40, uses one labor hour and 4 lb of clay. Each mug earns $50, uses two hours and 3 lb of clay. There are 40 labor hours and 120 lb of clay available per day.\n$$\\max Z=40x_1+50x_2$$\n$$x_1+2x_2\\le40,\\qquad4x_1+3x_2\\le120,\\qquad x_1,x_2\\ge0.$$\nAt (5,10), labor use is 25 and clay use is 50: \\(4\\times 5 + 3\\times 10 = 50\\) lb. Both limits are satisfied and profit is $700. The clay total is 50, not 70.\nAt (10,20), labor use is 50, exceeding 40, so the plan is infeasible even though its nominal profit is $1,400. Feasibility requires every constraint, including bounds, to hold.",
+        "body": "A pottery business makes bowls and mugs. Mugs earn more per item, but they also use more labor. To decide what to make, we must consider profit and both scarce resources together.\nLet \\(x_{1}\\) be bowls per day and \\(x_{2}\\) mugs per day. Each bowl earns $40, uses one labor hour and 4 lb of clay. Each mug earns $50, uses two hours and 3 lb of clay. There are 40 labor hours and 120 lb of clay available per day.\n$$\\max Z=40x_1+50x_2$$\n$$x_1+2x_2\\le40,\\qquad4x_1+3x_2\\le120,\\qquad x_1,x_2\\ge0.$$\nAt (5,10), labor use is 25 and clay use is 50: \\(4\\times 5 + 3\\times 10 = 50\\) lb. Both limits are satisfied and profit is $700. \nAt (10,20), labor use is 50, exceeding 40, so the plan is infeasible even though its nominal profit is $1,400. Feasibility requires every constraint, including bounds, to hold.",
         "sections": [
           {
             "title": "Slack and binding constraints",
@@ -390,7 +427,6 @@
           "chapter02 - part 2.pdf:6-8",
           "chapter02 - part 2.pdf:12-14"
         ],
-        "warning": "Each bowl uses 4 lb of clay and each mug uses 3 lb, so clay usage is \\(4x_1+3x_2\\). At (5,10), this is 50 lb, not 70. Keep both product variables in the clay constraint.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -419,12 +455,38 @@
         "equationWords": {
           "\\max Z=40x_1+50x_2": "\\max {\\text{profit}}=40\\,\\times\\,{\\text{bowls produced}}+50\\,\\times\\,{\\text{mugs produced}}",
           "x_1+2x_2\\le40,\\qquad4x_1+3x_2\\le120,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}{\\text{bowls produced}}+2\\,\\times\\,{\\text{mugs produced}}\\le40,\\\\4{\\text{bowls produced}}+3\\,\\times\\,{\\text{mugs produced}}\\le120,\\\\ {\\text{bowls produced}},{\\text{mugs produced}}\\ge0.\\end{gathered}"
+        },
+        "pointReadings": {
+          "At (5,10), labor use is 25 and clay use is 50: \\(4\\times 5 + 3\\times 10 = 50\\) lb. Both limits are satisfied and profit is $700. ": [
+            {
+              "point": "(5,10)",
+              "meaning": "Make 5 bowls and 10 mugs per day."
+            }
+          ],
+          "At (10,20), labor use is 50, exceeding 40, so the plan is infeasible even though its nominal profit is $1,400. Feasibility requires every constraint, including bounds, to hold.": [
+            {
+              "point": "(10,20)",
+              "meaning": "Make 10 bowls and 20 mugs per day."
+            }
+          ],
+          "For an upper-bound resource, slack equals availability minus usage. At (5,10), labor slack is 15 and clay slack is 70. A constraint binds when slack is zero. A feasible plan need not be optimal, and a high objective value does not rescue an infeasible plan.": [
+            {
+              "point": "(5,10)",
+              "meaning": "Make 5 bowls and 10 mugs per day."
+            }
+          ],
+          "Each bowl uses 4 lb of clay and each mug uses 3 lb, so clay usage is \\(4x_1+3x_2\\). At (5,10), this is 50 lb, not 70. Keep both product variables in the clay constraint.": [
+            {
+              "point": "(5,10)",
+              "meaning": "Make 5 bowls and 10 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "graphical",
         "title": "Graphical solution and corner points",
-        "body": "For two variables, draw each constraint boundary, select the permitted half-plane and intersect all the restrictions with the variable bounds. The pottery diagram shows the resource lines and feasible region. For a ≤ resource constraint, the origin is often a useful test point; a ≥ requirement can select the opposite side.\nFor the pottery model, the pottery feasible vertices are (0,0), (0,20), (24,8) and (30,0). Their objective values are $0, $1,000, $1,360 and $1,200, respectively. Thus the best plan is 24 bowls and 8 mugs. The redrawn feasible-region diagram and interactive controls use these equations rather than treating imprecise hand-drawn axes as numerical measurements.",
+        "body": "With only two decision quantities, we can draw every allowed plan on a graph. One axis shows the first quantity and the other shows the second. The overlapping allowed area contains the plans we are free to choose.\nFor two variables, draw each constraint boundary, select the permitted half-plane and intersect all the restrictions with the variable bounds. The pottery diagram shows the resource lines and feasible region. For a ≤ resource constraint, the origin is often a useful test point; a ≥ requirement can select the opposite side.\nFor the pottery model, the pottery feasible vertices are (0,0), (0,20), (24,8) and (30,0). Their objective values are $0, $1,000, $1,360 and $1,200, respectively. Thus the best plan is 24 bowls and 8 mugs. Use the graph to see the allowed plans and check the corner values with the equations.",
         "sections": [
           {
             "title": "Worked derivation of the binding intersection",
@@ -472,17 +534,36 @@
         },
         "equationWords": {
           "x_1+2x_2=40,\\qquad4x_1+3x_2=120.": "\\begin{gathered}{\\text{bowls produced}}+2\\,\\times\\,{\\text{mugs produced}}=40,\\\\4{\\text{bowls produced}}+3\\,\\times\\,{\\text{mugs produced}}=120.\\end{gathered}"
+        },
+        "pointReadings": {
+          "For the pottery model, the pottery feasible vertices are (0,0), (0,20), (24,8) and (30,0). Their objective values are $0, $1,000, $1,360 and $1,200, respectively. Thus the best plan is 24 bowls and 8 mugs. Use the graph to see the allowed plans and check the corner values with the equations.": [
+            {
+              "point": "(0,0)",
+              "meaning": "Make 0 bowls and 0 mugs per day."
+            },
+            {
+              "point": "(0,20)",
+              "meaning": "Make 0 bowls and 20 mugs per day."
+            },
+            {
+              "point": "(24,8)",
+              "meaning": "Make 24 bowls and 8 mugs per day."
+            },
+            {
+              "point": "(30,0)",
+              "meaning": "Make 30 bowls and 0 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "fertilizer",
         "title": "Fertilizer: a minimization model",
-        "body": "Let \\(x_{1}\\) be bags of Super-gro and \\(x_{2}\\) bags of Crop-quick. The purchase costs are $6 and $3 per bag. Their nitrogen contributions are 2 and 4 lb per bag, and phosphate contributions are 4 and 3 lb per bag. The field needs at least 16 lb nitrogen and 24 lb phosphate:\n$$\\min Z=6x_1+3x_2$$\n$$2x_1+4x_2\\ge16,\\qquad4x_1+3x_2\\ge24,\\qquad x_1,x_2\\ge0.$$\nWorking from these constraints, the feasible region extends upward and rightward, with lower-boundary vertices (0,8), (4.8,1.6) and (8,0). Their calculated costs are $24, $33.60 and $48. Buy 8 bags of Crop-quick and no Super-gro. \nAt that plan, nitrogen supplied is 32 lb, leaving surplus 16 lb, and phosphate is exactly 24 lb. This example has an unbounded feasible region but a finite minimum cost.",
+        "body": "This time we want to spend as little as possible. Buying less fertilizer is not automatically better: the crop must still receive enough of each nutrient. The cheapest acceptable mixture has to meet every requirement.\nLet \\(x_{1}\\) be bags of Super-gro and \\(x_{2}\\) bags of Crop-quick. The purchase costs are $6 and $3 per bag. Their nitrogen contributions are 2 and 4 lb per bag, and phosphate contributions are 4 and 3 lb per bag. The field needs at least 16 lb nitrogen and 24 lb phosphate:\n$$\\min Z=6x_1+3x_2$$\n$$2x_1+4x_2\\ge16,\\qquad4x_1+3x_2\\ge24,\\qquad x_1,x_2\\ge0.$$\nWorking from these constraints, the feasible region extends upward and rightward, with lower-boundary vertices (0,8), (4.8,1.6) and (8,0). Their calculated costs are $24, $33.60 and $48. Buy 8 bags of Crop-quick and no Super-gro. \nAt that plan, nitrogen supplied is 32 lb, leaving surplus 16 lb, and phosphate is exactly 24 lb. This example has an unbounded feasible region but a finite minimum cost.",
         "sections": [],
         "sources": [
           "chapter02 - part 2.pdf:9-10,15"
         ],
-        "warning": "The phosphate constraint is \\(4x_1+3x_2\\ge24\\), using the phosphate supplied by both fertilizer types.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -511,12 +592,28 @@
         "equationWords": {
           "\\min Z=6x_1+3x_2": "\\min {\\text{total cost}}=6\\,\\times\\,{\\text{Super-gro bags}}+3\\,\\times\\,{\\text{Crop-quick bags}}",
           "2x_1+4x_2\\ge16,\\qquad4x_1+3x_2\\ge24,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}2\\,\\times\\,{\\text{Super-gro bags}}+4\\,\\times\\,{\\text{Crop-quick bags}}\\ge16,\\\\4{\\text{Super-gro bags}}+3\\,\\times\\,{\\text{Crop-quick bags}}\\ge24,\\\\ {\\text{Super-gro bags}},{\\text{Crop-quick bags}}\\ge0.\\end{gathered}"
+        },
+        "pointReadings": {
+          "Working from these constraints, the feasible region extends upward and rightward, with lower-boundary vertices (0,8), (4.8,1.6) and (8,0). Their calculated costs are $24, $33.60 and $48. Buy 8 bags of Crop-quick and no Super-gro. ": [
+            {
+              "point": "(0,8)",
+              "meaning": "Buy 0 bags of Super-gro and 8 bags of Crop-quick."
+            },
+            {
+              "point": "(4.8,1.6)",
+              "meaning": "Buy 4.8 bags of Super-gro and 1.6 bags of Crop-quick."
+            },
+            {
+              "point": "(8,0)",
+              "meaning": "Buy 8 bags of Super-gro and 0 bags of Crop-quick."
+            }
+          ]
         }
       },
       {
         "id": "irregular",
         "title": "Multiple optima, infeasibility and unboundedness",
-        "body": "Consider changing unit profits, alternate optima, infeasibility and unboundedness. For the pottery calculations here, retain the product-data constraints \\(x_{1} + 2x_{2} \\le  40\\) and \\(4x_{1} + 3x_{2} \\le  120\\), with nonnegative variables. This avoids the repeated printed clay-row typo noted in the pottery topic.\nWorked evaluation for profits $70 and $20: the vertex profits are 0, 400, 1,840 and 2,100, so (30,0) becomes optimal. The feasible set stays fixed while the objective selects a different vertex.\nFor the alternate-optimum example, the objective \\(40x_{1} + 30x_{2}\\) equals ten times clay usage. Every feasible point on the clay boundary between (24,8) and (30,0) therefore earns $1,200. The diagram is a redraw from those equations; the equality of objective values follows from this calculation.",
+        "body": "An optimization problem does not always have one best answer. Several plans can tie, the restrictions can rule out every plan, or the model can allow the objective to improve forever. These are different situations and need different explanations.\nLet us look at three ways an optimization problem can behave. For the pottery calculations here, retain the product-data constraints \\(x_{1} + 2x_{2} \\le  40\\) and \\(4x_{1} + 3x_{2} \\le  120\\), with nonnegative variables. These constraints keep the same labor and clay limits while we change the question.\nWorked evaluation for profits $70 and $20: the vertex profits are 0, 400, 1,840 and 2,100, so (30,0) becomes optimal. The feasible set stays fixed while the objective selects a different vertex.\nFor the alternate-optimum example, the objective \\(40x_{1} + 30x_{2}\\) equals ten times clay usage. Every feasible point on the clay boundary between (24,8) and (30,0) therefore earns $1,200. That is why all points along this edge tie.",
         "sections": [
           {
             "title": "An infeasible model",
@@ -558,12 +655,30 @@
         "equationWords": {
           "\\max Z=5x_1+3x_2,\\qquad4x_1+2x_2\\le8,\\quad x_1\\ge4,\\quad x_2\\ge6.": "\\begin{gathered}\\max {\\text{profit}}=5\\,\\times\\,{\\text{bowls produced}}+3\\,\\times\\,{\\text{mugs produced}},\\\\4{\\text{bowls produced}}+2\\,\\times\\,{\\text{mugs produced}}\\le8,\\\\ {\\text{bowls produced}}\\ge4,\\\\ {\\text{mugs produced}}\\ge6.\\end{gathered}",
           "\\max(4x_1+2x_2),\\qquad x_1\\ge4,\\quad0\\le x_2\\le2.": "\\begin{gathered}\\max(4\\,\\times\\,{\\text{bowls produced}}+2\\,\\times\\,{\\text{mugs produced}}),\\\\ {\\text{bowls produced}}\\ge4,\\\\0\\le {\\text{mugs produced}}\\le2.\\end{gathered}"
+        },
+        "pointReadings": {
+          "Worked evaluation for profits $70 and $20: the vertex profits are 0, 400, 1,840 and 2,100, so (30,0) becomes optimal. The feasible set stays fixed while the objective selects a different vertex.": [
+            {
+              "point": "(30,0)",
+              "meaning": "Make 30 bowls and 0 mugs per day."
+            }
+          ],
+          "For the alternate-optimum example, the objective \\(40x_{1} + 30x_{2}\\) equals ten times clay usage. Every feasible point on the clay boundary between (24,8) and (30,0) therefore earns $1,200. That is why all points along this edge tie.": [
+            {
+              "point": "(24,8)",
+              "meaning": "Make 24 bowls and 8 mugs per day."
+            },
+            {
+              "point": "(30,0)",
+              "meaning": "Make 30 bowls and 0 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "hot-dogs",
         "title": "Mixture constraints: chicken and beef",
-        "body": "Make a 1,000 lb batch with chicken costing $3/lb and beef costing $5/lb. Requirements are at least 500 lb chicken, at least 200 lb beef, and a chicken-to-beef ratio of at least two to one.\nWorked formulation from those stated data: let c and b be pounds of chicken and beef.\n$$\\min Z=3c+5b,\\quad c+b=1000,\\quad c\\ge500,\\quad b\\ge200,\\quad c\\ge2b.$$\nSubstitute \\(c = 1,000 - b\\). The constraints give \\(200 \\le  b \\le  1,000/3\\), and cost becomes \\(3,000 + 2b\\). The derived minimum uses \\(b = 200\\) and \\(c = 800\\), at cost $3,400.\nBecause total batch weight is an equality, the feasible mixtures form a line segment. Writing the ratio as \\(c \\ge  2b\\) keeps the formulation linear. The formulation and feasible-region graph use these ingredient requirements.",
+        "body": "A recipe is also a decision problem. We can choose how much of each ingredient to buy, but the batch must have the right total weight and meet its recipe requirements. The goal is the cheapest recipe that works.\nMake a 1,000 lb batch with chicken costing $3/lb and beef costing $5/lb. Requirements are at least 500 lb chicken, at least 200 lb beef, and a chicken-to-beef ratio of at least two to one.\nWorked formulation from those stated data: let c and b be pounds of chicken and beef.\n$$\\min Z=3c+5b,\\quad c+b=1000,\\quad c\\ge500,\\quad b\\ge200,\\quad c\\ge2b.$$\nSubstitute \\(c = 1,000 - b\\). The constraints give \\(200 \\le  b \\le  1,000/3\\), and cost becomes \\(3,000 + 2b\\). The derived minimum uses \\(b = 200\\) and \\(c = 800\\), at cost $3,400.\nBecause total batch weight is an equality, the feasible mixtures form a line segment. Writing the ratio as \\(c \\ge  2b\\) keeps the formulation linear. The formulation and feasible-region graph use these ingredient requirements.",
         "sections": [],
         "sources": [
           "chapter02 - part 2.pdf:21-23"
@@ -595,7 +710,7 @@
       {
         "id": "furniture",
         "title": "Furniture production and a second graph",
-        "body": "Let \\(x_{1}\\) be doors and \\(x_{2}\\) windows. Workshop 1 allows four door-hours, workshop 2 allows 12 hours with two per window, and workshop 3 allows 18 hours with three per door and two per window. Profit is $300 per door and $500 per window.\n$$\\max Z=300x_1+500x_2,\\quad x_1\\le4,\\quad2x_2\\le12,\\quad3x_1+2x_2\\le18,\\quad x\\ge0.$$\nThe vertices are (0,0), (4,0), (4,3), (2,6), (0,6). Profits are 0, 1,200, 2,700, 3,600 and 3,000. The optimal mix is two doors and six windows, using all hours in workshops 2 and 3, and leaving two hours in workshop 1.",
+        "body": "Doors and windows compete for workshop time. A product that earns more per unit may still be a poor use of the busiest workshop. We will compare complete production plans rather than judge the products one at a time.\nLet \\(x_{1}\\) be doors and \\(x_{2}\\) windows. Workshop 1 allows four door-hours, workshop 2 allows 12 hours with two per window, and workshop 3 allows 18 hours with three per door and two per window. Profit is $300 per door and $500 per window.\n$$\\max Z=300x_1+500x_2,\\quad x_1\\le4,\\quad2x_2\\le12,\\quad3x_1+2x_2\\le18,\\quad x\\ge0.$$\nThe vertices are (0,0), (4,0), (4,3), (2,6), (0,6). Profits are 0, 1,200, 2,700, 3,600 and 3,000. The optimal mix is two doors and six windows, using all hours in workshops 2 and 3, and leaving two hours in workshop 1.",
         "sections": [
           {
             "title": "Worked solution of the final graphical exercise",
@@ -630,6 +745,52 @@
         "equationWords": {
           "\\max Z=300x_1+500x_2,\\quad x_1\\le4,\\quad2x_2\\le12,\\quad3x_1+2x_2\\le18,\\quad x\\ge0.": "\\begin{gathered}\\max {\\text{objective value}}=300\\,\\times\\,{\\text{first product quantity}}+500\\,\\times\\,{\\text{second product quantity}},\\\\ {\\text{first product quantity}}\\le4,\\\\2{\\text{second product quantity}}\\le12,\\\\3{\\text{first product quantity}}+2\\,\\times\\,{\\text{second product quantity}}\\le18,\\\\ {\\text{product quantities}}\\ge0.\\end{gathered}",
           "\\max Z=4x_1+5x_2,\\quad x_1+2x_2\\le10,\\quad6x_1+6x_2\\le36,\\quad x_1\\le4,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\max {\\text{objective value}}=4\\,\\times\\,{\\text{first product quantity}}+5\\,\\times\\,{\\text{second product quantity}},\\\\ {\\text{first product quantity}}+2\\,\\times\\,{\\text{second product quantity}}\\le10,\\\\6{\\text{first product quantity}}+6\\,\\times\\,{\\text{second product quantity}}\\le36,\\\\ {\\text{first product quantity}}\\le4,\\\\ {\\text{first product quantity}},{\\text{second product quantity}}\\ge0.\\end{gathered}"
+        },
+        "pointReadings": {
+          "The vertices are (0,0), (4,0), (4,3), (2,6), (0,6). Profits are 0, 1,200, 2,700, 3,600 and 3,000. The optimal mix is two doors and six windows, using all hours in workshops 2 and 3, and leaving two hours in workshop 1.": [
+            {
+              "point": "(0,0)",
+              "meaning": "Make 0 doors and 0 windows."
+            },
+            {
+              "point": "(4,0)",
+              "meaning": "Make 4 doors and 0 windows."
+            },
+            {
+              "point": "(4,3)",
+              "meaning": "Make 4 doors and 3 windows."
+            },
+            {
+              "point": "(2,6)",
+              "meaning": "Make 2 doors and 6 windows."
+            },
+            {
+              "point": "(0,6)",
+              "meaning": "Make 0 doors and 6 windows."
+            }
+          ],
+          "Divide the second constraint by six. Calculating the intersections gives vertices (0,0), (4,0), (4,2), (2,4) and (0,5), with objective values 0, 16, 26, 28 and 25. Thus the derived optimum is (2,4), \\(Z = 28\\). The \\(x_{1}\\) upper bound has slack 2.": [
+            {
+              "point": "(0,0)",
+              "meaning": "Choose 0 for the first quantity and 0 for the second."
+            },
+            {
+              "point": "(4,0)",
+              "meaning": "Choose 4 for the first quantity and 0 for the second."
+            },
+            {
+              "point": "(4,2)",
+              "meaning": "Choose 4 for the first quantity and 2 for the second."
+            },
+            {
+              "point": "(2,4)",
+              "meaning": "Choose 2 for the first quantity and 4 for the second."
+            },
+            {
+              "point": "(0,5)",
+              "meaning": "Choose 0 for the first quantity and 5 for the second."
+            }
+          ]
         }
       }
     ]
@@ -646,7 +807,7 @@
       {
         "id": "objective-range",
         "title": "Changing objective coefficients",
-        "body": "Find the coefficient ranges using the pottery model with clay constraint \\(4x_{1} + 3x_{2} \\le  120\\).\nHere \\(c_1\\) is profit per bowl and \\(c_2\\) is profit per mug; subscripts 1 and 2 identify the two products. They are objective coefficients, not total profit or production quantities.\nObjective sensitivity asks how much a coefficient can change while the current optimal point remains optimal. For the pottery intersection (24,8), the objective slope must lie between the slopes of its two adjacent edges, −\\(1/2\\) and −\\(4/3\\).\n$$\\frac12\\le\\frac{c_1}{c_2}\\le\\frac43\\quad(c_2>0).$$\nHold \\(c_{2} = 50\\): \\(25 \\le  c_{1} \\le  200/3 \\approx  66.67\\). Hold \\(c_{1} = 40\\): \\(30 \\le  c_{2} \\le  80\\). At either endpoint the current point is still optimal, but an adjacent edge also becomes optimal. These are one-at-a-time ranges; they cannot be applied independently to simultaneous coefficient changes.",
+        "body": "Suppose product profits change after we have found a good production plan. Do we need a different plan immediately? Often we can find a range of prices over which the current choice is still best.\nFind the coefficient ranges using the pottery model with clay constraint \\(4x_{1} + 3x_{2} \\le  120\\).\nHere \\(c_1\\) is profit per bowl and \\(c_2\\) is profit per mug; subscripts 1 and 2 identify the two products. They are objective coefficients, not total profit or production quantities.\nObjective sensitivity asks how much a coefficient can change while the current optimal point remains optimal. For the pottery intersection (24,8), the objective slope must lie between the slopes of its two adjacent edges, −\\(1/2\\) and −\\(4/3\\).\n$$\\frac12\\le\\frac{c_1}{c_2}\\le\\frac43\\quad(c_2>0).$$\nHold \\(c_{2} = 50\\): \\(25 \\le  c_{1} \\le  200/3 \\approx  66.67\\). Hold \\(c_{1} = 40\\): \\(30 \\le  c_{2} \\le  80\\). At either endpoint the current point is still optimal, but an adjacent edge also becomes optimal. These are one-at-a-time ranges; they cannot be applied independently to simultaneous coefficient changes.",
         "sections": [
           {
             "title": "Derive the coefficient range algebraically",
@@ -658,7 +819,6 @@
           "chapter02 - part 2.pdf:30"
         ],
         "experiment": "profit",
-        "warning": "Use the clay constraint \\(4x_1+3x_2\\le120\\), consistent with 4 lb per bowl and 3 lb per mug. Repeating the second variable in both terms would describe a different resource constraint.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -693,12 +853,20 @@
           "\\frac12\\le\\frac{c_1}{c_2}\\le\\frac43\\quad(c_2>0).": "\\begin{gathered}\\frac12\\le\\frac{{\\text{profit per bowl}}}{{\\text{profit per mug}}}\\le\\frac43\\\\({\\text{profit per mug}}>0).\\end{gathered}",
           "y_L+4y_C=c_1,\\quad2y_L+3y_C=c_2.": "\\begin{gathered}{\\text{profit from one extra labor hour}}+4\\,\\times\\,{\\text{profit from one extra pound of clay}}={\\text{profit per bowl}},\\\\2{\\text{profit from one extra labor hour}}+3\\,\\times\\,{\\text{profit from one extra pound of clay}}={\\text{profit per mug}}.\\end{gathered}",
           "y_L=\\frac{4c_2-3c_1}{5},\\qquad y_C=\\frac{2c_1-c_2}{5}.": "\\begin{gathered}{\\text{profit from one extra labor hour}}=\\frac{4\\,\\times\\,{\\text{profit per mug}}-3\\,\\times\\,{\\text{profit per bowl}}}{5},\\\\ {\\text{profit from one extra pound of clay}}=\\frac{2\\,\\times\\,{\\text{profit per bowl}}-{\\text{profit per mug}}}{5}.\\end{gathered}"
+        },
+        "pointReadings": {
+          "Objective sensitivity asks how much a coefficient can change while the current optimal point remains optimal. For the pottery intersection (24,8), the objective slope must lie between the slopes of its two adjacent edges, −\\(1/2\\) and −\\(4/3\\).": [
+            {
+              "point": "(24,8)",
+              "meaning": "Make 24 bowls and 8 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "fertilizer-range",
         "title": "Cost sensitivity and reduced cost",
-        "body": "Use the fertilizer model to find the ranges of bag prices that preserve the current optimum, then interpret the endpoints and reduced costs.\nAt the fertilizer optimum (0,8), the adjacent edge toward (4.8,1.6) has slope −\\(4/3\\). The point remains optimal when \\(c_{2} \\ge  0\\) and \\(c_{1}\\) ≥ (\\(4/3\\))\\(c_{2}\\). Holding \\(c_{2} = 3\\) gives \\(c_{1} \\ge  4\\). Holding \\(c_{1} = 6\\) gives \\(0 \\le  c_{2} \\le  4.5\\).\nAt \\(c_{1} = 4\\) or \\(c_{2} = 4.5\\), a whole boundary edge has the same cost. At \\(c_{2} = 0\\) and \\(c_{1}\\) positive, any feasible point with \\(x_{1} = 0\\) has zero cost. If \\(c_{2}\\) becomes negative, buying arbitrarily many Crop-quick bags makes this unbounded minimization model decrease without limit.\nReduced cost measures the objective penalty of bringing a currently zero variable into the solution, under the current optimal basis. For Super-gro, one bag costs $6 but replaces $4 of Crop-quick when phosphate remains binding. Its reduced cost is 2, and its cost must fall by $2 before it can enter without worsening the objective.",
+        "body": "If the price of one fertilizer changes, the cheapest mixture may stay the same or switch to another product. We want to find where that switch can occur and understand how large a price change it takes.\nUse the fertilizer model to find the ranges of bag prices that preserve the current optimum, then interpret the endpoints and reduced costs.\nAt the fertilizer optimum (0,8), the adjacent edge toward (4.8,1.6) has slope −\\(4/3\\). The point remains optimal when \\(c_{2} \\ge  0\\) and \\(c_{1}\\) ≥ (\\(4/3\\))\\(c_{2}\\). Holding \\(c_{2} = 3\\) gives \\(c_{1} \\ge  4\\). Holding \\(c_{1} = 6\\) gives \\(0 \\le  c_{2} \\le  4.5\\).\nAt \\(c_{1} = 4\\) or \\(c_{2} = 4.5\\), a whole boundary edge has the same cost. At \\(c_{2} = 0\\) and \\(c_{1}\\) positive, any feasible point with \\(x_{1} = 0\\) has zero cost. If \\(c_{2}\\) becomes negative, buying arbitrarily many Crop-quick bags makes this unbounded minimization model decrease without limit.\nReduced cost measures the objective penalty of bringing a currently zero variable into the solution, under the current optimal basis. For Super-gro, one bag costs $6 but replaces $4 of Crop-quick when phosphate remains binding. Its reduced cost is 2, and its cost must fall by $2 before it can enter without worsening the objective.",
         "sections": [],
         "sources": [
           "chapter02 - part 2.pdf:28-29",
@@ -729,12 +897,24 @@
               "dollars"
             ]
           ]
+        },
+        "pointReadings": {
+          "At the fertilizer optimum (0,8), the adjacent edge toward (4.8,1.6) has slope −\\(4/3\\). The point remains optimal when \\(c_{2} \\ge  0\\) and \\(c_{1}\\) ≥ (\\(4/3\\))\\(c_{2}\\). Holding \\(c_{2} = 3\\) gives \\(c_{1} \\ge  4\\). Holding \\(c_{1} = 6\\) gives \\(0 \\le  c_{2} \\le  4.5\\).": [
+            {
+              "point": "(0,8)",
+              "meaning": "Buy 0 bags of Super-gro and 8 bags of Crop-quick."
+            },
+            {
+              "point": "(4.8,1.6)",
+              "meaning": "Buy 4.8 bags of Super-gro and 1.6 bags of Crop-quick."
+            }
+          ]
         }
       },
       {
         "id": "labor-shadow",
         "title": "Labor availability and shadow price",
-        "body": "How does profit change when labor rises from 40 to 60 hours, falls to 30 hours, or changes slightly around 40 hours?\nIn this topic \\(L\\) is available labor hours, \\(x_1\\) is bowls produced, and \\(x_2\\) is mugs produced. The notation \\(Z^*(L)\\) means the greatest achievable profit at labor availability \\(L\\); the star marks an optimal value, not multiplication.\nAn RHS sensitivity range preserves the optimal basis, not the numerical values of the decision variables. With pottery clay fixed at 120 lb and labor availability L, solve the same two binding constraints:\n$$x_1=48-0.6L,\\qquad x_2=0.8L-24.$$\nBoth variables remain nonnegative for 30 ≤ L ≤ 80. Within this range:\n$$Z^*(L)=720+16L.$$\nThe shadow price is $16 per additional labor hour. From 40 to 60 hours, profit rises by \\(20\\times 16 = \\$320\\) to $1,680, with (12,24). At 30 hours, profit is $1,200 with (30,0). This marginal value is local; it is not a purchase recommendation without considering the cost of acquiring more labor.",
+        "body": "What would one more hour of labor be worth? Its value depends on whether labor is actually preventing us from earning more. A shadow price measures that extra value within a particular range of available hours.\nHow does profit change when labor rises from 40 to 60 hours, falls to 30 hours, or changes slightly around 40 hours?\nIn this topic \\(L\\) is available labor hours, \\(x_1\\) is bowls produced, and \\(x_2\\) is mugs produced. The notation \\(Z^*(L)\\) means the greatest achievable profit at labor availability \\(L\\); the star marks an optimal value, not multiplication.\nAn RHS sensitivity range preserves the optimal basis, not the numerical values of the decision variables. With pottery clay fixed at 120 lb and labor availability L, solve the same two binding constraints:\n$$x_1=48-0.6L,\\qquad x_2=0.8L-24.$$\nBoth variables remain nonnegative for 30 ≤ L ≤ 80. Within this range:\n$$Z^*(L)=720+16L.$$\nThe shadow price is $16 per additional labor hour. From 40 to 60 hours, profit rises by \\(20\\times 16 = \\$320\\) to $1,680, with (12,24). At 30 hours, profit is $1,200 with (30,0). This marginal value is local; it is not a purchase recommendation without considering the cost of acquiring more labor.",
         "sections": [
           {
             "title": "Derived full value function",
@@ -755,7 +935,6 @@
           "answer": 1,
           "explanation": "The new quantities are 23.4 bowls and 8.8 mugs. Profit rises by $16."
         },
-        "warning": "Keeping the same solution mix preserves the current basis/product pattern, not the numerical quantities (24,8). At a range endpoint, a basic variable can become zero.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -795,12 +974,30 @@
           "x_1=48-0.6L,\\qquad x_2=0.8L-24.": "\\begin{gathered}{\\text{bowls produced}}=48-0.6\\,\\times\\,{\\text{labor hours available}},\\\\ {\\text{mugs produced}}=0.8\\,\\times\\,{\\text{labor hours available}}-24.\\end{gathered}",
           "Z^*(L)=720+16L.": "{\\text{best profit}}({\\text{labor hours available}})=720+16\\,\\times\\,{\\text{labor hours available}}.",
           "Z^*(L)=\\begin{cases}40L&0\\le L\\le30\\\\720+16L&30\\le L\\le80\\\\2000&L\\ge80.\\end{cases}": "{\\text{best profit}}({\\text{labor hours available}})=\\begin{cases}40\\,\\times\\,{\\text{labor hours available}}&0\\le {\\text{labor hours available}}\\le30\\\\720+16\\,\\times\\,{\\text{labor hours available}}&30\\le {\\text{labor hours available}}\\le80\\\\2000&{\\text{labor hours available}}\\ge80.\\end{cases}"
+        },
+        "pointReadings": {
+          "The shadow price is $16 per additional labor hour. From 40 to 60 hours, profit rises by \\(20\\times 16 = \\$320\\) to $1,680, with (12,24). At 30 hours, profit is $1,200 with (30,0). This marginal value is local; it is not a purchase recommendation without considering the cost of acquiring more labor.": [
+            {
+              "point": "(12,24)",
+              "meaning": "Make 12 bowls and 24 mugs per day."
+            },
+            {
+              "point": "(30,0)",
+              "meaning": "Make 30 bowls and 0 mugs per day."
+            }
+          ],
+          "Keeping the same solution mix preserves the current basis/product pattern, not the numerical quantities (24,8). At a range endpoint, a basic variable can become zero.": [
+            {
+              "point": "(24,8)",
+              "meaning": "Make 24 bowls and 8 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "clay-shadow",
         "title": "Clay availability and the value of a resource",
-        "body": "Study changes in clay availability while holding labor fixed at 40 hours.\nKeep labor at 40 hours and let \\(C\\) be clay availability in pounds. Capital \\(C\\) is a resource amount here; it is not the lowercase unit cost \\(c\\) from break-even analysis. As in the pottery model, \\(x_1\\) counts bowls and \\(x_2\\) counts mugs. At the intersection:\n$$x_1=\\frac{2C-120}{5},\\qquad x_2=\\frac{160-C}{5}.$$\nThe basis remains feasible for 60 ≤ C ≤ 160, and optimal profit is 640 + 6C. Thus the shadow price at C = 120 is $6 per pound. Reducing clay to 80 lowers profit by $240 to $1,120; the new mix is (8,16).",
+        "body": "An extra pound of clay can be useful when clay is scarce. Once another resource becomes the bottleneck, more clay may add nothing. We will find both the value of extra clay and where that value changes.\nStudy changes in clay availability while holding labor fixed at 40 hours.\nKeep labor at 40 hours and let \\(C\\) be clay availability in pounds. Capital \\(C\\) is a resource amount here; it is not the lowercase unit cost \\(c\\) from break-even analysis. As in the pottery model, \\(x_1\\) counts bowls and \\(x_2\\) counts mugs. At the intersection:\n$$x_1=\\frac{2C-120}{5},\\qquad x_2=\\frac{160-C}{5}.$$\nThe basis remains feasible for 60 ≤ C ≤ 160, and optimal profit is 640 + 6C. Thus the shadow price at C = 120 is $6 per pound. Reducing clay to 80 lowers profit by $240 to $1,120; the new mix is (8,16).",
         "sections": [
           {
             "title": "Derived values beyond the local range",
@@ -849,12 +1046,20 @@
         "equationWords": {
           "x_1=\\frac{2C-120}{5},\\qquad x_2=\\frac{160-C}{5}.": "\\begin{gathered}{\\text{bowls produced}}=\\frac{2\\,\\times\\,{\\text{pounds of clay available}}-120}{5},\\\\ {\\text{mugs produced}}=\\frac{160-{\\text{pounds of clay available}}}{5}.\\end{gathered}",
           "Z^*(C)=\\begin{cases}\\frac{50}{3}C&0\\le C\\le60\\\\640+6C&60\\le C\\le160\\\\1600&C\\ge160.\\end{cases}": "{\\text{best profit}}({\\text{pounds of clay available}})=\\begin{cases}\\frac{50}{3}{\\text{pounds of clay available}}&0\\le {\\text{pounds of clay available}}\\le60\\\\640+6\\,\\times\\,{\\text{pounds of clay available}}&60\\le {\\text{pounds of clay available}}\\le160\\\\1600&{\\text{pounds of clay available}}\\ge160.\\end{cases}"
+        },
+        "pointReadings": {
+          "The basis remains feasible for 60 ≤ C ≤ 160, and optimal profit is 640 + 6C. Thus the shadow price at C = 120 is $6 per pound. Reducing clay to 80 lowers profit by $240 to $1,120; the new mix is (8,16).": [
+            {
+              "point": "(8,16)",
+              "meaning": "Make 8 bowls and 16 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "nutrient-shadow",
         "title": "Requirement sensitivity in a minimum-cost model",
-        "body": "Find how the minimum fertilizer cost and each nutrient’s shadow price change as its required amount varies.\nA higher nutrient minimum can raise the least achievable cost. At the current fertilizer solution, nitrogen is already oversupplied; its shadow price is zero. Phosphate binds and its shadow price is $1 per additional pound.\nCrop-quick is cheaper per pound of both nutrients. For any nonnegative nitrogen requirement N and phosphate requirement P, the optimal solution uses only Crop-quick:\n$$x_1^*=0,\\quad x_2^*=\\max\\left(\\frac N4,\\frac P3\\right),\\quad Z^*=\\max\\left(\\frac{3N}{4},P\\right).$$\nHere \\(x_1\\) counts Super-gro bags and \\(x_2\\) counts Crop-quick bags; \\(N\\) and \\(P\\) are required pounds of nitrogen and phosphate. A star marks an optimal quantity or minimum cost, and \\(\\max\\) means take the larger of the two expressions.\nHold \\(P=24\\). Cost stays 24 until N reaches 32, then rises at $0.75 per pound of required nitrogen. Hold N = 16. Cost stays 12 until P reaches 12, then rises at $1 per pound of required phosphate. At N = 16, P = 24, nitrogen can increase by 16 before its shadow price changes; phosphate can decrease by 12 before its current shadow price changes.\nFor nonnegative requirements, the current nitrogen range is 0–32 and the phosphate range is 12 upward. A solver can report an effectively infinite allowable decrease for a redundant nitrogen lower bound; negative nutrient requirements have no physical meaning here.",
+        "body": "Raising a minimum requirement can make a cheap plan more expensive. But if the plan already provides more than the required amount, a small increase may cost nothing. The fertilizer example lets us see both cases.\nFind how the minimum fertilizer cost and each nutrient’s shadow price change as its required amount varies.\nA higher nutrient minimum can raise the least achievable cost. At the current fertilizer solution, nitrogen is already oversupplied; its shadow price is zero. Phosphate binds and its shadow price is $1 per additional pound.\nCrop-quick is cheaper per pound of both nutrients. For any nonnegative nitrogen requirement N and phosphate requirement P, the optimal solution uses only Crop-quick:\n$$x_1^*=0,\\quad x_2^*=\\max\\left(\\frac N4,\\frac P3\\right),\\quad Z^*=\\max\\left(\\frac{3N}{4},P\\right).$$\nHere \\(x_1\\) counts Super-gro bags and \\(x_2\\) counts Crop-quick bags; \\(N\\) and \\(P\\) are required pounds of nitrogen and phosphate. A star marks an optimal quantity or minimum cost, and \\(\\max\\) means take the larger of the two expressions.\nHold \\(P=24\\). Cost stays 24 until N reaches 32, then rises at $0.75 per pound of required nitrogen. Hold N = 16. Cost stays 12 until P reaches 12, then rises at $1 per pound of required phosphate. At N = 16, P = 24, nitrogen can increase by 16 before its shadow price changes; phosphate can decrease by 12 before its current shadow price changes.\nFor nonnegative requirements, the current nitrogen range is 0–32 and the phosphate range is 12 upward. A solver can report an effectively infinite allowable decrease for a redundant nitrogen lower bound; negative nutrient requirements have no physical meaning here.",
         "sections": [],
         "sources": [
           "chapter02 - part 2.pdf:36",
@@ -898,7 +1103,7 @@
       {
         "id": "new-product",
         "title": "A new product and a second factory",
-        "body": "Should the pottery company introduce a new cup? Compare its profit with the value of the scarce resources it would consume.\nA cup would earn $30, using 1.2 labor hours and 2 lb of clay. At the current shadow prices its resources are worth \\(1.2\\times 16 + 2\\times 6 = \\$31.20\\). Its net contribution relative to these scarce resources is −$1.20, so adding it cannot improve the original optimum.\n$$\\max40x_1+50x_2+30x_3$$\n$$x_1+2x_2+1.2x_3\\le40,\\qquad4x_1+3x_2+2x_3\\le120,\\quad x\\ge0.$$\nAt profit 31.20, producing some cups can become an alternate optimum; above that threshold re-solve the model. The shadow-price test is based on the current model and its resource tradeoffs.",
+        "body": "Before adding a new product, ask what its materials and time could earn in the existing business. A product can have a positive selling margin and still be a poor use of scarce resources.\nShould the pottery company introduce a new cup? Compare its profit with the value of the scarce resources it would consume.\nA cup would earn $30, using 1.2 labor hours and 2 lb of clay. At the current shadow prices its resources are worth \\(1.2\\times 16 + 2\\times 6 = \\$31.20\\). Its net contribution relative to these scarce resources is −$1.20, so adding it cannot improve the original optimum.\n$$\\max40x_1+50x_2+30x_3$$\n$$x_1+2x_2+1.2x_3\\le40,\\qquad4x_1+3x_2+2x_3\\le120,\\quad x\\ge0.$$\nAt profit 31.20, producing some cups can become an alternate optimum; above that threshold re-solve the model. The shadow-price test is based on the current model and its resource tradeoffs.",
         "sections": [
           {
             "title": "Willow Valley: model and derived comparison",
@@ -908,7 +1113,6 @@
         "sources": [
           "chapter02 - part 2.pdf:39-40"
         ],
-        "warning": "Willow Valley labor availability is uncertain, so retain \\(H\\) as a parameter and distinguish the examples with 40 and 65 hours. Each bowl uses 2 labor hours; using 1 would describe a different factory.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -959,12 +1163,30 @@
           "x_1+2x_2+1.2x_3\\le40,\\qquad4x_1+3x_2+2x_3\\le120,\\quad x\\ge0.": "\\begin{gathered}{\\text{bowls produced}}+2\\,\\times\\,{\\text{mugs produced}}+1.2\\,\\times\\,{\\text{cups produced}}\\le40,\\\\4{\\text{bowls produced}}+3\\,\\times\\,{\\text{mugs produced}}+2\\,\\times\\,{\\text{cups produced}}\\le120,\\\\ {\\text{production quantities}}\\ge0.\\end{gathered}",
           "\\max Z_W=48y_1+60y_2;\\quad2y_1+3y_2\\le H,\\quad4y_1+3y_2\\le120,\\quad y_1,y_2\\ge0.": "\\begin{gathered}\\max {\\text{Willow profit}}=48\\,\\times\\,{\\text{Willow bowls}}+60\\,\\times\\,{\\text{Willow mugs}};\\\\2{\\text{Willow bowls}}+3\\,\\times\\,{\\text{Willow mugs}}\\le {\\text{Willow labor hours}},\\\\4{\\text{Willow bowls}}+3\\,\\times\\,{\\text{Willow mugs}}\\le120,\\\\ {\\text{Willow bowls}},{\\text{Willow mugs}}\\ge0.\\end{gathered}",
           "Z_W^*(H)=\\begin{cases}24H&0\\le H\\le60\\\\480+16H&60\\le H\\le120\\\\2400&H\\ge120.\\end{cases}": "{\\text{best Willow profit}}({\\text{Willow labor hours}})=\\begin{cases}24\\,\\times\\,{\\text{Willow labor hours}}&0\\le {\\text{Willow labor hours}}\\le60\\\\480+16\\,\\times\\,{\\text{Willow labor hours}}&60\\le {\\text{Willow labor hours}}\\le120\\\\2400&{\\text{Willow labor hours}}\\ge120.\\end{cases}"
+        },
+        "pointReadings": {
+          "For \\(H \\ge  0\\), solve as follows. For \\(0 \\le  H \\le  60\\), produce (\\(y_{1}\\),\\(y_{2}\\)) = (\\(H/2\\),0). For \\(60 \\le  H \\le  120\\), both resource rows bind, giving \\(y_{1} = (120 - H)/2\\) and \\(y_{2} = (2H - 120)/3\\). For \\(H \\ge  120\\), produce (0,40).": [
+            {
+              "point": "(0,40)",
+              "meaning": "Make 0 bowls and 40 mugs per day."
+            }
+          ],
+          "In the interior range \\(60 < H < 120\\), Willow’s labor shadow price is 16 and its clay shadow price is 4. At \\(H = 40\\), the optimum is (20,0), \\(Z = 960\\). At \\(H = 65\\), the optimum is (27.5,\\(10/3\\)), \\(Z = 1,520\\). These are alternative parameter examples, not two simultaneous labor limits. Compare resource values under the same stated availability rather than comparing unit profits alone.": [
+            {
+              "point": "(20,0)",
+              "meaning": "Make 20 bowls and 0 mugs per day."
+            },
+            {
+              "point": "(27.5,10/3)",
+              "meaning": "Make 27.5 bowls and 10/3 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "technology",
         "title": "Furniture sensitivity and changing technology",
-        "body": "Use the furniture model to find the allowable door-profit range and the marginal value of Workshop 3 time.\nFor the furniture solution (2,6), hold the window profit at 500. Door profit can range from 0 to 750 while that point remains optimal. At zero, producing fewer doors is equally good; at 750, the workshop-3 boundary edge becomes equally profitable.\nLet workshop 3 have H hours. Between 12 and 24 hours, windows remain 6 and doors are \\((H - 12)/3\\). The profit is \\(1,800 + 100H\\), so workshop 3 has a shadow price of $100 per hour. Its original 18 hours can decrease by 6 or increase by 6 within this basis.\nFor H below 12, only windows are made and the marginal value is $250 per hour; above 24, workshops 1 and 2 cap output at (4,6), so extra workshop-3 time has zero value.",
+        "body": "So far we have changed prices or the resources available. Now consider changing how much time a product needs. That changes the shape of the choices available, so it needs its own analysis.\nUse the furniture model to find the allowable door-profit range and the marginal value of Workshop 3 time.\nFor the furniture solution (2,6), hold the window profit at 500. Door profit can range from 0 to 750 while that point remains optimal. At zero, producing fewer doors is equally good; at 750, the workshop-3 boundary edge becomes equally profitable.\nLet workshop 3 have H hours. Between 12 and 24 hours, windows remain 6 and doors are \\((H - 12)/3\\). The profit is \\(1,800 + 100H\\), so workshop 3 has a shadow price of $100 per hour. Its original 18 hours can decrease by 6 or increase by 6 within this basis.\nFor H below 12, only windows are made and the marginal value is $250 per hour; above 24, workshops 1 and 2 cap output at (4,6), so extra workshop-3 time has zero value.",
         "sections": [
           {
             "title": "Changing a resource coefficient: rounded and exact values",
@@ -1003,12 +1225,36 @@
               "dollars"
             ]
           ]
+        },
+        "pointReadings": {
+          "For the furniture solution (2,6), hold the window profit at 500. Door profit can range from 0 to 750 while that point remains optimal. At zero, producing fewer doors is equally good; at 750, the workshop-3 boundary edge becomes equally profitable.": [
+            {
+              "point": "(2,6)",
+              "meaning": "Make 2 doors and 6 windows."
+            }
+          ],
+          "For H below 12, only windows are made and the marginal value is $250 per hour; above 24, workshops 1 and 2 cap output at (4,6), so extra workshop-3 time has zero value.": [
+            {
+              "point": "(4,6)",
+              "meaning": "Make 4 doors and 6 windows."
+            }
+          ],
+          "A rounded coefficient α ≈ 1.33 can suggest the bowl-only point (30,0). At α = \\(4/3\\) exactly, the solution is (30,0), \\(Z = 1,200\\). If 1.33 is interpreted literally, the intersection is approximately (29.9252,0.0998), with \\(Z \\approx  1,201.995\\). Preserve the distinction between a rounded coefficient and its exact value. Using 1.33 literally and using exactly four-thirds describe slightly different models.": [
+            {
+              "point": "(30,0)",
+              "meaning": "Make 30 bowls and 0 mugs per day."
+            },
+            {
+              "point": "(29.9252,0.0998)",
+              "meaning": "Make 29.9252 bowls and 0.0998 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "rhs-algebra",
         "title": "Calculate RHS ranges with slack, surplus and a fixed solution mix",
-        "body": "A shadow price is the marginal change in the optimal objective when one right-hand side (RHS) changes and the other model data stay fixed. Assignment 6 adds an algebraic method to the graphical sensitivity lesson.\nFor a capacity constraint introduce slack; for a minimum requirement introduce surplus:\n$$a_1x_1+a_2x_2+s=b,\\quad s\\ge0,\\qquad a_1x_1+a_2x_2-u=b,\\quad u\\ge0.$$\nSlack measures unused capacity; surplus measures how much a requirement is exceeded. At a binding constraint its slack or surplus is zero. Write binding rows directly as equalities.\nThe solution mix is the set of positive decision and slack/surplus variables. Keep the current zero variables at zero, solve the binding equations in terms of the changing RHS, and require every remaining variable to stay nonnegative.\nAn RHS is a right-hand-side number in a constraint. A subscript on \\(b_i\\) identifies constraint \\(i\\). In the worked examples, \\(Z^*\\) denotes the optimal objective value as these limits change; the star means optimal, not multiplication.",
+        "body": "You can find resource ranges without relying on a graph. Start from the best plan, write down the limits it exactly uses up, and solve those relationships as the available resource changes. The point where a quantity reaches zero tells you where to look for a different plan.\nA shadow price is the marginal change in the optimal objective when one right-hand side (RHS) changes and the other model data stay fixed. Assignment 6 adds an algebraic method to the graphical sensitivity lesson.\nFor a capacity constraint introduce slack; for a minimum requirement introduce surplus:\n$$a_1x_1+a_2x_2+s=b,\\quad s\\ge0,\\qquad a_1x_1+a_2x_2-u=b,\\quad u\\ge0.$$\nSlack measures unused capacity; surplus measures how much a requirement is exceeded. At a binding constraint its slack or surplus is zero. Write binding rows directly as equalities.\nThe solution mix is the set of positive decision and slack/surplus variables. Keep the current zero variables at zero, solve the binding equations in terms of the changing RHS, and require every remaining variable to stay nonnegative.\nAn RHS is a right-hand-side number in a constraint. A subscript on \\(b_i\\) identifies constraint \\(i\\). In the worked examples, \\(Z^*\\) denotes the optimal objective value as these limits change; the star means optimal, not multiplication.",
         "sections": [
           {
             "title": "Five steps, and why they work",
@@ -1064,7 +1310,7 @@
       {
         "id": "rhs-worked-examples",
         "title": "Algebraic RHS sensitivity: pottery and fertilizer",
-        "body": "Work through pottery and fertilizer examples, changing one right-hand side at a time. Each set of formulas describes its current optimal regime, not every possible limit.",
+        "body": "Let us work through that method with two familiar examples. The pottery business wants more profit; the fertilizer buyer wants lower cost. In each example, change just one resource limit or requirement and keep everything else fixed.\nWork through pottery and fertilizer examples, changing one right-hand side at a time. Each set of formulas describes its current optimal regime, not every possible limit.",
         "sections": [
           {
             "title": "Pottery: both resources bind",
@@ -1116,6 +1362,28 @@
         "equationWords": {
           "x_1=\\frac{2b_2-3b_1}{5},\\quad x_2=\\frac{4b_1-b_2}{5},\\quad Z^*=16b_1+6b_2.": "\\begin{gathered}{\\text{first product quantity}}=\\frac{2\\,\\times\\,{\\text{second constraint limit}}-3\\,\\times\\,{\\text{first constraint limit}}}{5},\\\\ {\\text{second product quantity}}=\\frac{4\\,\\times\\,{\\text{first constraint limit}}-{\\text{second constraint limit}}}{5},\\\\ {\\text{optimal objective value}}=16\\,\\times\\,{\\text{first constraint limit}}+6\\,\\times\\,{\\text{second constraint limit}}.\\end{gathered}",
           "x_2=b_2/3,\\quad u=4b_2/3-b_1,\\quad Z^*=b_2.": "\\begin{gathered}{\\text{second product quantity}}={\\text{second constraint limit}}/3,\\\\ {\\text{surplus nitrogen}}=4\\,\\times\\,{\\text{second constraint limit}}/3-{\\text{first constraint limit}},\\\\ {\\text{optimal objective value}}={\\text{second constraint limit}}.\\end{gathered}"
+        },
+        "pointReadings": {
+          "Maximize \\(40x_1+50x_2\\) subject to \\(x_1+2x_2\\le b_1\\), \\(4x_1+3x_2\\le b_2\\), and nonnegativity. At \\((b_1,b_2)=(40,120)\\) the optimum is \\((24,8)\\), worth 1,360. Solve both binding equations:": [
+            {
+              "point": "(40,120)",
+              "meaning": "Make 40 bowls and 120 mugs per day."
+            },
+            {
+              "point": "(24,8)",
+              "meaning": "Make 24 bowls and 8 mugs per day."
+            }
+          ],
+          "Minimize \\(6x_1+3x_2\\) subject to \\(2x_1+4x_2\\ge b_1\\), \\(4x_1+3x_2\\ge b_2\\), and nonnegativity. At \\((16,24)\\), \\((x_1,x_2)=(0,8)\\) costs 24. The first requirement has surplus 16; the second binds. Keeping \\(x_1=0\\) gives": [
+            {
+              "point": "(16,24)",
+              "meaning": "Buy 16 bags of Super-gro and 24 bags of Crop-quick."
+            },
+            {
+              "point": "(0,8)",
+              "meaning": "Buy 0 bags of Super-gro and 8 bags of Crop-quick."
+            }
+          ]
         }
       }
     ]
@@ -1132,12 +1400,11 @@
       {
         "id": "spreadsheet",
         "title": "Build the pottery model in Excel",
-        "body": "Computer solvers automate procedures such as the simplex method. Excel Solver and Cardinal Optimizer (COPT) are two tools for this task. Software solves the formulation supplied to it; it cannot check whether the coefficients express the intended business problem.\nSeparate inputs, decision cells, objective and constraint calculations. In the pottery spreadsheet, C2:D2 contains profits 40 and 50; C3:D3 labor coefficients 1 and 2; C4:D4 clay coefficients 4 and 3. C6 contains 40 and C7 contains 120. C11:D11 holds the changing production quantities.\nSet C15 to =SUMPRODUCT(C11:D11,C2:D2), C19 to =SUMPRODUCT(C3:D3,C11:D11), and C20 to =SUMPRODUCT(C4:D4,C11:D11). E19 links to C6 and E20 to C7.\nIn the demonstrated Solver setup, maximize C15 by changing C11:D11, subject to C19:C20 ≤ E19:E20. Apply nonnegative bounds and use the Simplex LP method. Solve, then independently substitute the returned values into every original constraint.\nThe expected result is (24,8), profit 1,360, labor usage 40 and clay usage 120. The Answer Report marks both resource constraints binding with zero slack. The original values shown in a report are the initial guesses, not a second optimum.",
+        "body": "A spreadsheet keeps the model visible: some cells hold the inputs, some hold the choices, and formulas calculate the result. Solver changes only the decision cells while respecting the limits you enter.\nComputer solvers automate procedures such as the simplex method. Excel Solver and Cardinal Optimizer (COPT) are two tools for this task. Software solves the formulation supplied to it; it cannot check whether the coefficients express the intended business problem.\nSeparate inputs, decision cells, objective and constraint calculations. In the pottery spreadsheet, C2:D2 contains profits 40 and 50; C3:D3 labor coefficients 1 and 2; C4:D4 clay coefficients 4 and 3. C6 contains 40 and C7 contains 120. C11:D11 holds the changing production quantities.\nSet C15 to =SUMPRODUCT(C11:D11,C2:D2), C19 to =SUMPRODUCT(C3:D3,C11:D11), and C20 to =SUMPRODUCT(C4:D4,C11:D11). E19 links to C6 and E20 to C7.\nIn the demonstrated Solver setup, maximize C15 by changing C11:D11, subject to C19:C20 ≤ E19:E20. Apply nonnegative bounds and use the Simplex LP method. Solve, then independently substitute the returned values into every original constraint.\nThe expected result is (24,8), profit 1,360, labor usage 40 and clay usage 120. The Answer Report marks both resource constraints binding with zero slack. The original values shown in a report are the initial guesses, not a second optimum.",
         "sections": [],
         "sources": [
           "chapter03-2--5beb6393ab.pdf:1-7"
         ],
-        "warning": "Use 4 and 3 as the bowl and mug clay coefficients. The corresponding optimum is (24,8), with profit 1,360. A clay row containing only the mug variable is a different model.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -1162,12 +1429,26 @@
               "dollars per product"
             ]
           ]
+        },
+        "pointReadings": {
+          "The expected result is (24,8), profit 1,360, labor usage 40 and clay usage 120. The Answer Report marks both resource constraints binding with zero slack. The original values shown in a report are the initial guesses, not a second optimum.": [
+            {
+              "point": "(24,8)",
+              "meaning": "Make 24 bowls and 8 mugs per day."
+            }
+          ],
+          "Use 4 and 3 as the bowl and mug clay coefficients. The corresponding optimum is (24,8), with profit 1,360. A clay row containing only the mug variable is a different model.": [
+            {
+              "point": "(24,8)",
+              "meaning": "Make 24 bowls and 8 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "reports",
         "title": "Read sensitivity reports without overextending them",
-        "body": "An objective-coefficient range is current coefficient minus allowable decrease through current coefficient plus allowable increase. For pottery bowls, \\(40 - 15 = 25\\) and \\(40 + 26.6667 = 66.6667\\). For mugs, \\(50 - 20 = 30\\) and \\(50 + 30 = 80\\). Both produced variables have reduced cost zero.\nThe labor report gives RHS 40, shadow price 16, allowable decrease 10 and increase 40: range 30–80. Clay gives RHS 120, shadow price 6, decrease 60 and increase 40: range 60–160. Within an RHS range, the optimal quantities can change even though the basis is retained; retaining the solution mix does not mean keeping the numerical quantities fixed.\nFor fertilizer, the changing cells are C9:C10. Minimize C13 = SUMPRODUCT(C2:C3,C9:C10). The nutrient left sides are SUMPRODUCT(C9:C10,D2:D3) and SUMPRODUCT(C9:C10,E2:E3), each constrained above its requirement. The answer is (0,8), total cost 24.\nThe fertilizer report gives Super-gro reduced cost 2, cost coefficient 6 and allowable decrease 2; Crop-quick coefficient 3, increase 1.5 and decrease 3. Nitrogen’s shadow price is 0 with surplus 16; phosphate’s is 1. Large entries such as 1E+30 denote an effectively unbounded allowable change in the software’s reporting convention.\nOne-at-a-time sensitivity reports are local and conditional. Integer restrictions, changed coefficients in the constraint matrix or simultaneous data changes can require solving again.",
+        "body": "Finding the best plan is only the beginning. A sensitivity report helps answer “What if a price or a resource limit changes?” Read each number with its units and its allowable range; it is not an unlimited promise about every future change.\nAn objective-coefficient range is current coefficient minus allowable decrease through current coefficient plus allowable increase. For pottery bowls, \\(40 - 15 = 25\\) and \\(40 + 26.6667 = 66.6667\\). For mugs, \\(50 - 20 = 30\\) and \\(50 + 30 = 80\\). Both produced variables have reduced cost zero.\nThe labor report gives RHS 40, shadow price 16, allowable decrease 10 and increase 40: range 30–80. Clay gives RHS 120, shadow price 6, decrease 60 and increase 40: range 60–160. Within an RHS range, the optimal quantities can change even though the basis is retained; retaining the solution mix does not mean keeping the numerical quantities fixed.\nFor fertilizer, the changing cells are C9:C10. Minimize C13 = SUMPRODUCT(C2:C3,C9:C10). The nutrient left sides are SUMPRODUCT(C9:C10,D2:D3) and SUMPRODUCT(C9:C10,E2:E3), each constrained above its requirement. The answer is (0,8), total cost 24.\nThe fertilizer report gives Super-gro reduced cost 2, cost coefficient 6 and allowable decrease 2; Crop-quick coefficient 3, increase 1.5 and decrease 3. Nitrogen’s shadow price is 0 with surplus 16; phosphate’s is 1. Large entries such as 1E+30 denote an effectively unbounded allowable change in the software’s reporting convention.\nOne-at-a-time sensitivity reports are local and conditional. Integer restrictions, changed coefficients in the constraint matrix or simultaneous data changes can require solving again.",
         "sections": [],
         "sources": [
           "chapter03-2--5beb6393ab.pdf:8-12"
@@ -1196,12 +1477,20 @@
               "dollars per product"
             ]
           ]
+        },
+        "pointReadings": {
+          "For fertilizer, the changing cells are C9:C10. Minimize C13 = SUMPRODUCT(C2:C3,C9:C10). The nutrient left sides are SUMPRODUCT(C9:C10,D2:D3) and SUMPRODUCT(C9:C10,E2:E3), each constrained above its requirement. The answer is (0,8), total cost 24.": [
+            {
+              "point": "(0,8)",
+              "meaning": "Make 0 bowls and 8 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "aircraft",
         "title": "Aircraft parts: verify a numerical solution",
-        "body": "Let \\(x_{1}\\) and \\(x_{2}\\) be production quantities of the two aircraft parts. The three stages are stamping, drilling and finishing.\n$$\\max Z=650x_1+910x_2$$\n$$4x_1+7.5x_2\\le105,\\quad6.2x_1+4.9x_2\\le90,\\quad9.1x_1+4.1x_2\\le110,\\quad x\\ge0.$$\nFor the continuous LP, solving the first two boundaries gives \\(x_{1} \\approx  5.96654\\) and \\(x_{2} \\approx  10.81784\\). Profit is approximately $13,722.49. Finishing usage is about 98.64870 hours, leaving about 11.35130 hours. Thus stamping and drilling bind while finishing does not.\nThese are continuous LP quantities. If the decision requires whole aircraft parts, impose integrality and solve the resulting integer model; independently rounding the continuous solution can violate constraints or lose optimality.",
+        "body": "Use this two-product factory to practice checking a computed answer. A solver can return precise-looking quantities, but we should still calculate resource use ourselves and check that the plan fits.\nLet \\(x_{1}\\) and \\(x_{2}\\) be production quantities of the two aircraft parts. The three stages are stamping, drilling and finishing.\n$$\\max Z=650x_1+910x_2$$\n$$4x_1+7.5x_2\\le105,\\quad6.2x_1+4.9x_2\\le90,\\quad9.1x_1+4.1x_2\\le110,\\quad x\\ge0.$$\nFor the continuous LP, solving the first two boundaries gives \\(x_{1} \\approx  5.96654\\) and \\(x_{2} \\approx  10.81784\\). Profit is approximately $13,722.49. Finishing usage is about 98.64870 hours, leaving about 11.35130 hours. Thus stamping and drilling bind while finishing does not.\nThese are continuous LP quantities. If the decision requires whole aircraft parts, impose integrality and solve the resulting integer model; independently rounding the continuous solution can violate constraints or lose optimality.",
         "sections": [],
         "sources": [
           "chapter03-2--5beb6393ab.pdf:13"
@@ -1234,12 +1523,11 @@
       {
         "id": "solver-benchmarks",
         "title": "Read a solver benchmark critically",
-        "body": "The revised Chapter 3 adds a dated solver comparison and a case study about how benchmark selection affects a claim. A benchmark measures particular solver versions on a specified instance set, hardware and stopping rule. It does not establish a universal ordering for every optimization problem.\nThe LPopt snapshot is dated April 29, 2026 and concerns finding an optimal basic solution on 65 instances. It reports COPT 8.0.0 with score 1.00 and 100% solved. The virtual-best entry is an ensemble reference that selects the best observed solver per instance, rather than a separate solver available for an individual run. Treat this table as the course's historical example, not a current product recommendation.\nCompare the complete 240-instance MIPLIB2017 benchmark set with an advertised comparison on 99 selected instances. A selected subset can change measured ratios and need not represent the full benchmark. A 2018 retraction and later benchmark withdrawals illustrate why reproducible comparisons matter. These historical comparisons help evaluate evidence, not proof that one solver will perform best on your model.\nWhen reading a comparison, check the exact instance list, solver versions, machine and thread settings, time limits, aggregation rule and treatment of unsolved instances. Read the solved fraction alongside the aggregate score. Test candidate solvers on representative models of your own before drawing a decision-specific conclusion.",
+        "body": "A benchmark runs several solvers on a collection of problems. It can be useful evidence, but the chosen problems and settings matter. A headline speed comparison is not enough to choose a solver for every situation.\nThe revised Chapter 3 adds a dated solver comparison and a case study about how benchmark selection affects a claim. A benchmark measures particular solver versions on a specified instance set, hardware and stopping rule. It does not establish a universal ordering for every optimization problem.\nThe LPopt snapshot is dated April 29, 2026 and concerns finding an optimal basic solution on 65 instances. It reports COPT 8.0.0 with score 1.00 and 100% solved. The virtual-best entry is an ensemble reference that selects the best observed solver per instance, rather than a separate solver available for an individual run. Use this dated example to practice evaluating a benchmark; it does not establish which solver will be best for a new problem.\nCompare the complete 240-instance MIPLIB2017 benchmark set with an advertised comparison on 99 selected instances. A selected subset can change measured ratios and need not represent the full benchmark. A 2018 retraction and later benchmark withdrawals illustrate why reproducible comparisons matter. These historical comparisons help evaluate evidence, not proof that one solver will perform best on your model.\nWhen reading a comparison, check the exact instance list, solver versions, machine and thread settings, time limits, aggregation rule and treatment of unsolved instances. Read the solved fraction alongside the aggregate score. Test candidate solvers on representative models of your own before drawing a decision-specific conclusion.",
         "sections": [],
         "sources": [
           "chapter03-2--5beb6393ab.pdf:14-22"
         ],
-        "warning": "Benchmark values and vendor classifications below reproduce a dated course snapshot. They have not been presented as current release information or independently verified performance claims.",
         "tables": [
           {
             "caption": "Course LPopt snapshot: optimal basic solutions, 65 instances, April 29, 2026",
@@ -1383,13 +1671,12 @@
       {
         "id": "copt",
         "title": "LP files and the COPT command-line workflow",
-        "body": "The Chapter 3 screenshots use COPT 7.2. The separate September 29 tutorial demonstrates COPT 8.0.7 and a corrected pottery model. Both workflows read a formulation, solve it and export the result. The tutorial introduces programming interfaces as well as the interactive shell and modeling-tool connectors.\nStart the interactive shell with copt_cmd. Use pwd to check its working directory, cd to change directories, and dir or ls to list available model files. If a path contains spaces, quote it. A shell can only read a file from a path it can find.\nUse read pottery.lp to load the corrected model below, then opt to solve it and writesol pottery.sol to save the result. An optimal result gives \\(x_{1} = 24\\), \\(x_{2} = 8\\) and \\(Z = 1,360\\). Both constraints bind. Substituting the values gives labor \\(24 + 2\\)(8) = 40 and clay 4(24) + 3(8) = 120.\nThe course also shows set timelimit 10, writeparam, display/get, optlp, iis, feasrelax, tune and loadtuneparam. Commands and available attributes depend on the installed version. The tutorial points to the copt80 manual in its example installation, while the older Chapter 3 screenshots point to copt72.\nAn IIS identifies a set of conflicting constraints. Feasibility relaxation changes bounds or constraints to make a problem solvable. Neither operation establishes that a changed formulation still represents the original business requirements. Always inspect solver status before reporting objective values or variable values.",
+        "body": "A solver is a calculator for a model you have already specified. First describe the decisions, limits and objective. Then load that description, solve it, and check what the returned status and quantities mean.\nCOPT can read a model from a file or build one through a programming interface. The workflow is the same: enter the model, solve it, inspect the result and save it. Commands shown here come from versions 7.2 and 8.0.7, so check the commands available in your installed version.\nStart the interactive shell with copt_cmd. Use pwd to check its working directory, cd to change directories, and dir or ls to list available model files. If a path contains spaces, quote it. A shell can only read a file from a path it can find.\nUse read pottery.lp to load the model below, then opt to solve it and writesol pottery.sol to save the result. An optimal result gives \\(x_{1} = 24\\), \\(x_{2} = 8\\) and \\(Z = 1,360\\). Both constraints bind. Substituting the values gives labor \\(24 + 2\\)(8) = 40 and clay 4(24) + 3(8) = 120.\nOther useful commands include set timelimit 10, writeparam, display/get, optlp, iis, feasrelax, tune and loadtuneparam. Commands and available attributes depend on the installed version. Use the manual that matches your installed version.\nAn IIS identifies a set of conflicting constraints. Feasibility relaxation changes bounds or constraints to make a problem solvable. Neither operation establishes that a changed formulation still represents the original business requirements. Always inspect solver status before reporting objective values or variable values.",
         "sections": [],
         "sources": [
           "chapter03-2--5beb6393ab.pdf:23-29",
           "copt 26-09-29.pptx:1-2,9,12"
         ],
-        "warning": "The older Chapter 3 screenshots still use \\(4x_{2} + 3x_{2} \\le  120\\) and return (40,0), \\(Z = 1,600\\). That solves the mistyped model. The separate COPT tutorial corrects the row to \\(4x_{1} + 3x_{2} \\le  120\\) and reports (24,8), \\(Z = 1,360\\).",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -1414,12 +1701,24 @@
               "dollars per product"
             ]
           ]
+        },
+        "pointReadings": {
+          "The older Chapter 3 screenshots still use \\(4x_{2} + 3x_{2} \\le  120\\) and return (40,0), \\(Z = 1,600\\). That solves the mistyped model. The separate COPT tutorial corrects the row to \\(4x_{1} + 3x_{2} \\le  120\\) and reports (24,8), \\(Z = 1,360\\).": [
+            {
+              "point": "(40,0)",
+              "meaning": "Make 40 bowls and 0 mugs per day."
+            },
+            {
+              "point": "(24,8)",
+              "meaning": "Make 24 bowls and 8 mugs per day."
+            }
+          ]
         }
       },
       {
         "id": "copt-files",
         "title": "Write LP files without changing the model",
-        "body": "An LP file is a plain-text optimization model. Maximize or Minimize introduces the objective, Subject To introduces constraints, and Bounds specifies variable bounds. End terminates the file. Use unique constraint names and ordinary comparison operators such as <= and >=.\nVariables are continuous and nonnegative unless declared otherwise. A free variable needs an explicit free bound. Generals declares integer variables and Binaries declares variables restricted to zero or one. Those declarations change the mathematical problem. The tutorial's small format example includes both an integer and a binary variable, so it is a mixed-integer example despite being stored in an LP-format file.\nOn Windows, show file-name extensions before renaming a text document. A file named example.lp.txt is still a text document with a hidden .txt suffix. Use a plain-text editor and separate numeric coefficients from variable names.\nThe tutorial's parsing example shows why syntax checking alone is insufficient: 4x2 can be read as a variable name rather than four times \\(x_{2}\\). Its particular malformed file also treats 32 as a variable and combines repeated coefficients on that variable. This is an observed parser trap in the demonstrated file, not a safe way to express a numeric constant.\nExport the model and compare its rows and columns with the intended algebra before solving. An MPS export can expose unexpected names and merged coefficients, but changing file format cannot repair an incorrect model on its own.",
+        "body": "An LP file is a written version of the same model we have been building. Its sections tell the solver what to improve, what limits to obey, and what values each variable may take. Small typing errors can change that meaning.\nAn LP file is a plain-text optimization model. Maximize or Minimize introduces the objective, Subject To introduces constraints, and Bounds specifies variable bounds. End terminates the file. Use unique constraint names and ordinary comparison operators such as <= and >=.\nVariables are continuous and nonnegative unless declared otherwise. A free variable needs an explicit free bound. Generals declares integer variables and Binaries declares variables restricted to zero or one. Those declarations change the mathematical problem. A file containing integer and binary declarations describes a mixed-integer problem, even when its filename ends in .lp.\nOn Windows, show file-name extensions before renaming a text document. A file named example.lp.txt is still a text document with a hidden .txt suffix. Use a plain-text editor and separate numeric coefficients from variable names.\nFor example, 4x2 can be read as a variable name rather than four times \\(x_{2}\\). Check the variable list after loading a file: an unexpected numeric-looking name can reveal that the text was parsed differently from the intended algebra.\nExport the model and compare its rows and columns with the intended algebra before solving. An MPS export can expose unexpected names and merged coefficients, but changing file format cannot repair an incorrect model on its own.",
         "sections": [],
         "sources": [
           "copt 26-09-29.pptx:3-4,7-8"
@@ -1511,7 +1810,7 @@
       {
         "id": "copt-inspection",
         "title": "Inspect, export and script a COPT solve",
-        "body": "After read pottery.lp, inspect the model before accepting any solve. The corrected pottery formulation has two constraint rows, two variables and four nonzero coefficients in its constraint matrix. Bounds are separate from those two algebraic rows. A column count greater than expected can reveal that a malformed numeric token became a variable.\nUse get rows, get cols, get objsense and get elems. Also inspect maxelem, minelem, maxrhs and minrhs. These report model dimensions, objective sense and coefficient or bound magnitudes. Very different magnitudes can motivate checking units and scaling, but an attribute report is not a proof of correctness.\nUse writelp pottery-check.lp or writemps pottery.mps to export the loaded model. LP emphasizes human-readable algebra. MPS records named rows and variable-by-variable coefficients. Its ROWS codes N, L, G and E denote the objective, <=, >= and equality rows; COLUMNS holds nonzero coefficients; RHS holds row constants; ENDATA terminates the model. Inspect names and coefficients in either export instead of relying on the original input text alone.\nThe tutorial contrasts output ordering and parsing behavior of its LP and MPS exports. Those observations describe the demonstrated tools and files; file layout should not be treated as a mathematical property or a universal guarantee for every reader and writer.\nAfter an optimal solve, writesol pottery.sol exports objective and variable values. Exporting LP/MPS does not optimize the problem, while writing a solution file does not establish that the business model was formulated correctly.\nFor repeatable runs, put commands in an .in file and execute load pottery.in from the COPT shell. The script below adapts the tutorial’s example to the pottery filenames: load the model, set a 10-second limit, solve, then write the solution. A time limit can stop a different problem before optimality, so inspect the final status rather than assuming that every script run found an optimum.",
+        "body": "Before trusting an answer, check what the solver actually loaded. The number of variables, the constraint coefficients and the objective should match the problem you intended to solve.\nAfter read pottery.lp, inspect the model before accepting any solve. The corrected pottery formulation has two constraint rows, two variables and four nonzero coefficients in its constraint matrix. Bounds are separate from those two algebraic rows. A column count greater than expected can reveal that a malformed numeric token became a variable.\nUse get rows, get cols, get objsense and get elems. Also inspect maxelem, minelem, maxrhs and minrhs. These report model dimensions, objective sense and coefficient or bound magnitudes. Very different magnitudes can motivate checking units and scaling, but an attribute report is not a proof of correctness.\nUse writelp pottery-check.lp or writemps pottery.mps to export the loaded model. LP emphasizes human-readable algebra. MPS records named rows and variable-by-variable coefficients. Its ROWS codes N, L, G and E denote the objective, <=, >= and equality rows; COLUMNS holds nonzero coefficients; RHS holds row constants; ENDATA terminates the model. Inspect names and coefficients in either export instead of relying on the original input text alone.\nLP and MPS exports can order the same model differently. Compare the actual variable names and coefficients, rather than expecting identical text layouts.\nAfter an optimal solve, writesol pottery.sol exports objective and variable values. Exporting LP/MPS does not optimize the problem, while writing a solution file does not establish that the business model was formulated correctly.\nFor repeatable runs, put commands in an .in file and execute load pottery.in from the COPT shell. The script below follows this sequence: load the model, set a 10-second limit, solve, then write the solution. A time limit can stop a different problem before optimality, so inspect the final status rather than assuming that every script run found an optimum.",
         "sections": [],
         "sources": [
           "copt 26-09-29.pptx:5-10"
@@ -1587,7 +1886,7 @@
       {
         "id": "copt-python",
         "title": "Build the same model with the COPT Python API",
-        "body": "Build the pottery model directly in Python. Install the interface with pip install coptpy and follow the full COPT setup instructions on Learn. A package installation and the solver's licensing/setup requirements are separate steps.\nCreate an environment and model, add nonnegative variables, add both resource constraints, set the maximizing objective, choose any parameters and solve. Model construction through expressions avoids manually spelling coefficient-variable tokens in an LP text file.\nCheck model.status == COPT.OPTIMAL before using the result as an optimum. For the corrected continuous pottery LP, the script returns \\(x_{1} = 24\\), \\(x_{2} = 8\\) and objective 1,360. Both variable reduced costs are zero, while the labor and clay dual values are 16 and 6. These are the local shadow prices for this continuous LP and its current basis.\nThe runnable example names constraints for readable output and raises an error if the solve does not prove optimality. Reduced costs and row duals need the appropriate continuous LP solution; do not reinterpret them automatically as sensitivity reports for an integer model.",
+        "body": "Python lets us build the model using named variables and expressions. We will create the same pottery problem as before, so the mathematical answer should agree even though the way we enter it changes.\nBuild the pottery model directly in Python. Install the interface with pip install coptpy and follow the full COPT setup instructions on Learn. A package installation and the solver's licensing/setup requirements are separate steps.\nCreate an environment and model, add nonnegative variables, add both resource constraints, set the maximizing objective, choose any parameters and solve. Model construction through expressions avoids manually spelling coefficient-variable tokens in an LP text file.\nCheck model.status == COPT.OPTIMAL before using the result as an optimum. For the corrected continuous pottery LP, the script returns \\(x_{1} = 24\\), \\(x_{2} = 8\\) and objective 1,360. Both variable reduced costs are zero, while the labor and clay dual values are 16 and 6. These are the local shadow prices for this continuous LP and its current basis.\nThe runnable example names constraints for readable output and raises an error if the solve does not prove optimality. Reduced costs and row duals need the appropriate continuous LP solution; do not reinterpret them automatically as sensitivity reports for an integer model.",
         "sections": [],
         "sources": [
           "copt 26-09-29.pptx:11-12"
@@ -1645,17 +1944,16 @@
       {
         "id": "shirts",
         "title": "Product mix: printed shirts",
-        "body": "Quick-Screen produces front-only and front-and-back printed T-shirts and sweatshirts. Available resources are 500 dozen blank garments of each type, $25,000 for production, 72 processing hours, and one truck with room for 1,200 standard boxes. A standard box holds twelve T-shirts; a sweatshirt box holds twelve sweatshirts but occupies three standard-box spaces. The table gives time, production cost and profit per dozen. The question is how many dozens of each product to make to maximize profit.",
+        "body": "A clothing printer has several products competing for the same stock, budget, processing time and truck. The challenge is to choose a mix that respects all four limits, not simply the product with the largest profit per dozen.\nQuick-Screen produces front-only and front-and-back printed T-shirts and sweatshirts. Available resources are 500 dozen blank garments of each type, $25,000 for production, 72 processing hours, and one truck with room for 1,200 standard boxes. A standard box holds twelve T-shirts; a sweatshirt box holds twelve sweatshirts but occupies three standard-box spaces. The table gives time, production cost and profit per dozen. The question is how many dozens of each product to make to maximize profit.",
         "sections": [
           {
             "title": "Derived formulation",
-            "body": "Let \\(x_{1}\\),\\(x_{2}\\) be dozens of front-only and front-and-back sweatshirts, and \\(x_{3}\\),\\(x_{4}\\) the corresponding T-shirt quantities. The following is a continuous LP derived from the stated data.\n$$\\max Z=90x_1+125x_2+45x_3+65x_4.$$\n$$0.10x_1+0.25x_2+0.08x_3+0.21x_4\\le72$$\n$$3x_1+3x_2+x_3+x_4\\le1200$$\n$$36x_1+48x_2+25x_3+35x_4\\le25000$$\n$$x_1+x_2\\le500,\\qquad x_3+x_4\\le500,\\qquad x_i\\ge0.$$\nThe constraints represent processing hours, one truck’s capacity, production budget, sweatshirt stock and T-shirt stock. Profit and cost are separate coefficients: maximize the stated profit, while production cost consumes budget. Do not subtract the cost a second time from an already net profit."
+            "body": "Let \\(x_{1}\\),\\(x_{2}\\) be dozens of front-only and front-and-back sweatshirts, and \\(x_{3}\\),\\(x_{4}\\) the corresponding T-shirt quantities. Allow fractional quantities when writing this linear program.\n$$\\max Z=90x_1+125x_2+45x_3+65x_4.$$\n$$0.10x_1+0.25x_2+0.08x_3+0.21x_4\\le72$$\n$$3x_1+3x_2+x_3+x_4\\le1200$$\n$$36x_1+48x_2+25x_3+35x_4\\le25000$$\n$$x_1+x_2\\le500,\\qquad x_3+x_4\\le500,\\qquad x_i\\ge0.$$\nThe constraints represent processing hours, one truck’s capacity, production budget, sweatshirt stock and T-shirt stock. Profit and cost are separate coefficients: maximize the stated profit, while production cost consumes budget. Do not subtract the cost a second time from an already net profit."
           }
         ],
         "sources": [
           "chapter04-2.pdf · pages 3-5"
         ],
-        "warning": "This is a derived continuous formulation. Quantities are measured in dozens; requiring whole dozens would add integer restrictions.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -1692,7 +1990,7 @@
       {
         "id": "diet",
         "title": "Diet: lower and upper nutrient limits",
-        "body": "The breakfast table lists ten foods and their nutrients and costs per stated serving: cup, egg, slice or orange. Minimize cost while providing at least 420 calories, 5 mg iron, 400 mg calcium, 20 g protein and 12 g fiber, and at most 20 g fat and 30 mg cholesterol. The table below gives all food options.",
+        "body": "The cheapest breakfast is useful only if it meets the nutritional requirements. Some nutrients have minimum targets, while others have upper limits. Keeping those directions straight is the main modeling task.\nThe breakfast table lists ten foods and their nutrients and costs per stated serving: cup, egg, slice or orange. Minimize cost while providing at least 420 calories, 5 mg iron, 400 mg calcium, 20 g protein and 12 g fiber, and at most 20 g fat and 30 mg cholesterol. The table below gives all food options.",
         "sections": [
           {
             "title": "Derived continuous-serving model",
@@ -1702,7 +2000,6 @@
         "sources": [
           "chapter04-2.pdf · pages 6-7"
         ],
-        "warning": "This is a derived continuous model: fractional servings are allowed, and every food uses the serving unit listed in the data table. Whole-serving requirements would add integer restrictions.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -1740,7 +2037,7 @@
       {
         "id": "portfolio",
         "title": "Investment allocation and ratio restrictions",
-        "body": "Kathleen Allen has $70,000 to invest for one year. The data table gives municipal bonds at 8.5%, CDs at 5%, treasury bills at 6.5% and stock fund at 13%. Municipal bonds may use at most 20% of the total; CDs may not exceed the other three investments combined; CDs and treasury bills together must receive at least 30%; and that group must receive at least 1.2 times the amount in bonds and stock.",
+        "body": "An investment allocation decides how to divide a fixed amount of money. Each option has a return, but the rules can require some money in lower-return choices. We will maximize return while honoring those rules.\nKathleen Allen has $70,000 to invest for one year. The data table gives municipal bonds at 8.5%, CDs at 5%, treasury bills at 6.5% and stock fund at 13%. Municipal bonds may use at most 20% of the total; CDs may not exceed the other three investments combined; CDs and treasury bills together must receive at least 30%; and that group must receive at least 1.2 times the amount in bonds and stock.\nTreat allocations as divisible dollar amounts and maximize the one-year return, not the original principal plus return.",
         "sections": [
           {
             "title": "Derived allocation model",
@@ -1750,7 +2047,6 @@
         "sources": [
           "chapter04-2.pdf · pages 8-9"
         ],
-        "warning": "The model-summary page 9 is visibly blank beneath its headings. These equations follow from the table on page 8; they are not visible equations from page 9.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -1781,7 +2077,7 @@
       {
         "id": "advertising",
         "title": "Marketing: maximize exposure within a budget",
-        "body": "Biggs Department Store wants to maximize advertising exposure using television, radio and newspaper ads. Each advertising option has exposures of 20,000, 12,000 and 9,000 per ad and costs of $15,000, $6,000 and $4,000. Available placements are at most 4 TV commercials, 10 radio commercials and 7 newspaper ads. The agency can produce at most 15 advertisements in total and has a $100,000 budget.",
+        "body": "An advertising budget can be divided among several media. Each option has a cost and an expected reach, and each also has placement limits. We need a feasible combination, not just the ad with the biggest audience.\nBiggs Department Store wants to maximize advertising exposure using television, radio and newspaper ads. Each advertising option has exposures of 20,000, 12,000 and 9,000 per ad and costs of $15,000, $6,000 and $4,000. Available placements are at most 4 TV commercials, 10 radio commercials and 7 newspaper ads. The agency can produce at most 15 advertisements in total and has a $100,000 budget.",
         "sections": [
           {
             "title": "Derived LP and the whole-ad distinction",
@@ -1791,7 +2087,6 @@
         "sources": [
           "chapter04-2.pdf · pages 10-12"
         ],
-        "warning": "This formulation assumes divisible advertising quantities. Requiring whole advertisements adds integer restrictions and can change the optimum.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -1821,7 +2116,7 @@
       {
         "id": "transport",
         "title": "Transportation: supply, demand and unused capacity",
-        "body": "Zephyr TV ships televisions monthly from Cincinnati, Atlanta and Pittsburgh to New York, Dallas and Detroit. The data table gives supplies 300, 200, 200, demands 150, 250, 200, and lane-specific unit shipping costs. Find the minimum-cost shipping plan. Supply totals 700 while stated demand totals 600.",
+        "body": "Shipping decisions connect places with spare supply to places that need goods. Each route has a cost. A good plan meets every destination’s demand while staying within what each warehouse can provide.\nZephyr TV ships televisions monthly from Cincinnati, Atlanta and Pittsburgh to New York, Dallas and Detroit. The data table gives supplies 300, 200, 200, demands 150, 250, 200, and lane-specific unit shipping costs. Find the minimum-cost shipping plan. Supply totals 700 while stated demand totals 600.",
         "sections": [
           {
             "title": "Derived model: interpret supply as availability",
@@ -1831,7 +2126,6 @@
         "sources": [
           "chapter04-2.pdf · pages 13-15"
         ],
-        "warning": "Warehouse supplies are upper bounds and unused stock has no modeled penalty. A zero-cost dummy destination is an alternative representation of the 100-unit supply surplus.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -1871,7 +2165,7 @@
       {
         "id": "blending",
         "title": "Blending: percentages become linear constraints",
-        "body": "The petroleum example blends three components into super, premium and extra motor oil. Component availability is 4,500, 2,700 and 3,500 barrels/day and purchase costs $12, $10 and $14 per barrel. Grade selling prices are $23, $20 and $18. Each grade must have at least 3,000 barrels. Super needs at least 50% component 1 and at most 30% component 2; premium needs at least 40% component 1 and at most 25% component 3; extra needs at least 60% component 1 and at least 10% component 2.",
+        "body": "A blend combines ingredients into products with quality requirements. A rule such as “at least half of this grade must be component 1” links one ingredient amount to the total amount of that grade.\nThe petroleum example blends three components into super, premium and extra motor oil. Component availability is 4,500, 2,700 and 3,500 barrels/day and purchase costs $12, $10 and $14 per barrel. Grade selling prices are $23, $20 and $18. Each grade must have at least 3,000 barrels. Super needs at least 50% component 1 and at most 30% component 2; premium needs at least 40% component 1 and at most 25% component 3; extra needs at least 60% component 1 and at least 10% component 2.",
         "sections": [
           {
             "title": "Derived LP formulation",
@@ -1885,7 +2179,6 @@
         "sources": [
           "chapter04-2.pdf · pages 16-18"
         ],
-        "warning": "This is a derived formulation and optimum. Grade totals are fixed at the optimum, but component allocations can be nonunique.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -1925,7 +2218,7 @@
       {
         "id": "production",
         "title": "Multiperiod production and inventory",
-        "body": "PM Computers seeks a production schedule that meets its orders at minimum cost. Regular production is limited to 160 computers/week, with at most 50 more computers/week from overtime. Unit costs are $190 for regular production and $260 for overtime; holding costs $10/computer/week. Orders in weeks 1–6 are 105, 170, 230, 180, 150 and 250. Initial and terminal inventory must be specified to complete the model.",
+        "body": "Orders arrive week by week, but we can make some items early and keep them for later. That creates a trade-off between cheaper production now, storage cost, and more expensive overtime later.\nPM Computers seeks a production schedule that meets its orders at minimum cost. Regular production is limited to 160 computers/week, with at most 50 more computers/week from overtime. Unit costs are $190 for regular production and $260 for overtime; holding costs $10/computer/week. Orders in weeks 1–6 are 105, 170, 230, 180, 150 and 250. Initial and terminal inventory must be specified to complete the model.",
         "sections": [
           {
             "title": "Derived inventory model and boundary assumptions",
@@ -1939,7 +2232,6 @@
         "sources": [
           "chapter04-2.pdf · pages 19-21"
         ],
-        "warning": "The derived minimum cost of $216,300 assumes zero initial and terminal inventory, on-time demand, no backlogs, and storage charged between weeks.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -1984,7 +2276,7 @@
       {
         "id": "pet-food",
         "title": "Pet food: keep weight and cans consistent",
-        "body": "Bark’s Pet Food Company produces Meow Chow and Bow Chow from horse meat, fish and cereal. Weekly availability is 600 lb horse meat, 800 lb fish and 1,000 lb cereal, plus 2,250 cans holding 16 ounces each. Meow Chow must be at least half fish and Bow Chow at least half horse meat. Stated profits are $0.80 and $0.96 per can. Since 16 ounces equals one pound, ingredient weight and filled-can totals can be matched directly.",
+        "body": "The ingredients are measured by weight, but the finished products are sold in cans. We must connect those units before writing the model. Otherwise a recipe can look feasible while using the wrong amount of material.\nBark’s Pet Food Company produces Meow Chow and Bow Chow from horse meat, fish and cereal. Weekly availability is 600 lb horse meat, 800 lb fish and 1,000 lb cereal, plus 2,250 cans holding 16 ounces each. Meow Chow must be at least half fish and Bow Chow at least half horse meat. Stated profits are $0.80 and $0.96 per can. Since 16 ounces equals one pound, ingredient weight and filled-can totals can be matched directly.",
         "sections": [
           {
             "title": "Derived blending model",
@@ -1998,7 +2290,6 @@
         "sources": [
           "chapter04-2.pdf · pages 22-24"
         ],
-        "warning": "Page 24 is visibly blank beneath its model-formulation heading. The ingredient-allocation model and $1,992 worked optimum are derived from page 23. The stated per-can profits are used directly.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -2038,7 +2329,7 @@
       {
         "id": "cash-flow",
         "title": "Investment over time: when is money available?",
-        "body": "Start with $100,000 and a five-year horizon. A can start at the beginning of years 1–4 and returns 15% after two years. B starts at the beginning of year 3, pays 25% at the end of year 5, and is capped at $40,000. C starts at the beginning of year 2, pays 40% at the end of year 4, and is capped at $30,000. Government bond D can be purchased at the beginning of each year and gives a 6% return. The question asks how to maximize the return at the end of year 5.",
+        "body": "A profitable investment is not useful if we need the money before it pays back. A cash-flow model follows money through time and makes sure each new investment uses funds that are actually available then.\nStart with $100,000 and a five-year horizon. A can start at the beginning of years 1–4 and returns 15% after two years. B starts at the beginning of year 3, pays 25% at the end of year 5, and is capped at $40,000. C starts at the beginning of year 2, pays 40% at the end of year 4, and is capped at $30,000. Government bond D can be purchased at the beginning of each year and gives a 6% return. The question asks how to maximize the return at the end of year 5.",
         "sections": [
           {
             "title": "Derived cash-flow model with explicit timing conventions",
@@ -2048,7 +2339,6 @@
         "sources": [
           "chapter04-2.pdf · pages 25-26"
         ],
-        "warning": "This model assumes project D matures after one year, percentage returns are added to repaid principal, and cash can be reinvested at year boundaries. These timing assumptions determine which investments are feasible.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -2092,7 +2382,7 @@
       {
         "id": "dea",
         "title": "Data envelopment analysis: relative efficiency",
-        "body": "Compare Alton, Beeks, Carey and Delancey elementary schools. Inputs are teacher/student ratio, supplementary funds per student and average parent education level; education values mean 12 = high-school graduate and 16 = college graduate. Outputs are average reading, mathematics and history SOL test scores. The goal is to find schools that convert resources into outcomes less efficiently than the others. The full school data are in the table below.",
+        "body": "How can we compare organizations that use several kinds of resources and produce several kinds of results? DEA builds a comparison from the observed organizations. Its efficiency score depends on that comparison and the modeling assumptions.\nCompare Alton, Beeks, Carey and Delancey elementary schools. Inputs are teacher/student ratio, supplementary funds per student and average parent education level; education values mean 12 = high-school graduate and 16 = college graduate. Outputs are average reading, mathematics and history SOL test scores. The goal is to find schools that convert resources into outcomes less efficiently than the others. The full school data are in the table below.\nAn input-oriented comparison asks how much an organization could reduce its resources while maintaining its results. Constant returns to scale means that scaling an operation and all its resources up or down preserves the same production proportions. These are assumptions of the comparison, not conclusions about how the organizations actually work.",
         "sections": [
           {
             "title": "Derived DEA formulation and its convention",
@@ -2106,7 +2396,6 @@
         "sources": [
           "chapter04-2.pdf · pages 27-31"
         ],
-        "warning": "The CCR formulation assumes constant returns to scale. Different returns-to-scale conventions or restrictions on weights give different efficiency models and can change scores.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -2146,7 +2435,7 @@
       {
         "id": "uncertain-returns",
         "title": "Uncertain returns and incomplete probabilities",
-        "body": "Now consider the $100,000, five-year investment problem with random returns. A can start in years 1–4 and pays after two years: 25% return with probability 20%, or 12.5% with probability 80%. B starts in year 3, pays at the end of year 5, and is capped at $40,000: the listed outcomes are a 30% return with probability 40% and 60% with probability 21.67%. C starts in year 2, pays at the end of year 4 and is capped at $30,000: its outcomes are 45% with probability 90% and -5% with probability 10%. D can be bought at the beginning of each year and gives 6%.",
+        "body": "A return is uncertain when several outcomes are possible. Before optimizing, we need to know what those outcomes are, how likely they are, and when decisions can react to them. Missing probabilities can prevent a numerical answer.\nNow consider the $100,000, five-year investment problem with random returns. A can start in years 1–4 and pays after two years: 25% return with probability 20%, or 12.5% with probability 80%. B starts in year 3, pays at the end of year 5, and is capped at $40,000: the listed outcomes are a 30% return with probability 40% and 60% with probability 21.67%. C starts in year 2, pays at the end of year 4 and is capped at $30,000: its outcomes are 45% with probability 90% and -5% with probability 10%. D can be bought at the beginning of each year and gives 6%.\nFor project B, the stated probabilities leave 38.33% unaccounted for. We need the missing outcome and its probability before calculating a complete expected return.",
         "sections": [
           {
             "title": "Derived expected-return calculations",
@@ -2160,7 +2449,6 @@
         "sources": [
           "chapter04-2.pdf · pages 32"
         ],
-        "warning": "Page 32 leaves 38.33% of B’s probability mass unspecified. Do not invent a missing outcome, silently renormalize the two printed probabilities, or claim a unique stochastic optimum from the incomplete probabilities.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -2206,7 +2494,7 @@
       {
         "id": "a1-shuttle",
         "title": "Assignment 1: six airport-shuttle pricing policies",
-        "body": "A shuttle has 40 seats. Regular tickets are bought less than seven days ahead; advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic, quantities are continuous, operating costs are ignored, and customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand is at most 40; there is no additional rationing or overbooking decision.\n$$D_W(p)=\\begin{cases}54-1.5p&0\\le p\\le30,\\\\24-0.5p&30<p\\le48,\\\\0&p>48,\\end{cases}\\qquad D_A(p)=48-2p,\\quad0\\le p\\le24.$$\nThe original fares are \\(p_W = \\$36\\) and \\(p_A = \\$18\\). Calculate demands, revenue and load factor for the benchmark; then compare filling capacity, optimizing only the advance fare, optimizing both fares, adding a student fare, and optimizing all three fares. These are derived worked solutions; no official Assignment 1 answer key is available in the synced materials. Related topic: Airline demand, segmentation and advance fares.",
+        "body": "Use the shuttle example to practice the difference between filling seats and earning revenue. Work through one fare policy at a time, keeping track of who can buy each ticket and the shared 40-seat limit.\nA shuttle has 40 seats. Regular tickets are bought less than seven days ahead; advance tickets are bought at least seven days ahead, including exactly seven days, and are nonrefundable and unchangeable. Demand is deterministic, quantities are continuous, operating costs are ignored, and customers do not switch between the regular and advance streams. Choose fares so that all demand is served and total demand is at most 40; there is no additional rationing or overbooking decision.\n$$D_W(p)=\\begin{cases}54-1.5p&0\\le p\\le30,\\\\24-0.5p&30<p\\le48,\\\\0&p>48,\\end{cases}\\qquad D_A(p)=48-2p,\\quad0\\le p\\le24.$$\nThe original fares are \\(p_W = \\$36\\) and \\(p_A = \\$18\\). Calculate demands, revenue and load factor for the benchmark; then compare filling capacity, optimizing only the advance fare, optimizing both fares, adding a student fare, and optimizing all three fares. Related topic: Airline demand, segmentation and advance fares.",
         "sections": [
           {
             "title": "(a)-(c) Benchmark, fill the shuttle, optimize the advance fare",
@@ -2233,50 +2521,50 @@
             "caption": "Pricing-policy comparison; quantities use full precision before rounding",
             "headers": [
               "Part",
-              "Fares W or R / S / A ($)",
+              "Ticket prices (dollars per ticket)",
               "Total passengers",
               "Load factor",
               "Revenue ($)"
             ],
             "rows": [
               [
-                "a",
-                "36 / — / 18",
+                "a · Current fares",
+                "Regular $36; advance $18; no student ticket",
                 "18",
                 "45%",
                 "432.00"
               ],
               [
-                "b",
-                "36 / — / 7",
+                "b · Fill every seat",
+                "Regular $36; advance $7; no student ticket",
                 "40",
                 "100%",
                 "454.00"
               ],
               [
-                "c",
-                "36 / — / 12",
+                "c · Best advance fare",
+                "Regular $36; advance $12; no student ticket",
                 "30",
                 "75%",
                 "504.00"
               ],
               [
-                "d",
-                "21.142857 / — / 15.142857",
+                "d · Choose two fares",
+                "Regular $21.142857; advance $15.142857; no student ticket",
                 "40",
                 "100%",
                 "739.428571"
               ],
               [
-                "e",
-                "\\(30 / 18 / 14.5\\)",
+                "e · Add student tickets",
+                "Regular $30; advance $14.5; student $18",
                 "40",
                 "100%",
                 "761.50"
               ],
               [
-                "f",
-                "\\(27.142857 / 18.142857 / 15.142857\\)",
+                "f · Choose all three fares",
+                "Regular $27.142857; advance $15.142857; student $18.142857",
                 "40",
                 "100%",
                 "766.428571"
@@ -2321,7 +2609,7 @@
       {
         "id": "a2-graphical",
         "title": "Assignment 2: bounded, unbounded and reversed objectives",
-        "body": "Problems 1, 2 and 4 ask for graphical solutions, including maximization versus minimization. Draw each boundary line, keep the indicated half-plane, and evaluate the feasible vertices. An unbounded feasible region does not by itself imply an unbounded objective; demonstrate an improving feasible direction. All variables are nonnegative. The results below agree with the official key and have been independently recomputed. Related topic: Graphical solution and irregular LP outcomes.",
+        "body": "These exercises practice reading a feasible region. First find which points satisfy every restriction. Only then compare objective values or decide whether the objective can improve without limit.\nProblems 1, 2 and 4 ask for graphical solutions, including maximization versus minimization. Draw each boundary line, keep the indicated half-plane, and evaluate the feasible vertices. An unbounded feasible region does not by itself imply an unbounded objective; demonstrate an improving feasible direction. All variables are nonnegative. Related topic: Graphical solution and irregular LP outcomes.",
         "sections": [
           {
             "title": "Problem 1: a bounded maximum",
@@ -2364,27 +2652,74 @@
           "\\max Z=5x_1+8x_2;\\quad3x_1+5x_2\\le50,\\quad2x_1+4x_2\\le40,\\quad x_1\\le8,\\quad x_2\\le10,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\max {\\text{objective value}}=5\\,\\times\\,{\\text{first activity quantity}}+8\\,\\times\\,{\\text{second activity quantity}};\\\\3{\\text{first activity quantity}}+5\\,\\times\\,{\\text{second activity quantity}}\\le50,\\\\2{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\le40,\\\\ {\\text{first activity quantity}}\\le8,\\\\ {\\text{second activity quantity}}\\le10,\\\\ {\\text{first activity quantity}},{\\text{second activity quantity}}\\ge0.\\end{gathered}",
           "Z=3x_1+2x_2;\\quad2x_1+4x_2\\ge22,\\quad-x_1+4x_2\\ge10,\\quad4x_1-2x_2\\le14,\\quad x_1-3x_2\\le1,\\quad x_1,x_2\\ge0.": "\\begin{gathered}{\\text{objective value}}=3\\,\\times\\,{\\text{first activity quantity}}+2\\,\\times\\,{\\text{second activity quantity}};\\\\2{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\ge22,\\\\-{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\ge10,\\\\4{\\text{first activity quantity}}-2\\,\\times\\,{\\text{second activity quantity}}\\le14,\\\\ {\\text{first activity quantity}}-3\\,\\times\\,{\\text{second activity quantity}}\\le1,\\\\ {\\text{first activity quantity}},{\\text{second activity quantity}}\\ge0.\\end{gathered}",
           "Z=800x_1+900x_2;\\quad2x_1+4x_2\\le30,\\quad4x_1+2x_2\\le30,\\quad x_1+x_2\\ge9,\\quad x_1,x_2\\ge0.": "\\begin{gathered}{\\text{objective value}}=800\\,\\times\\,{\\text{first activity quantity}}+900\\,\\times\\,{\\text{second activity quantity}};\\\\2{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\le30,\\\\4{\\text{first activity quantity}}+2\\,\\times\\,{\\text{second activity quantity}}\\le30,\\\\ {\\text{first activity quantity}}+{\\text{second activity quantity}}\\ge9,\\\\ {\\text{first activity quantity}},{\\text{second activity quantity}}\\ge0.\\end{gathered}"
+        },
+        "pointReadings": {
+          "The feasible polygon has vertices (0,0), (8,0), (8,5.2), (0,10). Their objective values are 0, 40, 81.6, 80. Thus the unique maximum is (8,5.2), \\(Z = 81.6\\). Draw the boundary from (0,10) to (8,5.2); the first resource and \\(x_{1}\\) bound meet at the optimum.": [
+            {
+              "point": "(0,0)",
+              "meaning": "Choose 0 for the first quantity and 0 for the second."
+            },
+            {
+              "point": "(8,0)",
+              "meaning": "Choose 8 for the first quantity and 0 for the second."
+            },
+            {
+              "point": "(8,5.2)",
+              "meaning": "Choose 8 for the first quantity and 5.2 for the second."
+            },
+            {
+              "point": "(0,10)",
+              "meaning": "Choose 0 for the first quantity and 10 for the second."
+            }
+          ],
+          "The lower boundary vertices are (0,5.5), (4,3.5), and (\\(38/7\\),\\(27/7\\)), with \\(Z = 11\\), 19, and 24. The feasible region extends upward; increasing \\(x_{2}\\) with \\(x_{1}\\) fixed remains feasible and increases Z, proving the maximum is unbounded. Reversing to minimization gives (0,5.5), \\(Z = 11\\).": [
+            {
+              "point": "(0,5.5)",
+              "meaning": "Choose 0 for the first quantity and 5.5 for the second."
+            },
+            {
+              "point": "(4,3.5)",
+              "meaning": "Choose 4 for the first quantity and 3.5 for the second."
+            },
+            {
+              "point": "(38/7,27/7)",
+              "meaning": "Choose 38/7 for the first quantity and 27/7 for the second."
+            }
+          ],
+          "The three vertices are (3,6), (5,5), and (6,3), with \\(Z = \\$7,800\\), $8,500, and $7,500. The maximum is (5,5), $8,500; the minimum is (6,3), $7,500. Changing the objective sense changes the supporting corner, not the feasible triangle.": [
+            {
+              "point": "(3,6)",
+              "meaning": "Choose 3 for the first quantity and 6 for the second."
+            },
+            {
+              "point": "(5,5)",
+              "meaning": "Choose 5 for the first quantity and 5 for the second."
+            },
+            {
+              "point": "(6,3)",
+              "meaning": "Choose 6 for the first quantity and 3 for the second."
+            }
+          ]
         }
       },
       {
         "id": "a2-claims",
         "title": "Assignment 2: staffing permanent and temporary claim processors",
-        "body": "Problem 3 asks for an LP formulation and graphical solution. Permanent operators process 16 claims/day, produce 0.5 erroneous claims/day and cost $64/day. Temporary operators process 12 claims/day, produce 1.4 errors/day and cost $42/day. At least 450 claims must be processed, at most 40 workstations are available, and no more than 25 erroneous claims are allowed daily. Use continuous staffing quantities for the stated LP; integer hiring would be a different model. Related topic: LP formulation and graphical solution.",
+        "body": "The insurer needs enough processing capacity without too many errors. Permanent and temporary staff have different costs and performance, so the cheapest plan must balance all three considerations.\nProblem 3 asks for an LP formulation and graphical solution. Permanent operators process 16 claims/day, produce 0.5 erroneous claims/day and cost $64/day. Temporary operators process 12 claims/day, produce 1.4 errors/day and cost $42/day. At least 450 claims must be processed, at most 40 workstations are available, and no more than 25 erroneous claims are allowed daily. Use continuous staffing quantities for the stated LP; integer hiring would be a different model. Related topic: LP formulation and graphical solution.",
         "sections": [
           {
             "title": "Model and feasible polygon",
             "body": "Let \\(x_{1}\\) and \\(x_{2}\\) be permanent and temporary operators.\n$$\\min Z=64x_1+42x_2;\\quad16x_1+12x_2\\ge450,\\quad x_1+x_2\\le40,\\quad0.5x_1+1.4x_2\\le25,\\quad x_1,x_2\\ge0.$$\nShade above the processing requirement and below the workstation and error limits. The feasible vertices are (28.125,0), (40,0), (34.444444,5.555556), and (20.121951,10.670732). Their daily costs are $1,800, $2,560, $2,437.777778, and $1,735.975610, respectively."
           },
           {
-            "title": "Optimal staffing and source correction",
-            "body": "The processing and error constraints bind at the optimum: (\\(x_{1}\\),\\(x_{2}\\)) = (20.1219512195,10.6707317073), with minimum cost $1,735.98/day after rounding to cents. Total staffing is about 30.792683, below 40. The official key identifies the same optimum. Its rounded cost label and one nonoptimal corner label need the corrections noted below."
+            "title": "Check the best staffing plan",
+            "body": "The processing and error constraints bind at the optimum: (\\(x_{1}\\),\\(x_{2}\\)) = (20.1219512195,10.6707317073), with minimum cost $1,735.98/day after rounding to cents. Total staffing is about 30.792683, below 40. Check that processing and expected errors exactly meet their limits and that total staffing stays below 40."
           }
         ],
         "sources": [
           "Assignment 2.pdf · page 2 (official problem 3)",
           "New Answer of assignment 2.pdf · pages 2-3 (official model and graphical solution)"
         ],
-        "warning": "The official key’s page-3 chart swaps the coordinates of the workstation/error corner: it should be (34.444444,5.555556), not (5.55,34.45). Its optimum cost label $1,735.97 should round to $1,735.98. These corrections follow direct substitution into the printed model. The same chart’s nonoptimal-corner cost shown as $2,437.9 is $2,437.777778, or $2,437.78 to cents.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -2407,12 +2742,48 @@
         },
         "equationWords": {
           "\\min Z=64x_1+42x_2;\\quad16x_1+12x_2\\ge450,\\quad x_1+x_2\\le40,\\quad0.5x_1+1.4x_2\\le25,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\min {\\text{staffing cost}}=64\\,\\times\\,{\\text{permanent operators}}+42\\,\\times\\,{\\text{temporary operators}};\\\\16{\\text{permanent operators}}+12\\,\\times\\,{\\text{temporary operators}}\\ge450,\\\\ {\\text{permanent operators}}+{\\text{temporary operators}}\\le40,\\\\0.5\\,\\times\\,{\\text{permanent operators}}+1.4\\,\\times\\,{\\text{temporary operators}}\\le25,\\\\ {\\text{permanent operators}},{\\text{temporary operators}}\\ge0.\\end{gathered}"
+        },
+        "pointReadings": {
+          "Shade above the processing requirement and below the workstation and error limits. The feasible vertices are (28.125,0), (40,0), (34.444444,5.555556), and (20.121951,10.670732). Their daily costs are $1,800, $2,560, $2,437.777778, and $1,735.975610, respectively.": [
+            {
+              "point": "(28.125,0)",
+              "meaning": "Use 28.125 permanent operators and 0 temporary operators."
+            },
+            {
+              "point": "(40,0)",
+              "meaning": "Use 40 permanent operators and 0 temporary operators."
+            },
+            {
+              "point": "(34.444444,5.555556)",
+              "meaning": "Use 34.444444 permanent operators and 5.555556 temporary operators."
+            },
+            {
+              "point": "(20.121951,10.670732)",
+              "meaning": "Use 20.121951 permanent operators and 10.670732 temporary operators."
+            }
+          ],
+          "The processing and error constraints bind at the optimum: (\\(x_{1}\\),\\(x_{2}\\)) = (20.1219512195,10.6707317073), with minimum cost $1,735.98/day after rounding to cents. Total staffing is about 30.792683, below 40. The official key identifies the same optimum. Its rounded cost label and one nonoptimal corner label need the corrections noted below.": [
+            {
+              "point": "(20.1219512195,10.6707317073)",
+              "meaning": "Use 20.1219512195 permanent operators and 10.6707317073 temporary operators."
+            }
+          ],
+          "The official key’s page-3 chart swaps the coordinates of the workstation/error corner: it should be (34.444444,5.555556), not (5.55,34.45). Its optimum cost label $1,735.97 should round to $1,735.98. These corrections follow direct substitution into the printed model. The same chart’s nonoptimal-corner cost shown as $2,437.9 is $2,437.777778, or $2,437.78 to cents.": [
+            {
+              "point": "(34.444444,5.555556)",
+              "meaning": "Use 34.444444 permanent operators and 5.555556 temporary operators."
+            },
+            {
+              "point": "(5.55,34.45)",
+              "meaning": "Use 5.55 permanent operators and 34.45 temporary operators."
+            }
+          ]
         }
       },
       {
         "id": "a3-mills",
         "title": "Assignment 3: aluminum mills and cost sensitivity",
-        "body": "For every Assignment 3 problem, parts (a)-(d) require a graphical solution, graphical coefficient sensitivity, algebraic sensitivity with slack/surplus variables, and Excel Solver verification. Mill 1 produces high/medium/low aluminum at \\(6/2/4\\) tons per day; Mill 2 produces \\(2/2/10\\). Requirements are at least \\(12/8/5\\) tons. Operating costs are $6,000 and $7,000 per day. Related topic: Objective-coefficient ranges, slack and surplus variables, and Solver reports.",
+        "body": "The mills produce several grades at once. Running a mill for another day adds all of those grades, so we cannot choose each grade’s production separately. Find the least operating cost that meets every order.\nFor every Assignment 3 problem, parts (a)-(d) require a graphical solution, graphical coefficient sensitivity, algebraic sensitivity with slack/surplus variables, and Excel Solver verification. Each operating day, mill 1 makes 6 tons of high-grade, 2 tons of medium-grade and 4 tons of low-grade aluminum. Mill 2 makes 2, 2 and 10 tons of those grades per day, respectively. The orders require at least 12 high-grade tons, 8 medium-grade tons and 5 low-grade tons. Operating costs are $6,000 and $7,000 per day. Related topic: Objective-coefficient ranges, slack and surplus variables, and Solver reports.",
         "sections": [
           {
             "title": "(a) Formulation and vertices",
@@ -2424,7 +2795,7 @@
           },
           {
             "title": "(d) Solver verification",
-            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected original-row shadow prices (high, medium, low) are ($0,$3,000,$0) per ton. The variable reduced costs are (0,$1,000). Medium demand can decrease from 8 to 4 with the same basis and has no finite upper bound; the high and low rows have current surpluses 12 and 11."
+            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. Use the values below to check your own Excel Sensitivity Report. Expected original-row shadow prices (high, medium, low) are ($0,$3,000,$0) per ton. The variable reduced costs are (0,$1,000). Medium demand can decrease from 8 to 4 with the same basis and has no finite upper bound; the high and low rows have current surpluses 12 and 11."
           }
         ],
         "sources": [
@@ -2465,12 +2836,34 @@
           "\\min Z=6000x_1+7000x_2;\\quad6x_1+2x_2\\ge12,\\quad2x_1+2x_2\\ge8,\\quad4x_1+10x_2\\ge5,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\min {\\text{operating cost}}=6000\\,\\times\\,{\\text{mill 1 operating days}}+7000\\,\\times\\,{\\text{mill 2 operating days}};\\\\6{\\text{mill 1 operating days}}+2\\,\\times\\,{\\text{mill 2 operating days}}\\ge12,\\\\2{\\text{mill 1 operating days}}+2\\,\\times\\,{\\text{mill 2 operating days}}\\ge8,\\\\4{\\text{mill 1 operating days}}+10\\,\\times\\,{\\text{mill 2 operating days}}\\ge5,\\\\ {\\text{mill 1 operating days}},{\\text{mill 2 operating days}}\\ge0.\\end{gathered}",
           "x_1=4-x_2+\\tfrac12e_2,\\quad e_1=12-4x_2+3e_2,\\quad e_3=11+6x_2+2e_2.": "\\begin{gathered}{\\text{mill 1 operating days}}=4-{\\text{mill 2 operating days}}+\\tfrac12{\\text{surplus medium-grade tons}},\\\\ {\\text{surplus high-grade tons}}=12-4\\,\\times\\,{\\text{mill 2 operating days}}+3\\,\\times\\,{\\text{surplus medium-grade tons}},\\\\ {\\text{surplus low-grade tons}}=11+6\\,\\times\\,{\\text{mill 2 operating days}}+2\\,\\times\\,{\\text{surplus medium-grade tons}}.\\end{gathered}",
           "Z=24000+1000x_2+3000e_2=4c_1+(c_2-c_1)x_2+\\tfrac12c_1e_2.": "{\\text{operating cost}}=24000+1000\\,\\times\\,{\\text{mill 2 operating days}}+3000\\,\\times\\,{\\text{surplus medium-grade tons}}=4\\,\\times\\,{\\text{mill 1 cost per day}}+({\\text{mill 2 cost per day}}-{\\text{mill 1 cost per day}})\\,\\times\\,{\\text{mill 2 operating days}}+\\tfrac12{\\text{mill 1 cost per day}}\\,\\times\\,{\\text{surplus medium-grade tons}}."
+        },
+        "pointReadings": {
+          "The low-grade row is redundant. The unbounded feasible region lies above the high- and medium-grade boundaries. Vertices (0,6), (1,3), and (4,0) cost $42,000, $27,000, and $24,000. The minimum is four days at Mill 1 and zero at Mill 2.": [
+            {
+              "point": "(0,6)",
+              "meaning": "Run mill 1 for 0 days and mill 2 for 6 days."
+            },
+            {
+              "point": "(1,3)",
+              "meaning": "Run mill 1 for 1 days and mill 2 for 3 days."
+            },
+            {
+              "point": "(4,0)",
+              "meaning": "Run mill 1 for 4 days and mill 2 for 0 days."
+            }
+          ],
+          "The objective slope is -\\(c_{1}/c_{2}\\). At (4,0), adjacent boundary slopes are -1 and 0, so \\(0 \\le  c_{1} \\le  c_{2}\\) keeps this corner optimal. With \\(c_{2} = 7,000\\), \\(c_{1}\\) ranges from 0 to 7,000 (allowable decrease 6,000; increase 1,000). With \\(c_{1} = 6,000\\), \\(c_{2}\\) ranges from 6,000 to infinity (decrease 1,000; unlimited increase).": [
+            {
+              "point": "(4,0)",
+              "meaning": "Run mill 1 for 4 days and mill 2 for 0 days."
+            }
+          ]
         }
       },
       {
         "id": "a3-bradley",
         "title": "Assignment 3: farm profits and a change to corn only",
-        "body": "The Bradley family has 410 acres and a $52,500 budget. Corn costs $105/acre and earns $300/acre; tobacco costs $210 and earns $520. Tobacco acreage is capped at 100. Define \\(x_{1}\\) and \\(x_{2}\\) as corn and tobacco acres. Address graphical solution, graphical and algebraic sensitivity, then Excel verification. Related topic: Objective ranges and shadow prices.",
+        "body": "The farm must choose how to divide its land between two crops. Land alone does not determine the answer: the planting budget and tobacco limit also matter. After solving, examine how changes in profit affect that choice.\nThe Bradley family has 410 acres and a $52,500 budget. Corn costs $105/acre and earns $300/acre; tobacco costs $210 and earns $520. Tobacco acreage is capped at 100. Define \\(x_{1}\\) and \\(x_{2}\\) as corn and tobacco acres. Address graphical solution, graphical and algebraic sensitivity, then Excel verification. Related topic: Objective ranges and shadow prices.",
         "sections": [
           {
             "title": "(a) Model and corner points",
@@ -2486,14 +2879,13 @@
           },
           {
             "title": "(d) Solver verification",
-            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected original-row shadow prices are $80/acre for land, \\(\\$220/105 = \\$2.095238\\) per budget dollar, and zero for tobacco quota. The current land RHS range is 400 to 500 acres; the original dollar-budget RHS range is $43,050 to $53,550; the quota remains nonbinding for a limit of at least 90 acres."
+            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. Use the values below to check your own Excel Sensitivity Report. Expected original-row shadow prices are $80/acre for land, \\(\\$220/105 = \\$2.095238\\) per budget dollar, and zero for tobacco quota. The current land RHS range is 400 to 500 acres; the original dollar-budget RHS range is $43,050 to $53,550; the quota remains nonbinding for a limit of at least 90 acres."
           }
         ],
         "sources": [
           "Assignment3.pdf · page 2 (official problem 2)",
           "Assignment3_Answer.pdf · pages 3-5 (official answer)"
         ],
-        "warning": "The official key’s “corn >= $520” condition means all-corn is an optimal plan, not necessarily the only optimal plan. Uniqueness requires a strict increase above $520.",
         "notation": {
           "caption": "Symbols and units in this lesson",
           "headers": [
@@ -2528,12 +2920,42 @@
           "\\max Z=300x_1+520x_2;\\quad x_1+x_2\\le410,\\quad105x_1+210x_2\\le52500,\\quad x_2\\le100,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\max {\\text{crop profit}}=300\\,\\times\\,{\\text{corn acres}}+520\\,\\times\\,{\\text{tobacco acres}};\\\\ {\\text{corn acres}}+{\\text{tobacco acres}}\\le410,\\\\105{\\text{corn acres}}+210\\,\\times\\,{\\text{tobacco acres}}\\le52500,\\\\ {\\text{tobacco acres}}\\le100,\\\\ {\\text{corn acres}},{\\text{tobacco acres}}\\ge0.\\end{gathered}",
           "x_1=320-2s_L+s_B,\\quad x_2=90+s_L-s_B,\\quad s_T=10-s_L+s_B.": "\\begin{gathered}{\\text{corn acres}}=320-2\\,\\times\\,{\\text{unused acres}}+{\\text{unused budget in 105-dollar units}},\\\\ {\\text{tobacco acres}}=90+{\\text{unused acres}}-{\\text{unused budget in 105-dollar units}},\\\\ {\\text{unused tobacco quota acres}}=10-{\\text{unused acres}}+{\\text{unused budget in 105-dollar units}}.\\end{gathered}",
           "Z=142800-80s_L-220s_B.": "{\\text{crop profit}}=142800-80\\,\\times\\,{\\text{unused acres}}-220\\,\\times\\,{\\text{unused budget in 105-dollar units}}."
+        },
+        "pointReadings": {
+          "The budget row is equivalently \\(x_{1} + 2x2 \\le  500\\). Vertices (0,0), (0,100), (300,100), (320,90), (410,0) yield profits $0, $52,000, $142,000, $142,800, $123,000. The optimum is (320,90), with land and budget binding and ten acres of unused tobacco quota.": [
+            {
+              "point": "(0,0)",
+              "meaning": "Plant 0 acres of corn and 0 acres of tobacco."
+            },
+            {
+              "point": "(0,100)",
+              "meaning": "Plant 0 acres of corn and 100 acres of tobacco."
+            },
+            {
+              "point": "(300,100)",
+              "meaning": "Plant 300 acres of corn and 100 acres of tobacco."
+            },
+            {
+              "point": "(320,90)",
+              "meaning": "Plant 320 acres of corn and 90 acres of tobacco."
+            },
+            {
+              "point": "(410,0)",
+              "meaning": "Plant 410 acres of corn and 0 acres of tobacco."
+            }
+          ],
+          "The binding boundary slopes are -1 (land) and -\\(1/2\\) (budget). Optimality requires \\(0.5 \\le  c_{1}/c_{2} \\le  1\\). With tobacco profit fixed at 520, corn profit ranges from $260 to $520 (decrease 40; increase 220). With corn fixed at 300, tobacco ranges from $300 to $600 (decrease 220; increase 80). An all-corn plan (410,0) first becomes optimal at corn profit $520. At exactly $520 it shares the optimum with a whole land-binding edge; corn profit strictly above $520 makes all-corn uniquely optimal.": [
+            {
+              "point": "(410,0)",
+              "meaning": "Plant 410 acres of corn and 0 acres of tobacco."
+            }
+          ]
         }
       },
       {
         "id": "a3-apex",
         "title": "Assignment 3: component production and reduced costs",
-        "body": "Apex produces components A and B. Each A uses two machining units and one finishing unit; each B uses one machining and two finishing. Capacities are 100 and 80, and profits are $50 and $40. Complete the graphical, graphical-sensitivity, algebraic-sensitivity and Excel-report parts. Related topic: Graphical solution and objective ranges.",
+        "body": "Both products use machining and finishing capacity, but in different proportions. Find the best use of those resources, then ask how much the product profits or resource limits can change before the preferred mix changes.\nApex produces components A and B. Each A uses two machining units and one finishing unit; each B uses one machining and two finishing. Capacities are 100 and 80, and profits are $50 and $40. Complete the graphical, graphical-sensitivity, algebraic-sensitivity and Excel-report parts. Related topic: Graphical solution and objective ranges.",
         "sections": [
           {
             "title": "(a) Model and graphical solution",
@@ -2545,7 +2967,7 @@
           },
           {
             "title": "(d) Solver verification",
-            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. The official key provides the analytical solution but no actual Excel report; the report checks below are independently derived expectations, not a claim that Excel was run. Expected shadow prices are $20 per machining unit and $10 per finishing unit; both decision-variable reduced costs are zero. Holding the other RHS fixed, the same-basis machining-capacity range is 40 to 160, and finishing-capacity range is 50 to 200."
+            "body": "For part (d), enter decision cells, a SUMPRODUCT objective and constraint left-hand sides, choose Simplex LP and nonnegative variables, then request the Sensitivity Report. Compare its solution and coefficient ranges with the values here. Use the values below to check your own Excel Sensitivity Report. Expected shadow prices are $20 per machining unit and $10 per finishing unit; both decision-variable reduced costs are zero. Holding the other RHS fixed, the same-basis machining-capacity range is 40 to 160, and finishing-capacity range is 50 to 200."
           }
         ],
         "sources": [
@@ -2585,12 +3007,32 @@
         "equationWords": {
           "\\max Z=50x_1+40x_2;\\quad2x_1+x_2\\le100,\\quad x_1+2x_2\\le80,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\max {\\text{profit}}=50\\,\\times\\,{\\text{component A quantity}}+40\\,\\times\\,{\\text{component B quantity}};\\\\2{\\text{component A quantity}}+{\\text{component B quantity}}\\le100,\\\\ {\\text{component A quantity}}+2\\,\\times\\,{\\text{component B quantity}}\\le80,\\\\ {\\text{component A quantity}},{\\text{component B quantity}}\\ge0.\\end{gathered}",
           "x_1=40-\\tfrac23s_1+\\tfrac13s_2,\\quad x_2=20+\\tfrac13s_1-\\tfrac23s_2,\\quad Z=2800-20s_1-10s_2.": "\\begin{gathered}{\\text{component A quantity}}=40-\\tfrac23{\\text{unused machining capacity}}+\\tfrac13{\\text{unused finishing capacity}},\\\\ {\\text{component B quantity}}=20+\\tfrac13{\\text{unused machining capacity}}-\\tfrac23{\\text{unused finishing capacity}},\\\\ {\\text{profit}}=2800-20\\,\\times\\,{\\text{unused machining capacity}}-10\\,\\times\\,{\\text{unused finishing capacity}}.\\end{gathered}"
+        },
+        "pointReadings": {
+          "The feasible polygon has vertices (0,0), (0,40), (40,20), and (50,0). Their profits are $0, $1,600, $2,800, and $2,500. Thus produce 40 A and 20 B for $2,800/day.": [
+            {
+              "point": "(0,0)",
+              "meaning": "Make 0 units of component A and 0 units of component B."
+            },
+            {
+              "point": "(0,40)",
+              "meaning": "Make 0 units of component A and 40 units of component B."
+            },
+            {
+              "point": "(40,20)",
+              "meaning": "Make 40 units of component A and 20 units of component B."
+            },
+            {
+              "point": "(50,0)",
+              "meaning": "Make 50 units of component A and 0 units of component B."
+            }
+          ]
         }
       },
       {
         "id": "a4-transport",
         "title": "Assignment 4(a): engine transport with prohibited routes",
-        "body": "Four plants ship engines to Greensboro (A), Charlotte (B), and Louisville (C), whose demands are 10, 20, and 15 engines/month. Plant capacities are upper bounds, so unused capacity is allowed. Seattle-to-Charlotte and Detroit-to-Louisville are prohibited. The assignment requests an LP formulation and Excel Solver solution for each of its five scenarios. The worked solution here is independently derived; no official Assignment 4 answer key is available. Related topic: Transportation.",
+        "body": "Plan shipments from four plants to three customers. Some routes are prohibited and plants need not use all their capacity. Keep those two facts visible when setting up the shipping variables.\nFour plants ship engines to Greensboro (A), Charlotte (B), and Louisville (C), whose demands are 10, 20, and 15 engines/month. Plant capacities are upper bounds, so unused capacity is allowed. Seattle-to-Charlotte and Detroit-to-Louisville are prohibited. The assignment requests an LP formulation and Excel Solver solution for each of its five scenarios. The worked solution here is independently derived; no official Assignment 4 answer key is available. Related topic: Transportation.",
         "sections": [
           {
             "title": "Model",
@@ -2715,7 +3157,7 @@
       {
         "id": "a4-byproduct",
         "title": "Assignment 4(b): produce, sell and discard a by-product",
-        "body": "Each ton of A uses 2 hours in Process 1 and 3 hours in Process 2; each ton of B uses 3 and 4 hours. Available hours are 15 and 25. Profits are 400 yuan/ton A and 800 yuan/ton B. Each ton of B also creates two tons of C, which can be sold for 300 yuan/ton up to a five-ton sales limit; unsold C must be discarded at 200 yuan/ton. Related topic: Blending and production formulations.",
+        "body": "Producing B also creates C. We must decide how much C to sell and how much to discard, because both choices affect profit. Every ton of by-product has to go somewhere.\nEach ton of A uses 2 hours in Process 1 and 3 hours in Process 2; each ton of B uses 3 and 4 hours. Available hours are 15 and 25. Profits are 400 yuan/ton A and 800 yuan/ton B. Each ton of B also creates two tons of C, which can be sold for 300 yuan/ton up to a five-ton sales limit; unsold C must be discarded at 200 yuan/ton. Related topic: Blending and production formulations.",
         "sections": [
           {
             "title": "Model",
@@ -2723,7 +3165,7 @@
           },
           {
             "title": "Derived solution",
-            "body": "One optimum is \\(a = 3.75\\), \\(b = 2.5\\), \\(s = 5\\), d = 0, yielding \\(1,500 + 2,000 + 1,500 = 5,000\\) yuan. Process 1 is full; Process 2 uses 21.25 of 25 hours. This is a derived numerical check of the formulation, independently solved with HiGHS; it is not an official answer key."
+            "body": "One optimum is \\(a = 3.75\\), \\(b = 2.5\\), \\(s = 5\\), d = 0, yielding \\(1,500 + 2,000 + 1,500 = 5,000\\) yuan. Process 1 is full; Process 2 uses 21.25 of 25 hours. Substituting these quantities checks that the plan is feasible."
           }
         ],
         "sources": [
@@ -2761,7 +3203,7 @@
       {
         "id": "a4-farm",
         "title": "Assignment 4(c): equal cultivation proportions across plots",
-        "body": "Three farm plots have 500, 800, and 700 acres. Corn, peas and soybeans earn $600, $450 and $300 per acre; crop maxima across the farm are 900, 700 and 1,000 acres. Any crop can use any plot. At least 60% of every plot must be cultivated, and the cultivated proportion must be the same for all three. Related topic: LP formulation and resource allocation.",
+        "body": "The plots differ in size, so cultivating the same percentage does not mean cultivating the same number of acres. Use a shared cultivated fraction to express the rule correctly.\nPlot 1 has 500 acres, plot 2 has 800 acres and plot 3 has 700 acres. Corn, peas and soybeans earn $600, $450 and $300 per acre; crop maxima across the farm are 900, 700 and 1,000 acres. Any crop can use any plot. At least 60% of every plot must be cultivated, and the cultivated proportion must be the same for all three. Related topic: LP formulation and resource allocation.",
         "sections": [
           {
             "title": "Model",
@@ -2854,7 +3296,7 @@
       {
         "id": "a4-investment",
         "title": "Assignment 4(d): allocate a coffee shop investment budget",
-        "body": "Allocate all $50,000 among baking, supplier contracts, loyalty and marketing at annual returns 15%, 8%, 6% and 20%. Baking is at most 30% of the total; supplier investment cannot exceed the other three combined; loyalty receives at least 20%; baking and marketing together receive at least 40%. Related topic: Portfolio formulation.",
+        "body": "Divide the entire budget among the four options. The largest return rate is attractive, but minimum allocations and combined-allocation rules can prevent putting everything there.\nAllocate all $50,000 among baking, supplier contracts, loyalty and marketing at annual returns 15%, 8%, 6% and 20%. Baking is at most 30% of the total; supplier investment cannot exceed the other three combined; loyalty receives at least 20%; baking and marketing together receive at least 40%. Related topic: Portfolio formulation.",
         "sections": [
           {
             "title": "Model",
@@ -2897,7 +3339,7 @@
       {
         "id": "a4-inventory",
         "title": "Assignment 4(e): quarterly heater production and inventory",
-        "body": "Quarterly demand is (580,300,320,700) units. Regular production is at most 450 units/quarter at $120/unit. Subcontracting is at most 200 units/quarter at $180/unit. End-of-quarter inventory costs $15/unit each quarter. Demand must be met on time, with zero initial and terminal inventory and no backorders. Related topic: Multiperiod production and inventory balance.",
+        "body": "The heater business can produce now, hire a subcontractor, or store heaters for later. Follow the stock balance quarter by quarter so that no demand is met with heaters that have not yet been made.\nDemand is 580 heaters in quarter 1, 300 in quarter 2, 320 in quarter 3 and 700 in quarter 4. Regular production is at most 450 units/quarter at $120/unit. Subcontracting is at most 200 units/quarter at $180/unit. End-of-quarter inventory costs $15/unit each quarter. Demand must be met on time, with zero initial and terminal inventory and no backorders. Related topic: Multiperiod production and inventory balance.",
         "sections": [
           {
             "title": "Model",
@@ -2905,7 +3347,7 @@
           },
           {
             "title": "Derived optimal schedule",
-            "body": "The schedule below meets all demand. Its regular-production cost is 1,770(120) = $212,400, subcontracting cost is 130(180) = $23,400, and inventory cost is (\\(120 + 250\\))\\((15) = \\$5,550\\), for a total minimum cost of $241,350. The earlier inventory substitutes for more expensive subcontracting in quarter 4. The schedule is independently solved with HiGHS."
+            "body": "The schedule below meets all demand. Its regular-production cost is 1,770(120) = $212,400, subcontracting cost is 130(180) = $23,400, and inventory cost is (\\(120 + 250\\))\\((15) = \\$5,550\\), for a total minimum cost of $241,350. The earlier inventory substitutes for more expensive subcontracting in quarter 4. "
           }
         ],
         "sources": [
@@ -2997,7 +3439,7 @@
       {
         "id": "a5-dea",
         "title": "Assignment 5: rank six companies with DEA",
-        "body": "Each company uses fixed assets, working capital and employees to produce output value and profit-and-tax. The question asks for relative input-to-output efficiency. The assignment does not select a DEA returns-to-scale convention; this worked solution explicitly uses the input-oriented constant-returns CCR model. Related topic: Data envelopment analysis. This is a derived solution verified in COPT and independently with HiGHS, not an official answer key.",
+        "body": "Compare each company with combinations of the others. Be clear about the efficiency model you choose: a score of one can create a tie, rather than a complete ranking from best to worst.\nEach company uses fixed assets, working capital and employees to produce output value and profit-and-tax. The question asks for relative input-to-output efficiency. The assignment does not select a DEA returns-to-scale convention; this worked solution explicitly uses the input-oriented constant-returns CCR model. Related topic: Data envelopment analysis. This is a derived solution verified in COPT and independently with HiGHS, not an official answer key.",
         "sections": [
           {
             "title": "Input-oriented envelopment formulation",
@@ -3140,7 +3582,7 @@
       {
         "id": "a5-allen",
         "title": "Assignment 5: solve Allen’s portfolio using COPT",
-        "body": "Solve the investment problem with COPT. Kathleen Allen has $70,000 for one year. Municipal bonds return 8.5%, CDs 5%, treasury bills 6.5% and the stock fund 13%. Bonds are at most 20% of total funds; CDs cannot exceed the other alternatives combined; CDs plus bills must be at least 30%; CDs plus bills must be at least 1.2 times bonds plus stock. Related topic: Portfolio and COPT.",
+        "body": "Build the investment model in COPT, solve it, and interpret the allocation in dollars. Distinguish the money invested from the return earned on that money.\nSolve the investment problem with COPT. Kathleen Allen has $70,000 for one year. Municipal bonds return 8.5%, CDs 5%, treasury bills 6.5% and the stock fund 13%. Bonds are at most 20% of total funds; CDs cannot exceed the other alternatives combined; CDs plus bills must be at least 30%; CDs plus bills must be at least 1.2 times bonds plus stock. Related topic: Portfolio and COPT.",
         "sections": [
           {
             "title": "Formulation",
@@ -3148,7 +3590,7 @@
           },
           {
             "title": "Derived COPT result",
-            "body": "The allocation is (0,0,38181.818182,31818.181818), with annual return $6,618.181818, or 9.454545% of capital. Its year-end value including principal is $76,618.181818. Treasury bills dominate CDs, and stock dominates municipal bonds without relaxing any constraints. The ratio \\(x_{3} \\ge  1.2x4\\) then binds. This independently checked result is a worked derivation, not an official answer key."
+            "body": "Invest nothing in municipal bonds or CDs, about $38,181.82 in treasury bills and $31,818.18 in the stock fund. The annual return is $6,618.181818, or 9.454545% of capital. Its year-end value including principal is $76,618.181818. Treasury bills dominate CDs, and stock dominates municipal bonds without relaxing any constraints. The ratio \\(x_{3} \\ge  1.2x4\\) then binds. Check the allocation against each investment rule."
           }
         ],
         "sources": [
@@ -3190,7 +3632,7 @@
       {
         "id": "a5-biofuel",
         "title": "Assignment 5: blend biofuels with cetane and sulfur constraints",
-        "body": "Feedstocks A, B and C have purchase limits 4,000, 5,000 and 3,500 barrels; costs $42,$36,$30; cetane ratings 65,52,45; sulfur contents 0.08%,0.15%,0.25%. Premium sells for $72/barrel, must have cetane >=58 and sulfur <=0.11%, and needs at least 3,000 barrels. Standard sells for $58, requires cetane >=50 and sulfur <=0.18%, and needs at least 4,000 barrels. Quality is a volume-weighted average. Parts \\((a)-(b)\\) ask for the LP, complete COPT script, optimal allocations and profit. Related topic: Blending and COPT.",
+        "body": "Choose which feedstock goes into each fuel grade. Revenue alone is not profit: purchases cost money, and every grade must meet both its quality rules and its minimum quantity.\nFeedstocks A, B and C have purchase limits 4,000, 5,000 and 3,500 barrels; costs $42,$36,$30; cetane ratings 65,52,45; sulfur contents 0.08%,0.15%,0.25%. Premium sells for $72/barrel, must have cetane >=58 and sulfur <=0.11%, and needs at least 3,000 barrels. Standard sells for $58, requires cetane >=50 and sulfur <=0.18%, and needs at least 4,000 barrels. Quality is a volume-weighted average. Parts \\((a)-(b)\\) ask for the LP, complete COPT script, optimal allocations and profit. Related topic: Blending and COPT.",
         "sections": [
           {
             "title": "(a) Linear formulation",
@@ -3198,7 +3640,7 @@
           },
           {
             "title": "(b) One derived optimal COPT allocation",
-            "body": "The table gives one optimum; allocations need not be unique. Grade totals are 4,357.142857 Premium and 8,142.857143 Standard barrels. Their cetane ratings are 61.470588 and 50.309598; sulfur contents are exactly 0.11% and 0.18%. All feedstock is used. Revenue is $786,000, purchase cost $453,000, and maximum net profit $333,000. The downloadable script prints full-precision output and saves it as JSON. The result was independently checked with HiGHS."
+            "body": "The table gives one optimum; allocations need not be unique. Grade totals are 4,357.142857 Premium and 8,142.857143 Standard barrels. Their cetane ratings are 61.470588 and 50.309598; sulfur contents are exactly 0.11% and 0.18%. All feedstock is used. Revenue is $786,000, purchase cost $453,000, and maximum net profit $333,000. The downloadable script prints full-precision output and saves it as JSON. "
           },
           {
             "title": "A short optimality bound",
@@ -3290,7 +3732,7 @@
       {
         "id": "a5-transshipment",
         "title": "Assignment 5: route shipments through capacity-limited hubs",
-        "body": "Plants P1 and P2 can supply at most 800 and 1,000 units. Every shipment must pass through hub T1 or T2; direct plant-customer routes are disallowed. Hubs have throughput limits 900 and 850, and zero inventory. Customer demands are 500,650,450. Parts \\((a)-(b)\\) require the LP, complete COPT script, every optimal link flow, and minimum shipping cost. Related topic: Transportation and network flow balance.",
+        "body": "Every shipment travels in two stages, through a hub. Goods cannot appear or disappear there, so total inflow and outflow must match. Hub capacity limits how much can pass through.\nPlants P1 and P2 can supply at most 800 and 1,000 units. Every shipment must pass through hub T1 or T2; direct plant-customer routes are disallowed. Hubs have throughput limits 900 and 850, and zero inventory. Customer demands are 500,650,450. Parts \\((a)-(b)\\) require the LP, complete COPT script, every optimal link flow, and minimum shipping cost. Related topic: Transportation and network flow balance.",
         "sections": [
           {
             "title": "(a) Linear formulation",
@@ -3298,7 +3740,7 @@
           },
           {
             "title": "(b) One derived COPT optimum",
-            "body": "Send 750 units P1->T1, zero P1->T2, zero P2->T1 and 850 P2->T2. T1 sends (500,250,0) to C1,C2,C3; T2 sends (0,400,450). Every flow is nonnegative and demand is exact. Cost is 5(750) + 4(850) + 8(500) + 10(250) + 7(400) + 9(450) = $20,500. T2 is full; T1 has 150 spare units. Plant spare capacities are 50 and 150. This is a derived result checked with COPT and HiGHS, not an official answer key."
+            "body": "Send 750 units P1->T1, zero P1->T2, zero P2->T1 and 850 P2->T2. Hub 1 sends 500 units to customer 1, 250 to customer 2 and none to customer 3. Hub 2 sends none to customer 1, 400 to customer 2 and 450 to customer 3. Every flow is nonnegative and demand is exact. Cost is 5(750) + 4(850) + 8(500) + 10(250) + 7(400) + 9(450) = $20,500. T2 is full; T1 has 150 spare units. Plant spare capacities are 50 and 150. The plan meets all demands within the stated limits."
           },
           {
             "title": "Why the minimum is attained",
@@ -3422,7 +3864,7 @@
       {
         "id": "a6-concrete",
         "title": "Assignment 6: the marginal value of a distributor quota",
-        "body": "A concrete plant chooses divisible planning units of basic blocks A and decorative blocks B. Unit contributions are 10 and 35. Five processing capacities and the distributor quota restrict production. The current B quota is 5; study its RHS \\(b_6\\ge0\\) while all processing capacities stay fixed. The table preserves the official problem data. The worked solution below is independently derived, not an official answer key.",
+        "body": "The distributor will buy only a limited amount of decorative blocks. How much would a larger quota help? Follow the best production plan as the quota grows, watching which processing stage becomes the next bottleneck.\nA concrete plant chooses divisible planning units of basic blocks A and decorative blocks B. Unit contributions are 10 and 35. Five processing capacities and the distributor quota restrict production. The current B quota is 5; study its RHS \\(b_6\\ge0\\) while all processing capacities stay fixed. Work through the model and check the result against the constraints.\nA contribution is the amount one unit adds toward covering fixed costs and profit after its variable costs. With fixed costs outside this comparison, maximize the total contribution.",
         "sections": [
           {
             "title": "Formulate and solve the current problem",
@@ -3434,7 +3876,7 @@
           },
           {
             "title": "Excel Solver verification to carry out",
-            "body": "Use continuous changing cells A and B, maximize total contribution, add all six constraints and nonnegativity, and select Simplex LP. Solve at quota values 1,3,5,7,9, choosing one interior point from every regime. Expected solutions are \\((15,1),(14,3),(11,5),(6,7),(3,8)\\), with objectives 185,245,285,305,310. Expected quota shadow prices are 35,25,15,5,0; closed RHS validity ranges are [0,2], [2,4], [4,6], [6,8], [8,∞), restricted to nonnegative quota. Compare the quota row’s allowable increase/decrease with these endpoints. These are independently derived expectations, not reports from an Excel run."
+            "body": "Use continuous changing cells A and B, maximize total contribution, add all six constraints and nonnegativity, and select Simplex LP. Solve at quota values 1,3,5,7,9, choosing one interior point from every regime. Expected solutions are \\((15,1),(14,3),(11,5),(6,7),(3,8)\\), with objectives 185,245,285,305,310. Expected quota shadow prices are 35,25,15,5,0; closed RHS validity ranges are [0,2], [2,4], [4,6], [6,8], [8,∞), restricted to nonnegative quota. Compare the quota row’s allowable increase/decrease with these endpoints. Generate a Sensitivity Report for each case and compare it with these expected results."
           },
           {
             "title": "Assignment 6 submission requirements",
@@ -3561,12 +4003,62 @@
         "equationWords": {
           "x\\le15,\\quad x+y\\le17,\\quad x+2y\\le21,\\quad x+3y\\le27,\\quad x+4y\\le35,\\quad y\\le b_6.": "\\begin{gathered}{\\text{basic blocks}}\\le15,\\\\ {\\text{basic blocks}}+{\\text{decorative blocks}}\\le17,\\\\ {\\text{basic blocks}}+2\\,\\times\\,{\\text{decorative blocks}}\\le21,\\\\ {\\text{basic blocks}}+3\\,\\times\\,{\\text{decorative blocks}}\\le27,\\\\ {\\text{basic blocks}}+4\\,\\times\\,{\\text{decorative blocks}}\\le35,\\\\ {\\text{decorative blocks}}\\le {\\text{decorative-block quota}}.\\end{gathered}",
           "x(y)=\\min\\{15,17-y,21-2y,27-3y,35-4y\\}.": "{\\text{basic blocks}}({\\text{decorative blocks}})=\\min\\{15,17-{\\text{decorative blocks}},21-2\\,\\times\\,{\\text{decorative blocks}},27-3\\,\\times\\,{\\text{decorative blocks}},35-4\\,\\times\\,{\\text{decorative blocks}}\\}."
+        },
+        "pointReadings": {
+          "At \\(b_6=5\\), the feasible polygon has vertices \\((0,0),(15,0),(15,2),(13,4),(11,5),(0,5)\\). The optimum is \\((11,5)\\), profit 285. Heat treatment and the quota bind; all original capacities must still be checked.": [
+            {
+              "point": "(0,0)",
+              "meaning": "Produce 0 basic-block units and 0 decorative-block units each week."
+            },
+            {
+              "point": "(15,0)",
+              "meaning": "Produce 15 basic-block units and 0 decorative-block units each week."
+            },
+            {
+              "point": "(15,2)",
+              "meaning": "Produce 15 basic-block units and 2 decorative-block units each week."
+            },
+            {
+              "point": "(13,4)",
+              "meaning": "Produce 13 basic-block units and 4 decorative-block units each week."
+            },
+            {
+              "point": "(11,5)",
+              "meaning": "Produce 11 basic-block units and 5 decorative-block units each week."
+            },
+            {
+              "point": "(0,5)",
+              "meaning": "Produce 0 basic-block units and 5 decorative-block units each week."
+            }
+          ],
+          "Use continuous changing cells A and B, maximize total contribution, add all six constraints and nonnegativity, and select Simplex LP. Solve at quota values 1,3,5,7,9, choosing one interior point from every regime. Expected solutions are \\((15,1),(14,3),(11,5),(6,7),(3,8)\\), with objectives 185,245,285,305,310. Expected quota shadow prices are 35,25,15,5,0; closed RHS validity ranges are [0,2], [2,4], [4,6], [6,8], [8,∞), restricted to nonnegative quota. Compare the quota row’s allowable increase/decrease with these endpoints. Generate a Sensitivity Report for each case and compare it with these expected results.": [
+            {
+              "point": "(15,1)",
+              "meaning": "Produce 15 basic-block units and 1 decorative-block units each week."
+            },
+            {
+              "point": "(14,3)",
+              "meaning": "Produce 14 basic-block units and 3 decorative-block units each week."
+            },
+            {
+              "point": "(11,5)",
+              "meaning": "Produce 11 basic-block units and 5 decorative-block units each week."
+            },
+            {
+              "point": "(6,7)",
+              "meaning": "Produce 6 basic-block units and 7 decorative-block units each week."
+            },
+            {
+              "point": "(3,8)",
+              "meaning": "Produce 3 basic-block units and 8 decorative-block units each week."
+            }
+          ]
         }
       },
       {
         "id": "a6-agency",
         "title": "Assignment 6: the marginal value of approval slots",
-        "body": "An advertising agency chooses divisible standard and premium campaign planning units, earning 7 and 13 per unit. Three teams provide the hours in the table. Both campaign types consume one central approval slot. The current approval limit is 11; vary only \\(b_4\\ge0\\). The worked solution below is independently derived.",
+        "body": "An approval slot is useful only if the teams can do the work it permits. Increase the approval limit step by step and find when another team’s capacity limits the extra contribution.\nAn advertising agency chooses divisible standard and premium campaign planning units, earning 7 and 13 per unit. Three teams provide the hours in the table. Both campaign types consume one central approval slot. The current approval limit is 11; vary only \\(b_4\\ge0\\). Work through the model step by step.\nA contribution is the amount one unit adds toward covering fixed costs and profit after its variable costs. With fixed costs outside this comparison, maximize the total contribution.",
         "sections": [
           {
             "title": "Model and current feasible region",
@@ -3578,7 +4070,7 @@
           },
           {
             "title": "Excel Solver verification to carry out",
-            "body": "Use Simplex LP with continuous nonnegative variables and request a Sensitivity Report after each solve. Interior approval values 2,7,11,12.5,14 should produce (A,B) = (0,2),(4,3),(9.5,1.5),(12,0.5),(13,0), objectives 26,67,86,90.5,91, and approval shadow prices 13,5,4,1,0. Corresponding closed RHS validity ranges, restricted to nonnegative approvals, are [0,4], [4,10], [10,12], [12,13], [13,∞). These expected values do not replace the assignment’s required Excel workbook and actual reports."
+            "body": "Use Simplex LP with continuous nonnegative variables and request a Sensitivity Report after each solve. Interior approval values 2,7,11,12.5,14 should produce (A,B) = (0,2),(4,3),(9.5,1.5),(12,0.5),(13,0), objectives 26,67,86,90.5,91, and approval shadow prices 13,5,4,1,0. Corresponding closed RHS validity ranges, restricted to nonnegative approvals, are [0,4], [4,10], [10,12], [12,13], [13,∞). Keep the workbook and actual Sensitivity Reports for your submission."
           },
           {
             "title": "Assignment 6 submission requirements",
@@ -3688,6 +4180,58 @@
         "equationWords": {
           "x+4y\\le16,\\quad x+3y\\le14,\\quad x+2y\\le13,\\quad x+y\\le b_4.": "\\begin{gathered}{\\text{standard campaigns}}+4\\,\\times\\,{\\text{premium campaigns}}\\le16,\\\\ {\\text{standard campaigns}}+3\\,\\times\\,{\\text{premium campaigns}}\\le14,\\\\ {\\text{standard campaigns}}+2\\,\\times\\,{\\text{premium campaigns}}\\le13,\\\\ {\\text{standard campaigns}}+{\\text{premium campaigns}}\\le {\\text{approval slots}}.\\end{gathered}",
           "y\\le b_4,\\quad y\\le(16-b_4)/3,\\quad y\\le(14-b_4)/2,\\quad y\\le13-b_4.": "\\begin{gathered}{\\text{premium campaigns}}\\le {\\text{approval slots}},\\\\ {\\text{premium campaigns}}\\le(16-{\\text{approval slots}})/3,\\\\ {\\text{premium campaigns}}\\le(14-{\\text{approval slots}})/2,\\\\ {\\text{premium campaigns}}\\le13-{\\text{approval slots}}.\\end{gathered}"
+        },
+        "pointReadings": {
+          "At \\(b_4=11\\), the polygon vertices are \\((0,0),(11,0),(9.5,1.5),(8,2),(0,4)\\). The optimum is \\((9.5,1.5)\\), contribution 86. Content editing and approvals bind.": [
+            {
+              "point": "(0,0)",
+              "meaning": "Plan 0 standard campaign units and 0 premium campaign units each week."
+            },
+            {
+              "point": "(11,0)",
+              "meaning": "Plan 11 standard campaign units and 0 premium campaign units each week."
+            },
+            {
+              "point": "(9.5,1.5)",
+              "meaning": "Plan 9.5 standard campaign units and 1.5 premium campaign units each week."
+            },
+            {
+              "point": "(8,2)",
+              "meaning": "Plan 8 standard campaign units and 2 premium campaign units each week."
+            },
+            {
+              "point": "(0,4)",
+              "meaning": "Plan 0 standard campaign units and 4 premium campaign units each week."
+            }
+          ],
+          "These bounds become active in order, giving breakpoints 4,10,12,13 and the table’s formulas. Once approvals reach 13, \\((13,0)\\) earns 91 and more approvals have no value. For example, the final publishing inequality also proves \\(7x+13y\\le7(x+2y)\\le91\\). Interior shadow prices are 13,5,4,1,0. Do not assign one differentiable slope at a breakpoint.": [
+            {
+              "point": "(13,0)",
+              "meaning": "Plan 13 standard campaign units and 0 premium campaign units each week."
+            }
+          ],
+          "Use Simplex LP with continuous nonnegative variables and request a Sensitivity Report after each solve. Interior approval values 2,7,11,12.5,14 should produce (A,B) = (0,2),(4,3),(9.5,1.5),(12,0.5),(13,0), objectives 26,67,86,90.5,91, and approval shadow prices 13,5,4,1,0. Corresponding closed RHS validity ranges, restricted to nonnegative approvals, are [0,4], [4,10], [10,12], [12,13], [13,∞). Keep the workbook and actual Sensitivity Reports for your submission.": [
+            {
+              "point": "(0,2)",
+              "meaning": "Plan 0 standard campaign units and 2 premium campaign units each week."
+            },
+            {
+              "point": "(4,3)",
+              "meaning": "Plan 4 standard campaign units and 3 premium campaign units each week."
+            },
+            {
+              "point": "(9.5,1.5)",
+              "meaning": "Plan 9.5 standard campaign units and 1.5 premium campaign units each week."
+            },
+            {
+              "point": "(12,0.5)",
+              "meaning": "Plan 12 standard campaign units and 0.5 premium campaign units each week."
+            },
+            {
+              "point": "(13,0)",
+              "meaning": "Plan 13 standard campaign units and 0 premium campaign units each week."
+            }
+          ]
         }
       }
     ]

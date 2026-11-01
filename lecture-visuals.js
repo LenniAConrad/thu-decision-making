@@ -41,6 +41,24 @@ const LectureVisuals=(()=>{
    +box(200,15,240,50,['Decision maker'])+box(230,120,180,95,['User interface'])+box(15,132,175,70,['Databases'])+box(450,132,175,70,['Management','science models'])+box(200,275,240,50,['Internet/e-business']);
   return svg(body,'The user interface exchanges information in both directions with the decision maker, databases, management science models, and Internet/e-business.',350);
  }
+ const pricingStrategies=[
+  {name:'1 · Keep full fare',short:'1 · Full fare',fares:[60,0,60],counts:[30,0,0],fareWords:'$60 common fare',revenue:1800},
+  {name:'2 · Fill every seat',short:'2 · Fill the plane',fares:[24,0,24],counts:[66,0,64],fareWords:'$24 common fare',revenue:3120},
+  {name:'3 · Best common fare',short:'3 · Best common fare',fares:[25,0,25],counts:[65,0,60],fareWords:'$25 common fare',revenue:3125},
+  {name:'4 · Separate customer types',short:'4 · Two fares',fares:[45,0,20],counts:[45,0,80],fareWords:'Business $45; leisure $20',revenue:3625},
+  {name:'5 · App; leisure fixed',short:'5 · App; leisure fixed',fares:[60,40,20],counts:[30,20,80],fareWords:'Full-fare business $60; app $40; leisure $20',revenue:4200},
+  {name:'6 · Choose app + leisure fares',short:'6 · Choose both fares',fares:[60,32,22],counts:[30,28,72],fareWords:'Full-fare business $60; app $32; leisure $22',revenue:4280}
+ ];
+ function pricingComparison(){
+  const money=n=>'$'+n.toLocaleString('en-US');
+  const rows=pricingStrategies.map(p=>{const [business,app,leisure]=p.counts,total=p.counts.reduce((a,b)=>a+b,0);return [p.name,p.fareWords,`${business} business; ${app} app; ${leisure} leisure`,`${total} of 130`,130-total,money(p.revenue)];});
+  let b=text(260,28,'Ticket revenue per departure ($)');
+  for(let i=0;i<=4;i++){const value=i*1000,x=260+value/4500*310;b+=line(x,50,x,445,'#edf0f4')+text(x,472,value.toLocaleString('en-US'),'middle');}
+  b+=line(260,50,260,445,'#758196');
+  pricingStrategies.forEach((p,i)=>{const y=65+i*62,w=p.revenue/4500*310;b+=text(15,y+23,p.short)+`<rect x="260" y="${y}" width="${w}" height="32" rx="3" fill="${i===5?'#198069':'#68419a'}"/>`+text(268+w,y+23,money(p.revenue));});
+  const chart=figure('Compare revenue across all six strategies',svg(b,'Revenue per departure: full fare $1,800; fill the plane $3,120; best common fare $3,125; two fares $3,625; app with fixed leisure fare $4,200; choose app and leisure fares $4,280. Bars start at zero.',500),'Keep the 130-seat capacity and the stated demand assumptions fixed. The table gives the exact fares, passenger mix and empty seats.');
+  return `<section class="pricing-comparison" aria-label="Six airline pricing strategies">${table('Six ways to price a 130-seat flight',['Strategy','Fare per ticket','Passengers by ticket type','Tickets sold','Empty seats','Revenue per departure'],rows)}${chart}</section>`;
+ }
  function shadowSteps(label,xlabel,xmax,ymax,segments){
   const X=x=>70+x/xmax*530,Y=y=>300-y/ymax*245;
   let b=text(70,25,'Marginal contribution per extra unit');
@@ -66,7 +84,8 @@ const LectureVisuals=(()=>{
   'modeling':()=>figure('The five stages of the management science approach',modelingCycle(),'Following Chapter 1 pages 8–9: implementation feeds back to problem definition, model construction and solution.'),
   'airline-demand':()=>figure('The combined demand curve',plot({label:'Total expected demand has a kink at price 40 and demand 50. Capacity is 130 seats.',xmax:100,ymax:250,xlabel:'Common fare · dollars',ylabel:'Expected passengers',curves:[{name:'Combined demand',fn:p=>DecisionMath.demand(p)},{name:'Seat capacity',fn:()=>130,dash:'7 5'}],points:[{x:40,y:50,label:'Kink (40, 50)',dy:-20,dx:20}]})),
   'segmentation':()=>figure('Two sources of demand',plot({label:'Business demand is 90 minus price; leisure demand is 160 minus four times price, clipped at zero.',xmax:100,ymax:200,xlabel:'Fare · dollars',ylabel:'Expected passengers',curves:[{name:'Business travelers',fn:p=>Math.max(0,90-p)},{name:'Leisure travelers',fn:p=>Math.max(0,160-4*p),dash:'7 5'}]})),
-  'app-fare':()=>table('Six pricing strategies',['Strategy','Fares ($)','Business / app / leisure','Revenue ($)'],[['Full fare','60','30 / 0 / 0',1800],['Fill the plane','24','66 / 0 / 64',3120],['Best common fare','25','65 / 0 / 60',3125],['Two segments','45 / 20','45 / 0 / 80',3625],['App; leisure fixed','60 / 40 / 20','30 / 20 / 80',4200],['Optimize app + leisure','60 / 32 / 22','30 / 28 / 72',4280]]),
+  'app-fare':()=>pricingComparison(),
+  'pricing-strategies':()=>pricingComparison(),
   'decision-support':()=>figure('A decision support system',supportSystem(),'Following Chapter 1 page 43: information flows in both directions through the user interface.'),
   'gantt':()=>figure('Render the visible part first',svg(`<rect x="45" y="40" width="550" height="230" fill="#f4f6fa" stroke="#b9c4cf"/>${[0,1,2,3,4].map((n)=>`<rect x="${65+n%2*35}" y="${60+n*40}" width="${440-n*25}" height="22" fill="#d4e5df"/>`).join('')}<rect x="170" y="75" width="280" height="160" fill="none" stroke="#68419a" stroke-width="2" stroke-dasharray="7 5"/><rect x="220" y="110" width="170" height="80" fill="#fff" fill-opacity=".8" stroke="#198069" stroke-width="3"/>${text(305,155,'Visible view','middle')}${text(320,305,'Dashed boundary: extended view cached nearby','middle')}`, 'Gantt chart with a smaller visible view inside a larger cached extended view.',340),'Blocks outside the current view need not all be drawn before the interface responds.'),
   'pottery':()=>table('Pottery inputs',['Product','Labor hr/unit','Clay lb/unit','Profit $/unit'],[['Bowl',1,4,40],['Mug',2,3,50],['Available',40,120,'—']]),
@@ -93,5 +112,5 @@ End</code></pre><a class="text-link" href="assets/examples/pottery.lp" download>
   'cash-flow':()=>figure('Cash flow under the stated timing convention',svg(`${line(60,220,580,220,'#198069')}${[0,1,2,3,4,5].map(i=>`<circle cx="${60+i*104}" cy="220" r="6" fill="#198069"/>${text(60+i*104,255,i<5?'Year '+(i+1):'End 5','middle')}`).join('')}<path d="M60 210 Q164 75 268 210" fill="none" stroke="#68419a" stroke-width="2"/>${text(164,125,'A₁ × 1.15','middle')}<path d="M164 205 Q320 -20 476 205" fill="none" stroke="#b45f29" stroke-width="2"/>${text(320,75,'C × 1.40','middle')}<path d="M268 210 Q424 50 580 210" fill="none" stroke="#68419a" stroke-width="2" stroke-dasharray="7 5"/>${text(510,90,'B × 1.25','middle')}${text(320,310,'D carries money one year forward at × 1.06','middle')}`, 'Reader timing convention: A1 matures at the start of year 3; C at the start of year 5; B at the end of year 5; D spans one year.',350),'Reader timing convention: D matures after one year and proceeds can be reinvested at year boundaries. An investment uses only cash already available.'),
   'dea':()=>table('School inputs and outputs',['School','Teacher/student','Funds/student','Parent education','Reading','Math','History'],[['Alton',.06,260,11.3,86,75,71],['Beeks',.05,320,10.5,82,72,67],['Carey',.08,340,12,81,79,80],['Delancey',.06,460,13.1,81,73,69]])
  };
- return {html:id=>content[id]?.()||'',plot,figure,table,potteryPlot};
+ return {html:id=>content[id]?.()||'',plot,figure,table,potteryPlot,pricingStrategies};
 })();

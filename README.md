@@ -4,7 +4,7 @@ A student-built study companion for **Introduction to Decision Making (70160513-
 
 **[Open the study website](https://lenniaconrad.github.io/thu-decision-making/)** · [Read the lectures](https://lenniaconrad.github.io/thu-decision-making/lectures.html) · [Practice with hints](https://lenniaconrad.github.io/thu-decision-making/practice.html)
 
-The reader follows the white, purple and teal design of the Intro to AI and EEE companions. It contains 59 topics in six reading sections: foundations and airline pricing; LP formulation and geometry; sensitivity analysis; computer solution; modeling examples; and assignment practice. The course materials index links all four chapters, the COPT practical tutorial, all six problem sets, and the available official answer keys. Repeated Chapter 2 material is consolidated.
+The reader follows the white, purple and teal design of the Intro to AI and EEE companions. It contains 60 topics in six reading sections: foundations and airline pricing; LP formulation and geometry; sensitivity analysis; computer solution; modeling examples; and assignment practice. The course materials index links all four chapters, the COPT practical tutorial, all six problem sets, and the available official answer keys. Repeated Chapter 2 material is consolidated.
 
 - Reflowed explanations, equations, worked examples and native HTML/SVG graphs. No embedded slides or copied teaching images.
 - Experiments for break-even, airline fares, feasible production, objective coefficients and labor availability.
@@ -29,7 +29,7 @@ Notable clarifications are stated where they matter:
 - The visible Chapter 1 total-cost formula correctly adds fixed and variable cost. An earlier reader warning mistook a PDF text-layer artifact for a slide typo; that warning has been removed.
 - The intended pottery clay row is `4x1 + 3x2 <= 120`. The revised Chapter 3 still contains the older mistyped COPT screenshot and its 1,600 result. The separate COPT 8.0.7 tutorial corrects the row and gives (24,8), objective 1,360.
 - At the feasible pottery point (5,10), clay usage is 50, not the printed 70.
-- At fare $38, the observed airline total is printed as 60 while its two type counts sum to 65. These source entries are retained with the inconsistency stated; the fitted demand curves are not refitted.
+- At fare $38, the teaching text corrects the observed total to 65 (57 business plus 8 leisure). The original printed 60 is retained only in the audit record. The fitted demand curves are unchanged.
 - Willow Valley uses 2 labor hours per bowl, not 1. Its earlier reader transcription and derived results have been corrected. The overwritten labor RHS is retained as a parameter rather than asserted as certain.
 - A technology coefficient of 1.33 is distinguished from the rounded value of 4/3.
 - All ten Chapter 4 formulation pages are visibly blank. The reader separates visible problem data from explicitly derived models, with inventory/timing assumptions and the DEA convention stated.
@@ -63,7 +63,7 @@ node scripts/build-practice-content.cjs
 
 Practice questions live in `content/practice.json`; `practice-index.js` contains only lightweight reader links, while `practice-content.js` loads full exercises on the practice page. Homework wording is restated from the course files; added hints and solver exercises are labeled. Official answer keys are distinguished from independently derived answers, and expected Excel values do not pretend an actual workbook was run.
 
-The DOM tests cover all 59 topics and 26 practice exercises, source tables, code blocks, downloads, material-index routes, privacy exclusions, and source-page coverage, visible-source fidelity regressions, and lecture audit coverage, as well as the existing controls and print lifecycle. Practice tests exercise progressive hints, hidden solutions, graphs, comparison checks, notes, reset, session restoration, blocked storage, invalid routes and lecture entry points. They do not replace a browser rendering engine. Browser layout and actual print-dialog rendering were not visually tested in this environment because no browser surface was available.
+The DOM tests cover all 60 topics and 26 practice exercises, source tables, code blocks, downloads, material-index routes, privacy exclusions, and source-page coverage, visible-source fidelity regressions, and lecture audit coverage, as well as the existing controls and print lifecycle. Practice tests exercise progressive hints, hidden solutions, graphs, comparison checks, notes, reset, session restoration, blocked storage, invalid routes and lecture entry points. They do not replace a browser rendering engine. Browser layout and actual print-dialog rendering were not visually tested in this environment because no browser surface was available.
 
 Only an explicit allowlist of runtime files is copied into `.build/site`. Built HTML references content-hashed script/style URLs so a refreshed page loads the corrected course content rather than reusing an older cached bundle. GitHub Actions runs the checks and publishes successful `main` builds to GitHub Pages. Source PDFs, local review images and test dependencies are not deployed.
 
