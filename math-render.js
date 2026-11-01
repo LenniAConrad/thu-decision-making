@@ -16,7 +16,7 @@ const MathView=(()=>{
   function equation(tex,words){
     const formula=`<div class="lecture-equation" tabindex="0">${html(tex,true)}</div>`;
     if(!words)return formula;
-    return `<div class="equation-pair">${formula}<div class="word-equation"><span class="word-equation-arrow" role="img" aria-label="The same formula in words">⇔</span><div class="word-equation-content"><span class="word-equation-label">Same formula in words</span><div class="lecture-equation" tabindex="0">${html(words,true)}</div></div></div></div>`;
+    return `<div class="equation-pair" tabindex="0" aria-label="Formula and its equivalent in words">${formula}<div class="word-equation"><span class="word-equation-arrow" role="img" aria-label="equivalent to">⇔</span><div class="word-equation-content"><div class="lecture-equation" tabindex="0">${html(words,true)}</div></div></div></div>`;
   }
   function points(items){
     if(!items?.length)return '';

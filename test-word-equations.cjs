@@ -16,6 +16,15 @@ function equations(o){
  }
  const p=await page('lectures.html','#foundations/break-even');
  const pairs=p.d.querySelectorAll('.equation-pair');assert.equal(pairs.length,2);
+ for(const pair of pairs){
+  assert.equal(pair.querySelector('.word-equation-label'),null,'No redundant word-formula heading');
+  assert.equal(pair.children[0].className,'lecture-equation');
+  assert.equal(pair.children[1].className,'word-equation','Word formula follows the symbolic formula in the same row');
+  assert.equal(p.w.getComputedStyle(pair).display,'flex');
+  assert.equal(p.w.getComputedStyle(pair).flexWrap,'nowrap','Keep both versions side by side');
+  assert.equal(p.w.getComputedStyle(pair).overflowX,'auto','Long formulas remain accessible by scrolling');
+  assert.equal(pair.tabIndex,0);
+ }
  const last=pairs[1];assert.equal(last.querySelector('.word-equation-arrow').textContent,'⇔');
  const text=last.querySelector('.word-equation').textContent;
  for(const term of ['break-even units','fixed cost','selling price per unit','variable cost per unit'])assert.ok(text.includes(term));
