@@ -9,7 +9,7 @@ const key='dm-practice-session-v1';
  assert.equal(new Set(data.exercises.map(e=>e.id)).size,data.exercises.length);
  assert.doesNotMatch(JSON.stringify(data),/Lennart Conrad|2025080264|2024280169|\/home\/lennart/);
  for(const id of lectureIds)assert.ok(data.exercises.some(e=>e.lectureIds.includes(id)),id+' has practice');
- for(const n of [1,2,3,4,5])assert.ok(data.exercises.some(e=>e.assignment.startsWith('Homework '+n)),n+' covered');
+ for(const n of [1,2,3,4,5,6])assert.ok(data.exercises.some(e=>e.assignment.startsWith('Homework '+n)),n+' covered');
  for(const e of data.exercises){
   assert.ok(e.id&&e.title&&e.prompt&&e.sources.length&&e.tasks.length&&e.compare.length,e.id);
   assert.ok(['homework','lecture','extra'].includes(e.kind));

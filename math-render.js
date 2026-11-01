@@ -6,6 +6,13 @@ const MathView=(()=>{
     if(typeof katex==='undefined')return `<span class="math-fallback">${escape(tex)}</span>`;
     return `<span class="math-render">${katex.renderToString(tex,{displayMode:display,throwOnError:false,strict:'ignore',trust:false,output:'htmlAndMathml'})}</span>`;
   }
+  function inline(text){
+    let out='',start=0;
+    for(const m of String(text).matchAll(/\\\((.+?)\\\)/g)){
+      out+=escape(String(text).slice(start,m.index))+html(m[1]);start=m.index+m[0].length;
+    }
+    return out+escape(String(text).slice(start));
+  }
   function plain(text){
     // Convert the lab's small, known equation grammar to TeX. Grouped quotients
     // become true fractions; node/component names are always escaped as text.
@@ -27,6 +34,6 @@ const MathView=(()=>{
   }
   function render(root=document){root.querySelectorAll('[data-tex]').forEach(el=>{const tex=el.dataset.tex;if(el.dataset.mathRendered===tex)return;el.innerHTML=html(tex,el.dataset.display==='true');el.dataset.mathRendered=tex;});}
   if(typeof document!=='undefined')document.addEventListener('DOMContentLoaded',()=>render());
-  return {html,plain,render,escape};
+  return {html,inline,plain,render,escape};
 })();
 if(typeof module!=='undefined')module.exports=MathView;

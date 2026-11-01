@@ -5,7 +5,7 @@
  const storageKey='dm-practice-session-v1';
  let saved={},storageFailed=false;
  try{const value=JSON.parse(sessionStorage.getItem(storageKey)||'{}');if(value&&typeof value==='object'&&!Array.isArray(value))saved=value;}catch{}
- const prose=body=>(body||'').split('\n').filter(s=>s.trim()).map(s=>s.startsWith('$$')?`<div class="lecture-equation" tabindex="0">${MathView.html(s.slice(2,-2),true)}</div>`:`<p>${esc(s)}</p>`).join('');
+ const prose=body=>(body||'').split('\n').filter(s=>s.trim()).map(s=>s.startsWith('$$')?`<div class="lecture-equation" tabindex="0">${MathView.html(s.slice(2,-2),true)}</div>`:`<p>${MathView.inline(s)}</p>`).join('');
  const kind=e=>e.kind==='homework'?'Homework question':e.kind==='lecture'?'Practice from a lecture example':'Additional practice';
  const route=(group,id)=>'#'+group+(id?'/'+id:'');
  const relevant=(group)=>group==='all'?exercises:exercises.filter(e=>e.lectureIds.includes(group));

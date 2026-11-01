@@ -41,7 +41,9 @@
     "pet-food",
     "cash-flow",
     "dea",
-    "uncertain-returns"
+    "uncertain-returns",
+    "rhs-algebra",
+    "rhs-worked-examples"
   ],
   "findings": [
     {
@@ -95,5 +97,10 @@
       "resolution": "Separated visible problem data from derived formulations and solutions. Stated continuous-variable, unused-supply, inventory-boundary, D-maturity and CCR choices. Kept incomplete B probabilities unresolved."
     }
   ],
-  "limits": "An audit of saved files cannot recover explanations delivered orally or equations written during class. The source-page inventory is not a promise of exam coverage."
+  "limits": "An audit of saved files cannot recover explanations delivered orally or equations written during class. The source-page inventory is not a promise of exam coverage.",
+  "supplementalReview": {
+    "date": "2026-11-01",
+    "source": "Assignment 6.pdf:1-6",
+    "scope": "All six pages rendered and inspected; original lecture source hashes unchanged. Algebraic method and data transcribed; regime solutions are independently derived."
+  }
 }

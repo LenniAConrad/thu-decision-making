@@ -391,6 +391,42 @@
         "sources": [
           "chapter02 - part 2.pdf:43-46"
         ]
+      },
+      {
+        "id": "rhs-algebra",
+        "title": "Calculate RHS ranges with slack, surplus and a fixed solution mix",
+        "body": "A shadow price is the marginal change in the optimal objective when one right-hand side (RHS) changes and the other model data stay fixed. Assignment 6 adds an algebraic method to the graphical sensitivity lesson.\nFor a capacity constraint introduce slack; for a minimum requirement introduce surplus:\n$$a_1x_1+a_2x_2+s=b,\\quad s\\ge0,\\qquad a_1x_1+a_2x_2-u=b,\\quad u\\ge0.$$\nSlack measures unused capacity; surplus measures how much a requirement is exceeded. At a binding constraint its slack or surplus is zero. The handout writes binding rows directly as equalities.\nThe handout calls the positive decision and slack/surplus variables the solution mix. Keep the current zero variables at zero, solve the binding equations in terms of the changing RHS, and require every remaining variable to stay nonnegative.",
+        "sections": [
+          {
+            "title": "Five steps, and why they work",
+            "body": "Identify binding rows and the current solution mix. Solve the resulting equations as functions of the RHS. Impose nonnegativity of every decision, slack and surplus variable, and check every original constraint. Substitute into the objective: the coefficient of the changing RHS is its shadow price. With fixed objective and technology coefficients, an optimal basis stays optimal while it remains feasible; this is why the feasibility calculation suffices for RHS sensitivity."
+          },
+          {
+            "title": "A local range is not the entire graph",
+            "body": "Hold all but one RHS fixed. At a range boundary a variable may reach zero, so the strictly positive mix can change even though the old basis is still valid at that endpoint. The handout reports closed validity ranges; unchanged positive mixes and constant marginal slopes apply in their interiors. To cover all nonnegative RHS values, find the adjacent regime and repeat. At a kink, report the left and right marginal values, rather than assert a unique derivative or extend one shadow price forever."
+          }
+        ],
+        "sources": [
+          "Assignment 6.pdf:2-4"
+        ]
+      },
+      {
+        "id": "rhs-worked-examples",
+        "title": "Algebraic RHS sensitivity: pottery and fertilizer",
+        "body": "The new class handout works through the same pottery and fertilizer models as the earlier lectures. Both examples change one RHS at a time. Its formulas below describe the current regime, not all possible RHS values.",
+        "sections": [
+          {
+            "title": "Pottery: both resources bind",
+            "body": "Maximize \\(40x_1+50x_2\\) subject to \\(x_1+2x_2\\le b_1\\), \\(4x_1+3x_2\\le b_2\\), and nonnegativity. At \\((b_1,b_2)=(40,120)\\) the optimum is \\((24,8)\\), worth 1,360. Solve both binding equations:\n$$x_1=\\frac{2b_2-3b_1}{5},\\quad x_2=\\frac{4b_1-b_2}{5},\\quad Z^*=16b_1+6b_2.$$\nHolding clay at 120 gives \\(30\\le b_1\\le80\\) and labor shadow price 16 in the interior. Holding labor at 40 gives \\(60\\le b_2\\le160\\) and clay shadow price 6 in the interior. These are separate one-at-a-time ranges; they are not a rectangle in which both RHS values may vary independently."
+          },
+          {
+            "title": "Fertilizer: include a nonbinding row’s surplus",
+            "body": "Minimize \\(6x_1+3x_2\\) subject to \\(2x_1+4x_2\\ge b_1\\), \\(4x_1+3x_2\\ge b_2\\), and nonnegativity. At \\((16,24)\\), \\((x_1,x_2)=(0,8)\\) costs 24. The first requirement has surplus 16; the second binds. Keeping \\(x_1=0\\) gives\n$$x_2=b_2/3,\\quad u=4b_2/3-b_1,\\quad Z^*=b_2.$$\nFor fixed \\(b_2=24\\), the nonnegative-RHS validity range is \\(0\\le b_1\\le32\\) and the interior shadow price is zero. For fixed \\(b_1=16\\), the range is \\(b_2\\ge12\\) and the interior shadow price is one. A nonbinding row still matters: its surplus determines where the current regime ends."
+          }
+        ],
+        "sources": [
+          "Assignment 6.pdf:2-4"
+        ]
       }
     ]
   },
@@ -932,7 +968,7 @@
   {
     "id": "assignments",
     "title": "Assignment practice",
-    "subtitle": "Problem Sets 1-5",
+    "subtitle": "Homework 1–6",
     "outcomes": [
       "Apply the lecture methods to every synced instructor assignment.",
       "Compare official answer keys with independently checked worked solutions."
@@ -1652,6 +1688,214 @@
           {
             "title": "Download complete COPT code for all four Assignment 5 problems",
             "href": "assets/examples/assignment5_copt.py"
+          }
+        ]
+      },
+      {
+        "id": "a6-concrete",
+        "title": "Assignment 6: the marginal value of a distributor quota",
+        "body": "A concrete plant chooses divisible planning units of basic blocks A and decorative blocks B. Unit contributions are 10 and 35. Five processing capacities and the distributor quota restrict production. The current B quota is 5; study its RHS \\(b_6\\ge0\\) while all processing capacities stay fixed. The table preserves the official problem data. The analysis below is derived for this companion, not an official answer key.",
+        "sections": [
+          {
+            "title": "Formulate and solve the current problem",
+            "body": "Let \\(x,y\\ge0\\) be weekly A and B units. Maximize \\(Z=10x+35y\\) subject to\n$$x\\le15,\\quad x+y\\le17,\\quad x+2y\\le21,\\quad x+3y\\le27,\\quad x+4y\\le35,\\quad y\\le b_6.$$\nAt \\(b_6=5\\), the feasible polygon has vertices \\((0,0),(15,0),(15,2),(13,4),(11,5),(0,5)\\). The optimum is \\((11,5)\\), profit 285. Heat treatment and the quota bind; all original capacities must still be checked."
+          },
+          {
+            "title": "Derive the full shadow-price graph",
+            "body": "For fixed \\(y\\), positive A profit makes the best A quantity the smallest capacity bound:\n$$x(y)=\\min\\{15,17-y,21-2y,27-3y,35-4y\\}.$$\nSuccessive binding rows change at \\(y=2,4,6,8\\). Profit slopes along these edges are 35, 25, 15, 5, then −5. Hence production stops increasing B at 8 even if its quota increases further. The five nonnegative-quota regimes are in the table. Their value formulas agree at every breakpoint; the shadow-price graph has downward jumps. At \\(b_6=8\\), the left marginal value is 5 and the right marginal value is 0."
+          },
+          {
+            "title": "Excel Solver verification to carry out",
+            "body": "Use continuous changing cells A and B, maximize total contribution, add all six constraints and nonnegativity, and select Simplex LP. Solve at quota values 1,3,5,7,9, choosing one interior point from every regime. Expected solutions are \\((15,1),(14,3),(11,5),(6,7),(3,8)\\), with objectives 185,245,285,305,310. Expected quota shadow prices are 35,25,15,5,0; closed RHS validity ranges are [0,2], [2,4], [4,6], [6,8], [8,∞), restricted to nonnegative quota. Compare the quota row’s allowable increase/decrease with these endpoints. These are independently derived expectations, not reports from an Excel run."
+          },
+          {
+            "title": "Assignment 6 submission requirements",
+            "body": "The handout requires a PDF of your answers and the Excel file(s) packaged together in one ZIP archive. It asks for the current feasible region, the complete shadow-price graph, algebraic verification and Excel Solver verification. Due 23:59 on 3 November 2026 (course time). This study companion neither produces official Solver reports nor submits work."
+          }
+        ],
+        "sources": [
+          "Assignment 6.pdf:5"
+        ],
+        "tables": [
+          {
+            "caption": "Concrete plant: resource use per planning unit",
+            "headers": [
+              "Stage",
+              "A",
+              "B",
+              "Weekly capacity"
+            ],
+            "rows": [
+              [
+                "Dedicated A molds",
+                "1",
+                "0",
+                "15"
+              ],
+              [
+                "Shared molding",
+                "1",
+                "1",
+                "17"
+              ],
+              [
+                "Heat treatment",
+                "1",
+                "2",
+                "21"
+              ],
+              [
+                "Surface finishing",
+                "1",
+                "3",
+                "27"
+              ],
+              [
+                "Quality inspection",
+                "1",
+                "4",
+                "35"
+              ]
+            ]
+          },
+          {
+            "caption": "Derived quota regimes; shadow prices apply in interval interiors",
+            "headers": [
+              "Quota b₆ range",
+              "Optimal (A,B)",
+              "Optimal profit",
+              "Marginal value"
+            ],
+            "rows": [
+              [
+                "0–2",
+                "(15,b₆)",
+                "150 + 35b₆",
+                "35"
+              ],
+              [
+                "2–4",
+                "(17 − b₆,b₆)",
+                "170 + 25b₆",
+                "25"
+              ],
+              [
+                "4–6",
+                "(21 − 2b₆,b₆)",
+                "210 + 15b₆",
+                "15"
+              ],
+              [
+                "6–8",
+                "(27 − 3b₆,b₆)",
+                "270 + 5b₆",
+                "5"
+              ],
+              [
+                "8 and above",
+                "(3,8)",
+                "310",
+                "0"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a6-agency",
+        "title": "Assignment 6: the marginal value of approval slots",
+        "body": "An advertising agency chooses divisible standard and premium campaign planning units, earning 7 and 13 per unit. Three teams provide the hours in the table. Both campaign types consume one central approval slot. The current approval limit is 11; vary only \\(b_4\\ge0\\). The worked analysis is derived for this companion.",
+        "sections": [
+          {
+            "title": "Model and current feasible region",
+            "body": "Let \\(x,y\\ge0\\) be standard and premium units. Maximize \\(Z=7x+13y\\) subject to\n$$x+4y\\le16,\\quad x+3y\\le14,\\quad x+2y\\le13,\\quad x+y\\le b_4.$$\nAt \\(b_4=11\\), the polygon vertices are \\((0,0),(11,0),(9.5,1.5),(8,2),(0,4)\\). The optimum is \\((9.5,1.5)\\), contribution 86. Content editing and approvals bind."
+          },
+          {
+            "title": "Follow the binding constraints as approvals increase",
+            "body": "While approvals bind, put \\(x=b_4-y\\), so \\(Z=7b_4+6y\\). The largest feasible premium quantity is constrained by\n$$y\\le b_4,\\quad y\\le(16-b_4)/3,\\quad y\\le(14-b_4)/2,\\quad y\\le13-b_4.$$\nThese bounds become active in order, giving breakpoints 4,10,12,13 and the table’s formulas. Once approvals reach 13, \\((13,0)\\) earns 91 and more approvals have no value. For example, the final publishing inequality also proves \\(7x+13y\\le7(x+2y)\\le91\\). Interior shadow prices are 13,5,4,1,0. Do not assign one differentiable slope at a breakpoint."
+          },
+          {
+            "title": "Excel Solver verification to carry out",
+            "body": "Use Simplex LP with continuous nonnegative variables and request a Sensitivity Report after each solve. Interior approval values 2,7,11,12.5,14 should produce (A,B) = (0,2),(4,3),(9.5,1.5),(12,0.5),(13,0), objectives 26,67,86,90.5,91, and approval shadow prices 13,5,4,1,0. Corresponding closed RHS validity ranges, restricted to nonnegative approvals, are [0,4], [4,10], [10,12], [12,13], [13,∞). These expected values do not replace the assignment’s required Excel workbook and actual reports."
+          },
+          {
+            "title": "Assignment 6 submission requirements",
+            "body": "The handout requires a PDF of your answers and the Excel file(s) packaged together in one ZIP archive. It asks for the current feasible region, the complete shadow-price graph, algebraic verification and Excel Solver verification. Due 23:59 on 3 November 2026 (course time). This study companion neither produces official Solver reports nor submits work."
+          }
+        ],
+        "sources": [
+          "Assignment 6.pdf:6"
+        ],
+        "tables": [
+          {
+            "caption": "Agency: hours per campaign planning unit",
+            "headers": [
+              "Team",
+              "Standard A",
+              "Premium B",
+              "Weekly hours"
+            ],
+            "rows": [
+              [
+                "Preparatory design",
+                "1",
+                "4",
+                "16"
+              ],
+              [
+                "Content editing",
+                "1",
+                "3",
+                "14"
+              ],
+              [
+                "Final publishing",
+                "1",
+                "2",
+                "13"
+              ]
+            ]
+          },
+          {
+            "caption": "Derived approval regimes; shadow prices apply in interval interiors",
+            "headers": [
+              "Approval b₄ range",
+              "Optimal (A,B)",
+              "Optimal contribution",
+              "Marginal value"
+            ],
+            "rows": [
+              [
+                "0–4",
+                "(0,b₄)",
+                "13b₄",
+                "13"
+              ],
+              [
+                "4–10",
+                "((4b₄ − 16)/3,(16 − b₄)/3)",
+                "5b₄ + 32",
+                "5"
+              ],
+              [
+                "10–12",
+                "((3b₄ − 14)/2,(14 − b₄)/2)",
+                "4b₄ + 42",
+                "4"
+              ],
+              [
+                "12–13",
+                "(2b₄ − 13,13 − b₄)",
+                "b₄ + 78",
+                "1"
+              ],
+              [
+                "13 and above",
+                "(13,0)",
+                "91",
+                "0"
+              ]
+            ]
           }
         ]
       }

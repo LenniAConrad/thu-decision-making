@@ -1652,7 +1652,55 @@
           ]
         }
       ]
+    },
+    {
+      "file": "Assignment 6.pdf",
+      "sha256": "bba5d5f2366130d6fddda04b568a10f0a6a548699fb546affa47681c897e81b8",
+      "pageCount": 6,
+      "pages": [
+        {
+          "page": 1,
+          "topicIds": [
+            "a6-concrete",
+            "a6-agency"
+          ],
+          "context": "Submission format, deadline and instructions."
+        },
+        {
+          "page": 2,
+          "topicIds": [
+            "rhs-algebra",
+            "rhs-worked-examples"
+          ]
+        },
+        {
+          "page": 3,
+          "topicIds": [
+            "rhs-algebra",
+            "rhs-worked-examples"
+          ]
+        },
+        {
+          "page": 4,
+          "topicIds": [
+            "rhs-algebra",
+            "rhs-worked-examples"
+          ]
+        },
+        {
+          "page": 5,
+          "topicIds": [
+            "a6-concrete"
+          ]
+        },
+        {
+          "page": 6,
+          "topicIds": [
+            "a6-agency"
+          ]
+        }
+      ]
     }
   ],
-  "updated": "2026-10-27"
+  "updated": "2026-11-01"
 }

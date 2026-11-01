@@ -1,5 +1,5 @@
 {
-  "updated": "27 October 2026",
+  "updated": "1 November 2026",
   "items": [
     {
       "id": "chapter-1",
@@ -217,6 +217,34 @@
         {
           "title": "route shipments through capacity-limited hubs",
           "href": "lectures.html#assignments/a5-transshipment"
+        }
+      ]
+    },
+    {
+      "id": "homework-6",
+      "title": "Homework 6: algebraic sensitivity and capacity planning",
+      "label": "New lesson + problem set",
+      "group": "Assignments and answer keys",
+      "files": [
+        "Assignment 6.pdf"
+      ],
+      "description": "Slack/surplus and solution mix; pottery and fertilizer RHS examples; full shadow-price graphs for concrete production and advertising approvals. Due 3 November; PDF + Excel files in one ZIP.",
+      "links": [
+        {
+          "title": "Learn the algebraic RHS method",
+          "href": "lectures.html#sensitivity/rhs-algebra"
+        },
+        {
+          "title": "Work through the two class examples",
+          "href": "lectures.html#sensitivity/rhs-worked-examples"
+        },
+        {
+          "title": "Assignment 6: the marginal value of a distributor quota",
+          "href": "lectures.html#assignments/a6-concrete"
+        },
+        {
+          "title": "Assignment 6: the marginal value of approval slots",
+          "href": "lectures.html#assignments/a6-agency"
         }
       ]
     }
