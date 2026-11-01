@@ -129,6 +129,13 @@
             "dollars per departure"
           ]
         ]
+      },
+      "equationWords": {
+        "D_W(p)=\\begin{cases}54-1.5p&0\\le p\\le30,\\\\24-0.5p&30<p\\le48,\\\\0&p>48.\\end{cases}": "{\\text{regular demand}}({\\text{fare}})=\\begin{cases}54-1.5\\,\\times\\,{\\text{fare}}&0\\le {\\text{fare}}\\le30,\\\\24-0.5\\,\\times\\,{\\text{fare}}&30<{\\text{fare}}\\le48,\\\\0&{\\text{fare}}>48.\\end{cases}",
+        "D_A(p)=48-2p,\\qquad0\\le p\\le24.": "\\begin{gathered}{\\text{advance demand}}({\\text{fare}})=48-2\\,\\times\\,{\\text{fare}},\\\\0\\le {\\text{fare}}\\le24.\\end{gathered}",
+        "R=36(6)+18(12)=432.": "{\\text{ticket revenue}}=36(6)+18(12)=432.",
+        "R=36(6)+7(34)=454.": "{\\text{ticket revenue}}=36(6)+7(34)=454.",
+        "R(p_A)=216+48p_A-2p_A^2.": "{\\text{ticket revenue}}({\\text{advance fare}})=216+48\\,\\times\\,{\\text{advance fare}}-2\\,\\times\\,{\\text{advance fare}}^2."
       }
     },
     {
@@ -239,6 +246,14 @@
             "dollars per departure"
           ]
         ]
+      },
+      "equationWords": {
+        "D_W(p)=\\begin{cases}54-1.5p&0\\le p\\le30,\\\\24-0.5p&30<p\\le48,\\\\0&p>48.\\end{cases}": "{\\text{regular demand}}({\\text{fare}})=\\begin{cases}54-1.5\\,\\times\\,{\\text{fare}}&0\\le {\\text{fare}}\\le30,\\\\24-0.5\\,\\times\\,{\\text{fare}}&30<{\\text{fare}}\\le48,\\\\0&{\\text{fare}}>48.\\end{cases}",
+        "D_A(p)=48-2p,\\qquad0\\le p\\le24.": "\\begin{gathered}{\\text{advance demand}}({\\text{fare}})=48-2\\,\\times\\,{\\text{fare}},\\\\0\\le {\\text{fare}}\\le24.\\end{gathered}",
+        "\\max_{p_W,p_A}\\;p_WD_W(p_W)+p_AD_A(p_A),\\qquad D_W(p_W)+D_A(p_A)\\le40.": "\\begin{gathered}\\max_{{\\text{regular fare}},{\\text{advance fare}}}\\;{\\text{regular fare}}\\,\\times\\,{\\text{regular demand}}({\\text{regular fare}})+{\\text{advance fare}}\\,\\times\\,{\\text{advance demand}}({\\text{advance fare}}),\\\\ {\\text{regular demand}}({\\text{regular fare}})+{\\text{advance demand}}({\\text{advance fare}})\\le40.\\end{gathered}",
+        "p_W=36-\\tfrac23q_W,\\qquad p_A=24-\\tfrac12q_A.": "\\begin{gathered}{\\text{regular fare}}=36-\\tfrac23{\\text{regular passengers}},\\\\ {\\text{advance fare}}=24-\\tfrac12{\\text{advance passengers}}.\\end{gathered}",
+        "R=36q_W-\\tfrac23q_W^2+24q_A-\\tfrac12q_A^2.": "{\\text{ticket revenue}}=36\\,\\times\\,{\\text{regular passengers}}-\\tfrac23{\\text{regular passengers}}^2+24\\,\\times\\,{\\text{advance passengers}}-\\tfrac12{\\text{advance passengers}}^2.",
+        "36-\\tfrac43q_W=24-q_A,\\qquad q_W+q_A=40.": "\\begin{gathered}36-\\tfrac43{\\text{regular passengers}}=24-{\\text{advance passengers}},\\\\ {\\text{regular passengers}}+{\\text{advance passengers}}=40.\\end{gathered}"
       }
     },
     {
@@ -356,6 +371,11 @@
             "dollars per departure"
           ]
         ]
+      },
+      "equationWords": {
+        "D_R(p_R)=24-\\tfrac12p_R,\\quad0\\le p_R\\le48;\\qquad D_S(p_S)=30-p_S,\\quad0\\le p_S\\le30.": "\\begin{gathered}{\\text{remaining regular demand}}({\\text{remaining regular fare}})=24-\\tfrac12{\\text{remaining regular fare}},\\\\0\\le {\\text{remaining regular fare}}\\le48;\\\\ {\\text{student demand}}({\\text{student fare}})=30-{\\text{student fare}},\\\\0\\le {\\text{student fare}}\\le30.\\end{gathered}",
+        "D_A(p_A)=48-2p_A,\\qquad0\\le p_A\\le24.": "\\begin{gathered}{\\text{advance demand}}({\\text{advance fare}})=48-2\\,\\times\\,{\\text{advance fare}},\\\\0\\le {\\text{advance fare}}\\le24.\\end{gathered}",
+        "R=30(9)+18(12)+14.5(19)=761.50.": "{\\text{ticket revenue}}=30(9)+18(12)+14.5(19)=761.50."
       }
     },
     {
@@ -476,6 +496,16 @@
             "dollars per departure"
           ]
         ]
+      },
+      "equationWords": {
+        "D_R(p_R)=24-\\tfrac12p_R,\\quad0\\le p_R\\le48;\\qquad D_S(p_S)=30-p_S,\\quad0\\le p_S\\le30.": "\\begin{gathered}{\\text{remaining regular demand}}({\\text{remaining regular fare}})=24-\\tfrac12{\\text{remaining regular fare}},\\\\0\\le {\\text{remaining regular fare}}\\le48;\\\\ {\\text{student demand}}({\\text{student fare}})=30-{\\text{student fare}},\\\\0\\le {\\text{student fare}}\\le30.\\end{gathered}",
+        "D_A(p_A)=48-2p_A,\\qquad0\\le p_A\\le24.": "\\begin{gathered}{\\text{advance demand}}({\\text{advance fare}})=48-2\\,\\times\\,{\\text{advance fare}},\\\\0\\le {\\text{advance fare}}\\le24.\\end{gathered}",
+        "p_R=48-2q_R,\\qquad p_S=30-q_S,\\qquad p_A=24-\\tfrac12q_A.": "\\begin{gathered}{\\text{remaining regular fare}}=48-2\\,\\times\\,{\\text{remaining regular passengers}},\\\\ {\\text{student fare}}=30-{\\text{student passengers}},\\\\ {\\text{advance fare}}=24-\\tfrac12{\\text{advance passengers}}.\\end{gathered}",
+        "0\\le q_R\\le24,\\qquad0\\le q_S\\le30,\\qquad0\\le q_A\\le48,\\qquad q_R+q_S+q_A\\le40.": "\\begin{gathered}0\\le {\\text{remaining regular passengers}}\\le24,\\\\0\\le {\\text{student passengers}}\\le30,\\\\0\\le {\\text{advance passengers}}\\le48,\\\\ {\\text{remaining regular passengers}}+{\\text{student passengers}}+{\\text{advance passengers}}\\le40.\\end{gathered}",
+        "\\max R=48q_R-2q_R^2+30q_S-q_S^2+24q_A-\\tfrac12q_A^2.": "\\max {\\text{ticket revenue}}=48\\,\\times\\,{\\text{remaining regular passengers}}-2\\,\\times\\,{\\text{remaining regular passengers}}^2+30\\,\\times\\,{\\text{student passengers}}-{\\text{student passengers}}^2+24\\,\\times\\,{\\text{advance passengers}}-\\tfrac12{\\text{advance passengers}}^2.",
+        "48-4q_R=30-2q_S=24-q_A=\\lambda.": "48-4\\,\\times\\,{\\text{remaining regular passengers}}=30-2\\,\\times\\,{\\text{student passengers}}=24-{\\text{advance passengers}}={\\text{marginal value of one extra seat}}.",
+        "(q_R,q_S,q_A)=\\left(\\tfrac{73}{7},\\tfrac{83}{7},\\tfrac{124}{7}\\right).": "({\\text{remaining regular passengers}},{\\text{student passengers}},{\\text{advance passengers}})=\\left(\\tfrac{73}{7},\\tfrac{83}{7},\\tfrac{124}{7}\\right).",
+        "(p_R,p_S,p_A)=\\left(\\tfrac{190}{7},\\tfrac{127}{7},\\tfrac{106}{7}\\right).": "({\\text{remaining regular fare}},{\\text{student fare}},{\\text{advance fare}})=\\left(\\tfrac{190}{7},\\tfrac{127}{7},\\tfrac{106}{7}\\right)."
       }
     },
     {
@@ -585,6 +615,10 @@
             "its stated objective units"
           ]
         ]
+      },
+      "equationWords": {
+        "\\max Z=5x_1+8x_2.": "\\max {\\text{objective value}}=5\\,\\times\\,{\\text{first activity quantity}}+8\\,\\times\\,{\\text{second activity quantity}}.",
+        "3x_1+5x_2\\le50,\\qquad2x_1+4x_2\\le40,\\qquad x_1\\le8,\\qquad x_2\\le10,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}3\\,\\times\\,{\\text{first activity quantity}}+5\\,\\times\\,{\\text{second activity quantity}}\\le50,\\\\2{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\le40,\\\\ {\\text{first activity quantity}}\\le8,\\\\ {\\text{second activity quantity}}\\le10,\\\\ {\\text{first activity quantity}},{\\text{second activity quantity}}\\ge0.\\end{gathered}"
       }
     },
     {
@@ -690,6 +724,10 @@
             "its stated objective units"
           ]
         ]
+      },
+      "equationWords": {
+        "Z=3x_1+2x_2.": "{\\text{objective value}}=3\\,\\times\\,{\\text{first activity quantity}}+2\\,\\times\\,{\\text{second activity quantity}}.",
+        "2x_1+4x_2\\ge22,\\qquad-x_1+4x_2\\ge10,\\qquad4x_1-2x_2\\le14,\\qquad x_1-3x_2\\le1,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}2\\,\\times\\,{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\ge22,\\\\-{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\ge10,\\\\4{\\text{first activity quantity}}-2\\,\\times\\,{\\text{second activity quantity}}\\le14,\\\\ {\\text{first activity quantity}}-3\\,\\times\\,{\\text{second activity quantity}}\\le1,\\\\ {\\text{first activity quantity}},{\\text{second activity quantity}}\\ge0.\\end{gathered}"
       }
     },
     {
@@ -832,6 +870,10 @@
             "dollars per modeled day"
           ]
         ]
+      },
+      "equationWords": {
+        "\\min Z=64x_1+42x_2.": "\\min {\\text{staffing cost}}=64\\,\\times\\,{\\text{permanent operators}}+42\\,\\times\\,{\\text{temporary operators}}.",
+        "16x_1+12x_2\\ge450,\\qquad x_1+x_2\\le40,\\qquad0.5x_1+1.4x_2\\le25,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}16\\,\\times\\,{\\text{permanent operators}}+12\\,\\times\\,{\\text{temporary operators}}\\ge450,\\\\ {\\text{permanent operators}}+{\\text{temporary operators}}\\le40,\\\\0.5\\,\\times\\,{\\text{permanent operators}}+1.4\\,\\times\\,{\\text{temporary operators}}\\le25,\\\\ {\\text{permanent operators}},{\\text{temporary operators}}\\ge0.\\end{gathered}"
       }
     },
     {
@@ -937,6 +979,10 @@
             "its stated objective units"
           ]
         ]
+      },
+      "equationWords": {
+        "Z=800x_1+900x_2.": "{\\text{objective value}}=800\\,\\times\\,{\\text{first activity quantity}}+900\\,\\times\\,{\\text{second activity quantity}}.",
+        "2x_1+4x_2\\le30,\\qquad4x_1+2x_2\\le30,\\qquad x_1+x_2\\ge9,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}2\\,\\times\\,{\\text{first activity quantity}}+4\\,\\times\\,{\\text{second activity quantity}}\\le30,\\\\4{\\text{first activity quantity}}+2\\,\\times\\,{\\text{second activity quantity}}\\le30,\\\\ {\\text{first activity quantity}}+{\\text{second activity quantity}}\\ge9,\\\\ {\\text{first activity quantity}},{\\text{second activity quantity}}\\ge0.\\end{gathered}"
       }
     },
     {
@@ -1096,6 +1142,12 @@
             "dollars"
           ]
         ]
+      },
+      "equationWords": {
+        "\\min Z=6000x_1+7000x_2;\\quad6x_1+2x_2\\ge12,\\quad2x_1+2x_2\\ge8,\\quad4x_1+10x_2\\ge5,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\min {\\text{operating cost}}=6000\\,\\times\\,{\\text{mill 1 operating days}}+7000\\,\\times\\,{\\text{mill 2 operating days}};\\\\6{\\text{mill 1 operating days}}+2\\,\\times\\,{\\text{mill 2 operating days}}\\ge12,\\\\2{\\text{mill 1 operating days}}+2\\,\\times\\,{\\text{mill 2 operating days}}\\ge8,\\\\4{\\text{mill 1 operating days}}+10\\,\\times\\,{\\text{mill 2 operating days}}\\ge5,\\\\ {\\text{mill 1 operating days}},{\\text{mill 2 operating days}}\\ge0.\\end{gathered}",
+        "x_1=4-x_2+\\tfrac12e_2,\\quad e_1=12-4x_2+3e_2,\\quad e_3=11+6x_2+2e_2.": "\\begin{gathered}{\\text{mill 1 operating days}}=4-{\\text{mill 2 operating days}}+\\tfrac12{\\text{surplus medium-grade tons}},\\\\ {\\text{surplus high-grade tons}}=12-4\\,\\times\\,{\\text{mill 2 operating days}}+3\\,\\times\\,{\\text{surplus medium-grade tons}},\\\\ {\\text{surplus low-grade tons}}=11+6\\,\\times\\,{\\text{mill 2 operating days}}+2\\,\\times\\,{\\text{surplus medium-grade tons}}.\\end{gathered}",
+        "Z=24000+1000x_2+3000e_2.": "{\\text{operating cost}}=24000+1000\\,\\times\\,{\\text{mill 2 operating days}}+3000\\,\\times\\,{\\text{surplus medium-grade tons}}.",
+        "Z=4c_1+(c_2-c_1)x_2+\\tfrac12c_1e_2.": "{\\text{operating cost}}=4\\,\\times\\,{\\text{mill 1 cost per day}}+({\\text{mill 2 cost per day}}-{\\text{mill 1 cost per day}})\\,\\times\\,{\\text{mill 2 operating days}}+\\tfrac12{\\text{mill 1 cost per day}}\\,\\times\\,{\\text{surplus medium-grade tons}}."
       }
     },
     {
@@ -1253,6 +1305,11 @@
             "dollars"
           ]
         ]
+      },
+      "equationWords": {
+        "\\max Z=300x_1+520x_2;\\quad x_1+x_2\\le410,\\quad105x_1+210x_2\\le52500,\\quad x_2\\le100,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\max {\\text{crop profit}}=300\\,\\times\\,{\\text{corn acres}}+520\\,\\times\\,{\\text{tobacco acres}};\\\\ {\\text{corn acres}}+{\\text{tobacco acres}}\\le410,\\\\105{\\text{corn acres}}+210\\,\\times\\,{\\text{tobacco acres}}\\le52500,\\\\ {\\text{tobacco acres}}\\le100,\\\\ {\\text{corn acres}},{\\text{tobacco acres}}\\ge0.\\end{gathered}",
+        "x_1=320-2s_L+s_B,\\quad x_2=90+s_L-s_B,\\quad s_T=10-s_L+s_B.": "\\begin{gathered}{\\text{corn acres}}=320-2\\,\\times\\,{\\text{unused acres}}+{\\text{unused budget in 105-dollar units}},\\\\ {\\text{tobacco acres}}=90+{\\text{unused acres}}-{\\text{unused budget in 105-dollar units}},\\\\ {\\text{unused tobacco quota acres}}=10-{\\text{unused acres}}+{\\text{unused budget in 105-dollar units}}.\\end{gathered}",
+        "Z=142800-80s_L-220s_B.": "{\\text{crop profit}}=142800-80\\,\\times\\,{\\text{unused acres}}-220\\,\\times\\,{\\text{unused budget in 105-dollar units}}."
       }
     },
     {
@@ -1412,6 +1469,12 @@
             "dollars per day"
           ]
         ]
+      },
+      "equationWords": {
+        "\\max Z=50x_1+40x_2": "\\max {\\text{profit}}=50\\,\\times\\,{\\text{component A quantity}}+40\\,\\times\\,{\\text{component B quantity}}",
+        "2x_1+x_2\\le100,\\qquad x_1+2x_2\\le80,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}2\\,\\times\\,{\\text{component A quantity}}+{\\text{component B quantity}}\\le100,\\\\ {\\text{component A quantity}}+2\\,\\times\\,{\\text{component B quantity}}\\le80,\\\\ {\\text{component A quantity}},{\\text{component B quantity}}\\ge0.\\end{gathered}",
+        "\\max Z=50x_1+40x_2;\\quad2x_1+x_2\\le100,\\quad x_1+2x_2\\le80,\\quad x_1,x_2\\ge0.": "\\begin{gathered}\\max {\\text{profit}}=50\\,\\times\\,{\\text{component A quantity}}+40\\,\\times\\,{\\text{component B quantity}};\\\\2{\\text{component A quantity}}+{\\text{component B quantity}}\\le100,\\\\ {\\text{component A quantity}}+2\\,\\times\\,{\\text{component B quantity}}\\le80,\\\\ {\\text{component A quantity}},{\\text{component B quantity}}\\ge0.\\end{gathered}",
+        "x_1=40-\\tfrac23s_1+\\tfrac13s_2,\\quad x_2=20+\\tfrac13s_1-\\tfrac23s_2,\\quad Z=2800-20s_1-10s_2.": "\\begin{gathered}{\\text{component A quantity}}=40-\\tfrac23{\\text{unused machining capacity}}+\\tfrac13{\\text{unused finishing capacity}},\\\\ {\\text{component B quantity}}=20+\\tfrac13{\\text{unused machining capacity}}-\\tfrac23{\\text{unused finishing capacity}},\\\\ {\\text{profit}}=2800-20\\,\\times\\,{\\text{unused machining capacity}}-10\\,\\times\\,{\\text{unused finishing capacity}}.\\end{gathered}"
       }
     },
     {
@@ -1544,7 +1607,8 @@
             "dollars per product"
           ]
         ]
-      }
+      },
+      "equationWords": {}
     },
     {
       "id": "solver-pottery-diagnosis",
@@ -1662,6 +1726,10 @@
             "dollars per product"
           ]
         ]
+      },
+      "equationWords": {
+        "\\max Z=40x_1+50x_2": "\\max {\\text{profit}}=40\\,\\times\\,{\\text{bowls produced}}+50\\,\\times\\,{\\text{mugs produced}}",
+        "x_1+2x_2\\le40,\\qquad4x_2+3x_2\\le120,\\qquad x_1,x_2\\ge0.": "\\begin{gathered}{\\text{bowls produced}}+2\\,\\times\\,{\\text{mugs produced}}\\le40,\\\\4{\\text{mugs produced}}+3\\,\\times\\,{\\text{mugs produced}}\\le120,\\\\ {\\text{bowls produced}},{\\text{mugs produced}}\\ge0.\\end{gathered}"
       }
     },
     {
@@ -1799,7 +1867,8 @@
             "dollars per product"
           ]
         ]
-      }
+      },
+      "equationWords": {}
     },
     {
       "id": "solver-pottery-python",
@@ -1925,7 +1994,8 @@
             "dollars per product"
           ]
         ]
-      }
+      },
+      "equationWords": {}
     },
     {
       "id": "practice-hw4-transport",
@@ -2111,6 +2181,11 @@
             "hundreds of dollars"
           ]
         ]
+      },
+      "equationWords": {
+        "\\min Z=\\sum_{i=1}^{4}\\sum_{j\\in\\{A,B,C\\}}c_{ij}x_{ij}.": "\\min {\\text{shipping cost}}=\\sum_{{\\text{plant}}=1}^{4}\\sum_{{\\text{customer}}\\in\\{{\\text{Greensboro}},{\\text{Charlotte}},{\\text{Louisville}}\\}}{\\text{cost per engine on route}}\\,\\times\\,{\\text{engines shipped on route}}.",
+        "\\sum_jx_{1j}\\le5,\\quad\\sum_jx_{2j}\\le25,\\quad\\sum_jx_{3j}\\le20,\\quad\\sum_jx_{4j}\\le25.": "\\begin{gathered}\\sum_{{\\text{customer}}}{\\text{engines from Phoenix}}\\le5,\\\\\\sum_{{\\text{customer}}}{\\text{engines from Seattle}}\\le25,\\\\\\sum_{{\\text{customer}}}{\\text{engines from St Louis}}\\le20,\\\\\\sum_{{\\text{customer}}}{\\text{engines from Detroit}}\\le25.\\end{gathered}",
+        "\\sum_ix_{iA}=10,\\quad\\sum_ix_{iB}=20,\\quad\\sum_ix_{iC}=15,\\quad x_{2B}=x_{4C}=0,\\quad x_{ij}\\ge0.": "\\begin{gathered}\\sum_{{\\text{plant}}}{\\text{engines to Greensboro}}=10,\\\\\\sum_{{\\text{plant}}}{\\text{engines to Charlotte}}=20,\\\\\\sum_{{\\text{plant}}}{\\text{engines to Louisville}}=15,\\\\ {\\text{engines from Seattle to Charlotte}}={\\text{engines from Detroit to Louisville}}=0,\\\\ {\\text{engines shipped on route}}\\ge0.\\end{gathered}"
       }
     },
     {
@@ -2249,6 +2324,9 @@
             "yuan"
           ]
         ]
+      },
+      "equationWords": {
+        "\\max Z=400a+800b+300s-200d;\\quad2a+3b\\le15,\\quad3a+4b\\le25,\\quad s+d=2b,\\quad s\\le5.": "\\begin{gathered}\\max {\\text{net profit}}=400\\,\\times\\,{\\text{tons of A made}}+800\\,\\times\\,{\\text{tons of B made}}+300\\,\\times\\,{\\text{tons of C sold}}-200\\,\\times\\,{\\text{tons of C discarded}};\\\\2{\\text{tons of A made}}+3\\,\\times\\,{\\text{tons of B made}}\\le15,\\\\3{\\text{tons of A made}}+4\\,\\times\\,{\\text{tons of B made}}\\le25,\\\\ {\\text{tons of C sold}}+{\\text{tons of C discarded}}=2\\,\\times\\,{\\text{tons of B made}},\\\\ {\\text{tons of C sold}}\\le5.\\end{gathered}"
       }
     },
     {
@@ -2427,6 +2505,12 @@
             "dollars"
           ]
         ]
+      },
+      "equationWords": {
+        "\\max Z=600\\sum_i x_{iC}+450\\sum_i x_{iP}+300\\sum_i x_{iS}.": "\\max {\\text{crop profit}}=600\\sum_{{\\text{plot}}} {\\text{corn acres on plot}}+450\\sum_{{\\text{plot}}} {\\text{pea acres on plot}}+300\\sum_{{\\text{plot}}} {\\text{soybean acres on plot}}.",
+        "\\sum_j x_{ij}=L_it\\quad(i=1,2,3),\\qquad0.6\\le t\\le1.": "\\begin{gathered}\\sum_{{\\text{crop}}} {\\text{crop acres on plot}}={\\text{plot size in acres}}\\,\\times\\,{\\text{cultivated fraction of each plot}}\\\\({\\text{plot}}=1,2,3),\\\\0.6\\le {\\text{cultivated fraction of each plot}}\\le1.\\end{gathered}",
+        "\\sum_i x_{iC}\\le900,\\quad\\sum_i x_{iP}\\le700,\\quad\\sum_i x_{iS}\\le1000.": "\\begin{gathered}\\sum_{{\\text{plot}}} {\\text{corn acres on plot}}\\le900,\\\\\\sum_{{\\text{plot}}} {\\text{pea acres on plot}}\\le700,\\\\\\sum_{{\\text{plot}}} {\\text{soybean acres on plot}}\\le1000.\\end{gathered}",
+        "600C+450P+300S=300(C+P+S)+300C+150P\\le300(2000)+300(900)+150(700)=975000.": "600\\,\\times\\,{\\text{total corn acres}}+450\\,\\times\\,{\\text{total pea acres}}+300\\,\\times\\,{\\text{total soybean acres}}=300({\\text{total corn acres}}+{\\text{total pea acres}}+{\\text{total soybean acres}})+300\\,\\times\\,{\\text{total corn acres}}+150\\,\\times\\,{\\text{total pea acres}}\\le300(2000)+300(900)+150(700)=975000."
       }
     },
     {
@@ -2535,6 +2619,11 @@
             "dollars"
           ]
         ]
+      },
+      "equationWords": {
+        "\\max Z=0.15x_1+0.08x_2+0.06x_3+0.20x_4.": "\\max {\\text{annual return}}=0.15\\,\\times\\,{\\text{money in baking}}+0.08\\,\\times\\,{\\text{money in supplier contracts}}+0.06\\,\\times\\,{\\text{money in loyalty}}+0.20\\,\\times\\,{\\text{money in marketing}}.",
+        "x_1+x_2+x_3+x_4=50000,\\quad x_1\\le15000,\\quad x_2\\le x_1+x_3+x_4,": "\\begin{gathered}{\\text{money in baking}}+{\\text{money in supplier contracts}}+{\\text{money in loyalty}}+{\\text{money in marketing}}=50000,\\\\ {\\text{money in baking}}\\le15000,\\\\ {\\text{money in supplier contracts}}\\le {\\text{money in baking}}+{\\text{money in loyalty}}+{\\text{money in marketing}},\\end{gathered}",
+        "x_3\\ge10000,\\quad x_1+x_4\\ge20000,\\quad x_1,x_2,x_3,x_4\\ge0.": "\\begin{gathered}{\\text{money in loyalty}}\\ge10000,\\\\ {\\text{money in baking}}+{\\text{money in marketing}}\\ge20000,\\\\ {\\text{money in baking}},{\\text{money in supplier contracts}},{\\text{money in loyalty}},{\\text{money in marketing}}\\ge0.\\end{gathered}"
       }
     },
     {
@@ -2689,6 +2778,11 @@
             "heaters, both fixed at zero"
           ]
         ]
+      },
+      "equationWords": {
+        "\\min Z=\\sum_{t=1}^{4}(120r_t+180s_t+15I_t).": "\\min {\\text{total production and storage cost}}=\\sum_{{\\text{quarter}}=1}^{4}(120\\,\\times\\,{\\text{regular production this quarter}}+180\\,\\times\\,{\\text{subcontracted production this quarter}}+15\\,\\times\\,{\\text{ending inventory this quarter}}).",
+        "I_{t-1}+r_t+s_t-I_t=d_t,\\quad0\\le r_t\\le450,\\quad0\\le s_t\\le200,\\quad I_t\\ge0.": "\\begin{gathered}{\\text{inventory from previous quarter}}+{\\text{regular production this quarter}}+{\\text{subcontracted production this quarter}}-{\\text{ending inventory this quarter}}={\\text{demand this quarter}},\\\\0\\le {\\text{regular production this quarter}}\\le450,\\\\0\\le {\\text{subcontracted production this quarter}}\\le200,\\\\ {\\text{ending inventory this quarter}}\\ge0.\\end{gathered}",
+        "I_0=0,\\qquad I_4=0.": "\\begin{gathered}{\\text{initial inventory}}=0,\\\\ {\\text{final inventory}}=0.\\end{gathered}"
       }
     },
     {
@@ -2898,6 +2992,10 @@
             "labels"
           ]
         ]
+      },
+      "equationWords": {
+        "\\min\\theta;\\qquad\\sum_jx_{ij}\\lambda_j\\le\\theta x_{io}\\ (i=1,2,3),\\qquad\\sum_jy_{rj}\\lambda_j\\ge y_{ro}\\ (r=1,2),\\qquad\\lambda_j,\\theta\\ge0.": "\\begin{gathered}\\min{\\text{efficiency score}};\\\\\\sum_{{\\text{comparison entity}}}{\\text{comparison entity input}}\\,\\times\\,{\\text{reference weight for company}}\\le{\\text{efficiency score}}\\,\\times\\,{\\text{evaluated entity input}}\\ ({\\text{input}}=1,2,3),\\\\\\sum_{{\\text{comparison entity}}}{\\text{comparison entity output}}\\,\\times\\,{\\text{reference weight for company}}\\ge {\\text{evaluated entity output}}\\ ({\\text{output}}=1,2),\\\\{\\text{reference weight for company}},{\\text{efficiency score}}\\ge0.\\end{gathered}",
+        "A=B=C=E=F>D,\\qquad\\theta_D=959/1824\\approx0.525767544.": "\\begin{gathered}{\\text{company A score}}={\\text{company B score}}={\\text{company C score}}={\\text{company E score}}={\\text{company F score}}>{\\text{company D score}},\\\\{\\text{company D efficiency}}=959/1824\\approx0.525767544.\\end{gathered}"
       }
     },
     {
@@ -3040,6 +3138,11 @@
             "dollars of return"
           ]
         ]
+      },
+      "equationWords": {
+        "\\max Z=0.085x_1+0.05x_2+0.065x_3+0.13x_4.": "\\max {\\text{annual return}}=0.085\\,\\times\\,{\\text{money in municipal bonds}}+0.05\\,\\times\\,{\\text{money in CDs}}+0.065\\,\\times\\,{\\text{money in treasury bills}}+0.13\\,\\times\\,{\\text{money in stock fund}}.",
+        "x_1+x_2+x_3+x_4=70000,\\quad x_1\\le14000,\\quad x_2-x_1-x_3-x_4\\le0,": "\\begin{gathered}{\\text{money in municipal bonds}}+{\\text{money in CDs}}+{\\text{money in treasury bills}}+{\\text{money in stock fund}}=70000,\\\\ {\\text{money in municipal bonds}}\\le14000,\\\\ {\\text{money in CDs}}-{\\text{money in municipal bonds}}-{\\text{money in treasury bills}}-{\\text{money in stock fund}}\\le0,\\end{gathered}",
+        "x_2+x_3\\ge21000,\\quad-1.2x_1+x_2+x_3-1.2x_4\\ge0,\\quad x_1,x_2,x_3,x_4\\ge0.": "\\begin{gathered}{\\text{money in CDs}}+{\\text{money in treasury bills}}\\ge21000,\\\\-1.2\\,\\times\\,{\\text{money in municipal bonds}}+{\\text{money in CDs}}+{\\text{money in treasury bills}}-1.2\\,\\times\\,{\\text{money in stock fund}}\\ge0,\\\\ {\\text{money in municipal bonds}},{\\text{money in CDs}},{\\text{money in treasury bills}},{\\text{money in stock fund}}\\ge0.\\end{gathered}"
       }
     },
     {
@@ -3257,6 +3360,12 @@
             "dollars"
           ]
         ]
+      },
+      "equationWords": {
+        "\\max Z=30x_{AP}+36x_{BP}+42x_{CP}+16x_{AS}+22x_{BS}+28x_{CS}.": "\\max {\\text{net profit}}=30\\,\\times\\,{\\text{A barrels in Premium}}+36\\,\\times\\,{\\text{B barrels in Premium}}+42\\,\\times\\,{\\text{C barrels in Premium}}+16\\,\\times\\,{\\text{A barrels in Standard}}+22\\,\\times\\,{\\text{B barrels in Standard}}+28\\,\\times\\,{\\text{C barrels in Standard}}.",
+        "x_{AP}+x_{AS}\\le4000,\\quad x_{BP}+x_{BS}\\le5000,\\quad x_{CP}+x_{CS}\\le3500,\\quad Q_P\\ge3000,\\quad Q_S\\ge4000.": "\\begin{gathered}{\\text{A barrels in Premium}}+{\\text{A barrels in Standard}}\\le4000,\\\\ {\\text{B barrels in Premium}}+{\\text{B barrels in Standard}}\\le5000,\\\\ {\\text{C barrels in Premium}}+{\\text{C barrels in Standard}}\\le3500,\\\\ {\\text{Premium barrels}}\\ge3000,\\\\ {\\text{Standard barrels}}\\ge4000.\\end{gathered}",
+        "65x_{AP}+52x_{BP}+45x_{CP}\\ge58Q_P,\\quad65x_{AS}+52x_{BS}+45x_{CS}\\ge50Q_S.": "\\begin{gathered}65\\,\\times\\,{\\text{A barrels in Premium}}+52\\,\\times\\,{\\text{B barrels in Premium}}+45\\,\\times\\,{\\text{C barrels in Premium}}\\ge58{\\text{Premium barrels}},\\\\65{\\text{A barrels in Standard}}+52\\,\\times\\,{\\text{B barrels in Standard}}+45\\,\\times\\,{\\text{C barrels in Standard}}\\ge50{\\text{Standard barrels}}.\\end{gathered}",
+        "0.08x_{AP}+0.15x_{BP}+0.25x_{CP}\\le0.11Q_P,\\quad0.08x_{AS}+0.15x_{BS}+0.25x_{CS}\\le0.18Q_S.": "\\begin{gathered}0.08\\,\\times\\,{\\text{A barrels in Premium}}+0.15\\,\\times\\,{\\text{B barrels in Premium}}+0.25\\,\\times\\,{\\text{C barrels in Premium}}\\le0.11\\,\\times\\,{\\text{Premium barrels}},\\\\0.08\\,\\times\\,{\\text{A barrels in Standard}}+0.15\\,\\times\\,{\\text{B barrels in Standard}}+0.25\\,\\times\\,{\\text{C barrels in Standard}}\\le0.18\\,\\times\\,{\\text{Standard barrels}}.\\end{gathered}"
       }
     },
     {
@@ -3467,6 +3576,12 @@
             "dollars"
           ]
         ]
+      },
+      "equationWords": {
+        "\\min Z=5a_{11}+7a_{12}+6a_{21}+4a_{22}+8b_{11}+10b_{12}+12b_{13}+11b_{21}+7b_{22}+9b_{23}.": "\\min {\\text{total shipping cost}}=5\\,\\times\\,{\\text{units from plant 1 to hub 1}}+7\\,\\times\\,{\\text{units from plant 1 to hub 2}}+6\\,\\times\\,{\\text{units from plant 2 to hub 1}}+4\\,\\times\\,{\\text{units from plant 2 to hub 2}}+8\\,\\times\\,{\\text{units from hub 1 to customer 1}}+10\\,\\times\\,{\\text{units from hub 1 to customer 2}}+12\\,\\times\\,{\\text{units from hub 1 to customer 3}}+11\\,\\times\\,{\\text{units from hub 2 to customer 1}}+7\\,\\times\\,{\\text{units from hub 2 to customer 2}}+9\\,\\times\\,{\\text{units from hub 2 to customer 3}}.",
+        "a_{11}+a_{12}\\le800,\\quad a_{21}+a_{22}\\le1000,\\quad a_{11}+a_{21}\\le900,\\quad a_{12}+a_{22}\\le850.": "\\begin{gathered}{\\text{units from plant 1 to hub 1}}+{\\text{units from plant 1 to hub 2}}\\le800,\\\\ {\\text{units from plant 2 to hub 1}}+{\\text{units from plant 2 to hub 2}}\\le1000,\\\\ {\\text{units from plant 1 to hub 1}}+{\\text{units from plant 2 to hub 1}}\\le900,\\\\ {\\text{units from plant 1 to hub 2}}+{\\text{units from plant 2 to hub 2}}\\le850.\\end{gathered}",
+        "a_{11}+a_{21}=b_{11}+b_{12}+b_{13},\\quad a_{12}+a_{22}=b_{21}+b_{22}+b_{23}.": "\\begin{gathered}{\\text{units from plant 1 to hub 1}}+{\\text{units from plant 2 to hub 1}}={\\text{units from hub 1 to customer 1}}+{\\text{units from hub 1 to customer 2}}+{\\text{units from hub 1 to customer 3}},\\\\ {\\text{units from plant 1 to hub 2}}+{\\text{units from plant 2 to hub 2}}={\\text{units from hub 2 to customer 1}}+{\\text{units from hub 2 to customer 2}}+{\\text{units from hub 2 to customer 3}}.\\end{gathered}",
+        "b_{11}+b_{21}=500,\\quad b_{12}+b_{22}=650,\\quad b_{13}+b_{23}=450.": "\\begin{gathered}{\\text{units from hub 1 to customer 1}}+{\\text{units from hub 2 to customer 1}}=500,\\\\ {\\text{units from hub 1 to customer 2}}+{\\text{units from hub 2 to customer 2}}=650,\\\\ {\\text{units from hub 1 to customer 3}}+{\\text{units from hub 2 to customer 3}}=450.\\end{gathered}"
       }
     },
     {
@@ -3696,6 +3811,10 @@
             "units of the corresponding capacity"
           ]
         ]
+      },
+      "equationWords": {
+        "x\\le15,\\quad x+y\\le17,\\quad x+2y\\le21,\\quad x+3y\\le27,\\quad x+4y\\le35,\\quad y\\le b_6.": "\\begin{gathered}{\\text{basic blocks}}\\le15,\\\\ {\\text{basic blocks}}+{\\text{decorative blocks}}\\le17,\\\\ {\\text{basic blocks}}+2\\,\\times\\,{\\text{decorative blocks}}\\le21,\\\\ {\\text{basic blocks}}+3\\,\\times\\,{\\text{decorative blocks}}\\le27,\\\\ {\\text{basic blocks}}+4\\,\\times\\,{\\text{decorative blocks}}\\le35,\\\\ {\\text{decorative blocks}}\\le {\\text{decorative-block quota}}.\\end{gathered}",
+        "x(y)=\\min\\{15,17-y,21-2y,27-3y,35-4y\\}.": "{\\text{basic blocks}}({\\text{decorative blocks}})=\\min\\{15,17-{\\text{decorative blocks}},21-2\\,\\times\\,{\\text{decorative blocks}},27-3\\,\\times\\,{\\text{decorative blocks}},35-4\\,\\times\\,{\\text{decorative blocks}}\\}."
       }
     },
     {
@@ -3896,6 +4015,10 @@
             "monetary units per week"
           ]
         ]
+      },
+      "equationWords": {
+        "x+4y\\le16,\\quad x+3y\\le14,\\quad x+2y\\le13,\\quad x+y\\le b_4.": "\\begin{gathered}{\\text{standard campaigns}}+4\\,\\times\\,{\\text{premium campaigns}}\\le16,\\\\ {\\text{standard campaigns}}+3\\,\\times\\,{\\text{premium campaigns}}\\le14,\\\\ {\\text{standard campaigns}}+2\\,\\times\\,{\\text{premium campaigns}}\\le13,\\\\ {\\text{standard campaigns}}+{\\text{premium campaigns}}\\le {\\text{approval slots}}.\\end{gathered}",
+        "y\\le b_4,\\quad y\\le(16-b_4)/3,\\quad y\\le(14-b_4)/2,\\quad y\\le13-b_4.": "\\begin{gathered}{\\text{premium campaigns}}\\le {\\text{approval slots}},\\\\ {\\text{premium campaigns}}\\le(16-{\\text{approval slots}})/3,\\\\ {\\text{premium campaigns}}\\le(14-{\\text{approval slots}})/2,\\\\ {\\text{premium campaigns}}\\le13-{\\text{approval slots}}.\\end{gathered}"
       }
     }
   ]

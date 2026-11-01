@@ -154,3 +154,5 @@ body{font-size:1rem}button:hover{background:#f3eef9;border-color:#b9a4d1}.primar
 @media print{.practice-shell .reader-heading{display:block!important}.practice-solution .native-drawing svg{min-width:0}.lecture-equation .katex-display{overflow:visible}}
 
 .symbol-guide{margin:1rem 0;padding:.8rem 1rem;border:1px solid #ddd5e8;border-radius:.6rem;background:#faf8fc}.symbol-guide>summary{cursor:pointer;font-weight:650;color:#52317d}.symbol-guide p{font-size:.95rem}.symbol-guide .lecture-table-wrap{margin:.8rem 0 0}
+
+.equation-pair{margin:1.2rem 0}.word-equation{display:flex;gap:.8rem;align-items:center;padding:.8rem 1rem;background:#f6f3fa;border-left:3px solid #9171b4;border-radius:.3rem}.word-equation-arrow{font-size:1.7rem;color:#68419a;flex-shrink:0}.word-equation-content{min-width:0;flex:1}.word-equation-label{font-size:.78rem;font-weight:650;color:#68419a}.word-equation .lecture-equation{margin:0;overflow-x:auto}.word-equation .katex{font-size:1em}.word-equation .katex-display{margin:.4em 0}@media print{.equation-pair{break-inside:avoid}.word-equation{background:none;border-left:1px solid #777}}

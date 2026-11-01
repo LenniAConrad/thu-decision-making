@@ -13,6 +13,11 @@ const MathView=(()=>{
     }
     return out+escape(String(text).slice(start));
   }
+  function equation(tex,words){
+    const formula=`<div class="lecture-equation" tabindex="0">${html(tex,true)}</div>`;
+    if(!words)return formula;
+    return `<div class="equation-pair">${formula}<div class="word-equation"><span class="word-equation-arrow" role="img" aria-label="The same formula in words">⇔</span><div class="word-equation-content"><span class="word-equation-label">Same formula in words</span><div class="lecture-equation" tabindex="0">${html(words,true)}</div></div></div></div>`;
+  }
   function plain(text){
     // Convert the lab's small, known equation grammar to TeX. Grouped quotients
     // become true fractions; node/component names are always escaped as text.
@@ -34,6 +39,6 @@ const MathView=(()=>{
   }
   function render(root=document){root.querySelectorAll('[data-tex]').forEach(el=>{const tex=el.dataset.tex;if(el.dataset.mathRendered===tex)return;el.innerHTML=html(tex,el.dataset.display==='true');el.dataset.mathRendered=tex;});}
   if(typeof document!=='undefined')document.addEventListener('DOMContentLoaded',()=>render());
-  return {html,inline,plain,render,escape};
+  return {html,inline,equation,plain,render,escape};
 })();
 if(typeof module!=='undefined')module.exports=MathView;
